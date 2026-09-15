@@ -1,0 +1,464 @@
+{
+  "topics": [
+    {
+      "section": "history",
+      "slug": "diriyah-history",
+      "translationKey": "research-20260911-diriyah-history",
+      "ar": {
+        "title": "تاريخ الدرعية",
+        "summary": "نشأت الدرعية على وادي حنيفة، وأصبحت عاصمة الدولة السعودية الأولى، ويحفظ حي الطريف شواهد على تاريخها السياسي وعمارتها النجدية.",
+        "category": "تاريخ المدن",
+        "seoTitle": "تاريخ الدرعية: وادي حنيفة وعاصمة الدولة السعودية الأولى",
+        "seoDescription": "تعرف على نشأة الدرعية عام 1446، ودورها عاصمة للدولة السعودية الأولى، وعمارة حي الطريف الذي أدرجته اليونسكو عام 2010.",
+        "imageAlt": "جدران طينية مسننة وفتحات مثلثة في مبانٍ بالدرعية",
+        "facts": [
+          { "label": "الموقع", "value": "وادي حنيفة، شمال غربي مدينة الرياض" },
+          { "label": "تأسيس البلدة", "value": "مانع المريدي، 1446م" },
+          { "label": "الدور السياسي", "value": "عاصمة الدولة السعودية الأولى" },
+          { "label": "إدراج حي الطريف لدى اليونسكو", "value": "2010م" }
+        ],
+        "body": [
+          { "heading": "بلدة على ضفاف الوادي", "text": "أسس مانع المريدي الدرعية عام 1446م في وادي حنيفة، شمال غربي مدينة الرياض الحالية. هيأت رواسب الوادي تربة للزراعة، ووفرت المياه القريبة من السطح موردًا للآبار. وأسهمت الواحة ببساتينها ونخيلها في استقرار البلدة." },
+          { "heading": "الدرعية مقرًا للحكم", "text": "اتخذ الإمام محمد بن سعود الدرعية عاصمة للدولة السعودية الأولى التي أسسها عام 1727م. وتعاظم دورها السياسي والديني خلال القرن الثامن عشر وأوائل القرن التاسع عشر. وكان حي الطريف مركزًا للحكم، ويضم قصر سلوى." },
+          { "heading": "ما يحفظه حي الطريف", "text": "أُدرج حي الطريف في قائمة التراث العالمي عام 2010م، ويقتصر الإدراج على الحي داخل الدرعية. وتوضح قصوره وبقايا مبانيه وشبكة طرقه أساليب العمارة النجدية، ولا سيما استخدام اللِبن والزخارف الهندسية. ويضم الموقع عناصر تاريخية باقية وأعمال ترميم لاحقة." }
+        ],
+        "sources": [
+          { "title": "سعوديبيديا: محافظة الدرعية", "url": "https://saudipedia.com/محافظة-الدرعية" },
+          { "title": "اليونسكو: حي الطريف في الدرعية", "url": "https://whc.unesco.org/en/list/1329/" }
+        ]
+      },
+      "en": {
+        "title": "History of Diriyah",
+        "summary": "Diriyah developed beside Wadi Hanifah and became the First Saudi State's capital. At-Turaif preserves evidence of its political history and Najdi architecture.",
+        "category": "Urban history",
+        "seoTitle": "Diriyah History: Wadi Hanifah and the First Saudi Capital",
+        "seoDescription": "Explore Diriyah's founding in 1446, its role as the First Saudi State's capital, and At-Turaif's architecture and 2010 UNESCO inscription.",
+        "imageAlt": "Crenellated earthen walls and triangular openings in buildings in Diriyah",
+        "facts": [
+          { "label": "Location", "value": "Wadi Hanifah, northwest of Riyadh city" },
+          { "label": "Town founded", "value": "Mani al-Muraydi, 1446" },
+          { "label": "Political role", "value": "Capital of the First Saudi State" },
+          { "label": "At-Turaif UNESCO inscription", "value": "2010" }
+        ],
+        "body": [
+          { "heading": "A town beside the wadi", "text": "Mani al-Muraydi founded Diriyah in 1446 in Wadi Hanifah, northwest of present-day Riyadh. Deposits left by the wadi provided agricultural soil, while water close to the surface supplied wells. The oasis, with its gardens and date palms, helped support settlement." },
+          { "heading": "Diriyah as a seat of government", "text": "Imam Muhammad bin Saud made Diriyah the capital of the First Saudi State, which he established in 1727. Its political and religious role grew during the eighteenth and early nineteenth centuries. At-Turaif was a centre of government and contains Salwa Palace." },
+          { "heading": "What At-Turaif preserves", "text": "At-Turaif was inscribed on the World Heritage List in 2010, with the designation limited to the district within Diriyah. Its palaces, surviving buildings and street network illustrate Najdi construction, particularly adobe and geometric decoration. The site contains surviving historic elements and later restoration work." }
+        ],
+        "sources": [
+          { "title": "Saudipedia: Diriyah Governorate (Arabic)", "url": "https://saudipedia.com/محافظة-الدرعية" },
+          { "title": "UNESCO: At-Turaif District in ad-Dir'iyah", "url": "https://whc.unesco.org/en/list/1329/" }
+        ]
+      },
+      "image": {
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Diriyahpic.jpg",
+        "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Diriyahpic.jpg",
+        "author": "Petrovic-Njegos at English Wikipedia",
+        "license": "CC BY 2.5 Generic",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.5/",
+        "attribution": "Diriyahpic — Petrovic-Njegos at English Wikipedia, via Wikimedia Commons, CC BY 2.5. Source: https://commons.wikimedia.org/wiki/File:Diriyahpic.jpg ; license: https://creativecommons.org/licenses/by/2.5/ . Renamed locally; image unchanged.",
+        "altAr": "جدران طينية مسننة وفتحات مثلثة في مبانٍ بالدرعية",
+        "altEn": "Crenellated earthen walls and triangular openings in buildings in Diriyah",
+        "changes": "Prefer existing public/images/diriyah.jpg, public URL /images/diriyah.jpg. Original and local dimensions: 1196 × 658. docs/asset-licenses.md records a filename change only. No download or modification in this batch. Do not enlarge excessively."
+      },
+      "evidence": [
+        { "url": "https://saudipedia.com/محافظة-الدرعية", "claims": ["Mani al-Muraydi founded the town in 1446; Muhammad bin Saud established the First Saudi State in 1727 with Diriyah as capital.", "Wadi Hanifah location northwest of Riyadh; alluvial soils, shallow groundwater and wells supporting gardens and palms.", "At-Turaif contains Salwa Palace and was inscribed in 2010; exact palace construction dates are not adopted."] },
+        { "url": "https://whc.unesco.org/en/list/1329/", "claims": ["At-Turaif's eighteenth- and early nineteenth-century political and religious importance and its role as a Saudi seat of power.", "2010 inscription of the named district; adobe palaces, geometric decoration, oasis setting and preserved street layout.", "Authenticity assessment distinguishes surviving components from later reuse and restoration; not evidence of present project completion."] },
+        { "url": "https://commons.wikimedia.org/wiki/File:Diriyahpic.jpg", "claims": ["File identifies Diriyah, author Petrovic-Njegos, dimensions 1196 × 658 and original download URL.", "CC BY 2.5 is an explicitly selectable license alongside other licenses; Leoboudv is the transferring user, not the photographer.", "Existing local photo visually inspected: earthen walls, crenellations and triangular openings; no specific palace identification claimed."] },
+        { "url": "https://creativecommons.org/licenses/by/2.5/", "claims": ["License deed permits commercial reuse and adaptation with attribution; no warranty covering every other right."] }
+      ],
+      "reviewNotes": [
+        "Date correction before import: the history/regions research pass incorrectly recorded 2026-09-13 as its access date and used research-20260913- translation keys. Per the user's supplied research-session date, all six access-date records are corrected to 2026-09-11 and all six keys to research-20260911-. None of these topics has been imported, per the user; no persisted CMS key was changed. This corrects the prior research record, not a new source access, human review or approval date. No sources were re-fetched during this prose-only correction.",
+        "Batch scope: six bilingual topics, three history and three regions, forming this half of the user's approved twelve-topic draft scope. Only initial-history-regions.json is written. No database connection, duplicate lookup, account creation, upload, seed, migration, import or publication. Human Arabic, English, factual and rights review remains a publication blocker for all six topics.",
+        "Schema follows initial-people-heritage.json, including paired body/facts/sources arrays and shared topic/image metadata. This is research JSON, not a directly importable Payload document. Any separately authorized import must use reviewStatus=draft and _status=draft, keep media published=false, verify the target and configured sections, check duplicates, preserve existing records and immutable translation keys, and follow normal access checks. No author or reviewer has been invented.",
+        "Original prose composed from factual notes, not copied or translated source paragraphs. Factual citations do not confer rights to source prose or images. UNESCO's source description displays CC BY-SA IGO 3.0; this batch does not reproduce that description. Saudipedia text is not assumed freely reusable.",
+        "Chronology review: Saudipedia dates the town to 1446 and the state to 1727, while UNESCO describes mid-eighteenth-century state formation and uses fifteenth-century foundation wording for the property. These are not silently treated as identical milestones. Saudipedia gives differing 1765/1766 dates for Salwa Palace; no palace construction year or founding-era photograph claim is included.",
+        "Failed route: https://saudipedia.com/الدرعية returned HTTP 404. The separate successfully fetched governorate article is cited instead. No failed page is represented as evidence.",
+        "Photo licensing rechecked live against the exact Commons file page and CC deed, after reading docs/asset-licenses.md. All five existing local photographs were visually inspected; recorded prior resizes come from that inventory, not work performed here. No new image binaries were downloaded or saved. No independent chain-of-title audit or new binary/hash verification was performed.",
+        "All image uses remain gated on human rights acceptance and visible linked public credits, including source, author, license and change notices. Existing image documentation is not proof of implemented public attribution. Jeddah's newly selected reference must be added to docs/asset-licenses.md before future use; that file and runtime code are outside this task's write scope. Retain ShareAlike for applicable derivatives. CMS ingestion, private storage, delivery and rendered SEO are untested."
+      ]
+    },
+    {
+      "section": "history",
+      "slug": "hegra-history",
+      "translationKey": "research-20260911-hegra-history",
+      "ar": {
+        "title": "تاريخ الحِجر",
+        "summary": "الحِجر، أو مدائن صالح، موقع أثري في محافظة العلا، تكشف مدافنه وآباره ونقوشه جوانب من الحضارة النبطية وتاريخ طرق القوافل.",
+        "category": "المواقع الأثرية",
+        "seoTitle": "تاريخ الحِجر: المدافن النبطية والآبار وطرق القوافل",
+        "seoDescription": "مدخل إلى تاريخ الحِجر في العلا، وواجهاته المنحوتة وآباره ونقوشه، ودوره على طرق القوافل وإدراجه في التراث العالمي عام 2008.",
+        "imageAlt": "واجهتا مدفنين منحوتتان في صخور الحِجر، أمامهما أرض رملية وشجيرات متناثرة",
+        "facts": [
+          { "label": "اسم آخر", "value": "مدائن صالح" },
+          { "label": "الموقع الإداري", "value": "محافظة العلا، منطقة المدينة المنورة" },
+          { "label": "الحضارة البارزة في المدافن", "value": "الحضارة النبطية" },
+          { "label": "إدراج اليونسكو", "value": "2008م، أول موقع سعودي في قائمة التراث العالمي" }
+        ],
+        "body": [
+          { "heading": "محطة في شبكة القوافل", "text": "تقع الحِجر في محافظة العلا شمال غربي السعودية، وتعرف كذلك بمدائن صالح. ازدهرت بوصفها مركزًا نبطيًا على طرق التجارة البرية التي ربطت الجزيرة العربية بمناطق أخرى. ولم ينته دور الطريق بانحسار المدينة القديمة؛ فقد استمر استخدامه للقوافل ثم للحج، قبل إنشاء سكة الحديد في مطلع القرن العشرين." },
+          { "heading": "المدافن سجل معماري", "text": "نُحتت المدافن مباشرة في كتل الحجر الرملي، وتؤرخ اليونسكو واجهاتها المزخرفة إلى القرن الأول قبل الميلاد والقرن الأول الميلادي. تجمع الزخارف عناصر من تقاليد فنية متعددة، منها المصرية والهلنستية. وتساعد النقوش، إلى جانب أشكال البناء، على دراسة اللغات والصلات الثقافية." },
+          { "heading": "المياه وما وراء الواجهات", "text": "لا تقتصر شواهد الحِجر على المقابر؛ فالآبار المحفورة في الأرض الصخرية توضح تقنيات توفير المياه للزراعة. كما يحفظ الموقع نقوشًا أقدم من المرحلة النبطية، ما يوسع مجاله الزمني. وفي عام 2008م أصبح أول موقع سعودي يُدرج في قائمة التراث العالمي، تقديرًا لشواهده على العمارة والتبادل الحضاري وإدارة المياه." }
+        ],
+        "sources": [
+          { "title": "اليونسكو: موقع الحِجر الأثري (مدائن صالح)", "url": "https://whc.unesco.org/en/list/1293/" },
+          { "title": "سعوديبيديا: الحجر (مدائن صالح)", "url": "https://saudipedia.com/الحجر-مدائن-صالح" }
+        ]
+      },
+      "en": {
+        "title": "History of Hegra",
+        "summary": "Hegra, also called Mada'in Salih, is an archaeological site in AlUla Governorate whose tombs, wells and inscriptions illuminate Nabataean life and caravan routes.",
+        "category": "Archaeological sites",
+        "seoTitle": "Hegra History: Nabataean Tombs, Wells and Caravan Routes",
+        "seoDescription": "Discover Hegra in AlUla through its carved tombs, wells and inscriptions, its caravan connections and its 2008 World Heritage inscription.",
+        "imageAlt": "Two tomb facades carved into Hegra's rock outcrops, with sandy ground and scattered shrubs in front",
+        "facts": [
+          { "label": "Also known as", "value": "Mada'in Salih" },
+          { "label": "Administrative location", "value": "AlUla Governorate, Madinah Region" },
+          { "label": "Civilisation prominent in the tombs", "value": "Nabataean civilisation" },
+          { "label": "UNESCO inscription", "value": "2008, Saudi Arabia's first World Heritage property" }
+        ],
+        "body": [
+          { "heading": "A stop in the caravan network", "text": "Hegra lies in AlUla Governorate in northwestern Saudi Arabia and is also known as Mada'in Salih. It flourished as a Nabataean centre on overland routes connecting Arabia with other regions. The route's role outlasted the ancient city: caravans and later pilgrims continued to use it before the railway arrived in the early twentieth century." },
+          { "heading": "Tombs as an architectural record", "text": "The tombs were cut directly into sandstone outcrops. UNESCO dates their decorated facades to the first century BCE and the first century CE. Their ornament draws on several artistic traditions, including Egyptian and Hellenistic ones. Inscriptions, alongside building forms, help researchers study languages and cultural connections." },
+          { "heading": "Water and evidence beyond the facades", "text": "Hegra's evidence extends beyond its tombs. Wells sunk into rocky ground demonstrate techniques for supplying agriculture with water. The site also preserves inscriptions older than its Nabataean phase, broadening its chronological scope. In 2008 it became Saudi Arabia's first World Heritage property, recognised for its evidence of architecture, cultural exchange and water management." }
+        ],
+        "sources": [
+          { "title": "UNESCO: Hegra Archaeological Site (al-Hijr / Mada'in Salih)", "url": "https://whc.unesco.org/en/list/1293/" },
+          { "title": "Saudipedia: al-Hijr (Mada'in Salih) (Arabic)", "url": "https://saudipedia.com/الحجر-مدائن-صالح" }
+        ]
+      },
+      "image": {
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Madain_Saleh_1.jpg",
+        "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/1/19/Madain_Saleh_1.jpg",
+        "author": "KHAWAJA UMER FAROOQ (Commons user Kufarooq)",
+        "license": "CC BY-SA 4.0 International",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "Madain Saleh 1 — KHAWAJA UMER FAROOQ (Kufarooq), CC BY-SA 4.0, via Wikimedia Commons. Source: https://commons.wikimedia.org/wiki/File:Madain_Saleh_1.jpg ; license: https://creativecommons.org/licenses/by-sa/4.0/ . No changes made for this batch.",
+        "altAr": "واجهتا مدفنين منحوتتان في صخور الحِجر، أمامهما أرض رملية وشجيرات متناثرة",
+        "altEn": "Two tomb facades carved into Hegra's rock outcrops, with sandy ground and scattered shrubs in front",
+        "changes": "Replacement research reference, not public/images/heritage.jpg. Commons original is 4224 × 3168 pixels, JPEG, listed as 4.34 MB; photograph dated 29 July 2014, uploaded by Kufarooq on 6 February 2022. Original-file link only. No binary saved, resized, converted, cropped or locally renamed in this pass. Future authorized ingestion must validate bytes, resize within CMS limits, retain ShareAlike and record actual modifications."
+      },
+      "evidence": [
+        { "url": "https://whc.unesco.org/en/list/1293/", "claims": ["Nabataean caravan centre; decorated rock-cut sandstone tombs dated to the first century BCE–first century CE.", "Egyptian and Hellenistic decorative influences, several inscription languages, and pre-Nabataean inscriptions.", "Wells supplying agriculture; subsequent caravan and pilgrimage use of the route and early-twentieth-century railway modernisation.", "Inscribed in 2008 as Saudi Arabia's first World Heritage property."] },
+        { "url": "https://saudipedia.com/الحجر-مدائن-صالح", "claims": ["Hegra/Mada'in Salih lies in AlUla Governorate, Madinah Region; corroborates caravan role and 2008 inscription.", "Identifies the carved monuments as funerary structures and describes wells and other water installations; its tomb totals and some early chronology are not adopted."] },
+        { "url": "https://commons.wikimedia.org/wiki/File:Madain_Saleh_1.jpg", "claims": ["Exact Commons file page successfully fetched: Hegra/Mada'in Salih in Saudi Arabia, Source Own work, Author KHAWAJA UMER FAROOQ (linked Commons account Kufarooq), CC BY-SA 4.0.", "File history records Kufarooq's own-work upload on 6 February 2022; original JPEG 4224 × 3168, listed size 4.34 MB and exact original download link verified on the page.", "Description and displayed EXIF agree on 29 July 2014; camera SONY DSC-W300. Complete page metadata table inspected, including initially hidden rows: no competing creator, copyright credit or third-party URL found. This is not a binary EXIF audit.", "Browser preview visually inspected: two ancient rock-cut tomb facades, sandy foreground and scattered shrubs. No specific tomb number or Qasr al-Farid identification inferred."] },
+        { "url": "https://creativecommons.org/licenses/by-sa/4.0/", "claims": ["Deed successfully fetched: commercial reuse and adaptation allowed with attribution, license link, modification notices and ShareAlike; no blanket warranty of all permissions."] }
+      ],
+      "reviewNotes": [
+        "Recorded research access date corrected to 2026-09-11 per the user's supplied research-session date; the prior date/key error and pre-import correction are disclosed on diriyah-history. Human factual, translation and rights review outstanding. All common batch-scope and publication-gate notes on diriyah-history apply. Historical scope is the archaeological site, distinct from the AlUla geography topic.",
+        "Unresolved evidence differences: UNESCO lists 111 monumental tombs while Saudipedia lists 116 burial structures. Definitions and survey dates were not reconciled; totals are deliberately omitted. Saudipedia's early settlement and Nabataean/Roman chronology contains inconsistent statements; these were not used. No equation of religious accounts with dated Nabataean tomb construction is asserted.",
+        "Failed routes: https://saudipedia.com/الحجر returned HTTP 404; https://saudipedia.com/مدائن-صالح yielded no meaningful extracted content. The linked article at https://saudipedia.com/الحجر-مدائن-صالح was successfully fetched and read instead.",
+        "Image replacement record date: 2026-09-11, as supplied by the user for the batch, not a human approval date. The new Commons file and CC deed were actually fetched and the preview inspected during this image-only pass; the earlier prose-correction note does not describe these new image checks. Historical prose, facts, factual sources and translation key are unchanged.",
+        "Replaced the Following Hadrian / www.thomaskotlorz.de attribution-ambiguity candidate with Madain Saleh 1, an explicit own-work submission by KHAWAJA UMER FAROOQ (Kufarooq). No conflicting attribution or specific rights warning was found on the selected page, its file history or its complete displayed metadata table. This removes reliance on the identified conflicting-credit image; it does not resolve that old file's provenance or warrant the replacement's chain of title independently. The photographed subject is ancient rock-cut tombs, not a modern decorative artwork.",
+        "New reference supersedes the old preference for public/images/heritage.jpg for this topic only. Existing local assets and docs/asset-licenses.md were not changed, and their old credits must not be attached to this replacement. Before separately authorized use, document the new source/author/license, implement linked public attribution and retain ShareAlike. No binaries saved or CMS writes; human rights acceptance, original-byte validation and CMS image processing remain outstanding. Do not present the 2014 photo as a current-condition survey.",
+        "Image discovery: Google search located the exact file; Madain Saleh 8 by the same author was also fetched but not selected. Category:Hegra referred to Norway, while Category:Mada'in_Salih and Category:Hegra_(Mada'in_Salih) returned 404; none establishes this photograph's location or license. Those were verified on the selected Saudi file page."
+      ]
+    },
+    {
+      "section": "history",
+      "slug": "historic-jeddah",
+      "translationKey": "research-20260911-historic-jeddah",
+      "ar": {
+        "title": "جدة التاريخية",
+        "summary": "جدة التاريخية، أو البلد، نواة عمرانية على البحر الأحمر شكّلتها التجارة البحرية ورحلات الحج، وتتميز ببيوتها ذات الرواشين الخشبية.",
+        "category": "تاريخ المدن",
+        "seoTitle": "جدة التاريخية: الميناء والحج وبيوت الرواشين",
+        "seoDescription": "تعرف على صلة جدة التاريخية بالتجارة والحج، وخصائص بيوتها ورواشينها، وإدراجها في قائمة التراث العالمي عام 2014.",
+        "imageAlt": "واجهات بيوت قديمة ذات رواشين خشبية بنية قرب سوق العلوي في جدة البلد، في صورة من عام 2008",
+        "facts": [
+          { "label": "الاسم المتداول", "value": "جدة البلد" },
+          { "label": "الموقع", "value": "الساحل الشرقي للبحر الأحمر" },
+          { "label": "عنصر معماري بارز", "value": "الرواشين الخشبية" },
+          { "label": "إدراج اليونسكو", "value": "2014م" }
+        ],
+        "body": [
+          { "heading": "التجارة والحج في مدينة واحدة", "text": "برزت جدة منذ القرن السابع الميلادي ميناءً يخدم مكة المكرمة ويستقبل الحجاج القادمين بحرًا. وربطتها التجارة بموانئ البحر الأحمر والمحيط الهندي. واجتمع في المدينة تجار وحجاج ومقيمون من مجتمعات مختلفة، فارتبط تاريخها بحركة الناس والبضائع معًا." },
+          { "heading": "كيف استجابت البيوت للمكان", "text": "تضم البلد بيوتًا من الحجر المرجاني وأبنية مرتفعة ذات رواشين خشبية بارزة. ساعدت الرواشين وعناصر التهوية في التعامل مع حرارة الساحل ورطوبته. وفي بعض بيوت التجار خُصصت الطوابق الأرضية للعمل والتجارة، وأُجرت غرف للحجاج." },
+          { "heading": "ازدهار عمراني وتراث عالمي", "text": "أسهم افتتاح قناة السويس عام 1869م وتوسع الملاحة البخارية في زيادة الحركة البحرية، وشهد أواخر القرن التاسع عشر بناء بيوت تجار مزخرفة. وأُدرجت جدة التاريخية في قائمة التراث العالمي عام 2014م باسم «جدة التاريخية، بوابة مكة». وتشمل قيمة الموقع البيوت والأسواق والمساجد والساحات وترابطها داخل الأحياء." }
+        ],
+        "sources": [
+          { "title": "اليونسكو: جدة التاريخية، بوابة مكة", "url": "https://whc.unesco.org/en/list/1361/" },
+          { "title": "سعوديبيديا: جدة التاريخية", "url": "https://saudipedia.com/جدة-التاريخية" }
+        ]
+      },
+      "en": {
+        "title": "Historic Jeddah",
+        "summary": "Historic Jeddah, or Al-Balad, is an urban core on the Red Sea shaped by maritime trade and pilgrimage, with houses distinguished by projecting wooden windows.",
+        "category": "Urban history",
+        "seoTitle": "Historic Jeddah: Port, Pilgrimage and Roshan Houses",
+        "seoDescription": "Explore Historic Jeddah's links with maritime trade and Hajj, its houses and wooden roshan windows, and its 2014 World Heritage inscription.",
+        "imageAlt": "Old house facades with brown wooden roshan windows near Souq al-Alawi in Jeddah's Al-Balad, photographed in 2008",
+        "facts": [
+          { "label": "Common name", "value": "Jeddah Al-Balad" },
+          { "label": "Location", "value": "Eastern shore of the Red Sea" },
+          { "label": "Distinctive architectural element", "value": "Wooden roshan windows" },
+          { "label": "UNESCO inscription", "value": "2014" }
+        ],
+        "body": [
+          { "heading": "Trade and pilgrimage in one city", "text": "From the seventh century CE, Jeddah developed as a port serving Makkah and receiving pilgrims by sea. Trade connected it with ports around the Red Sea and Indian Ocean. Merchants, pilgrims and residents from different communities met in the city, linking its history to the movement of people and goods." },
+          { "heading": "How houses responded to their setting", "text": "Al-Balad contains coral-stone houses and tall buildings with projecting wooden roshan windows. The roshan and ventilation features helped address coastal heat and humidity. In some merchants' houses, ground floors accommodated business and trade, while rooms were rented to pilgrims." },
+          { "heading": "Urban prosperity and World Heritage", "text": "The opening of the Suez Canal in 1869 and the expansion of steam navigation increased maritime traffic. Elaborately decorated merchants' houses were built in the late nineteenth century. In 2014, Historic Jeddah was inscribed on the World Heritage List as Historic Jeddah, the Gate to Makkah. Its significance includes the relationship between homes, markets, mosques and squares within the neighbourhoods." }
+        ],
+        "sources": [
+          { "title": "UNESCO: Historic Jeddah, the Gate to Makkah", "url": "https://whc.unesco.org/en/list/1361/" },
+          { "title": "Saudipedia: Historic Jeddah (Arabic)", "url": "https://saudipedia.com/جدة-التاريخية" }
+        ]
+      },
+      "image": {
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:AlBalad_CoralHouses.JPG",
+        "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/e/eb/AlBalad_CoralHouses.JPG",
+        "author": "User:Jpatokal / (WT-shared) Jpatokal at Wikivoyage WTS",
+        "license": "CC BY-SA 4.0 International",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "AlBalad CoralHouses — User:Jpatokal / (WT-shared) Jpatokal at Wikivoyage WTS, via Wikimedia Commons, CC BY-SA 4.0. Source: https://commons.wikimedia.org/wiki/File:AlBalad_CoralHouses.JPG ; license: https://creativecommons.org/licenses/by-sa/4.0/ . No changes made for this batch.",
+        "altAr": "واجهات بيوت قديمة ذات رواشين خشبية بنية قرب سوق العلوي في جدة البلد، في صورة من عام 2008",
+        "altEn": "Old house facades with brown wooden roshan windows near Souq al-Alawi in Jeddah's Al-Balad, photographed in 2008",
+        "changes": "Research reference only, not an installed asset. Commons original is 3008 × 2000 pixels, dated 29 February 2008. No download, resize, conversion or crop performed by this batch. A later authorized CMS ingestion must validate original bytes, resize as required and retain ShareAlike and any new change notice."
+      },
+      "evidence": [
+        { "url": "https://whc.unesco.org/en/list/1361/", "claims": ["Eastern Red Sea shore; seventh-century CE port and pilgrimage gateway in the short description; Indian Ocean trade connections and multicultural population.", "Coral construction, wooden roshan, ventilation, ground-floor business space and rooms rented to pilgrims.", "1869 Suez Canal opening, steam navigation and late-nineteenth-century merchants' tower houses.", "2014 inscription and significance of the urban ensemble including houses, markets, mosques and squares."] },
+        { "url": "https://saudipedia.com/جدة-التاريخية", "claims": ["Al-Balad alternative name, historic quarters, maritime pilgrims and trade serving Makkah.", "Coral building stone, wooden rawasheen, shading and ventilation; corroborates 2014 inscription."] },
+        { "url": "https://commons.wikimedia.org/wiki/File:AlBalad_CoralHouses.JPG", "claims": ["File description explicitly identifies traditional coral-and-wood houses near Souq al-Alawi in Jeddah's Al-Balad.", "Photographer User:Jpatokal, date 29 February 2008, 3008 × 2000 dimensions and original URL; transferred from Wikivoyage WTS, not photographed by transfer bot.", "CC BY-SA 4.0 is explicitly offered among selectable licenses. Browser preview visually inspected: weathered light-coloured facades and brown projecting wooden windows."] },
+        { "url": "https://creativecommons.org/licenses/by-sa/4.0/", "claims": ["Commercial reuse and adaptation permitted with attribution, retained modification notices and ShareAlike; other rights are not warranted."] }
+      ],
+      "reviewNotes": [
+        "Recorded research access date corrected to 2026-09-11 per the user's supplied research-session date; the prior date/key error and pre-import correction are disclosed on diriyah-history. Human review outstanding. All common batch notes on diriyah-history apply. This topic concerns the historic urban core, not every part of modern Jeddah.",
+        "Chronology caveat: UNESCO's short description says seventh century AD, but its synthesis says seventh century AH in a sentence about Caliph Uthman. That era label is inconsistent. The draft uses the CE century from the short description, corroborated by Saudipedia's early Islamic port account, and omits an exact designation year. It does not reproduce the AH wording.",
+        "Saudipedia's approximate age, building totals, present visitor figures and national World Heritage totals were not reused. Current restoration completion, building condition and visitor access have not been checked. The 2008 photograph must not be presented as today's condition.",
+        "Photo discovery followed https://commons.wikimedia.org/wiki/Category:Al-Balad,_Jeddah to https://commons.wikimedia.org/wiki/Category:Old_Jeddah and then the selected file. https://commons.wikimedia.org/wiki/File:Al-Balad,_Jeddah.jpg was also read and visually inspected but rejected for this article: it shows a modern commercial pedestrian space at night, not the traditional house facades sought. No image license was inferred from a category or thumbnail.",
+        "Image integration BLOCKER: selected photo is not downloaded or registered in docs/asset-licenses.md, and public credits are not implemented or verified here. Human rights review must cover the intended architectural-image use; no blanket freedom-of-panorama or independent authorship warranty is assumed. Alt text is not attribution. Keep the documented 2008 date and selected CC BY-SA 4.0 license for later derivatives."
+      ]
+    },
+    {
+      "section": "regions",
+      "slug": "riyadh",
+      "translationKey": "research-20260911-riyadh",
+      "ar": {
+        "title": "منطقة الرياض",
+        "summary": "منطقة إدارية في وسط السعودية تتخذ من مدينة الرياض مقرًا لها، وتمتد عبر هضبة نجد إلى محافظات وأودية وبلدات خارج نطاق العاصمة.",
+        "category": "منطقة إدارية",
+        "seoTitle": "منطقة الرياض: العاصمة وهضبة نجد والمحافظات",
+        "seoDescription": "مدخل إلى منطقة الرياض ومقرها الإداري ومحافظاتها، وتضاريس هضبة نجد وطويق، وصلتها بالدرعية ووادي حنيفة.",
+        "imageAlt": "أفق مدينة الرياض المضاء عند الغسق في فبراير 2018",
+        "facts": [
+          { "label": "الصفة الإدارية", "value": "منطقة إدارية سعودية" },
+          { "label": "المقر الإداري", "value": "مدينة الرياض" },
+          { "label": "الموقع العام", "value": "وسط السعودية" },
+          { "label": "معلم تضاريسي", "value": "جبال طويق" }
+        ],
+        "body": [
+          { "heading": "المنطقة أكبر من المدينة", "text": "تقع منطقة الرياض في وسط السعودية، ومقرها الإداري مدينة الرياض، العاصمة الوطنية. وتمتد المنطقة خارج عمران العاصمة لتشمل محافظات مثل الدرعية والخرج والمجمعة ووادي الدواسر." },
+          { "heading": "الهضبة والأودية والمناخ", "text": "تمتد المنطقة فوق هضبة نجد، وتبرز جبال طويق ضمن تضاريسها، مع أودية ومواضع استقرار زراعي. ومناخها قاري جاف بوجه عام، مع حرارة صيفية وبرودة شتوية وتفاوت بين المحافظات." },
+          { "heading": "الدرعية ضمن المجال الإقليمي", "text": "تقع الدرعية داخل منطقة الرياض على وادي حنيفة. ويحفظ حي الطريف فيها مباني طينية وبقايا قصور بجوار الواحة، وقد أُدرج في قائمة التراث العالمي عام 2010م." }
+        ],
+        "sources": [
+          { "title": "سعوديبيديا: منطقة الرياض", "url": "https://saudipedia.com/منطقة-الرياض" },
+          { "title": "ويكيبيديا: Riyadh Province", "url": "https://en.wikipedia.org/wiki/Riyadh_Province" },
+          { "title": "اليونسكو: حي الطريف في الدرعية", "url": "https://whc.unesco.org/en/list/1329/" },
+          { "title": "سعوديبيديا: محافظة الدرعية", "url": "https://saudipedia.com/محافظة-الدرعية" }
+        ]
+      },
+      "en": {
+        "title": "Riyadh Region",
+        "summary": "An administrative region in central Saudi Arabia, administered from Riyadh city and extending across the Najd plateau to governorates and wadis beyond the capital.",
+        "category": "Administrative region",
+        "seoTitle": "Riyadh Region: The Capital, Najd Plateau and Governorates",
+        "seoDescription": "Explore Riyadh Region, its administrative seat and governorates, the Najd plateau, Tuwaiq landforms, Diriyah and Wadi Hanifah.",
+        "imageAlt": "Riyadh city's illuminated skyline at dusk in February 2018",
+        "facts": [
+          { "label": "Administrative status", "value": "Saudi administrative region" },
+          { "label": "Administrative seat", "value": "Riyadh city" },
+          { "label": "General location", "value": "Central Saudi Arabia" },
+          { "label": "Notable landform", "value": "Tuwaiq Mountains" }
+        ],
+        "body": [
+          { "heading": "The region is larger than the city", "text": "Riyadh Region lies in central Saudi Arabia. Its administrative seat is Riyadh city, the national capital. The region extends beyond the capital's built-up area to include governorates such as Diriyah, Al Kharj, Al Majmaah and Wadi al-Dawasir." },
+          { "heading": "Plateau, wadis and climate", "text": "The region extends across the Najd plateau, with Tuwaiq among its prominent landforms, alongside wadis and agricultural settlements. Its climate is broadly dry and continental, with hot summers, cold winters and differences between governorates." },
+          { "heading": "Diriyah in its regional setting", "text": "Diriyah lies within Riyadh Region beside Wadi Hanifah. Its At-Turaif district preserves earthen buildings and palace remains beside the oasis and was inscribed on the World Heritage List in 2010." }
+        ],
+        "sources": [
+          { "title": "Saudipedia: Riyadh Region (Arabic)", "url": "https://saudipedia.com/منطقة-الرياض" },
+          { "title": "Wikipedia: Riyadh Province", "url": "https://en.wikipedia.org/wiki/Riyadh_Province" },
+          { "title": "UNESCO: At-Turaif District in ad-Dir'iyah", "url": "https://whc.unesco.org/en/list/1329/" },
+          { "title": "Saudipedia: Diriyah Governorate (Arabic)", "url": "https://saudipedia.com/محافظة-الدرعية" }
+        ]
+      },
+      "image": {
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Riyadh_Skyline.jpg",
+        "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Riyadh_Skyline.jpg/1920px-Riyadh_Skyline.jpg",
+        "author": "B.alotaby",
+        "license": "CC BY-SA 4.0 International",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "Riyadh Skyline — B.alotaby, via Wikimedia Commons, CC BY-SA 4.0. Source: https://commons.wikimedia.org/wiki/File:Riyadh_Skyline.jpg ; license: https://creativecommons.org/licenses/by-sa/4.0/ . Resized by Wikimedia; renamed locally. Photograph: February 2018.",
+        "altAr": "أفق مدينة الرياض المضاء عند الغسق في فبراير 2018",
+        "altEn": "Riyadh city's illuminated skyline at dusk in February 2018",
+        "changes": "Prefer existing public/images/riyadh.jpg, public URL /images/riyadh.jpg. docs/asset-licenses.md records Wikimedia proportional resizing from 4109 × 2311 to 1920 × 1080 and local renaming only. The downloadUrl identifies that prior derivative. No download or modification in this batch; retain ShareAlike and the archival date."
+      },
+      "evidence": [
+        { "url": "https://saudipedia.com/منطقة-الرياض", "claims": ["Central Saudi administrative region with Riyadh city as seat; lists Diriyah, Al Kharj, Al Majmaah and Wadi al-Dawasir governorates.", "Najd plateau, Tuwaiq landforms, wadis and agricultural settlements; generally dry continental climate with local variation.", "The city occupies only part of the administrative region; no area, population, ranking or elevation figures adopted."] },
+        { "url": "https://en.wikipedia.org/wiki/Riyadh_Province", "claims": ["Corroborates central location, regional coverage of Najd and Riyadh's role as administrative seat and national capital; used as a secondary cross-check, not a geographic survey."] },
+        { "url": "https://whc.unesco.org/en/list/1329/", "claims": ["2010 inscription of At-Turaif, earthen construction, palace remains and oasis setting."] },
+        { "url": "https://saudipedia.com/محافظة-الدرعية", "claims": ["Diriyah's administrative membership of Riyadh Region and its location on Wadi Hanifah."] },
+        { "url": "https://commons.wikimedia.org/wiki/File:Riyadh_Skyline.jpg", "claims": ["Own-work photograph by B.alotaby, dated 8 February 2018; 4109 × 2311 original under CC BY-SA 4.0.", "Existing local photo visually inspected: illuminated city skyline at dusk; it is contextual to a region article, not a current panorama or a regional map."] },
+        { "url": "https://creativecommons.org/licenses/by-sa/4.0/", "claims": ["Attribution, modification notices and ShareAlike apply to reuse; commercial use is permitted subject to the license."] }
+      ],
+      "reviewNotes": [
+        "Recorded research access date corrected to 2026-09-11 per the user's supplied research-session date; the prior date/key error and pre-import correction are disclosed on diriyah-history. Human review outstanding. All common batch notes on diriyah-history apply. The regions/riyadh slug already occurs in the static editorial previews; it is retained as a candidate route, not a claim that no CMS record exists. Duplicate and translation-key reconciliation is required before any separately authorized creation.",
+        "Unresolved geographic figures: Saudipedia's Riyadh Region article calls 600 m its highest elevation, while its Diriyah article gives about 700 m for that locality. No elevation figure is used. Population density and other headline metrics also require dated statistical review; the draft omits them rather than harmonising conflicting numbers.",
+        "Boundaries, governorate counts, climate normals and live transport services were not independently surveyed. The article uses broad geography and named examples, not a comprehensive inventory. Photo licensing rechecked live; public-credit and human rights gates remain."
+      ]
+    },
+    {
+      "section": "regions",
+      "slug": "asir",
+      "translationKey": "research-20260911-asir",
+      "ar": {
+        "title": "منطقة عسير",
+        "summary": "منطقة إدارية في جنوب غربي السعودية مقرها أبها، تجمع المرتفعات والأودية والسهول وساحل البحر الأحمر، وتتنوع فيها بيئات العمران.",
+        "category": "منطقة إدارية",
+        "seoTitle": "منطقة عسير: أبها والجبال والأودية والساحل",
+        "seoDescription": "تعرف على منطقة عسير ومقرها أبها، وتنوع تضاريسها بين الجبال والساحل، واختلاف بيئات الاستقرار في مدنها وقراها.",
+        "imageAlt": "منحدر جبلي صخري في عسير تحت سماء زرقاء",
+        "facts": [
+          { "label": "الموقع العام", "value": "جنوب غربي السعودية" },
+          { "label": "المقر الإداري", "value": "أبها" },
+          { "label": "الواجهة البحرية", "value": "البحر الأحمر" },
+          { "label": "أمثلة للتضاريس", "value": "جبال وأودية وسهول ساحلية" }
+        ],
+        "body": [
+          { "heading": "أبها والمنطقة المحيطة", "text": "عسير منطقة إدارية في جنوب غربي السعودية، تتخذ من أبها مقرًا للإمارة. وتشمل محافظات منها خميس مشيط وبيشة والنماص ورجال ألمع والبرك، وتضم مدنًا وقرى في بيئات تتفاوت في الارتفاع وطبيعة الأرض." },
+          { "heading": "من المرتفعات إلى البحر", "text": "تتخلل جبال عسير أودية وشعاب، وتمتد أراضي المنطقة إلى السهول والساحل على البحر الأحمر. وتتلقى المرتفعات أمطارًا موسمية، وتختلف الظروف المناخية بين المرتفعات والساحل." },
+          { "heading": "العمران على السفوح", "text": "تقدم قرية رجال ألمع التاريخية مثالًا للاستقرار على السفوح الجبلية، بمبانيها الحجرية المتجاورة المتعددة الطوابق وأحجار المرو البيضاء التي تزين واجهاتها. وتمثل هذه العمارة أحد أنماط السكن في بيئات عسير المتنوعة." }
+        ],
+        "sources": [
+          { "title": "سعوديبيديا: منطقة عسير", "url": "https://saudipedia.com/منطقة-عسير" },
+          { "title": "ويكيبيديا: Asir", "url": "https://en.wikipedia.org/wiki/Asir" }
+        ]
+      },
+      "en": {
+        "title": "Asir Region",
+        "summary": "An administrative region in southwestern Saudi Arabia, seated in Abha, with highlands, wadis, plains and a Red Sea coast supporting varied settlement settings.",
+        "category": "Administrative region",
+        "seoTitle": "Asir Region: Abha, Mountains, Wadis and the Coast",
+        "seoDescription": "Explore Asir Region and its seat in Abha, the terrain between mountains and the Red Sea, and the varied settings of its towns and villages.",
+        "imageAlt": "A rocky mountain slope in Asir beneath a blue sky",
+        "facts": [
+          { "label": "General location", "value": "Southwestern Saudi Arabia" },
+          { "label": "Administrative seat", "value": "Abha" },
+          { "label": "Coast", "value": "Red Sea" },
+          { "label": "Examples of terrain", "value": "Mountains, wadis and coastal plains" }
+        ],
+        "body": [
+          { "heading": "Abha and the surrounding region", "text": "Asir is an administrative region in southwestern Saudi Arabia, with Abha as its seat. Its governorates include Khamis Mushait, Bisha, Al Namas, Rijal Almaa and Al Birk, with towns and villages in settings that vary in elevation and terrain." },
+          { "heading": "From the highlands to the sea", "text": "Wadis and ravines cut through Asir's mountains, and the region extends to plains and the Red Sea coast. Its highlands receive seasonal rainfall, and climatic conditions differ between the highlands and the coast." },
+          { "heading": "Building on the slopes", "text": "The historic village of Rijal Almaa offers an example of settlement on mountain slopes, with adjoining multistorey stone buildings and white quartz decorating their facades. This architecture is one of the forms of housing found across Asir's varied environments." }
+        ],
+        "sources": [
+          { "title": "Saudipedia: Asir Region (Arabic)", "url": "https://saudipedia.com/منطقة-عسير" },
+          { "title": "Wikipedia: Asir", "url": "https://en.wikipedia.org/wiki/Asir" }
+        ]
+      },
+      "image": {
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:AsirRockyMountain.jpg",
+        "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/AsirRockyMountain.jpg/1920px-AsirRockyMountain.jpg",
+        "author": "Aboluay",
+        "license": "CC BY-SA 4.0 International",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "AsirRockyMountain — Aboluay, via Wikimedia Commons, CC BY-SA 4.0. Source: https://commons.wikimedia.org/wiki/File:AsirRockyMountain.jpg ; license: https://creativecommons.org/licenses/by-sa/4.0/ . Resized by Wikimedia; renamed locally.",
+        "altAr": "منحدر جبلي صخري في عسير تحت سماء زرقاء",
+        "altEn": "A rocky mountain slope in Asir beneath a blue sky",
+        "changes": "Prefer existing public/images/mountains.jpg, public URL /images/mountains.jpg. docs/asset-licenses.md records Wikimedia proportional resizing from 2448 × 3264 to 1920 × 2560 and local renaming, no crop or other modification. No download or modification in this batch. Portrait composition; any later landscape crop requires an accurate change notice and retained ShareAlike."
+      },
+      "evidence": [
+        { "url": "https://saudipedia.com/منطقة-عسير", "claims": ["Southwestern Saudi administrative region, seat Abha; lists Khamis Mushait, Bisha, Al Namas, Rijal Almaa and Al Birk.", "Terrain includes mountains, wadis, plains and a Red Sea coast; rainfall is more prominent in elevated parts.", "Historic Rijal Almaa village on slopes with adjacent multistorey buildings decorated with white quartz; no village-wide age or building totals adopted."] },
+        { "url": "https://en.wikipedia.org/wiki/Asir", "claims": ["Successfully read via Asir_Province redirect; corroborates Abha as seat, highland geography and rainfall seasonality.", "Discusses geography from the Red Sea coast to foothills and the escarpment; quantitative and superlative climate claims not adopted."] },
+        { "url": "https://commons.wikimedia.org/wiki/File:AsirRockyMountain.jpg", "claims": ["Arabic description identifies rocky Asir mountains; own work by Aboluay, dated 19 February 2015, 2448 × 3264 original under CC BY-SA 4.0.", "Local derivative visually inspected: steep rocky slope and blue sky; description does not establish Jabal Soudah or another particular summit."] },
+        { "url": "https://creativecommons.org/licenses/by-sa/4.0/", "claims": ["Commercial sharing and adaptation allowed with attribution, change notices and ShareAlike; no blanket other-rights permission."] }
+      ],
+      "reviewNotes": [
+        "Recorded research access date corrected to 2026-09-11 per the user's supplied research-session date; the prior date/key error and pre-import correction are disclosed on diriyah-history. Human factual, translation and rights review required. All common batch notes on diriyah-history apply. This is regional geography, not a second Al-Qatt craft article. The regions/asir route occurs in static previews; actual CMS duplicates and existing translation keys must be checked before import.",
+        "Source redirect: https://en.wikipedia.org/wiki/Asir_Province returned the article at https://en.wikipedia.org/wiki/Asir, which is the cited destination.",
+        "Unresolved facts excluded: Saudipedia lists 18 governorates while Wikipedia lists 17. No count, current official, area total or highest-peak ranking is included. Saudipedia's broad August temperature ceiling and Wikipedia's extreme daily-range assertions are not suitable region-wide climate normals; no numerical climate claim is adopted. Human geography review should preserve the highland/coast distinction.",
+        "Image location is verified only at the regional level; naming a particular peak is BLOCKED without further evidence. The existing 1920 × 2560 asset is taller than the CMS's configured 2400-pixel output box, so future ingestion may resize it. No CMS processing or image optimisation was tested here; retain the current resize notice and document any later changes."
+      ]
+    },
+    {
+      "section": "regions",
+      "slug": "alula-geography",
+      "translationKey": "research-20260911-alula-geography",
+      "ar": {
+        "title": "جغرافيا العلا",
+        "summary": "العلا محافظة في منطقة المدينة المنورة شمال غربي السعودية، تتجاور فيها الواحات الزراعية والعمران مع الأودية والجروف الصخرية الصحراوية.",
+        "category": "جغرافيا المحافظات والواحات",
+        "seoTitle": "جغرافيا العلا: الواحة والأودية والتكوينات الصخرية",
+        "seoDescription": "تعرف على موقع العلا في منطقة المدينة المنورة، وواحتها ونخيلها وحمضياتها، والتباين بين الزراعة والتضاريس الصحراوية المحيطة.",
+        "imageAlt": "إطلالة على عمران العلا وبساتين النخيل والجروف الصخرية المحيطة، في صورة من يناير 2012",
+        "facts": [
+          { "label": "الصفة الإدارية", "value": "محافظة، وليست منطقة إدارية مستقلة" },
+          { "label": "المنطقة التابعة لها", "value": "المدينة المنورة" },
+          { "label": "الموقع العام", "value": "شمال غربي السعودية" },
+          { "label": "محاصيل الواحة", "value": "التمور والحمضيات" }
+        ],
+        "body": [
+          { "heading": "المحافظة والواحة والمدينة", "text": "تقع محافظة العلا في شمال غربي السعودية وتتبع إداريًا لمنطقة المدينة المنورة. ويستخدم اسم العلا للمدينة وللمحافظة الأوسع التي تضمها، بينما تشغل الواحة جزءًا من أراضي المحافظة." },
+          { "heading": "الزراعة داخل بيئة جافة", "text": "تضم واحة العلا بساتين نخيل ومزارع حمضيات، وقد ساعد توافر الماء والتربة الصالحة للزراعة على الاستقرار فيها. ويتجاور العمران والبساتين داخل الوادي وسط محيط صحراوي جاف، بمناخ عام حار صيفًا وأبرد شتاءً." },
+          { "heading": "صخور طبيعية ومعالم منحوتة", "text": "تحيط بالوادي جروف من الحجر الرملي، وتنتشر في نطاق العلا أودية وأخاديد وتكوينات صخرية. ومن أمثلتها جبل الفيل، الذي شكّلته عوامل التعرية الطبيعية. أما واجهات مدافن الحِجر شمال المدينة فهي نحت بشري في الصخر، والحِجر أحد المواقع الأثرية في المحافظة." }
+        ],
+        "sources": [
+          { "title": "سعوديبيديا: العلا", "url": "https://saudipedia.com/العلا" },
+          { "title": "ويكيبيديا: Al-Ula", "url": "https://en.wikipedia.org/wiki/Al-Ula" },
+          { "title": "اليونسكو: موقع الحِجر الأثري", "url": "https://whc.unesco.org/en/list/1293/" }
+        ]
+      },
+      "en": {
+        "title": "Geography of AlUla",
+        "summary": "AlUla is a governorate in Madinah Region in northwestern Saudi Arabia, where cultivated oases and settlements lie among wadis and desert escarpments.",
+        "category": "Governorate and oasis geography",
+        "seoTitle": "AlUla Geography: Oasis, Wadis and Rock Formations",
+        "seoDescription": "Locate AlUla within Madinah Region and explore its oasis, date palms and citrus farms, set against surrounding desert valleys and sandstone cliffs.",
+        "imageAlt": "A view over AlUla's buildings, date-palm groves and surrounding rocky escarpments, photographed in January 2012",
+        "facts": [
+          { "label": "Administrative status", "value": "Governorate, not a separate administrative region" },
+          { "label": "Parent region", "value": "Madinah" },
+          { "label": "General location", "value": "Northwestern Saudi Arabia" },
+          { "label": "Oasis crops", "value": "Dates and citrus" }
+        ],
+        "body": [
+          { "heading": "Governorate, oasis and city", "text": "AlUla Governorate lies in northwestern Saudi Arabia and belongs administratively to Madinah Region. AlUla is used for both the city and the wider governorate containing it, while the oasis occupies part of the governorate's land." },
+          { "heading": "Farming in an arid setting", "text": "AlUla's oasis contains date-palm groves and citrus farms. Access to water and suitable agricultural soil helped support settlement. Buildings and orchards share the valley amid dry desert surroundings, with a general climate of hot summers and cooler winters." },
+          { "heading": "Natural rocks and carved monuments", "text": "Sandstone cliffs surround the valley, and the wider AlUla area includes wadis, canyons and rock formations. Elephant Rock is one example shaped by natural erosion. In contrast, Hegra's tomb facades north of the city were carved by people, and Hegra is one of the governorate's archaeological sites." }
+        ],
+        "sources": [
+          { "title": "Saudipedia: AlUla (Arabic)", "url": "https://saudipedia.com/العلا" },
+          { "title": "Wikipedia: Al-Ula", "url": "https://en.wikipedia.org/wiki/Al-Ula" },
+          { "title": "UNESCO: Hegra Archaeological Site", "url": "https://whc.unesco.org/en/list/1293/" }
+        ]
+      },
+      "image": {
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Al_Ula_(6748577917).jpg",
+        "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Al_Ula_%286748577917%29.jpg/1920px-Al_Ula_%286748577917%29.jpg",
+        "author": "Sammy Six",
+        "license": "CC BY 2.0 Generic",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+        "attribution": "Al Ula (6748577917) — Sammy Six, via Wikimedia Commons, CC BY 2.0. Source: https://commons.wikimedia.org/wiki/File:Al_Ula_(6748577917).jpg ; license: https://creativecommons.org/licenses/by/2.0/ . Resized by Wikimedia; renamed locally. Photograph: January 2012.",
+        "altAr": "إطلالة على عمران العلا وبساتين النخيل والجروف الصخرية المحيطة، في صورة من يناير 2012",
+        "altEn": "A view over AlUla's buildings, date-palm groves and surrounding rocky escarpments, photographed in January 2012",
+        "changes": "Prefer existing public/images/desert.jpg, public URL /images/desert.jpg. docs/asset-licenses.md records Wikimedia proportional resizing from 4608 × 3072 to 1920 × 1280 and a local filename change only. downloadUrl is the previously recorded derivative. No download, crop or conversion in this batch."
+      },
+      "evidence": [
+        { "url": "https://saudipedia.com/العلا", "claims": ["Northwestern Saudi governorate belonging to Madinah Region; oasis with date palms and citrus cultivation.", "Water and fertile soil supported settlement; inland dry climate with hot summers and cooler winters.", "Elephant Rock shaped by natural erosion, including water and wind; wadis, canyons and rocky terrain within the wider governorate."] },
+        { "url": "https://en.wikipedia.org/wiki/Al-Ula", "claims": ["Corroborates city/governorate distinction and Madinah administrative membership.", "Sandstone cliffs surrounding the valley; contrast between dry wadis and palm-filled oases.", "Hegra is north of the city within the governorate, not synonymous with the entire AlUla landscape. No quoted distance adopted."] },
+        { "url": "https://whc.unesco.org/en/list/1293/", "claims": ["Hegra's monumental tomb facades were carved directly into sandstone, supporting the distinction from naturally eroded rock formations."] },
+        { "url": "https://commons.wikimedia.org/wiki/File:Al_Ula_(6748577917).jpg", "claims": ["Photograph of AlUla and surrounding mountains by Sammy Six, dated 15 January 2012; 4608 × 3072 original under CC BY 2.0.", "Commons displays a Flickr license review dated 15 April 2014; no separate Flickr audit performed here.", "Existing local photo visually inspected: buildings, palm groves and rocky escarpments, not an empty dune sea or the Empty Quarter."] },
+        { "url": "https://creativecommons.org/licenses/by/2.0/", "claims": ["Commercial sharing and adaptation allowed with attribution and applicable change notices; license offers no blanket other-rights warranty."] }
+      ],
+      "reviewNotes": [
+        "Recorded research access date corrected to 2026-09-11 per the user's supplied research-session date; the prior date/key error and pre-import correction are disclosed on diriyah-history. Human Arabic/English, factual and rights review outstanding. All common batch notes on diriyah-history apply. The regions section is an editorial grouping; the category and facts explicitly identify AlUla as a governorate, not a fourteenth administrative region.",
+        "Failed route: https://saudipedia.com/محافظة-العلا returned HTTP 404. The article https://saudipedia.com/العلا was subsequently fetched and read successfully. Wikipedia displays a promotional-content warning; it is used for basic landscape corroboration, not tourism rankings, commercial recommendations or future completion claims.",
+        "Unresolved details excluded: consulted texts give different distances from Madinah and mix city/governorate population scopes. No distance, population, exact area, elevation, rainfall total or crop-production quantity is stated. Geological ages and measured erosion rates were not researched; only the qualitative natural-erosion explanation is used.",
+        "Photo is archival January 2012 and must not imply the present extent of the city or oasis. The existing filename desert.jpg does not establish an Empty Quarter location. License rechecked live; no direct binary request or new file saved. Public linked credits and human rights acceptance remain launch gates."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,419 @@
+{
+  "researchDate": "2026-09-14",
+  "status": "draft",
+  "topics": [
+    {
+      "section": "people", "slug": "king-abdulaziz", "translationKey": "research-20260914-king-abdulaziz", "kind": "ruler", "period": "1932–1953", "featured": true,
+      "ar": {
+        "title": "الملك عبدالعزيز بن عبدالرحمن آل سعود",
+        "summary": "مؤسس المملكة العربية السعودية وأول ملوكها؛ استعاد الرياض عام 1902، وقاد توحيد البلاد حتى إعلان المملكة عام 1932، وشهد عهده بناء مؤسسات الدولة وبداية صناعة النفط.",
+        "category": "ملوك المملكة العربية السعودية",
+        "seoTitle": "الملك عبدالعزيز: التوحيد وتأسيس المملكة",
+        "seoDescription": "سيرة الملك عبدالعزيز من النشأة واستعادة الرياض إلى توحيد المملكة وبناء مؤسساتها وبداية صناعة النفط، مع مراجع تاريخية.",
+        "imageAlt": "صورة أرشيفية للملك عبدالعزيز بن عبدالرحمن آل سعود عام 1945",
+        "facts": [
+          { "label": "الترتيب بين ملوك المملكة", "value": "الأول والمؤسس" },
+          { "label": "مكان الميلاد", "value": "الرياض" },
+          { "label": "استعادة الرياض", "value": "1902م" },
+          { "label": "إعلان توحيد المملكة", "value": "23 سبتمبر 1932م" },
+          { "label": "فترة حكم المملكة", "value": "1932–1953م" },
+          { "label": "الوفاة", "value": "9 نوفمبر 1953م، الطائف" }
+        ],
+        "body": [
+          { "heading": "النشأة والأسرة والإقامة في الكويت", "text": "نشأ عبدالعزيز في الرياض في أسرة آل سعود، وهو ابن الإمام عبدالرحمن بن فيصل، آخر أئمة الدولة السعودية الثانية، والأميرة سارة بنت أحمد السديري. تلقّى تعليمًا في القرآن والقراءة والكتابة، وتعلّم الفروسية. وبعد انتهاء الدولة الثانية غادرت أسرته الرياض وتنقلت قبل استقرارها في الكويت، حيث اطّلع على شؤون نجد والعلاقات السياسية في المنطقة. تختلف المراجع المستخدمة في تحديد سنة ميلاده بين 1876 و1877م، لذلك لا يُثبت هذا المقال يوم ميلاد محددًا. [1، 2]" },
+          { "heading": "استعادة الرياض وبداية الدولة الثالثة", "text": "عاد عبدالعزيز من الكويت مع مجموعة من رجاله وتمكن من استعادة الرياض عام 1902م، واتخذها قاعدة لإعادة بناء الحكم السعودي. مثّل استرداد المدينة بداية مرحلة الدولة السعودية الثالثة، لكنه لم يكن إعلانًا للمملكة بحدودها واسمها اللاحقين. أعقبت ذلك حملات واتفاقات وعمليات تفاوض امتدت نحو ثلاثة عقود؛ ولذلك ينبغي التمييز بين تاريخ بدء هذه المرحلة وتاريخ قيام المملكة العربية السعودية عام 1932م. [1، 2]" },
+          { "heading": "توحيد المناطق وإعلان المملكة", "text": "امتد الحكم السعودي إلى الأحساء عام 1913م، ثم حائل عام 1921م، والحجاز خلال 1924–1925م. ولم يخلُ هذا المسار من النزاعات؛ فقد واجه عبدالعزيز تمردًا من قادة الإخوان، ووقعت معركة السبلة عام 1929م ضمن تثبيت سلطة الدولة. صدر أمر توحيد البلاد باسم المملكة العربية السعودية في سبتمبر 1932م، وحدد يوم 23 سبتمبر لإعلان الاسم الجديد. ومن هذا التاريخ تُحسب فترة حكم عبدالعزيز بوصفه أول ملوك المملكة، لا من استعادته الرياض. [1، 2]" },
+          { "heading": "الإدارة وبناء مؤسسات الدولة", "text": "ترافقت عملية التوحيد مع تنظيم القضاء والمالية والشؤون الخارجية والخدمات، وتطوير هياكل الإدارة في المناطق. أُنشئت وزارة الخارجية عام 1930م وتولاها الأمير فيصل، ثم توسعت أجهزة الدولة خلال عهد المملكة. وفي عام 1953م صدر أمر إنشاء مجلس الوزراء برئاسة الأمير سعود، قبل وفاة الملك عبدالعزيز؛ أما بدء اجتماعات المجلس فكان في عهد الملك سعود. يوضح هذا التسلسل أن بناء المؤسسات كان عملية متدرجة عبر أكثر من عهد. [1]" },
+          { "heading": "النفط والعلاقات الخارجية", "text": "منحت الحكومة امتياز التنقيب عن النفط عام 1933م، وأُعلن اكتشاف النفط بكميات تجارية عام 1938م. فتح ذلك بابًا لتحول اقتصادي طويل، ولم تتحقق آثاره دفعة واحدة؛ فقد اتسع الإنتاج والإيراد في السنوات اللاحقة. وفي العلاقات الخارجية، التقى عبدالعزيز الرئيس الأمريكي فرانكلين روزفلت في 14 فبراير 1945م على متن السفينة كوينسي في البحيرات المرة بمصر، في لقاء بارز ضمن تطور العلاقات السعودية الأمريكية. [1، 2]" },
+          { "heading": "الوفاة وانتقال الحكم", "text": "توفي الملك عبدالعزيز في الطائف في 9 نوفمبر 1953م، ودُفن في مقبرة العود بالرياض، وتولى الحكم بعده ولي عهده الملك سعود. تجمع دراسة عهده بين تاريخ التوحيد العسكري والسياسي وتاريخ الإدارة والاقتصاد؛ كما تقتضي قراءة المصادر في سياقها، والتمييز بين الوقائع المؤرخة وبين الأوصاف التقويمية التي يوردها بعض الكتّاب عن شخصيته وإرثه. [1، 2]" }
+        ],
+        "sources": [
+          { "title": "سعوديبيديا: عبدالعزيز بن عبدالرحمن آل سعود", "url": "https://saudipedia.com/عبدالعزيز-بن-عبدالرحمن-آل-سعود" },
+          { "title": "ويكيبيديا: Ibn Saud — مع إحالات إلى الدراسات التاريخية", "url": "https://en.wikipedia.org/wiki/Ibn_Saud" }
+        ]
+      },
+      "en": {
+        "title": "King Abdulaziz bin Abdulrahman Al Saud",
+        "summary": "Founder and first king of Saudi Arabia, Abdulaziz recovered Riyadh in 1902 and led the unification proclaimed in 1932. His reign saw the development of state institutions and the beginnings of the oil industry.",
+        "category": "Kings of Saudi Arabia",
+        "seoTitle": "King Abdulaziz: Unification and the Founding of Saudi Arabia",
+        "seoDescription": "Explore Abdulaziz’s life, the recovery of Riyadh, unification, state institutions and the beginnings of the oil industry, with historical references.",
+        "imageAlt": "An archival photograph of King Abdulaziz bin Abdulrahman Al Saud in 1945",
+        "facts": [
+          { "label": "Place in the royal succession", "value": "First king and founder" },
+          { "label": "Birthplace", "value": "Riyadh" },
+          { "label": "Recovery of Riyadh", "value": "1902" },
+          { "label": "Proclamation of the unified Kingdom", "value": "23 September 1932" },
+          { "label": "Reign as king of Saudi Arabia", "value": "1932–1953" },
+          { "label": "Death", "value": "9 November 1953, Taif" }
+        ],
+        "body": [
+          { "heading": "Family, upbringing and residence in Kuwait", "text": "Abdulaziz grew up in Riyadh in the Al Saud family. His parents were Imam Abdulrahman bin Faisal, the last imam of the Second Saudi State, and Sara bint Ahmed Al Sudairi. He studied the Quran, reading and writing, and learned horsemanship. After the second state ended, his family left Riyadh and moved between locations before settling in Kuwait, where he followed developments in Najd and regional politics. The consulted references differ between 1876 and 1877 for his birth year, so this article does not assign an exact birthday. [1, 2]" },
+          { "heading": "Recovering Riyadh and beginning the third state", "text": "Abdulaziz returned from Kuwait with a group of followers and recovered Riyadh in 1902, making it his base for rebuilding Saudi rule. The recovery marks the beginning of the Third Saudi State, not the proclamation of a kingdom with its later name and borders. Campaigns, agreements and negotiations followed over roughly three decades. The beginning of that process must therefore be distinguished from the establishment of the Kingdom of Saudi Arabia in 1932. [1, 2]" },
+          { "heading": "Unification and the proclamation of the Kingdom", "text": "Saudi rule extended to Al Ahsa in 1913, Hail in 1921, and the Hejaz during 1924–1925. This process also involved conflict: Abdulaziz faced a rebellion by Ikhwan leaders, with the Battle of Sabilla in 1929 forming part of the consolidation of state authority. An order issued in September 1932 unified the country under the name Kingdom of Saudi Arabia, effective on 23 September. His reign as its first king is dated from this proclamation rather than from the recovery of Riyadh. [1, 2]" },
+          { "heading": "Administration and state institutions", "text": "Unification was accompanied by the organisation of the judiciary, public finance, foreign affairs and services, alongside regional administrative structures. The Ministry of Foreign Affairs was established in 1930 under Prince Faisal, and government institutions expanded during the Kingdom’s early years. In 1953, before Abdulaziz’s death, an order established the Council of Ministers under Prince Saud. Its meetings began during King Saud’s reign. This sequence illustrates how institutional development continued across successive reigns. [1]" },
+          { "heading": "Oil and foreign relations", "text": "The government granted an oil exploration concession in 1933, and oil was discovered in commercial quantities in 1938. This opened a long period of economic change rather than producing all its effects immediately; output and revenues expanded in subsequent years. In foreign relations, Abdulaziz met U.S. President Franklin Roosevelt on 14 February 1945 aboard USS Quincy on Egypt’s Great Bitter Lake, a notable meeting in the development of Saudi–American relations. [1, 2]" },
+          { "heading": "Death and succession", "text": "King Abdulaziz died in Taif on 9 November 1953 and was buried in Al Oud Cemetery in Riyadh. Crown Prince Saud succeeded him. Studying Abdulaziz’s reign brings military and political unification together with administrative and economic history. It also requires reading sources in context and distinguishing dated events from the assessments that writers make of his character and legacy. [1, 2]" }
+        ],
+        "sources": [
+          { "title": "Saudipedia: Abdulaziz bin Abdulrahman Al Saud (Arabic)", "url": "https://saudipedia.com/عبدالعزيز-بن-عبدالرحمن-آل-سعود" },
+          { "title": "Wikipedia: Ibn Saud — with references to historical scholarship", "url": "https://en.wikipedia.org/wiki/Ibn_Saud" }
+        ]
+      },
+      "image": {
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ibn_Saud_1945.jpg",
+        "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Ibn_Saud_1945.jpg",
+        "author": "Unknown photographer; Franklin D. Roosevelt Library & Museum",
+        "license": "Public domain — U.S. federal government work (PD-USGov)",
+        "licenseUrl": "https://commons.wikimedia.org/wiki/File:Ibn_Saud_1945.jpg#Licensing",
+        "attribution": "King Abdulaziz, 1945 — unknown photographer; Franklin D. Roosevelt Library & Museum, via Wikimedia Commons. Source: https://commons.wikimedia.org/wiki/File:Ibn_Saud_1945.jpg . Public domain as a U.S. federal government work (PD-USGov). Archival portrait; no claim of an official modern portrait.",
+        "altAr": "صورة أرشيفية للملك عبدالعزيز بن عبدالرحمن آل سعود عام 1945",
+        "altEn": "An archival photograph of King Abdulaziz bin Abdulrahman Al Saud in 1945"
+      },
+      "reviewNotes": ["Sources consulted on 2026-09-14; original bilingual synthesis, not copied source prose. Numbers in square brackets refer to the ordered sources.", "Birth dates conflict, including internally in Saudipedia; retain the explicit uncertainty. Do not calculate an exact age or silently reconcile Hijri dates.", "Human factual, translation and rights review still required. CMS import must remain draft and must preserve existing translation keys and editorial associations."]
+    },
+    {
+      "section": "people", "slug": "king-saud", "translationKey": "research-20260914-king-saud", "kind": "ruler", "period": "1953–1964",
+      "ar": {
+        "title": "الملك سعود بن عبدالعزيز آل سعود",
+        "summary": "ثاني ملوك المملكة وأول ولي للعهد بعد إعلانها؛ حكم بين 1953 و1964، وشهد عهده تأسيس وزارة المعارف وجامعة الملك سعود وتوسع أجهزة الدولة والخدمات.",
+        "category": "ملوك المملكة العربية السعودية", "seoTitle": "الملك سعود: الحكم والتعليم وتطور مؤسسات الدولة", "seoDescription": "سيرة الملك سعود من النشأة وولاية العهد إلى الحكم وتوسع التعليم والخدمات وانتقال العرش إلى الملك فيصل، مع مصادر للقراءة.",
+        "imageAlt": "صورة أرشيفية للملك سعود بن عبدالعزيز آل سعود تعود إلى عام 1960 بحسب سجل ويكيميديا",
+        "facts": [
+          { "label": "الترتيب بين ملوك المملكة", "value": "الثاني" },
+          { "label": "الميلاد", "value": "1902م، الكويت" },
+          { "label": "ولاية العهد", "value": "1933–1953م" },
+          { "label": "فترة الحكم", "value": "1953–1964م" },
+          { "label": "الوفاة", "value": "1969م، أثينا" }
+        ],
+        "body": [
+          { "heading": "النشأة والتجربة المبكرة", "text": "وُلد سعود في الكويت عام 1902م، وهو ابن الملك عبدالعزيز والأميرة وضحى بنت محمد آل عريعر. انتقل مع أسرته إلى الرياض بعد استعادتها، وتعلّم القرآن والعلوم الدينية، وحضر مجالس والده وجدّه الإمام عبدالرحمن. شارك في شبابه في مهام سياسية وعسكرية ضمن جهود تأسيس الدولة، وهو ما مهّد لتحمله مسؤوليات إدارية أوسع قبل إعلان المملكة وبعده. [1، 2]" },
+          { "heading": "ولاية العهد وتولي الحكم", "text": "أصبح سعود وليًا للعهد عام 1933م، بعد إعلان المملكة بعام، واضطلع بمهام داخلية وزيارات خارجية ممثلًا لوالده. وفي أكتوبر 1953م عُيّن رئيسًا لمجلس الوزراء عند إنشائه في أواخر عهد الملك عبدالعزيز. تولى العرش بعد وفاة والده في نوفمبر من العام نفسه، وأصبح أخوه فيصل وليًا للعهد. لذلك لا يصح الخلط بين إنشاء المجلس في عهد عبدالعزيز واتساع أعماله في عهد سعود. [1، 2]" },
+          { "heading": "التعليم وبناء المؤسسات", "text": "أُنشئت وزارة المعارف عام 1953م، وتولاها الأمير فهد بن عبدالعزيز، لتتسع مسؤوليات الإشراف على التعليم النظامي. ومن أبرز المحطات افتتاح جامعة الملك سعود عام 1957م، ثم الجامعة الإسلامية بالمدينة المنورة عام 1961م. وامتد التوسع إلى تعليم البنات والتدريب الإداري؛ وقد جاءت هذه المؤسسات استجابة لحاجة الدولة إلى المعلمين والموظفين والمتخصصين، لا بوصفها حدثًا منفصلًا عن نمو الإدارة والخدمات. [1، 2]" },
+          { "heading": "الخدمات والعلاقات الخارجية", "text": "شهد العهد مشروعات في الطرق والمياه والصحة وتوسعات في الحرمين الشريفين، بالتوازي مع نمو موارد الدولة النفطية. وفي السياسة الخارجية حافظت المملكة على حضورها في القضايا العربية وعلاقاتها بالولايات المتحدة، ومن محطاتها زيارة سعود لواشنطن عام 1957م. واجهت الإدارة في الوقت نفسه ضغوطًا مالية وخلافات بشأن الإنفاق وتوزيع الصلاحيات بين الملك وولي عهده، وهي قضايا ضرورية لفهم المرحلة إلى جانب مشروعاتها. [1، 2]" },
+          { "heading": "انتقال الحكم والسنوات الأخيرة", "text": "تصاعد الخلاف بين سعود وفيصل على إدارة الدولة، وانتهت فترة حكم سعود في نوفمبر 1964م بتولي فيصل العرش. تعرض ويكيبيديا الحدث بوصفه عزلًا أو تنازلًا مفروضًا، بينما تصفه سعوديبيديا بالتنازل بناءً على رأي الأسرة المالكة؛ ويجب التمييز بين اتفاق المصادر على انتقال الحكم واختلافها في توصيف إجراءاته. أمضى سعود سنواته الأخيرة خارج المملكة، وتوفي في أثينا عام 1969م، ثم نُقل جثمانه ودُفن في الرياض. [1، 2]" }
+        ],
+        "sources": [
+          { "title": "سعوديبيديا: سعود بن عبدالعزيز آل سعود", "url": "https://saudipedia.com/سعود-بن-عبدالعزيز-آل-سعود" },
+          { "title": "ويكيبيديا: Saud of Saudi Arabia", "url": "https://en.wikipedia.org/wiki/Saud_of_Saudi_Arabia" }
+        ]
+      },
+      "en": {
+        "title": "King Saud bin Abdulaziz Al Saud",
+        "summary": "The Kingdom’s second king and first crown prince after unification, Saud reigned from 1953 to 1964. His reign saw the Ministry of Education, King Saud University and expanding government services.",
+        "category": "Kings of Saudi Arabia", "seoTitle": "King Saud: Government, Education and State Institutions", "seoDescription": "Read about King Saud’s early life, crown princeship, reign, educational expansion and the transfer of power to Faisal, with references.",
+        "imageAlt": "An archival portrait of King Saud bin Abdulaziz Al Saud, dated 1960 in the Wikimedia record",
+        "facts": [
+          { "label": "Place in the royal succession", "value": "Second king" },
+          { "label": "Birth", "value": "1902, Kuwait" },
+          { "label": "Crown princeship", "value": "1933–1953" },
+          { "label": "Reign", "value": "1953–1964" },
+          { "label": "Death", "value": "1969, Athens" }
+        ],
+        "body": [
+          { "heading": "Upbringing and early experience", "text": "Saud was born in Kuwait in 1902 to King Abdulaziz and Wadha bint Mohammed Al Urayir. His family moved to Riyadh after its recovery. He studied the Quran and religious subjects and attended the gatherings of his father and grandfather, Imam Abdulrahman. As a young man he participated in political and military missions during the establishment of the state, preparing him for wider administrative responsibilities before and after the Kingdom’s proclamation. [1, 2]" },
+          { "heading": "Crown prince and accession", "text": "Saud became crown prince in 1933, a year after the Kingdom’s proclamation, and undertook domestic responsibilities and foreign visits on his father’s behalf. In October 1953 he was appointed president of the newly established Council of Ministers during Abdulaziz’s final months. He succeeded his father that November, with Faisal becoming crown prince. The council’s establishment under Abdulaziz should therefore be distinguished from the expansion of its work under Saud. [1, 2]" },
+          { "heading": "Education and institution building", "text": "The Ministry of Education was established in 1953 under Prince Fahd bin Abdulaziz, expanding the administration of formal schooling. Major milestones included King Saud University in 1957 and the Islamic University in Medina in 1961. Expansion also encompassed girls’ education and administrative training. These institutions responded to demand for teachers, officials and specialists and formed part of the broader growth of government and public services. [1, 2]" },
+          { "heading": "Public services and foreign relations", "text": "Projects in roads, water and healthcare, along with expansions of the Two Holy Mosques, accompanied growing oil revenues. Saudi Arabia remained involved in Arab affairs and relations with the United States, including Saud’s visit to Washington in 1957. At the same time, the government faced financial pressures and disagreements over expenditure and the division of authority between the king and crown prince. These difficulties are part of the period’s history alongside its development projects. [1, 2]" },
+          { "heading": "Transfer of power and later years", "text": "The dispute between Saud and Faisal over the administration of the state intensified, and Saud’s reign ended when Faisal took the throne in November 1964. Wikipedia describes the event as deposition or forced abdication, while Saudipedia describes abdication following the royal family’s deliberations. Agreement about the succession should be distinguished from differences in how its procedures are characterised. Saud spent his final years abroad, died in Athens in 1969 and was subsequently buried in Riyadh. [1, 2]" }
+        ],
+        "sources": [
+          { "title": "Saudipedia: Saud bin Abdulaziz Al Saud (Arabic)", "url": "https://saudipedia.com/سعود-بن-عبدالعزيز-آل-سعود" },
+          { "title": "Wikipedia: Saud of Saudi Arabia", "url": "https://en.wikipedia.org/wiki/Saud_of_Saudi_Arabia" }
+        ]
+      },
+      "image": {
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Saud_IV_of_Saudi_Arabia_portrait.jpg",
+        "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Saud_IV_of_Saudi_Arabia_portrait.jpg",
+        "author": "Unknown photographer; source credited on Commons as Saudi Press Agency",
+        "license": "Public domain — PD-Saudi Arabia, image dated 1960 on Commons",
+        "licenseUrl": "https://commons.wikimedia.org/wiki/File:Saud_IV_of_Saudi_Arabia_portrait.jpg#Licensing",
+        "attribution": "King Saud — unknown photographer; source credited by Wikimedia Commons as Saudi Press Agency; dated 1960 in the file record. Source and public-domain rationale: https://commons.wikimedia.org/wiki/File:Saud_IV_of_Saudi_Arabia_portrait.jpg . PD-Saudi Arabia, including the pre-1979 publication criterion recorded by Commons.",
+        "altAr": "صورة أرشيفية للملك سعود بن عبدالعزيز آل سعود تعود إلى عام 1960 بحسب سجل ويكيميديا",
+        "altEn": "An archival portrait of King Saud bin Abdulaziz Al Saud, dated 1960 in the Wikimedia record"
+      },
+      "reviewNotes": ["Sources and Commons license consulted on 2026-09-14. Date and agency credit are the Commons record, not independently established authorship or proof of first publication; human rights review required.", "Exact birth day omitted. Competing descriptions of the 1964 succession are attributed explicitly. Do not invent a named photographer or confuse Saud with an earlier imam named Saud."]
+    },
+    {
+      "section": "people", "slug": "king-faisal", "translationKey": "research-20260914-king-faisal", "kind": "ruler", "period": "1964–1975",
+      "ar": {
+        "title": "الملك فيصل بن عبدالعزيز آل سعود", "summary": "ثالث ملوك المملكة؛ جمع بين خبرة طويلة في الشؤون الخارجية ورئاسة الحكومة، وشهد عهده توسع التعليم والتخطيط التنموي ودور المملكة في أزمة النفط عام 1973.",
+        "category": "ملوك المملكة العربية السعودية", "seoTitle": "الملك فيصل: الدبلوماسية والإصلاح وعهد الحكم", "seoDescription": "سيرة الملك فيصل وتكوينه السياسي، ومسؤولياته قبل الحكم، والتخطيط التنموي والتعليم والسياسة الخارجية حتى وفاته عام 1975.",
+        "imageAlt": "الأمير فيصل بن عبدالعزيز، الملك لاحقًا، في صورة التقطها جون روس عام 1943",
+        "facts": [
+          { "label": "الترتيب بين ملوك المملكة", "value": "الثالث" },
+          { "label": "الميلاد", "value": "1906م، الرياض" },
+          { "label": "تولي وزارة الخارجية أول مرة", "value": "1930م" },
+          { "label": "فترة الحكم", "value": "1964–1975م" },
+          { "label": "الوفاة", "value": "25 مارس 1975م، الرياض" }
+        ],
+        "body": [
+          { "heading": "النشأة وبدايات العمل السياسي", "text": "وُلد فيصل في الرياض عام 1906م، وهو ابن الملك عبدالعزيز وطرفة بنت عبدالله آل الشيخ. نشأ في رعاية أسرة والدته بعد وفاتها، وتلقى تعليمًا دينيًا وتعلّم القراءة والكتابة. أدخله والده مبكرًا في العمل السياسي والعسكري، وزار أوروبا عام 1919م ممثلًا له. منحته هذه التجارب معرفة بالمفاوضات والعلاقات الدولية قبل أن تصبح الدبلوماسية أحد أبرز مجالات عمله. [1، 2]" },
+          { "heading": "المسؤوليات قبل العرش", "text": "تولى فيصل مسؤوليات إدارة الحجاز، ثم أصبح أول وزير للخارجية عند إنشاء الوزارة عام 1930م. وشارك في تمثيل المملكة في المؤتمرات الدولية، ومنها مؤتمر تأسيس الأمم المتحدة عام 1945م. وبعد وفاة الملك عبدالعزيز أصبح وليًا للعهد، وتولى رئاسة مجلس الوزراء في فترات من عهد الملك سعود. وفي عام 1962م أعلن برنامجًا للإصلاح من عشر نقاط، شمل إلغاء الرق وتطوير الإدارة والخدمات. [1، 2]" },
+          { "heading": "الحكم والإدارة والتعليم", "text": "تولى فيصل العرش في نوفمبر 1964م بعد انتهاء حكم الملك سعود. ركزت حكومته على تنظيم المالية العامة والتخطيط وتوسيع مؤسسات التعليم والصحة. بدأت الخطة الخمسية الأولى للتنمية عام 1970م، وأصبحت الخطط الدورية إطارًا لتنظيم المشروعات والإنفاق. كما اتسع تعليم البنات والتدريب الفني والابتعاث، ضمن مسار تعليمي بدأ قبل عهده واستمر بعده. [1، 2]" },
+          { "heading": "السياسة العربية والإسلامية وأزمة النفط", "text": "احتلت القضية الفلسطينية والتعاون بين الدول الإسلامية موقعًا بارزًا في سياسة فيصل الخارجية. وفي حرب أكتوبر 1973م شاركت المملكة مع دول عربية منتجة للنفط في خفض الإنتاج وفرض حظر على بعض الدول الداعمة لإسرائيل. ارتبطت الأزمة أيضًا بقرارات الأسعار وظروف السوق العالمية؛ لذلك لا تختزل نتائجها في قرار فردي، بل تُقرأ ضمن تفاعل الدبلوماسية العربية وسياسات الطاقة والاقتصاد الدولي. [1، 2]" },
+          { "heading": "الاغتيال وانتقال الحكم", "text": "اغتيل الملك فيصل في الرياض في 25 مارس 1975م، وتولى الحكم بعده ولي عهده الملك خالد. ترك عهده مؤسسات تعليمية وإدارية وخططًا تنموية استمرت في العهود اللاحقة، كما ظل موضوعًا للدراسة بسبب دور المملكة الإقليمي وسياساتها النفطية. وتعتمد قراءة هذه المرحلة على التمييز بين القرارات المثبتة والآراء المختلفة في تفسير آثارها. [1، 2]" }
+        ],
+        "sources": [
+          { "title": "سعوديبيديا: فيصل بن عبدالعزيز آل سعود", "url": "https://saudipedia.com/فيصل-بن-عبدالعزيز-آل-سعود" },
+          { "title": "ويكيبيديا: Faisal of Saudi Arabia", "url": "https://en.wikipedia.org/wiki/Faisal_of_Saudi_Arabia" }
+        ]
+      },
+      "en": {
+        "title": "King Faisal bin Abdulaziz Al Saud", "summary": "The third Saudi king, Faisal brought extensive experience in foreign affairs and government. His reign included educational expansion, development planning and Saudi participation in the 1973 oil crisis.",
+        "category": "Kings of Saudi Arabia", "seoTitle": "King Faisal: Diplomacy, Reform and Reign", "seoDescription": "Explore Faisal’s political formation, roles before accession, development planning, education and foreign policy through to his death in 1975.",
+        "imageAlt": "Prince Faisal bin Abdulaziz, later king, photographed by John Rous in 1943",
+        "facts": [
+          { "label": "Place in the royal succession", "value": "Third king" },
+          { "label": "Birth", "value": "1906, Riyadh" },
+          { "label": "First appointment as foreign minister", "value": "1930" },
+          { "label": "Reign", "value": "1964–1975" },
+          { "label": "Death", "value": "25 March 1975, Riyadh" }
+        ],
+        "body": [
+          { "heading": "Upbringing and early political work", "text": "Faisal was born in Riyadh in 1906 to King Abdulaziz and Tarfa bint Abdullah Al Sheikh. Following his mother’s death, he grew up in the care of her family and received instruction in religion, reading and writing. His father involved him early in political and military affairs, and he visited Europe as his representative in 1919. These experiences introduced him to negotiations and international relations before diplomacy became a central part of his career. [1, 2]" },
+          { "heading": "Responsibilities before accession", "text": "Faisal took on responsibilities in the administration of the Hejaz and became the first foreign minister when the ministry was established in 1930. He represented the Kingdom at international conferences, including the founding conference of the United Nations in 1945. After Abdulaziz’s death he became crown prince and served as prime minister during parts of Saud’s reign. In 1962 he announced a ten-point reform programme that included abolishing slavery and improving administration and services. [1, 2]" },
+          { "heading": "Government, administration and education", "text": "Faisal acceded in November 1964 after Saud’s reign ended. His government concentrated on public finance, planning and the expansion of education and healthcare. The first five-year development plan began in 1970, with successive plans providing a framework for projects and expenditure. Girls’ education, technical training and overseas study also expanded, continuing an educational development process that both preceded and outlasted his reign. [1, 2]" },
+          { "heading": "Arab and Islamic affairs and the oil crisis", "text": "Palestine and cooperation among Muslim-majority countries were prominent in Faisal’s foreign policy. During the October 1973 war, Saudi Arabia joined other Arab oil producers in reducing output and imposing an embargo on certain states supporting Israel. The crisis also involved pricing decisions and global market conditions. Its consequences should therefore be understood through Arab diplomacy, energy policy and international economics rather than reduced to the actions of a single individual. [1, 2]" },
+          { "heading": "Assassination and succession", "text": "King Faisal was assassinated in Riyadh on 25 March 1975 and was succeeded by Crown Prince Khalid. Educational and administrative institutions and development plans established during his reign continued into later periods. The reign also remains a subject of study for Saudi Arabia’s regional role and oil policies. Understanding it requires distinguishing documented decisions from differing interpretations of their consequences. [1, 2]" }
+        ],
+        "sources": [
+          { "title": "Saudipedia: Faisal bin Abdulaziz Al Saud (Arabic)", "url": "https://saudipedia.com/فيصل-بن-عبدالعزيز-آل-سعود" },
+          { "title": "Wikipedia: Faisal of Saudi Arabia", "url": "https://en.wikipedia.org/wiki/Faisal_of_Saudi_Arabia" }
+        ]
+      },
+      "image": {
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Faisal_of_Saudi_Arabia_-_1943.jpg", "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Faisal_of_Saudi_Arabia_-_1943.jpg", "author": "John Rous / Office of War Information / Library of Congress", "license": "Public domain — U.S. federal government work (PD-USGov-FSA)", "licenseUrl": "https://commons.wikimedia.org/wiki/File:Faisal_of_Saudi_Arabia_-_1943.jpg#Licensing",
+        "attribution": "Prince Faisal, 1943 — John Rous, Office of War Information; Library of Congress, fsac.1a35390. Existing Commons crop from the photograph of Princes Faisal and Khalid. Source: https://commons.wikimedia.org/wiki/File:Faisal_of_Saudi_Arabia_-_1943.jpg . Public domain (PD-USGov-FSA).",
+        "altAr": "الأمير فيصل بن عبدالعزيز، الملك لاحقًا، في صورة التقطها جون روس عام 1943", "altEn": "Prince Faisal bin Abdulaziz, later king, photographed by John Rous in 1943"
+      },
+      "reviewNotes": ["Sources consulted on 2026-09-14. Saudipedia’s Faisal page and its Saud page differ on the November 1964 accession day; use month and year. Do not silently correct source chronology.", "Commons HTML retrieval failed for the individual crop; imageinfo and revision wikitext were read successfully through the Commons API, including PD-USGov-FSA and original-source identification. The original joint portrait and Khalid crop pages were also read. LOC rights-page fetch returned 403; no independent LOC rights-page review is claimed."]
+    },
+    {
+      "section": "people", "slug": "king-khalid", "translationKey": "research-20260914-king-khalid", "kind": "ruler", "period": "1975–1982",
+      "ar": {
+        "title": "الملك خالد بن عبدالعزيز آل سعود", "summary": "رابع ملوك المملكة؛ شهد عهده توسع البنية الأساسية والتعليم والصحة في مرحلة ارتفاع الإيرادات النفطية، وتأسيس مجلس التعاون لدول الخليج العربية عام 1981.",
+        "category": "ملوك المملكة العربية السعودية", "seoTitle": "الملك خالد: التنمية والتعاون الخليجي", "seoDescription": "سيرة الملك خالد ومسؤولياته قبل الحكم، ومشروعات التنمية والتعليم والصحة، والتعاون الخليجي وأحداث عهده بين 1975 و1982.",
+        "imageAlt": "الأمير خالد بن عبدالعزيز، الملك لاحقًا، في صورة التقطها جون روس عام 1943",
+        "facts": [
+          { "label": "الترتيب بين ملوك المملكة", "value": "الرابع" },
+          { "label": "الميلاد", "value": "1913م، الرياض" },
+          { "label": "فترة الحكم", "value": "1975–1982م" },
+          { "label": "تأسيس مجلس التعاون الخليجي", "value": "1981م" },
+          { "label": "الوفاة", "value": "13 يونيو 1982م، الطائف" }
+        ],
+        "body": [
+          { "heading": "النشأة والمهمات المبكرة", "text": "وُلد خالد في الرياض عام 1913م، وهو ابن الملك عبدالعزيز والأميرة الجوهرة بنت مساعد بن جلوي. تلقى تعليمًا في القرآن والعلوم الدينية، ورافق والده في بعض الرحلات والمهمات. ومن أدواره قبل الحكم رئاسة الجانب السعودي في مفاوضات معاهدة الطائف مع اليمن عام 1934م، كما شارك مع أخيه فيصل في زيارة إلى الولايات المتحدة عام 1943م. [1، 2]" },
+          { "heading": "ولاية العهد وتولي المسؤولية", "text": "أصبح خالد وليًا للعهد في عهد الملك فيصل، ثم تولى العرش في 25 مارس 1975م بعد اغتيال فيصل، واختير الأمير فهد وليًا للعهد. استمرت الحكومة في عدد من السياسات والمشروعات السابقة، مع توزيع المسؤوليات بين الملك وولي عهده وأجهزة الدولة. كانت هذه الاستمرارية مهمة في مرحلة توسعت فيها الموارد المالية وازدادت متطلبات الإدارة والتخطيط. [1، 2]" },
+          { "heading": "مشروعات التنمية والتعليم والصحة", "text": "أتاحت الإيرادات النفطية المرتفعة تمويل مشروعات في الطرق والمطارات والموانئ والخدمات البلدية. واتسع التعليم العالي والتدريب، وأُنشئت وزارة التعليم العالي عام 1975م وجامعة أم القرى عام 1981م. كما تطورت المستشفيات الجامعية والرعاية الصحية والتأهيل الطبي. تفسَّر هذه المشروعات ضمن خطط التنمية ونمو السكان والمدن، دون افتراض أن زيادة الإنفاق وحدها تكفي للحكم على نتائج كل مشروع. [1، 2]" },
+          { "heading": "أحداث داخلية وتعاون خليجي", "text": "واجهت المملكة في عهد خالد أحداثًا صعبة، منها اقتحام المسجد الحرام عام 1979م وما أعقبه من عملية لإنهاء سيطرة المسلحين عليه. وعلى الصعيد الإقليمي، شاركت السعودية مع خمس دول خليجية أخرى في تأسيس مجلس التعاون لدول الخليج العربية عام 1981م. جاء المجلس إطارًا للتنسيق بين الدول الأعضاء في ظل تحولات أمنية وسياسية واقتصادية شهدتها المنطقة. [1، 2]" },
+          { "heading": "الوفاة واستمرار مؤسسات الدولة", "text": "توفي الملك خالد في الطائف في 13 يونيو 1982م، ودُفن في مقبرة العود بالرياض، وخلفه الملك فهد. يرتبط عهده في تاريخ المملكة بمرحلة توسع عمراني وخدمي وبنشأة إطار التعاون الخليجي. وتساعد مقارنة خطط التنمية والمؤسسات قبل عهده وبعده على فهم هذا التوسع بوصفه جزءًا من عملية ممتدة، لا مجموعة إنجازات معزولة عن سياقها. [1، 2]" }
+        ],
+        "sources": [
+          { "title": "سعوديبيديا: خالد بن عبدالعزيز آل سعود", "url": "https://saudipedia.com/خالد-بن-عبدالعزيز-آل-سعود" },
+          { "title": "ويكيبيديا: Khalid of Saudi Arabia", "url": "https://en.wikipedia.org/wiki/Khalid_of_Saudi_Arabia" }
+        ]
+      },
+      "en": {
+        "title": "King Khalid bin Abdulaziz Al Saud", "summary": "The fourth Saudi king, Khalid reigned during expanding infrastructure, education and healthcare funded by rising oil revenues. The Gulf Cooperation Council was founded during his reign in 1981.",
+        "category": "Kings of Saudi Arabia", "seoTitle": "King Khalid: Development and Gulf Cooperation", "seoDescription": "Explore Khalid’s early responsibilities, development projects, education, healthcare and Gulf cooperation during his reign from 1975 to 1982.",
+        "imageAlt": "Prince Khalid bin Abdulaziz, later king, photographed by John Rous in 1943",
+        "facts": [
+          { "label": "Place in the royal succession", "value": "Fourth king" },
+          { "label": "Birth", "value": "1913, Riyadh" },
+          { "label": "Reign", "value": "1975–1982" },
+          { "label": "Establishment of the GCC", "value": "1981" },
+          { "label": "Death", "value": "13 June 1982, Taif" }
+        ],
+        "body": [
+          { "heading": "Upbringing and early missions", "text": "Khalid was born in Riyadh in 1913 to King Abdulaziz and Al Jawhara bint Musaid bin Jiluwi. He studied the Quran and religious subjects and accompanied his father on journeys and official missions. His responsibilities before accession included leading the Saudi side in the negotiations for the 1934 Treaty of Taif with Yemen. He also visited the United States with his brother Faisal in 1943. [1, 2]" },
+          { "heading": "Crown prince and accession", "text": "Khalid became crown prince during Faisal’s reign and succeeded him on 25 March 1975 following his assassination. Prince Fahd was chosen as crown prince. Government continued several existing policies and projects, with responsibilities distributed among the king, crown prince and state institutions. This continuity mattered during a period of expanding financial resources and growing demands on administration and planning. [1, 2]" },
+          { "heading": "Development, education and healthcare", "text": "Higher oil revenues funded roads, airports, ports and municipal services. Higher education and training expanded, with a Ministry of Higher Education established in 1975 and Umm Al Qura University in 1981. University hospitals, healthcare and medical training also developed. These projects belong within the context of development plans and growing cities and populations; expenditure alone is not a sufficient measure of every project’s outcomes. [1, 2]" },
+          { "heading": "Domestic events and Gulf cooperation", "text": "Saudi Arabia faced major difficulties during Khalid’s reign, including the seizure of the Grand Mosque in 1979 and the subsequent operation to end the militants’ occupation. Regionally, Saudi Arabia joined five other Gulf states in establishing the Gulf Cooperation Council in 1981. The council provided a framework for coordination among its members against a background of regional security, political and economic change. [1, 2]" },
+          { "heading": "Death and institutional continuity", "text": "King Khalid died in Taif on 13 June 1982 and was buried in Al Oud Cemetery in Riyadh. King Fahd succeeded him. Khalid’s reign is associated with urban and public-service expansion and the establishment of the GCC. Comparing development plans and institutions before and after his reign helps explain these changes as part of a continuing process rather than a set of achievements detached from their context. [1, 2]" }
+        ],
+        "sources": [
+          { "title": "Saudipedia: Khalid bin Abdulaziz Al Saud (Arabic)", "url": "https://saudipedia.com/خالد-بن-عبدالعزيز-آل-سعود" },
+          { "title": "Wikipedia: Khalid of Saudi Arabia", "url": "https://en.wikipedia.org/wiki/Khalid_of_Saudi_Arabia" }
+        ]
+      },
+      "image": {
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Khalid_of_Saudi_Arabia_-_1943.jpg", "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Khalid_of_Saudi_Arabia_-_1943.jpg", "author": "John Rous / Office of War Information / Library of Congress", "license": "Public domain — U.S. federal government work (PD-USGov-FSA)", "licenseUrl": "https://commons.wikimedia.org/wiki/File:Khalid_of_Saudi_Arabia_-_1943.jpg#Licensing",
+        "attribution": "Prince Khalid, 1943 — John Rous, Office of War Information; Library of Congress, fsac.1a35390. Existing Commons crop from the photograph of Princes Faisal and Khalid. Source: https://commons.wikimedia.org/wiki/File:Khalid_of_Saudi_Arabia_-_1943.jpg . Public domain (PD-USGov-FSA).",
+        "altAr": "الأمير خالد بن عبدالعزيز، الملك لاحقًا، في صورة التقطها جون روس عام 1943", "altEn": "Prince Khalid bin Abdulaziz, later king, photographed by John Rous in 1943"
+      },
+      "reviewNotes": ["Sources consulted on 2026-09-14. Saudipedia’s summary box mislabels the 1975 accession as birth; prose establishes 1913. Its stated age at death conflicts with Gregorian years; omit age.", "The English Wikipedia infobox and prose differ on crown-prince chronology; this article omits the exact appointment year. The 1979 mosque seizure is dated by year only because source day conversions conflict. Archival photograph predates his kingship."]
+    },
+    {
+      "section": "people", "slug": "king-fahd", "translationKey": "research-20260914-king-fahd", "kind": "ruler", "period": "1982–2005",
+      "ar": {
+        "title": "الملك فهد بن عبدالعزيز آل سعود", "summary": "خامس ملوك المملكة؛ تولى الحكم عام 1982، وشهد عهده صدور النظام الأساسي للحكم ونظامي الشورى والمناطق، وتوسعات الحرمين الشريفين وأحداث حرب الخليج.",
+        "category": "ملوك المملكة العربية السعودية", "seoTitle": "الملك فهد: أنظمة الحكم والخدمات والسياسة الإقليمية", "seoDescription": "تعرف على مسيرة الملك فهد من وزارتي المعارف والداخلية إلى الحكم، وأنظمة 1992 وتوسعات الحرمين وحرب الخليج وانتقال العرش عام 2005.",
+        "imageAlt": "الملك فهد بن عبدالعزيز خلال لقائه الرئيس رونالد ريغان في المكتب البيضاوي عام 1985",
+        "facts": [
+          { "label": "الترتيب بين ملوك المملكة", "value": "الخامس" },
+          { "label": "أول وزارة تولاها", "value": "وزارة المعارف، 1953م" },
+          { "label": "فترة الحكم", "value": "1982–2005م" },
+          { "label": "صدور النظام الأساسي للحكم", "value": "1992م" },
+          { "label": "الوفاة", "value": "1 أغسطس 2005م، الرياض" }
+        ],
+        "body": [
+          { "heading": "التكوين والمسؤوليات الوزارية", "text": "نشأ فهد بن عبدالعزيز في الرياض، وتلقى تعليمه في مدارس الأمراء والمعهد السعودي العلمي في مكة المكرمة. أصبح أول وزير للمعارف عام 1953م في عهد الملك سعود، ثم تولى وزارة الداخلية عام 1962م. أتاحت له هاتان المسؤوليتان خبرة في التعليم والإدارة والأمن، قبل اختياره وليًا للعهد في عهد الملك خالد عام 1975م. [1، 2]" },
+          { "heading": "تولي الحكم واللقب الرسمي", "text": "تولى فهد العرش في 13 يونيو 1982م بعد وفاة الملك خالد، واختير الأمير عبدالله وليًا للعهد. وفي عام 1986م اعتمد لقب «خادم الحرمين الشريفين» بدلًا من «صاحب الجلالة» في المخاطبات الرسمية. والمقصود هنا اعتماده الرسمي في عهده، لا الادعاء بأن التعبير لم يُستخدم في التاريخ قبل ذلك. امتد حكمه إلى عام 2005م، خلال تحولات اقتصادية وإقليمية متعددة. [1، 2]" },
+          { "heading": "الأنظمة وتنظيم الإدارة", "text": "صدرت عام 1992م ثلاثة أنظمة مهمة: النظام الأساسي للحكم، ونظام مجلس الشورى، ونظام المناطق. نظمت هذه النصوص جوانب من مؤسسات الحكم والإدارة والعلاقة بين أجهزة الدولة، وأُعيد تشكيل مجلس الشورى ضمن هذا الإطار. كما استمرت مشروعات البنية الأساسية والصناعة والخدمات، وافتُتح جسر الملك فهد الرابط بين السعودية والبحرين عام 1986م. [1، 2]" },
+          { "heading": "الحرمين الشريفين والظروف الإقليمية", "text": "شملت مشروعات العهد توسعات في المسجد الحرام والمسجد النبوي ومرافق لخدمة الحجاج والمعتمرين. وفي عام 1990م أحدث الغزو العراقي للكويت أزمة أمنية إقليمية، فاستقبلت المملكة قوات التحالف وشاركت في الجهود التي انتهت بتحرير الكويت عام 1991م. جعلت تلك الأزمة قضايا الأمن والتحالفات وكلفة الدفاع جزءًا أساسيًا من سياسة المملكة في هذه المرحلة. [1، 2]" },
+          { "heading": "السنوات الأخيرة وانتقال العرش", "text": "أُصيب الملك فهد بجلطة عام 1995م، وتولى ولي العهد عبدالله جانبًا متزايدًا من إدارة الشؤون اليومية مع بقاء فهد ملكًا حتى وفاته. توفي في الرياض في 1 أغسطس 2005م، ودُفن في مقبرة العود، وخلفه الملك عبدالله. ويقتضي عرض المرحلة التمييز بين الصفة الرسمية للملك وتوزيع مسؤوليات إدارة الدولة في سنوات مرضه. [1، 2]" }
+        ],
+        "sources": [
+          { "title": "سعوديبيديا: فهد بن عبدالعزيز آل سعود", "url": "https://saudipedia.com/فهد-بن-عبدالعزيز-آل-سعود" },
+          { "title": "ويكيبيديا: Fahd of Saudi Arabia", "url": "https://en.wikipedia.org/wiki/Fahd_of_Saudi_Arabia" }
+        ]
+      },
+      "en": {
+        "title": "King Fahd bin Abdulaziz Al Saud", "summary": "The fifth Saudi king, Fahd acceded in 1982. His reign included the Basic Law of Governance, the Shura Council and provincial laws, expansions of the Two Holy Mosques and the Gulf War.",
+        "category": "Kings of Saudi Arabia", "seoTitle": "King Fahd: Governance, Public Services and Regional Policy", "seoDescription": "Explore Fahd’s ministries and reign, the laws of 1992, mosque expansions, the Gulf War and the transfer of the throne in 2005.",
+        "imageAlt": "King Fahd bin Abdulaziz meeting President Ronald Reagan in the Oval Office in 1985",
+        "facts": [
+          { "label": "Place in the royal succession", "value": "Fifth king" },
+          { "label": "First ministerial appointment", "value": "Education, 1953" },
+          { "label": "Reign", "value": "1982–2005" },
+          { "label": "Basic Law of Governance issued", "value": "1992" },
+          { "label": "Death", "value": "1 August 2005, Riyadh" }
+        ],
+        "body": [
+          { "heading": "Education and ministerial responsibilities", "text": "Fahd bin Abdulaziz grew up in Riyadh and studied at the princes’ schools and the Saudi Scientific Institute in Mecca. He became the first minister of education in 1953 under King Saud and minister of interior in 1962. These roles gave him experience in education, administration and security before he was chosen as crown prince under King Khalid in 1975. [1, 2]" },
+          { "heading": "Accession and official title", "text": "Fahd acceded on 13 June 1982 after Khalid’s death, and Prince Abdullah became crown prince. In 1986 Fahd adopted ‘Custodian of the Two Holy Mosques’ in place of ‘His Majesty’ in official usage. This refers to formal adoption during his reign, not a claim that the expression had never been used historically. He remained king until 2005 through substantial economic and regional changes. [1, 2]" },
+          { "heading": "Laws and administrative organisation", "text": "Three important laws were issued in 1992: the Basic Law of Governance, the Shura Council Law and the Law of Provinces. They regulated aspects of government institutions, administration and the relationships between state bodies, with the Shura Council reorganised within this framework. Infrastructure, industry and services continued to develop, and the King Fahd Causeway connecting Saudi Arabia and Bahrain opened in 1986. [1, 2]" },
+          { "heading": "The Two Holy Mosques and regional conditions", "text": "Projects included expansions of the Grand Mosque and the Prophet’s Mosque and facilities for pilgrims. Iraq’s invasion of Kuwait in 1990 created a regional security crisis. Saudi Arabia hosted coalition forces and participated in efforts that culminated in Kuwait’s liberation in 1991. Security, alliances and the cost of defence consequently occupied a central place in the Kingdom’s policy during this period. [1, 2]" },
+          { "heading": "Later years and succession", "text": "Fahd suffered a stroke in 1995, after which Crown Prince Abdullah assumed an increasing share of day-to-day government while Fahd remained king. He died in Riyadh on 1 August 2005, was buried in Al Oud Cemetery and was succeeded by Abdullah. Accounts of the period should distinguish the king’s formal position from the distribution of responsibilities during his illness. [1, 2]" }
+        ],
+        "sources": [
+          { "title": "Saudipedia: Fahd bin Abdulaziz Al Saud (Arabic)", "url": "https://saudipedia.com/فهد-بن-عبدالعزيز-آل-سعود" },
+          { "title": "Wikipedia: Fahd of Saudi Arabia", "url": "https://en.wikipedia.org/wiki/Fahd_of_Saudi_Arabia" }
+        ]
+      },
+      "image": {
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:President_Ronald_Reagan_and_King_Fahd_of_Saudi_Arabia_Meeting_in_The_Oval_Office_-_DPLA_-_0bb9c9488ecfad2bef4dd53ecfd78eb2.jpg",
+        "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1c/President_Ronald_Reagan_and_King_Fahd_of_Saudi_Arabia_Meeting_in_The_Oval_Office_-_DPLA_-_0bb9c9488ecfad2bef4dd53ecfd78eb2.jpg",
+        "author": "White House Photographic Office / Ronald Reagan Presidential Library / NARA",
+        "license": "Public domain — U.S. federal government work (PD-USGov)",
+        "licenseUrl": "https://commons.wikimedia.org/wiki/File:President_Ronald_Reagan_and_King_Fahd_of_Saudi_Arabia_Meeting_in_The_Oval_Office_-_DPLA_-_0bb9c9488ecfad2bef4dd53ecfd78eb2.jpg#Licensing",
+        "attribution": "King Fahd and President Ronald Reagan, 11 February 1985 — White House Photographic Office; Ronald Reagan Presidential Library / NARA, record 75853933, image C27253-9. Source: https://commons.wikimedia.org/wiki/File:President_Ronald_Reagan_and_King_Fahd_of_Saudi_Arabia_Meeting_in_The_Oval_Office_-_DPLA_-_0bb9c9488ecfad2bef4dd53ecfd78eb2.jpg . Public domain (PD-USGov).",
+        "altAr": "الملك فهد بن عبدالعزيز خلال لقائه الرئيس رونالد ريغان في المكتب البيضاوي عام 1985", "altEn": "King Fahd bin Abdulaziz meeting President Ronald Reagan in the Oval Office in 1985"
+      },
+      "reviewNotes": ["Sources consulted on 2026-09-14. Exact birth date omitted because chronologies vary. Adoption of the royal title is not described as its first-ever historical use.", "Rejected the 1982 official portrait tagged only PD-Saudi Arabia: the file date does not meet the pre-1979 U.S. publication criterion in that template. Selected the documented U.S. government meeting photograph instead."]
+    },
+    {
+      "section": "people", "slug": "king-abdullah", "translationKey": "research-20260914-king-abdullah", "kind": "ruler", "period": "2005–2015",
+      "ar": {
+        "title": "الملك عبدالله بن عبدالعزيز آل سعود", "summary": "سادس ملوك المملكة؛ امتد عهده من 2005 إلى 2015، وشهد توسع التعليم العالي والابتعاث ومبادرات الحوار ومشاركة النساء في مجلس الشورى.",
+        "category": "ملوك المملكة العربية السعودية", "seoTitle": "الملك عبدالله: التعليم والحوار والتحولات المؤسسية", "seoDescription": "سيرة الملك عبدالله ومسؤولياته في الحرس الوطني وولاية العهد، وتوسع الجامعات والابتعاث والحوار ومجلس الشورى خلال حكمه.",
+        "imageAlt": "الملك عبدالله بن عبدالعزيز في صورة التقطتها شيري ثيرلبي في يناير 2007",
+        "facts": [
+          { "label": "الترتيب بين ملوك المملكة", "value": "السادس" },
+          { "label": "الميلاد", "value": "1924م، الرياض" },
+          { "label": "ولاية العهد", "value": "1982–2005م" },
+          { "label": "فترة الحكم", "value": "2005–2015م" },
+          { "label": "الوفاة", "value": "23 يناير 2015م، الرياض" }
+        ],
+        "body": [
+          { "heading": "النشأة والعمل في الحرس الوطني", "text": "وُلد عبدالله بن عبدالعزيز في الرياض عام 1924م، ووالدته فهدة بنت العاصي الشريم. تلقى تعليمًا في القرآن والعلوم الدينية واللغة، واهتم بالقراءة والفروسية. تولى قيادة الحرس الوطني في الستينيات، وارتبطت تجربته بتطوير تنظيمه العسكري والإداري وخدماته التعليمية والصحية. كانت هذه المسؤولية أحد أهم مجالات عمله قبل ولاية العهد ثم الحكم. [1، 2]" },
+          { "heading": "ولاية العهد وتولي الملك", "text": "أصبح عبدالله وليًا للعهد عند تولي الملك فهد الحكم عام 1982م، واستمر في المنصب حتى 2005م. وبعد مرض الملك فهد في التسعينيات تولى جانبًا واسعًا من إدارة الشؤون اليومية للدولة. انتقل إليه العرش بعد وفاة فهد في أغسطس 2005م. وتعاقب على ولاية العهد خلال حكمه الأمراء سلطان ونايف وسلمان، وهو تسلسل يفسر انتقال الحكم إلى سلمان بعد وفاته. [1، 2]" },
+          { "heading": "الجامعات والابتعاث والبحث العلمي", "text": "أُطلق برنامج الملك عبدالله للابتعاث الخارجي عام 2005م، واتسعت الجامعات والتخصصات داخل المملكة. وافتُتحت جامعة الملك عبدالله للعلوم والتقنية عام 2009م كمؤسسة للدراسات العليا والبحث العلمي. ربطت هذه المشروعات بين تأهيل الكفاءات وبناء مؤسسات علمية جديدة؛ أما تقييم نتائجها فيحتاج إلى بيانات عن التعليم والبحث والعمل، وليس إلى أهداف البرامج المعلنة وحدها. [1، 2]" },
+          { "heading": "الحوار والمشاركة المؤسسية", "text": "ارتبط اسم عبدالله بمبادرات للحوار الوطني وبين أتباع الأديان والثقافات. وفي عام 2013م عُيّنت ثلاثون امرأة في مجلس الشورى، مع تعديل قواعد تشكيله لتخصيص نسبة لا تقل عن خمس المقاعد للنساء. وعلى الصعيد العربي، طرح عندما كان وليًا للعهد مبادرة للسلام تبنتها القمة العربية في بيروت عام 2002م. تندرج هذه الخطوات في سياقات مختلفة، داخلية ودبلوماسية، ولا تعني تطابق أهدافها أو نتائجها. [1، 2]" },
+          { "heading": "الخدمات والوفاة وانتقال الحكم", "text": "شهد العهد توسعات في الحرمين ومشروعات للنقل وخدمة الحجاج، منها قطار المشاعر المقدسة الذي بدأ تشغيله عام 2010م. توفي الملك عبدالله في الرياض في 23 يناير 2015م، ودُفن في مقبرة العود، وتولى الحكم بعده الملك سلمان. وتتيح دراسة عهده تتبع تداخل التعليم والخدمات والإصلاحات المؤسسية مع الظروف الإقليمية التي واجهتها المملكة. [1، 2]" }
+        ],
+        "sources": [
+          { "title": "سعوديبيديا: عبدالله بن عبدالعزيز آل سعود", "url": "https://saudipedia.com/عبدالله-بن-عبدالعزيز-آل-سعود" },
+          { "title": "ويكيبيديا: Abdullah of Saudi Arabia", "url": "https://en.wikipedia.org/wiki/Abdullah_of_Saudi_Arabia" }
+        ]
+      },
+      "en": {
+        "title": "King Abdullah bin Abdulaziz Al Saud", "summary": "The sixth Saudi king, Abdullah reigned from 2005 to 2015. His reign saw expanding higher education and scholarships, dialogue initiatives and women’s participation in the Shura Council.",
+        "category": "Kings of Saudi Arabia", "seoTitle": "King Abdullah: Education, Dialogue and Institutional Change", "seoDescription": "Read about Abdullah’s National Guard and crown-prince roles, university and scholarship expansion, dialogue and the Shura Council during his reign.",
+        "imageAlt": "King Abdullah bin Abdulaziz photographed by Cherie A. Thurlby in January 2007",
+        "facts": [
+          { "label": "Place in the royal succession", "value": "Sixth king" },
+          { "label": "Birth", "value": "1924, Riyadh" },
+          { "label": "Crown princeship", "value": "1982–2005" },
+          { "label": "Reign", "value": "2005–2015" },
+          { "label": "Death", "value": "23 January 2015, Riyadh" }
+        ],
+        "body": [
+          { "heading": "Upbringing and the National Guard", "text": "Abdullah bin Abdulaziz was born in Riyadh in 1924 to Fahda bint Asi Al Shuraim. He studied the Quran, religious subjects and Arabic and developed interests in reading and horsemanship. He took command of the National Guard in the 1960s, with his tenure associated with its military and administrative development and educational and medical services. This was a major field of his work before becoming crown prince and king. [1, 2]" },
+          { "heading": "Crown princeship and accession", "text": "Abdullah became crown prince when King Fahd acceded in 1982 and remained in that position until 2005. Following Fahd’s illness in the 1990s, he took on a substantial share of the day-to-day administration of the state. He succeeded Fahd after his death in August 2005. During Abdullah’s reign, Sultan, Nayef and Salman successively served as crown prince, a sequence that explains Salman’s eventual succession. [1, 2]" },
+          { "heading": "Universities, scholarships and research", "text": "The King Abdullah Scholarship Programme began in 2005, while universities and fields of study expanded within the Kingdom. King Abdullah University of Science and Technology opened in 2009 as a graduate and research institution. These projects connected the training of specialists with the establishment of new scientific institutions. Evaluating their results requires evidence about education, research and employment rather than relying solely on stated programme objectives. [1, 2]" },
+          { "heading": "Dialogue and institutional participation", "text": "Abdullah supported national dialogue and initiatives bringing together different religions and cultures. In 2013, thirty women were appointed to the Shura Council, and its rules were amended to reserve at least one-fifth of its seats for women. In Arab diplomacy, he had proposed a peace initiative while crown prince that was adopted at the 2002 Beirut Arab summit. These measures belonged to different domestic and diplomatic contexts and should not be assumed to share identical aims or outcomes. [1, 2]" },
+          { "heading": "Services, death and succession", "text": "The reign included expansions of the Two Holy Mosques and transport and pilgrim-service projects, including the Al Mashaaer railway, which began operating in 2010. Abdullah died in Riyadh on 23 January 2015 and was buried in Al Oud Cemetery. King Salman succeeded him. Studying the reign connects education, public services and institutional changes with the regional circumstances facing Saudi Arabia. [1, 2]" }
+        ],
+        "sources": [
+          { "title": "Saudipedia: Abdullah bin Abdulaziz Al Saud (Arabic)", "url": "https://saudipedia.com/عبدالله-بن-عبدالعزيز-آل-سعود" },
+          { "title": "Wikipedia: Abdullah of Saudi Arabia", "url": "https://en.wikipedia.org/wiki/Abdullah_of_Saudi_Arabia" }
+        ]
+      },
+      "image": {
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:King_Abdullah_bin_Abdul_al-Saud_January_2007.jpg", "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d5/King_Abdullah_bin_Abdul_al-Saud_January_2007.jpg", "author": "Cherie A. Thurlby / U.S. Department of Defense", "license": "Public domain — U.S. Department of Defense work (PD-USGov-Military)", "licenseUrl": "https://commons.wikimedia.org/wiki/File:King_Abdullah_bin_Abdul_al-Saud_January_2007.jpg#Licensing",
+        "attribution": "King Abdullah, 17 January 2007 — Cherie A. Thurlby, U.S. Department of Defense. Existing portrait crop from the meeting photograph, ID 070117-D-7203T-016. Source: https://commons.wikimedia.org/wiki/File:King_Abdullah_bin_Abdul_al-Saud_January_2007.jpg . Public domain (PD-USGov-Military).",
+        "altAr": "الملك عبدالله بن عبدالعزيز في صورة التقطتها شيري ثيرلبي في يناير 2007", "altEn": "King Abdullah bin Abdulaziz photographed by Cherie A. Thurlby in January 2007"
+      },
+      "reviewNotes": ["Sources consulted on 2026-09-14. Accession and public allegiance dates are distinguished in Wikipedia; use August 2005 rather than silently merging 1 and 2 August. National Guard appointment year differs across accounts, so use the 1960s.", "All assertions remain a research draft; no educational outcome or medical claim is inferred from the existence of an institution."]
+    },
+    {
+      "section": "people", "slug": "king-salman", "translationKey": "research-20260914-king-salman", "kind": "ruler", "period": "2015–",
+      "ar": {
+        "title": "الملك سلمان بن عبدالعزيز آل سعود", "summary": "سابع ملوك المملكة؛ تولى الحكم عام 2015 بعد خبرة في إمارة الرياض ووزارة الدفاع وولاية العهد، وأُطلقت في عهده رؤية السعودية 2030 وتحولات إدارية واقتصادية واجتماعية.",
+        "category": "ملوك المملكة العربية السعودية", "seoTitle": "الملك سلمان: من إمارة الرياض إلى حكم المملكة", "seoDescription": "سيرة الملك سلمان ومسؤولياته في الرياض والدفاع وولاية العهد، وتوليه الحكم عام 2015 وأبرز التحولات في عهده، مع مصادر مؤرخة.",
+        "imageAlt": "الأمير سلمان بن عبدالعزيز، ولي العهد آنذاك، في صورة التقطتها إيرين كيرك كومو عام 2013",
+        "facts": [
+          { "label": "الترتيب بين ملوك المملكة", "value": "السابع" },
+          { "label": "الميلاد", "value": "31 ديسمبر 1935م، الرياض" },
+          { "label": "تولي وزارة الدفاع", "value": "2011م" },
+          { "label": "ولاية العهد", "value": "2012–2015م" },
+          { "label": "تولي الحكم", "value": "23 يناير 2015م" },
+          { "label": "تاريخ الاطلاع على المراجع", "value": "14 سبتمبر 2026م" }
+        ],
+        "body": [
+          { "heading": "النشأة والتعليم", "text": "وُلد سلمان بن عبدالعزيز في الرياض في 31 ديسمبر 1935م، ووالدته الأميرة حصة بنت أحمد السديري. تلقى تعليمه المبكر في مدرسة الأمراء، ودرس القرآن والعلوم الدينية واللغة، ورافق والده الملك عبدالعزيز في مجالسه ومناسباته. أسهم هذا المحيط في اطلاعه على شؤون الحكم والمجتمع قبل توليه مسؤوليات رسمية في منطقة الرياض. [1، 2]" },
+          { "heading": "إمارة الرياض وتطور العاصمة", "text": "تولى سلمان إمارة الرياض بالنيابة عام 1954م، ثم عُيّن أميرًا عليها عام 1955م. وبعد انقطاع، عاد إلى الإمارة عام 1963م واستمر حتى 2011م. ارتبطت هذه العقود بتوسع العاصمة وشبكات الطرق والخدمات والتخطيط العمراني، ومن المؤسسات المرتبطة بذلك الهيئة العليا لتطوير مدينة الرياض. ولا تختزل عملية نمو المدينة في شخص واحد؛ فقد اشتركت فيها مؤسسات حكومية وبلدية ومهنيون وسكان وقطاع خاص. [1، 2]" },
+          { "heading": "الدفاع وولاية العهد والعرش", "text": "عُيّن سلمان وزيرًا للدفاع في نوفمبر 2011م، ثم وليًا للعهد في يونيو 2012م مع استمراره في الوزارة. تولى العرش في 23 يناير 2015م بعد وفاة الملك عبدالله. وتغير ترتيب ولاية العهد في السنوات التالية، حتى أصبح الأمير محمد بن سلمان وليًا للعهد عام 2017م، ثم رئيسًا لمجلس الوزراء عام 2022م. ينبغي التمييز بين منصب الملك وهذه المسؤوليات الحكومية عند وصف بنية القيادة. [1، 2]" },
+          { "heading": "رؤية 2030 والتحولات الداخلية", "text": "أُطلقت رؤية السعودية 2030 عام 2016م إطارًا للتحول الاقتصادي والاجتماعي وتنويع مصادر الدخل، مع دور محوري لولي العهد محمد بن سلمان في برامجها. وشهد العهد تغييرات في تنظيم قطاعات السياحة والثقافة والاستثمار، ورفع الحظر على قيادة النساء للسيارات الذي أُعلن عام 2017م ودخل حيز التنفيذ عام 2018م. تُعرض هذه الإجراءات بوصفها قرارات وبرامج مؤرخة، ولا يُفترض تحقق جميع أهدافها المستقبلية دون بيانات مستقلة. [1، 2]" },
+          { "heading": "السياق الإقليمي وقراءة العهد المعاصر", "text": "بدأ التدخل العسكري الذي قادته السعودية في اليمن عام 2015م، وأصبحت الحرب وتداعياتها الأمنية والإنسانية من القضايا البارزة في سياسة المنطقة. ويحتاج عرض العهد المعاصر إلى الفصل بين المواقف الرسمية والتقارير المستقلة وتقييم النتائج. تستند هذه السيرة إلى مراجع جرى الاطلاع عليها في 14 سبتمبر 2026م؛ أما المناصب الجارية ومؤشرات البرامج والتطورات السياسية فتحتاج إلى تحديث دوري، ولا يُستنتج استمرارها إلى ما بعد تاريخ التحقق. [1، 2]" }
+        ],
+        "sources": [
+          { "title": "سعوديبيديا: سلمان بن عبدالعزيز آل سعود", "url": "https://saudipedia.com/سلمان-بن-عبدالعزيز-آل-سعود" },
+          { "title": "ويكيبيديا: Salman of Saudi Arabia", "url": "https://en.wikipedia.org/wiki/Salman_of_Saudi_Arabia" }
+        ]
+      },
+      "en": {
+        "title": "King Salman bin Abdulaziz Al Saud", "summary": "The seventh Saudi king, Salman acceded in 2015 after serving in Riyadh, defence and the crown princeship. His reign has included Vision 2030 and administrative, economic and social changes.",
+        "category": "Kings of Saudi Arabia", "seoTitle": "King Salman: From Riyadh Governorship to the Throne", "seoDescription": "Explore Salman’s responsibilities in Riyadh, defence and the crown princeship, his 2015 accession and major changes during his reign, with dated sources.",
+        "imageAlt": "Prince Salman bin Abdulaziz, then crown prince, photographed by Erin A. Kirk-Cuomo in 2013",
+        "facts": [
+          { "label": "Place in the royal succession", "value": "Seventh king" },
+          { "label": "Birth", "value": "31 December 1935, Riyadh" },
+          { "label": "Appointment as defence minister", "value": "2011" },
+          { "label": "Crown princeship", "value": "2012–2015" },
+          { "label": "Accession", "value": "23 January 2015" },
+          { "label": "Sources consulted", "value": "14 September 2026" }
+        ],
+        "body": [
+          { "heading": "Upbringing and education", "text": "Salman bin Abdulaziz was born in Riyadh on 31 December 1935 to Hassa bint Ahmed Al Sudairi. He attended the princes’ school, studying the Quran, religious subjects and Arabic, and accompanied his father, King Abdulaziz, at gatherings and events. This environment introduced him to government and social affairs before he assumed official responsibilities in Riyadh Region. [1, 2]" },
+          { "heading": "Riyadh governorship and the capital’s growth", "text": "Salman became acting governor of Riyadh in 1954 and governor in 1955. After an interval, he returned to the governorship in 1963 and remained until 2011. These decades brought expansion of the capital, roads, services and urban planning, including the work of the High Commission for the Development of Riyadh. The city’s growth cannot be attributed to one person alone; government and municipal institutions, professionals, residents and private enterprise all participated. [1, 2]" },
+          { "heading": "Defence, crown princeship and accession", "text": "Salman was appointed defence minister in November 2011 and crown prince in June 2012 while retaining the ministry. He acceded on 23 January 2015 after King Abdullah’s death. The succession arrangements changed in subsequent years, with Mohammed bin Salman becoming crown prince in 2017 and prime minister in 2022. The king’s position should be distinguished from these government responsibilities when describing the leadership structure. [1, 2]" },
+          { "heading": "Vision 2030 and domestic changes", "text": "Saudi Vision 2030 was launched in 2016 as a framework for economic and social change and income diversification, with Crown Prince Mohammed bin Salman playing a central role in its programmes. The reign has included changes in tourism, culture and investment, and the lifting of the ban on women driving, announced in 2017 and implemented in 2018. These are dated measures and programmes; their future objectives should not be treated as accomplished results without independent evidence. [1, 2]" },
+          { "heading": "Regional context and a contemporary reign", "text": "The Saudi-led military intervention in Yemen began in 2015, making the war and its security and humanitarian consequences major regional issues. Accounts of this contemporary reign should distinguish official positions, independent reporting and assessments of results. This biography draws on references consulted on 14 September 2026. Current offices, programme indicators and political developments require periodic updates and should not be assumed to remain unchanged beyond that verification date. [1, 2]" }
+        ],
+        "sources": [
+          { "title": "Saudipedia: Salman bin Abdulaziz Al Saud (Arabic)", "url": "https://saudipedia.com/سلمان-بن-عبدالعزيز-آل-سعود" },
+          { "title": "Wikipedia: Salman of Saudi Arabia", "url": "https://en.wikipedia.org/wiki/Salman_of_Saudi_Arabia" }
+        ]
+      },
+      "image": {
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:King_Salman_bin_Abdulaziz_Al_Saud_in_2013.jpg", "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5f/King_Salman_bin_Abdulaziz_Al_Saud_in_2013.jpg", "author": "Erin A. Kirk-Cuomo / U.S. Department of Defense", "license": "Public domain — U.S. Department of Defense work (PD-USGov-Defense)", "licenseUrl": "https://commons.wikimedia.org/wiki/File:King_Salman_bin_Abdulaziz_Al_Saud_in_2013.jpg#Licensing",
+        "attribution": "Salman bin Abdulaziz, then crown prince, 9 December 2013 — Erin A. Kirk-Cuomo, U.S. Department of Defense, image 131209-D-BW835-554. Source: https://commons.wikimedia.org/wiki/File:King_Salman_bin_Abdulaziz_Al_Saud_in_2013.jpg . Public domain (PD-USGov-Defense). Archival photograph, not a current official portrait.",
+        "altAr": "الأمير سلمان بن عبدالعزيز، ولي العهد آنذاك، في صورة التقطتها إيرين كيرك كومو عام 2013", "altEn": "Prince Salman bin Abdulaziz, then crown prince, photographed by Erin A. Kirk-Cuomo in 2013"
+      },
+      "reviewNotes": ["Sources consulted on 2026-09-14. Current-reign statements are time-bounded. No claims about health, private wealth or future programme success are included.", "Commons source has an uninformative description but identifies the DoD photograph and author. Subject identity must also be checked visually. This 2013 photograph predates accession; retain that distinction in captions."]
+    }
+  ]
+}
