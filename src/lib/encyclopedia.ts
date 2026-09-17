@@ -70,6 +70,13 @@ export function matchesSection(entry: Entry, section: string): boolean {
   return entry.section === section;
 }
 
+export function administrativeRegions(items: Entry[]): Entry[] {
+  return ['riyadh', 'makkah', 'madinah', 'qassim', 'eastern-province', 'asir', 'tabuk', 'hail', 'northern-borders', 'jazan', 'najran', 'bahah', 'jawf'].flatMap(slug => {
+    const entry = items.find(item => item.section === 'regions' && item.slug === slug);
+    return entry ? [entry] : [];
+  });
+}
+
 export function saudiStateHistory(items: Entry[]): Entry[] {
   return ['first-saudi-state', 'second-saudi-state', 'third-saudi-state'].flatMap(slug => {
     const entry = items.find(item => item.section === 'history' && item.slug === slug);

@@ -81,7 +81,7 @@ test('public reader validates access flags, pagination and pairing across page b
 });
 
 test('runtime decoder rejects malformed or nonpublic documents before array access', async () => {
-  const bad: unknown[] = [null, [], 42, article('ar', { locale: 'fr' }), article('ar', { section: 'other' }),
+  const bad: unknown[] = [null, [], 42, article('ar', { locale: 'fr' }), article('ar', { section: '../other' }),
     article('ar', { body: null }), article('ar', { body: [null] }), article('ar', { body: [] }),
     article('ar', { facts: [3] }), article('ar', { sources: {} }), article('ar', { title: '' }),
     article('ar', { sources: [{ title: 'Bad', url: 'https://user:secret@example.org' }] }),

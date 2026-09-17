@@ -23,6 +23,31 @@ export const navigation = [
   { path: 'heritage', ar: 'التراث', en: 'Heritage' },
 ] as const;
 
+export type NavigationItem = { path: string; ar: string; en: string };
+
+const compactLabels: Record<string, { ar: string; en: string }> = {
+  regions: { ar: 'المناطق', en: 'Regions' },
+  'notable-figures': { ar: 'الشخصيات', en: 'People' },
+  economy: { ar: 'الاقتصاد', en: 'Economy' },
+  nature: { ar: 'الطبيعة', en: 'Nature' },
+  tourism: { ar: 'السياحة', en: 'Tourism' },
+};
+
+export function navigationLabel(item: NavigationItem, locale: Locale): string {
+  return compactLabels[item.path]?.[locale] ?? item[locale];
+}
+
+export function publicNavigation(sections: readonly { slug: string; name: { ar: string; en: string } }[]): NavigationItem[] {
+  const items = new Map<string, NavigationItem>();
+  for (const section of sections) {
+    if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(section.slug)
+      || ['search', 'privacy', 'credits', 'about', 'editorial-policy', 'geography', 'admin', 'api'].includes(section.slug)) continue;
+    const path = ['people', 'rulers'].includes(section.slug) ? 'notable-figures' : section.slug;
+    if (!items.has(path)) items.set(path, navigation.find(item => item.path === path) ?? { path, ...section.name });
+  }
+  return [...items.values()];
+}
+
 export const photoCredits = [
   { file: 'desert.jpg', ar: 'وادي العلا وجروفه الصخرية', en: 'AlUla valley and sandstone escarpments', author: 'Sammy Six', source: 'https://commons.wikimedia.org/wiki/File:Al_Ula_(6748577917).jpg', license: 'CC BY 2.0', licenseUrl: 'https://creativecommons.org/licenses/by/2.0/' },
   { file: 'diriyah.jpg', ar: 'العمارة الطينية في الدرعية', en: 'Earthen architecture in Diriyah', author: 'Petrovic-Njegos', source: 'https://commons.wikimedia.org/wiki/File:Diriyahpic.jpg', license: 'CC BY 2.5', licenseUrl: 'https://creativecommons.org/licenses/by/2.5/' },

@@ -1,0 +1,309 @@
+{
+  "researchDate": "2026-09-16",
+  "status": "prepared-for-authorized-publication",
+  "sections": [
+    { "slug": "economy", "nameAr": "الاقتصاد والتنمية", "nameEn": "Economy & Development", "order": 4 },
+    { "slug": "nature", "nameAr": "البيئة والطبيعة", "nameEn": "Nature & Environment", "order": 5 },
+    { "slug": "tourism", "nameAr": "السياحة والمعالم", "nameEn": "Tourism & Landmarks", "order": 6 }
+  ],
+  "topics": [
+    {
+      "section": "economy", "slug": "saudi-vision-2030", "translationKey": "research-20260916-saudi-vision-2030", "period": "2016–2030",
+      "image": { "type": "illustration", "theme": "economy" },
+      "ar": {
+        "title": "رؤية السعودية 2030: إطار للتحول والتنمية",
+        "summary": "تعريف برؤية السعودية 2030، ومحاورها الاجتماعية والاقتصادية والإدارية، وكيف ترتبط برامج التنفيذ بأهدافها طويلة المدى، مع التمييز بين المستهدفات والنتائج المحققة.",
+        "category": "رؤى وبرامج وطنية", "seoTitle": "رؤية السعودية 2030: المحاور وبرامج التحول", "seoDescription": "دليل موجز إلى إطلاق رؤية السعودية 2030 ومحاورها وبرامجها، وكيفية قراءة المستهدفات ومؤشرات الأداء دون الخلط بينها وبين النتائج.",
+        "imageAlt": "رسم هندسي توضيحي أصلي عن التنمية، وليس شعار رؤية 2030 أو بيانات اقتصادية فعلية",
+        "facts": [
+          { "label": "الإطلاق", "value": "25 أبريل 2016م" },
+          { "label": "الأفق الزمني", "value": "2030م" },
+          { "label": "المحاور الرئيسة", "value": "مجتمع حيوي، اقتصاد مزدهر، وطن طموح" },
+          { "label": "مجال الرؤية", "value": "تحول اقتصادي واجتماعي وإداري" }
+        ],
+        "body": [
+          { "heading": "وثيقة وطنية تتجاوز مشروعًا منفردًا", "text": "أُعلنت رؤية السعودية 2030 في 25 أبريل 2016 بعد موافقة مجلس الوزراء. وهي إطار يربط اتجاهات التنمية في المملكة بأفق زمني مشترك، وليست اسمًا لمشروع عمراني واحد أو لقطاع اقتصادي بعينه. تنطلق الوثيقة من موقع البلاد، وقدراتها الاستثمارية، ومكانتها العربية والإسلامية، وتستخدم هذه المقومات لتحديد مجالات التحول. وتتيح قراءة الرؤية بهذه الصفة فهم الصلة بين إصلاح الإدارة، وتطوير الخدمات، وتوسيع النشاط الاقتصادي. [1، 2]" },
+          { "heading": "العلاقة بين الإنسان والاقتصاد والمؤسسات", "text": "تجمع الرؤية ثلاثة محاور مترابطة. يتناول محور المجتمع الحيوي جوانب جودة الحياة والهوية والخدمات، بينما يركز الاقتصاد المزدهر على فرص العمل والاستثمار وتنوع الأنشطة. ويرتبط الوطن الطموح بفاعلية المؤسسات والمسؤولية المجتمعية. لذلك لا يقتصر فهم التنمية في الوثيقة على زيادة الإنتاج؛ فالتعليم والصحة والثقافة والقدرة على تقديم خدمات حكومية فعالة تدخل أيضًا ضمن صورتها للمستقبل. [1، 2]" },
+          { "heading": "كيف تنتقل الأهداف إلى التنفيذ؟", "text": "تتولى برامج تحقيق الرؤية تحويل الاتجاهات العامة إلى خطط ومبادرات ومؤشرات أداء. ومن أمثلتها برنامج تطوير القطاع المالي وبرنامج التحول الوطني، اللذان يتناولان مجالات مختلفة داخل الإطار نفسه. وتوضح سعوديبيديا أن البرامج أُعيد تنظيم بعضها مع انتقال التنفيذ بين المراحل. ولهذا فإن اسم برنامج أو مبادرة لا يكفي وحده لوصف دوره؛ بل ينبغي الرجوع إلى خطته ونطاق عمله وتاريخ المعلومات المنشورة عنه. [1]" },
+          { "heading": "قراءة المستهدفات دون تحويلها إلى نتائج", "text": "تضم وثائق الرؤية أهدافًا مستقبلية، بينما تعرض تقارير المتابعة ما تحقق في فترات محددة. وهذان نوعان مختلفان من المعلومات: فالمستهدف ليس إنجازًا لمجرد الإعلان عنه، والمؤشر السنوي لا يصف بالضرورة جميع جوانب التحول. عند المقارنة، ينبغي بيان السنة وتعريف المؤشر ومصدره، والتمييز بين خط الأساس والقيمة المستهدفة والقيمة المسجلة. يقدّم هذا المقال إطارًا تعريفيًا، ولا يحوّل الأهداف المستقبلية إلى ادعاءات بنجاح مكتمل. [1، 2]" }
+        ],
+        "sources": [
+          { "title": "سعوديبيديا: رؤية السعودية 2030", "url": "https://saudipedia.com/رؤية-السعودية-2030" },
+          { "title": "الموقع الرسمي لرؤية السعودية 2030: نظرة عامة", "url": "https://www.vision2030.gov.sa/en/overview" }
+        ]
+      },
+      "en": {
+        "title": "Saudi Vision 2030: A Framework for Transformation",
+        "summary": "An introduction to Saudi Vision 2030, its social, economic and institutional themes, and the relationship between implementation programmes, long-term targets and measured results.",
+        "category": "National visions and programmes", "seoTitle": "Saudi Vision 2030: Themes and Transformation Programmes", "seoDescription": "Understand Saudi Vision 2030, its launch, themes and implementation programmes, while distinguishing future targets from measured results.",
+        "imageAlt": "An original geometric illustration of development, not the Vision 2030 logo or actual economic data",
+        "facts": [
+          { "label": "Launch", "value": "25 April 2016" },
+          { "label": "Planning horizon", "value": "2030" },
+          { "label": "Main themes", "value": "A Vibrant Society, A Thriving Economy, An Ambitious Nation" },
+          { "label": "Scope", "value": "Economic, social and institutional transformation" }
+        ],
+        "body": [
+          { "heading": "A national framework rather than a single project", "text": "Saudi Vision 2030 was announced on 25 April 2016 following approval by the Council of Ministers. It connects development priorities across the Kingdom within a shared planning horizon; it is not the name of a single construction project or economic sector. The document identifies the country's location, investment capacity and Arab and Islamic connections as foundations for change. Understanding it as a framework helps explain the relationship between administrative reform, public services and wider economic activity. [1, 2]" },
+          { "heading": "People, economic activity and institutions", "text": "The Vision brings together three related themes. A Vibrant Society addresses areas including quality of life, identity and services. A Thriving Economy concerns employment, investment and a broader range of economic activities. An Ambitious Nation focuses on effective institutions and social responsibility. Development in this framework therefore means more than increasing output: education, health, culture and the capacity to deliver effective public services also form part of its picture of the future. [1, 2]" },
+          { "heading": "Turning objectives into implementation", "text": "Vision Realization Programmes translate broad directions into plans, initiatives and performance indicators. Examples include the Financial Sector Development Program and the National Transformation Program, which address different areas within the same framework. Saudipedia describes how some programmes were reorganised as implementation moved between stages. A programme's name alone is consequently insufficient to explain its role: its implementation plan, responsibilities and the date of the available information also matter. [1]" },
+          { "heading": "Keeping targets separate from results", "text": "Vision documents contain future objectives, whereas progress reports describe results for particular periods. These are different kinds of information: announcing a target does not make it an achievement, and an annual indicator does not necessarily capture every aspect of transformation. Comparisons should identify the year, indicator definition and source, separating the baseline, intended target and recorded value. This article provides an introductory framework rather than treating future objectives as evidence of completed success. [1, 2]" }
+        ],
+        "sources": [
+          { "title": "Saudipedia: Saudi Vision 2030 (Arabic)", "url": "https://saudipedia.com/رؤية-السعودية-2030" },
+          { "title": "Official Saudi Vision 2030 website: Overview", "url": "https://www.vision2030.gov.sa/en/overview" }
+        ]
+      },
+      "reviewNotes": ["Original bilingual synthesis of factual information, not a sentence-by-sentence rewrite. No source images or logos copied.", "Saudipedia full article retrieved on 2026-09-16. Official overview read through indexed search excerpts; direct retrieval returned HTTP 403. PDF retrieval did not provide usable extracted text. No performance statistics or claims relying on unread PDF pages included."]
+    },
+    {
+      "section": "economy", "slug": "capital-market-authority", "translationKey": "research-20260916-capital-market-authority",
+      "image": { "type": "illustration", "theme": "economy" },
+      "ar": {
+        "title": "هيئة السوق المالية: الرقابة والإفصاح وحماية المستثمر",
+        "summary": "تعرّف على دور هيئة السوق المالية في تنظيم الأوراق المالية، ومراقبة الإفصاح والممارسات السوقية، والفرق بين الجهة التنظيمية ومشغّل السوق.",
+        "category": "المؤسسات المالية", "seoTitle": "هيئة السوق المالية: التنظيم وحماية المستثمر", "seoDescription": "تعريف بهيئة السوق المالية السعودية وأساسها النظامي ودور الإفصاح والرقابة، مع توضيح الفرق بينها وبين مشغّل السوق المالية.",
+        "imageAlt": "رسم هندسي توضيحي أصلي عن المؤسسات المالية، وليس صورة لمقر الهيئة أو مؤشر أسعار",
+        "facts": [
+          { "label": "الاسم المختصر بالإنجليزية", "value": "CMA" },
+          { "label": "الإطار النظامي", "value": "نظام السوق المالية، المرسوم الملكي م/30" },
+          { "label": "سنة الإنشاء", "value": "2003م" },
+          { "label": "الوظيفة الرئيسة", "value": "تنظيم السوق المالية وتطويرها وحماية المستثمرين" }
+        ],
+        "body": [
+          { "heading": "لماذا تحتاج السوق إلى جهة تنظيمية؟", "text": "تجمع السوق المالية بين جهات تصدر الأوراق المالية ومستثمرين يشترونها ويبيعونها ومؤسسات تقدم الخدمات. ولتنظيم هذه العلاقات تعمل هيئة السوق المالية على وضع القواعد ومتابعة الالتزام بها، بدل أن يكون دورها مجرد توفير مكان للتداول. وقد أُنشئت بموجب نظام السوق المالية الصادر عام 2003 بالمرسوم الملكي م/30، وتتمتع باستقلال مالي وإداري وترتبط برئيس مجلس الوزراء. [1، 2]" },
+          { "heading": "المعلومة جزء من حماية المستثمر", "text": "تراقب الهيئة الإفصاح عن المعلومات المتعلقة بالأوراق المالية والجهات المصدرة لها. وتساعد هذه المتطلبات على إتاحة المعلومات المهمة للمتعاملين بدل احتكارها من أطراف محددة. كما تشمل مسؤولياتها مواجهة الاحتيال والتلاعب والتعامل بناءً على المعلومات الداخلية. فحماية المستثمر هنا ترتبط بسلامة الإجراءات وشفافية المعلومات وعدالة التعامل، ولا تعني ضمان ارتفاع قيمة الاستثمار أو إلغاء احتمالات الخسارة. [2]" },
+          { "heading": "التمييز بين الهيئة والسوق", "text": "الهيئة جهة تنظيم ورقابة، أما مشغّل السوق فيتولى أعمالًا تتصل بالتداول والبنية التشغيلية وفق الأنظمة ذات العلاقة. ويساعد هذا الفصل في فهم الأخبار الاقتصادية: فإصدار لائحة أو إجراء رقابي يختلف عن تنفيذ صفقة أو توفير خدمة تداول. ويشرح الموقع الرسمي للهيئة هذا الإطار إلى جانب مسؤولياته المتعلقة بإصدار الأوراق المالية ومتابعة الجهات الخاضعة لإشرافه. [1، 2]" },
+          { "heading": "دورها في فهم التنمية المالية", "text": "لا يقتصر تطوير القطاع المالي على زيادة عدد المعاملات؛ إذ يشمل القواعد التي تسمح بتمويل النشاط الاقتصادي وتحد من الممارسات غير العادلة. ومن هذه الزاوية، تمثل الهيئة جزءًا من البنية المؤسسية للاقتصاد السعودي. ولأن اللوائح والإجراءات قد تتغير، فإن النصوص المنشورة لدى الهيئة هي المرجع عند الحاجة إلى حكم نظامي محدد. هذا عرض موسوعي لوظيفة المؤسسة، وليس توصية بشراء أوراق مالية أو تقييمًا لجدوى استثمار. [2]" }
+        ],
+        "sources": [
+          { "title": "سعوديبيديا: هيئة السوق المالية", "url": "https://saudipedia.com/هيئة-السوق-المالية" },
+          { "title": "هيئة السوق المالية: التعريف والاختصاصات", "url": "https://cma.org.sa/en/AboutCMA/Pages/AboutCMA.aspx" }
+        ]
+      },
+      "en": {
+        "title": "Capital Market Authority: Regulation and Investor Protection",
+        "summary": "Explore the Saudi Capital Market Authority's role in securities regulation, disclosure and market oversight, and understand how the regulator differs from the exchange operator.",
+        "category": "Financial institutions", "seoTitle": "Saudi Capital Market Authority: Role and Regulation", "seoDescription": "Learn about Saudi Arabia's CMA, its legal foundation, disclosure and oversight responsibilities, and how it differs from the exchange operator.",
+        "imageAlt": "An original geometric illustration of financial institutions, not the CMA headquarters or a price index",
+        "facts": [
+          { "label": "English abbreviation", "value": "CMA" },
+          { "label": "Legal framework", "value": "Capital Market Law, Royal Decree M/30" },
+          { "label": "Established", "value": "2003" },
+          { "label": "Principal function", "value": "Capital market regulation, development and investor protection" }
+        ],
+        "body": [
+          { "heading": "Why a market needs a regulator", "text": "A capital market brings together securities issuers, investors who buy and sell their instruments, and institutions providing financial services. The Capital Market Authority sets rules and monitors compliance across these relationships rather than simply providing a place to trade. It was established under the Capital Market Law issued in 2003 through Royal Decree M/30. The Authority has financial and administrative independence and reports directly to the Prime Minister. [1, 2]" },
+          { "heading": "Information as part of investor protection", "text": "The CMA oversees disclosure concerning securities and their issuers. These requirements help make important information available to market participants instead of leaving it in the hands of selected parties. Its responsibilities also include addressing fraud, manipulation and insider trading. Investor protection in this context concerns sound procedures, transparent information and fair dealing; it does not mean that investments are guaranteed to rise in value or that the possibility of loss disappears. [2]" },
+          { "heading": "Separating the Authority from the exchange", "text": "The Authority performs regulatory and supervisory functions, while an exchange operator handles trading-related operations and infrastructure under the relevant rules. This distinction helps readers interpret financial news: issuing a regulation or taking supervisory action is different from executing a trade or offering a trading service. The CMA's official overview explains this framework alongside its responsibilities for securities issuance and the activities of institutions under its supervision. [1, 2]" },
+          { "heading": "Understanding its development role", "text": "Financial development involves more than increasing the number of transactions. It also involves rules that support economic financing and constrain unfair practices. Seen in this way, the CMA forms part of Saudi Arabia's institutional economic infrastructure. Because regulations and procedures can change, the Authority's published rules should be consulted for any specific legal requirement. This is an encyclopedic explanation of the institution, not a recommendation to buy securities or an assessment of an investment's merits. [2]" }
+        ],
+        "sources": [
+          { "title": "Saudipedia: Capital Market Authority (Arabic)", "url": "https://saudipedia.com/هيئة-السوق-المالية" },
+          { "title": "Capital Market Authority: Overview and responsibilities", "url": "https://cma.org.sa/en/AboutCMA/Pages/AboutCMA.aspx" }
+        ]
+      },
+      "reviewNotes": ["Both source pages retrieved on 2026-09-16. Original explanatory structure focuses on regulation versus operations, not the source article's historical sequence.", "Only the establishment year is stated: consulted pages differ in Gregorian day conversion. Current officeholders, trading eligibility and legacy depository-operating claims are omitted."]
+    },
+    {
+      "section": "nature", "slug": "farasan-islands-reserve", "translationKey": "research-20260916-farasan-islands-reserve",
+      "image": { "type": "illustration", "theme": "coast" },
+      "ar": {
+        "title": "محمية جزر فرسان: بيئات بحرية وحياة جزيرية",
+        "summary": "تعريف ببيئات فرسان المرجانية والساحلية والبرية، وصلتها بحياة السكان، ومعنى إدراج الأرخبيل ضمن شبكة محميات المحيط الحيوي لليونسكو عام 2021.",
+        "category": "المحميات والتنوع الأحيائي", "seoTitle": "محمية جزر فرسان: الطبيعة والمحيط الحيوي", "seoDescription": "اكتشف تنوع بيئات جزر فرسان من الشعاب المرجانية والمانغروف إلى الغزال الفرساني، وصلتها بالسكان وببرنامج المحيط الحيوي لليونسكو.",
+        "imageAlt": "رسم توضيحي أصلي لبحر وجزر، وليس تصويرًا لجزر فرسان أو خريطة لحدود المحمية",
+        "facts": [
+          { "label": "الموقع", "value": "البحر الأحمر قبالة منطقة جازان" },
+          { "label": "أبرز البيئات", "value": "شعاب مرجانية، مانغروف، حشائش بحرية وبيئات برية" },
+          { "label": "التصنيف الدولي المذكور", "value": "محمية محيط حيوي ضمن برنامج الإنسان والمحيط الحيوي" },
+          { "label": "سنة الانضمام إلى الشبكة", "value": "2021م" }
+        ],
+        "body": [
+          { "heading": "أرخبيل لا تنفصل جزره عن البحر", "text": "تقع جزر فرسان قبالة منطقة جازان في البحر الأحمر. وتضم بيئتها جزرًا وجزيرات ومياهًا ضحلة وشعابًا مرجانية، ولذلك لا يمكن فهم قيمتها الطبيعية بالنظر إلى اليابسة وحدها. تجمع المنطقة بين مواطن ساحلية وبحرية ومساحات برية جافة، وتتيح هذه المجاورة وجود كائنات ذات احتياجات مختلفة داخل نطاق واحد. وتعد فرسان الكبير والسقيد من الجزر الرئيسة التي تذكرها المراجع عند التعريف بالأرخبيل. [1، 2]" },
+          { "heading": "سلسلة مترابطة من المواطن الطبيعية", "text": "تؤدي أشجار المانغروف ومروج الحشائش البحرية والشعاب المرجانية أدوارًا متكاملة؛ فهي توفر موائل وغذاءً للكائنات وتدعم إنتاجية البيئة الساحلية. وتوضح اليونسكو أهمية هذه البيئات للأسماك والسلاحف والأطوم، إلى جانب دور السواحل في تكاثر الطيور. أما اليابسة فتؤوي الغزال الفرساني ومجتمعات نباتية متكيفة مع الجفاف. ومن ثم فإن حماية نوع واحد لا تنفصل عن المحافظة على موطنه وصلاته ببقية البيئة. [1، 2]" },
+          { "heading": "ما معنى محمية المحيط الحيوي؟", "text": "انضمت جزر فرسان عام 2021 إلى الشبكة العالمية لمحميات المحيط الحيوي التابعة لبرنامج الإنسان والمحيط الحيوي في اليونسكو. يهتم هذا الإطار بالجمع بين حفظ الطبيعة والاستخدام المستدام للموارد والبحث والتعلم. وهو تصنيف ينبغي ذكره باسمه، وعدم استخدام عبارة «موقع تراث عالمي» بوصفها مرادفًا له؛ فالبرنامج واتفاقية التراث العالمي مساران مختلفان، حتى حين تتقاطع موضوعاتهما البيئية. [1، 2]" },
+          { "heading": "السكان جزء من قصة الحماية", "text": "تصف المراجع الصيد التقليدي والأنشطة المرتبطة بالبحر بوصفها جزءًا من معيشة سكان الجزر. لذلك تتصل استدامة الموارد بمصالح المجتمع المحلي، لا بالحياة الفطرية وحدها. وتبرز أهمية متابعة الأنواع والموائل، والحد من الصيد غير المشروع والإضرار بالسواحل، وتنمية الوعي البيئي. ويمكن للسياحة القائمة على مشاهدة الطبيعة أن تدعم المعرفة بالمكان، شرط الالتزام بالتعليمات المحلية وعدم إزعاج الحيوانات أو إتلاف موائلها. [2]" }
+        ],
+        "sources": [
+          { "title": "سعوديبيديا: محمية جزر فرسان", "url": "https://saudipedia.com/محمية-جزر-فرسان" },
+          { "title": "اليونسكو: جزر فرسان، برنامج الإنسان والمحيط الحيوي", "url": "https://www.unesco.org/en/mab/juzur-farasan" }
+        ]
+      },
+      "en": {
+        "title": "Farasan Islands Reserve: Marine Habitats and Island Life",
+        "summary": "An introduction to Farasan's reefs, coasts and terrestrial habitats, their relationship with island communities, and the archipelago's inclusion in UNESCO's biosphere reserve network in 2021.",
+        "category": "Reserves and biodiversity", "seoTitle": "Farasan Islands Reserve: Nature and the Biosphere", "seoDescription": "Explore Farasan's coral reefs, mangroves, seagrass and gazelles, their links with island communities, and UNESCO's biosphere reserve programme.",
+        "imageAlt": "An original illustration of sea and islands, not a photograph of Farasan or a map of the reserve boundaries",
+        "facts": [
+          { "label": "Location", "value": "Red Sea, off the Jazan region" },
+          { "label": "Key habitats", "value": "Coral reefs, mangroves, seagrass and terrestrial environments" },
+          { "label": "International designation discussed", "value": "Biosphere reserve under the Man and the Biosphere Programme" },
+          { "label": "Network designation year", "value": "2021" }
+        ],
+        "body": [
+          { "heading": "An archipelago inseparable from the sea", "text": "The Farasan Islands lie in the Red Sea off the Jazan region. Their environment encompasses islands, islets, shallow waters and coral reefs, so their natural significance cannot be understood by looking at land alone. Coastal and marine habitats adjoin dry terrestrial areas, allowing species with different ecological needs to occupy the same wider landscape. Farasan al Kabir and As Saqid are among the principal islands identified in accounts of the archipelago. [1, 2]" },
+          { "heading": "A connected network of habitats", "text": "Mangroves, seagrass meadows and coral reefs perform complementary roles, providing habitat and food while supporting coastal productivity. UNESCO describes their importance for fish, turtles and dugongs, alongside coastal breeding areas for birds. On land, Farasan gazelles share the islands with plant communities adapted to arid conditions. Protecting a species consequently requires attention to its habitat and ecological relationships rather than treating its population in isolation from the surrounding environment. [1, 2]" },
+          { "heading": "What biosphere reserve status means", "text": "In 2021, Juzur Farasan joined the World Network of Biosphere Reserves under UNESCO's Man and the Biosphere Programme. This framework brings nature conservation together with sustainable resource use, research and learning. Its designation should be identified accurately rather than using World Heritage Site as a synonym: the biosphere programme and the World Heritage Convention are distinct frameworks, even when their environmental concerns overlap. [1, 2]" },
+          { "heading": "Communities within the conservation story", "text": "The sources describe traditional fishing and other maritime activities as part of island livelihoods. Sustainable resource use therefore concerns local communities as well as wildlife. Monitoring species and habitats, limiting illegal hunting and coastal damage, and strengthening environmental awareness are important parts of management. Nature-based tourism can help people learn about the islands, provided visitors follow local instructions and avoid disturbing animals or damaging the habitats on which they depend. [2]" }
+        ],
+        "sources": [
+          { "title": "Saudipedia: Farasan Islands Reserve (Arabic)", "url": "https://saudipedia.com/محمية-جزر-فرسان" },
+          { "title": "UNESCO: Juzur Farasan, Man and the Biosphere Programme", "url": "https://www.unesco.org/en/mab/juzur-farasan" }
+        ]
+      },
+      "reviewNotes": ["Both source pages retrieved on 2026-09-16. Foundation dates, exact island counts and areas differ across national protected-area and biosphere-reserve descriptions; omit these rather than mix geographic scopes.", "Biosphere designation is not presented as World Heritage inscription. Illustration is schematic and has no geographic boundary claim."]
+    },
+    {
+      "section": "nature", "slug": "uruq-bani-maarid", "translationKey": "research-20260916-uruq-bani-maarid",
+      "image": { "type": "illustration", "theme": "desert" },
+      "ar": {
+        "title": "عروق بني معارض: حماية الحياة في صحراء الربع الخالي",
+        "summary": "كيف يجمع موقع عروق بني معارض بين الكثبان والموائل الصحراوية وبرامج إعادة توطين الحيوانات، وما أهمية تسجيله تراثًا عالميًا طبيعيًا في 2023؟",
+        "category": "المحميات والتنوع الأحيائي", "seoTitle": "عروق بني معارض: محمية وتراث طبيعي عالمي", "seoDescription": "تعرّف على بيئات عروق بني معارض عند الحافة الغربية للربع الخالي، وبرامج إعادة توطين الحيوانات، وتسجيل الموقع لدى اليونسكو في 2023.",
+        "imageAlt": "رسم توضيحي أصلي لكثبان صحراوية، وليس صورة لعروق بني معارض أو خريطة للمحمية",
+        "facts": [
+          { "label": "النطاق الجغرافي", "value": "الحافة الغربية لصحراء الربع الخالي" },
+          { "label": "طبيعة الموقع", "value": "بيئات صحراوية وكثبان وموائل متنوعة" },
+          { "label": "من أنواع إعادة التوطين", "value": "المها العربي وظباء الريم" },
+          { "label": "التسجيل في التراث العالمي", "value": "2023م، موقع طبيعي" }
+        ],
+        "body": [
+          { "heading": "الصحراء بوصفها موطنًا حيًا", "text": "يقع عروق بني معارض عند الحافة الغربية للربع الخالي، حيث تجاور الكثبان الرملية تكوينات جيرية وأودية ومساحات حصوية. وهذا التنوع في التضاريس يتيح موائل مختلفة داخل بيئة شديدة الجفاف. فالصورة العامة للرمال الواسعة لا تكشف وحدها تنوع النباتات والحيوانات التي تعيش في الموقع، ولا الاختلافات بين ما توفره الأودية وما توفره الممرات الواقعة بين الكثبان. [1، 2]" },
+          { "heading": "إعادة التوطين عمل يتجاوز الإطلاق", "text": "يرتبط الموقع ببرامج إعادة توطين المها العربي وظباء الريم وغيرها من الأنواع المحلية. وتشير سعوديبيديا إلى أعمال إعادة توطين خلال عامي 1995 و1996، فيما تبرز اليونسكو هذه البرامج ضمن القيمة البيئية للموقع. ولا يعني إطلاق الحيوانات انتهاء المهمة؛ إذ يعتمد استمرارها على ملاءمة الموطن والحماية والمتابعة. ولهذا تُفهم إعادة التوطين ضمن إدارة النظام البيئي، لا بوصفها زيادة عددية منفصلة عن ظروف المكان. [1، 2]" },
+          { "heading": "لماذا يهم التسجيل الدولي؟", "text": "أُدرج الموقع في قائمة التراث العالمي لليونسكو عام 2023، وأصبح أول موقع سعودي يُسجّل فيها بوصفه تراثًا طبيعيًا. يلفت هذا الاعتراف إلى قيمة المنظر الصحراوي والتنوع الأحيائي وعمليات الحماية، بدل اقتصار معنى التراث على المباني والآثار. كما يساعد على وضع الطبيعة السعودية في سياق المقارنة مع مواقع بيئية في أنحاء العالم، مع بقاء إدارة الموقع مسؤولية تتطلب عملًا مستمرًا. [1، 2]" },
+          { "heading": "المراقبة والزيارة المسؤولة", "text": "تذكر سعوديبيديا استخدام أدوات حديثة للمراقبة والمسح البيئي في المحمية، إلى جانب الاهتمام بإشراك المجتمع المحلي. وتظل الغاية الأساسية هي المحافظة على الموائل والأنواع، حتى عند تطوير فرص التعرف على الصحراء وزيارتها. ولا يقدم هذا المقال مسارات دخول أو وعودًا بإتاحة أنشطة بعينها؛ فشروط الزيارة تتطلب الرجوع إلى الجهة المشرفة. وتجنب القيادة العشوائية وإزعاج الحيوانات من مبادئ التعامل المسؤول مع البيئات الهشة. [1]" }
+        ],
+        "sources": [
+          { "title": "سعوديبيديا: محمية عروق بني معارض", "url": "https://saudipedia.com/محمية-عروق-بني-معارض" },
+          { "title": "مركز التراث العالمي لليونسكو: عروق بني معارض", "url": "https://whc.unesco.org/en/list/1699/" }
+        ]
+      },
+      "en": {
+        "title": "Uruq Bani Maarid: Conserving Life in the Empty Quarter",
+        "summary": "Explore the dunes and habitats of Uruq Bani Maarid, its wildlife reintroduction programmes, and the significance of its inscription as a natural World Heritage property in 2023.",
+        "category": "Reserves and biodiversity", "seoTitle": "Uruq Bani Maarid: Desert Reserve and World Heritage", "seoDescription": "Discover habitats at the western edge of the Empty Quarter, wildlife reintroduction at Uruq Bani Maarid, and its 2023 World Heritage inscription.",
+        "imageAlt": "An original illustration of desert dunes, not a photograph of Uruq Bani Maarid or a reserve map",
+        "facts": [
+          { "label": "Geographic setting", "value": "Western edge of the Rub al Khali desert" },
+          { "label": "Environment", "value": "Desert landscapes, dunes and varied habitats" },
+          { "label": "Reintroduced species include", "value": "Arabian oryx and Arabian sand gazelle" },
+          { "label": "World Heritage inscription", "value": "2023, natural property" }
+        ],
+        "body": [
+          { "heading": "The desert as a living habitat", "text": "Uruq Bani Maarid lies at the western edge of the Rub al Khali, where sand dunes adjoin limestone formations, wadis and gravel areas. This varied terrain creates different habitats within a very dry environment. The broad image of an extensive sand desert alone does not reveal the diversity of its plants and animals, or the differences between the resources offered by wadis and those found in corridors between dunes. [1, 2]" },
+          { "heading": "Reintroduction involves more than release", "text": "The site is associated with programmes to reintroduce Arabian oryx, Arabian sand gazelles and other native species. Saudipedia identifies reintroduction work in 1995 and 1996, while UNESCO highlights these programmes within the property's ecological significance. Releasing animals does not finish the task: their continued survival depends on habitat suitability, protection and monitoring. Reintroduction is therefore best understood as part of ecosystem management rather than a numerical increase detached from local conditions. [1, 2]" },
+          { "heading": "The significance of international recognition", "text": "The property was inscribed on UNESCO's World Heritage List in 2023, becoming Saudi Arabia's first inscription in the natural category. This recognition draws attention to desert landscapes, biodiversity and conservation processes, extending the idea of heritage beyond buildings and archaeological remains. It also places Saudi environments within a wider international context, while management of the site remains an ongoing responsibility rather than something completed by inscription itself. [1, 2]" },
+          { "heading": "Monitoring and responsible visits", "text": "Saudipedia describes the use of modern tools for surveillance and ecological surveys in the reserve, alongside efforts to involve local communities. Protecting habitats and species remains the central purpose even where opportunities to learn about and visit the desert are developed. This article does not provide access routes or promise the availability of particular activities; current conditions should be checked with the managing authority. Avoiding uncontrolled off-road driving and wildlife disturbance are basic principles for visiting fragile environments. [1]" }
+        ],
+        "sources": [
+          { "title": "Saudipedia: Uruq Bani Maarid Reserve (Arabic)", "url": "https://saudipedia.com/محمية-عروق-بني-معارض" },
+          { "title": "UNESCO World Heritage Centre: Uruq Bani Maarid", "url": "https://whc.unesco.org/en/list/1699/" }
+        ]
+      },
+      "reviewNotes": ["Saudipedia full article and indexed UNESCO description consulted on 2026-09-16. Direct UNESCO fetch returned 403; no claim of reviewing its nomination dossier.", "Foundation year differs between Saudipedia entries. Omit it, exact area, last-wild-oryx date and current animal counts. Reserve and UNESCO property boundaries are not assumed identical."]
+    },
+    {
+      "section": "tourism", "slug": "saudi-national-museum", "translationKey": "research-20260916-saudi-national-museum",
+      "image": { "type": "illustration", "theme": "culture" },
+      "ar": {
+        "title": "المتحف الوطني السعودي: قراءة تاريخ الجزيرة عبر المقتنيات",
+        "summary": "جولة تعريفية في المتحف الوطني بالرياض، وعلاقته بمركز الملك عبدالعزيز التاريخي، وطريقة استخدام المقتنيات والوسائط لعرض تاريخ الجزيرة العربية.",
+        "category": "المتاحف والمراكز الثقافية", "seoTitle": "المتحف الوطني السعودي: الموقع والتجربة المعرفية", "seoDescription": "تعرّف على المتحف الوطني في حي المربع بالرياض، وتاريخ مبناه الحالي، وكيف تعرض قاعاته المقتنيات والحقب التاريخية للجزيرة العربية.",
+        "imageAlt": "رسم هندسي توضيحي أصلي عن المتاحف والثقافة، وليس صورة لمبنى المتحف الوطني أو مقتنياته",
+        "facts": [
+          { "label": "المدينة", "value": "الرياض" },
+          { "label": "الموقع", "value": "حي المربع، ضمن مركز الملك عبدالعزيز التاريخي" },
+          { "label": "افتتاح المبنى الحالي", "value": "1999م" },
+          { "label": "طبيعة التجربة", "value": "مقتنيات أثرية وعروض تفسيرية ووسائط متعددة" }
+        ],
+        "body": [
+          { "heading": "وجهة لفهم التسلسل التاريخي", "text": "يقع المتحف الوطني السعودي في حي المربع بالرياض ضمن مركز الملك عبدالعزيز التاريخي. ويتيح للقارئ والزائر تتبع جوانب من تاريخ الجزيرة العربية من خلال أشياء مادية، لا من خلال التواريخ المكتوبة وحدها. فالأدوات والنقوش والعملات والمخطوطات تُعرض داخل سياق يساعد على ربطها بالبيئات والمجتمعات التي أنتجتها، وتستكملها وسائل تفسيرية ووسائط متعددة. [1، 2، 3]" },
+          { "heading": "المبنى والمحيط الثقافي", "text": "افتُتح المبنى الحالي عام 1999، وترتبط نشأته بتطوير منطقة المربع ومرافقها الثقافية. وتجاور المتحف عناصر من مركز الملك عبدالعزيز التاريخي، منها قصر المربع، بما يتيح وضع الزيارة ضمن سياق عمراني أوسع. وتذكر وزارة الثقافة أن المعماري ريموند مورياما استلهم عناصر من البيئة المحلية في التصميم. لذلك يمكن قراءة المبنى نفسه بوصفه جزءًا من تجربة المكان، إلى جانب ما يحتويه من معروضات. [1، 2]" },
+          { "heading": "من القطعة المعروضة إلى سياقها", "text": "يعرض دليل القاعات الرسمي موضوعات تشمل الإنسان والبيئة الطبيعية والممالك العربية والتاريخ الإسلامي والدول السعودية. وتسمح هذه الموضوعات بمقارنة أشكال العيش والتبادل والمعرفة عبر فترات مختلفة. ومن المفيد عند التأمل في أي قطعة الانتباه إلى موقع العثور عليها وتأريخها ووظيفتها، وعدم فصلها عن الشرح المصاحب. وتُظهر المعروضات أن النقش أو الأداة الصغيرة قد يقدم مدخلًا لفهم مجتمع كامل أو شبكة علاقات تجارية. [3]" },
+          { "heading": "التخطيط للزيارة بمعلومات محدثة", "text": "يقدم المتحف معارض وبرامج ثقافية، وقد تختلف القاعات المتاحة وشروط التذاكر ومواعيد الأنشطة بمرور الوقت. لذلك يُرجع إلى الموقع الرسمي عند التخطيط للزيارة بدل الاعتماد على جدول ثابت داخل مقال موسوعي. تركز هذه المقدمة على هوية المتحف وقيمته المعرفية، ولا تضمن فتح جميع القاعات أو توافر معرض بعينه. كما يُراعى الالتزام بتعليمات التصوير وحماية المقتنيات المعلنة في الموقع. [1، 3]" }
+        ],
+        "sources": [
+          { "title": "سعوديبيديا: المتحف الوطني السعودي — النسخة الإنجليزية", "url": "https://saudipedia.com/en/the-saudi-national-museum" },
+          { "title": "وزارة الثقافة: التعريف بالمتحف الوطني", "url": "https://engage.moc.gov.sa/national_museum/about-museum/" },
+          { "title": "وزارة الثقافة: دليل قاعات المتحف الوطني", "url": "https://engage.moc.gov.sa/national_museum/galleries/" }
+        ]
+      },
+      "en": {
+        "title": "Saudi National Museum: Reading History through Objects",
+        "summary": "An introduction to Riyadh's National Museum, its setting within the King Abdulaziz Historical Center, and the use of objects and multimedia to explore the Arabian Peninsula's past.",
+        "category": "Museums and cultural centres", "seoTitle": "Saudi National Museum: Location and Learning Experience", "seoDescription": "Explore Riyadh's National Museum in Al Murabba, the history of its present building, and the use of objects and galleries to interpret Arabia's past.",
+        "imageAlt": "An original geometric illustration of museums and culture, not a photograph of the National Museum building or its collections",
+        "facts": [
+          { "label": "City", "value": "Riyadh" },
+          { "label": "Setting", "value": "Al Murabba, within the King Abdulaziz Historical Center" },
+          { "label": "Present building opened", "value": "1999" },
+          { "label": "Experience", "value": "Archaeological collections, interpretation and multimedia" }
+        ],
+        "body": [
+          { "heading": "A place to understand historical sequence", "text": "The Saudi National Museum stands in Riyadh's Al Murabba district within the King Abdulaziz Historical Center. It allows readers and visitors to follow aspects of the Arabian Peninsula's history through material objects rather than written dates alone. Tools, inscriptions, coins and manuscripts are placed in contexts that connect them to the environments and communities that produced them, with interpretive displays and multimedia supporting the experience. [1, 2, 3]" },
+          { "heading": "The building and its cultural setting", "text": "The present building opened in 1999 as part of the development of Al Murabba and its cultural facilities. Nearby elements of the King Abdulaziz Historical Center, including Al Murabba Palace, place a museum visit within a broader urban setting. The Ministry of Culture identifies architect Raymond Moriyama and describes local environmental influences on the design. The building can therefore be considered part of the experience of the place, alongside its displays. [1, 2]" },
+          { "heading": "Moving from an object to its context", "text": "The official gallery guide covers themes including people and the natural environment, Arabian kingdoms, Islamic history and the Saudi states. These themes allow visitors to compare ways of living, exchange and knowledge across different periods. An object's findspot, date and function matter, as does its accompanying interpretation. A small tool or inscription can provide an entry point into understanding a wider society or a network of commercial relationships. [3]" },
+          { "heading": "Planning with current information", "text": "The museum offers exhibitions and cultural programmes, but gallery availability, ticket conditions and activity schedules can change. Visitors should therefore consult its official website rather than rely on a fixed timetable in an encyclopedia article. This introduction concerns the museum's identity and educational value; it does not guarantee that every gallery or a particular exhibition is open. Photography and collection-protection instructions displayed by the museum should also be followed. [1, 3]" }
+        ],
+        "sources": [
+          { "title": "Saudipedia: The Saudi National Museum", "url": "https://saudipedia.com/en/the-saudi-national-museum" },
+          { "title": "Ministry of Culture: About the National Museum", "url": "https://engage.moc.gov.sa/national_museum/about-museum/" },
+          { "title": "Ministry of Culture: National Museum galleries", "url": "https://engage.moc.gov.sa/national_museum/galleries/" }
+        ]
+      },
+      "reviewNotes": ["All three pages retrieved on 2026-09-16. Source descriptions differ between six currently described galleries and eight historical/main galleries; no count or guarantee of opening is asserted.", "Omit inconsistent floor areas, artifact totals, artifact date conversions, driving times and the English Saudipedia formulation conflating recovery of Riyadh with founding of the Kingdom. No museum collection images copied."]
+    },
+    {
+      "section": "tourism", "slug": "ithra", "translationKey": "research-20260916-ithra",
+      "image": { "type": "illustration", "theme": "culture" },
+      "ar": {
+        "title": "إثراء: مركز يجمع الفنون والقراءة والتجربة الإبداعية",
+        "summary": "تعريف بمركز الملك عبدالعزيز الثقافي العالمي في الظهران، ومرافقه المعرفية والفنية، ودوره في إتاحة تجارب تعلم وإبداع متنوعة للجمهور.",
+        "category": "المتاحف والمراكز الثقافية", "seoTitle": "مركز إثراء في الظهران: الفنون والمعرفة والإبداع", "seoDescription": "اكتشف مركز الملك عبدالعزيز الثقافي العالمي «إثراء» في الظهران، ومكتبته ومتحفه ومسرحه وبرامجه، مع مصادر رسمية للتعرف والزيارة.",
+        "imageAlt": "رسم هندسي توضيحي أصلي عن المعرفة والفنون، وليس صورة لمبنى إثراء أو شعار المركز",
+        "facts": [
+          { "label": "الاسم الكامل", "value": "مركز الملك عبدالعزيز الثقافي العالمي" },
+          { "label": "المدينة", "value": "الظهران" },
+          { "label": "المبادرة", "value": "أرامكو السعودية" },
+          { "label": "إتاحة الدخول للجمهور", "value": "2018م" }
+        ],
+        "body": [
+          { "heading": "وجهة متعددة التجارب", "text": "إثراء هو الاسم المختصر لمركز الملك عبدالعزيز الثقافي العالمي في الظهران، وهو مبادرة لأرامكو السعودية. وتذكر سعوديبيديا أن دخول عامة الأفراد أُتيح عام 2018. لا يقتصر المركز على عرض مقتنيات أو تنظيم عروض؛ إذ يجمع مرافق للتعلم والقراءة والفنون والتجريب. ويتيح هذا التنوع أن تختلف تجربة الزائر بحسب اهتمامه، من الاطلاع على معرض إلى المشاركة في نشاط معرفي أو إبداعي. [1، 2]" },
+          { "heading": "المكتبة والمعرض ومختبر الأفكار", "text": "تضم مرافق المركز مكتبة ومتحفًا ومتحفًا للأطفال ومعرضًا للطاقة، إلى جانب مختبر الأفكار. وتعرض أرامكو هذه المرافق بوصفها مساحات مختلفة للتعرف على الثقافة والعلوم والتصميم. وتضيف المكتبة خدمات للقراءة والبحث، وفق ما توضحه سعوديبيديا. ومن هذا الجمع تنشأ صلة بين تلقي المعرفة واختبار الأفكار، بدل حصر التجربة الثقافية في المشاهدة وحدها. [2، 3]" },
+          { "heading": "الفنون والأداء ضمن برنامج متغير", "text": "يوفر المركز مسرحًا وسينما، ويرتبط بمبادرات في القراءة والإبداع وبأنشطة مثل تنوين ومهرجان الأفلام السعودية. وهذه البرامج تختلف في موضوعاتها وجداولها، ولذلك يُميَّز بين المرافق الدائمة وبين فعالية تقام في فترة محددة. كما أن وجود مبادرة ضمن تاريخ المركز لا يعني استمرار نسختها السابقة بالشروط نفسها؛ فالمرجع للبرنامج الجاري هو إعلان المركز الرسمي. [1، 2]" },
+          { "heading": "المبنى مدخل إلى التجربة وليس بديلًا عنها", "text": "صممت شركة سنوهيتا مبنى إثراء، وتلفت هيئته المعمارية الانتباه إلى الموقع، لكن القيمة المعرفية للزيارة ترتبط أيضًا بما يقدمه من برامج ومحتوى. لذلك يُستحسن اختيار الأنشطة المناسبة والاطلاع على شروط الدخول والحجز قبل الزيارة. ولا يتضمن هذا المقال أسعارًا أو مواعيد قد تتغير، كما أن الرسم المصاحب توضيحي ولا يمثل المبنى أو تصميمه المعماري. [2]" }
+        ],
+        "sources": [
+          { "title": "سعوديبيديا: الخط الزمني لمركز إثراء", "url": "https://saudipedia.com/الخط-الزمني-لمركز-الملك-عبدالعزيز-الثقافي-العالمي-%22إثراء%22" },
+          { "title": "أرامكو السعودية: مركز الملك عبدالعزيز الثقافي العالمي — إثراء", "url": "https://www.aramco.com/en/sustainability/society/economic-and-community-projects/ithra" },
+          { "title": "سعوديبيديا: مكتبة إثراء", "url": "https://saudipedia.com/مكتبة-إثراء" }
+        ]
+      },
+      "en": {
+        "title": "Ithra: Bringing Arts, Reading and Creative Practice Together",
+        "summary": "An introduction to the King Abdulaziz Center for World Culture in Dhahran, its learning and arts facilities, and the varied experiences it makes available to the public.",
+        "category": "Museums and cultural centres", "seoTitle": "Ithra in Dhahran: Arts, Knowledge and Creativity", "seoDescription": "Explore Dhahran's King Abdulaziz Center for World Culture, its library, museum, theatre and programmes, with sources for learning and planning a visit.",
+        "imageAlt": "An original geometric illustration of knowledge and the arts, not the Ithra building or the centre's logo",
+        "facts": [
+          { "label": "Full name", "value": "King Abdulaziz Center for World Culture" },
+          { "label": "City", "value": "Dhahran" },
+          { "label": "Initiative", "value": "Saudi Aramco" },
+          { "label": "Public access began", "value": "2018" }
+        ],
+        "body": [
+          { "heading": "A destination with several kinds of experience", "text": "Ithra is the abbreviated name of the King Abdulaziz Center for World Culture in Dhahran, a Saudi Aramco initiative. Saudipedia records the opening of access to the general public in 2018. The centre is not limited to displaying collections or hosting performances: it combines facilities for learning, reading, arts and experimentation. This variety allows visitors to shape their experience around different interests, from an exhibition to a learning activity or creative practice. [1, 2]" },
+          { "heading": "Library, exhibitions and the Idea Lab", "text": "The centre includes a library, museum, Children's Museum and Energy Exhibit, alongside the Idea Lab. Aramco describes these as different spaces for engaging with culture, science and design. The library adds reading and research services, as described by Saudipedia. Together, the facilities connect access to knowledge with opportunities to test ideas, rather than limiting a cultural experience to looking at objects or listening to explanations. [2, 3]" },
+          { "heading": "Arts within a changing programme", "text": "Ithra provides a theatre and cinema and is associated with reading and creativity initiatives, as well as activities such as Tanween and the Saudi Film Festival. These programmes vary in theme and schedule, so permanent facilities should be distinguished from events held during particular periods. The appearance of an initiative in the centre's history does not establish that an earlier edition remains available on the same terms; current announcements are the appropriate guide. [1, 2]" },
+          { "heading": "Architecture as an introduction, not the whole experience", "text": "Snøhetta designed Ithra's building, whose distinctive architecture draws attention to the site. The educational value of a visit also depends on its programmes and content. Visitors should select suitable activities and check access and booking requirements beforehand. This article does not list prices or schedules that may change, and its accompanying illustration is schematic rather than a representation of the building or its architectural design. [2]" }
+        ],
+        "sources": [
+          { "title": "Saudipedia: Timeline of the Ithra centre (Arabic)", "url": "https://saudipedia.com/الخط-الزمني-لمركز-الملك-عبدالعزيز-الثقافي-العالمي-%22إثراء%22" },
+          { "title": "Saudi Aramco: King Abdulaziz Center for World Culture — Ithra", "url": "https://www.aramco.com/en/sustainability/society/economic-and-community-projects/ithra" },
+          { "title": "Saudipedia: Ithra Library (Arabic)", "url": "https://saudipedia.com/مكتبة-إثراء" }
+        ]
+      },
+      "reviewNotes": ["All three cited pages retrieved on 2026-09-16. Ithra's own about page timed out, but its indexed excerpt also states opening in 2018. That page is not represented as fully reviewed.", "Public access in 2018 is distinguished from inauguration dates in other accounts. Omit changing book totals, lending penalties, prices, opening hours and programme-duration claims. No reproduction of copyrighted architectural imagery."]
+    }
+  ]
+}

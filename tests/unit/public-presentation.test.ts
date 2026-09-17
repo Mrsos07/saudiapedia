@@ -39,9 +39,11 @@ test('optional SEO and credits preserve legacy public entries and static fallbac
   assert.equal(legacy.imageCredit, undefined);
   assert.equal(legacy.image, '/images/diriyah.jpg');
   for (const locale of ['ar', 'en'] as const) {
-    assert.deepEqual(articleMetadata(legacy, locale), pageMetadata(
-      locale, legacy.title[locale], legacy.summary[locale], '/people/test-person', false,
-    ));
+    const base = pageMetadata(locale, legacy.title[locale], legacy.summary[locale], '/people/test-person', false);
+    const images: { url: string; alt: string }[] = [{ url: legacy.image, alt: legacy.imageAlt[locale] }];
+    assert.deepEqual(articleMetadata(legacy, locale), { ...base,
+      openGraph: { ...base.openGraph, type: 'article', images }, twitter: { ...base.twitter, images },
+    });
   }
   const empty = await entry({ seoTitle: '  ', seoDescription: null, canonicalURL: '', noIndex: null });
   assert.deepEqual(articleMetadata(empty, 'en'), articleMetadata(legacy, 'en'));
@@ -54,6 +56,20 @@ test('optional SEO and credits preserve legacy public entries and static fallbac
   }));
   assert.match(fallback, /Petrovic-Njegos/);
   assert.doesNotMatch(fallback, /Must not replace/);
+});
+
+test('article social metadata uses its public image and translated alt, never private media', async () => {
+  for (const published of [true, false]) {
+    const result = await entry({ image: { ...media, published }, imageAlt: 'وصف الصورة' }, { image: { ...media, published }, imageAlt: 'Image description' });
+    for (const locale of ['ar', 'en'] as const) {
+      const metadata = articleMetadata(result, locale);
+      const expected = [{ url: result.image, alt: result.imageAlt[locale] }];
+      assert.deepEqual(metadata.openGraph?.images, expected);
+      assert.deepEqual(metadata.twitter?.images, expected);
+      assert.ok(metadata.openGraph && 'type' in metadata.openGraph && metadata.openGraph.type === 'article');
+      if (!published) assert.doesNotMatch(JSON.stringify(metadata), /approved\.webp/);
+    }
+  }
 });
 
 test('public media credits survive decoding and render visibly on cards in both languages', async () => {

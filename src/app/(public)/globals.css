@@ -95,7 +95,7 @@ button, a { transition: color 180ms ease, background-color 180ms ease, border-co
 .brand span { display: grid; gap: 2px; }
 .brand strong { color: var(--deep-green); font-size: 28px; font-weight: 800; line-height: 1.15; }
 .brand small { color: var(--muted); font-size: 12px; line-height: 1.4; }
-.desktop-nav { display: flex; align-items: center; justify-content: center; gap: clamp(14px, 1.6vw, 25px); }
+.desktop-nav { display: flex; flex: 1; flex-wrap: wrap; min-inline-size: 0; align-items: center; justify-content: center; gap: 0 clamp(10px, 1vw, 16px); }
 .desktop-nav a { display: inline-flex; align-items: center; min-block-size: 48px; border-block-end: 2px solid transparent; font-size: 17px; font-weight: 700; }
 .desktop-nav a[aria-current='page'] { color: var(--green); border-color: var(--gold); }
 .header-actions { display: flex; align-items: center; gap: 16px; flex-shrink: 0; }

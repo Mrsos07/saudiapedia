@@ -39,7 +39,7 @@ export function decodePublicArticle(value: unknown): PublicArticle {
   const { locale, section, kind, image } = value;
   if (!id(value.id) || value._status !== 'published' || value.reviewStatus !== 'approved'
     || (locale !== 'ar' && locale !== 'en')
-    || (section !== 'history' && section !== 'regions' && section !== 'people' && section !== 'heritage')
+    || !nonEmpty(section) || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(section)
     || !nonEmpty(value.translationKey) || value.translationKey.length > 160
     || !nonEmpty(value.slug) || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value.slug)
     || !nonEmpty(value.title) || !nonEmpty(value.summary) || !nonEmpty(value.category)

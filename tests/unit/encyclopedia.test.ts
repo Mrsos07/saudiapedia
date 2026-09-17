@@ -2,11 +2,14 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import {
   entries, entryPath, isLocale, localize, normalizeSearch, searchEntries, matchesSection,
-  resolveSectionLabel, seedSectionLabels, saudiStateHistory,
+  resolveSectionLabel, seedSectionLabels, saudiStateHistory, administrativeRegions,
   type Entry, type Localized,
 } from '../../src/lib/encyclopedia';
 import { validHTTPURL } from '../../src/collections/access';
 import { navigation } from '../../src/lib/site';
+import regionBatch from '../../docs/editorial-batches/regions-20260917.json' with { type: 'json' };
+import discoveryBatch from '../../docs/editorial-batches/discovery-20260916.json' with { type: 'json' };
+import { decodePublicArticle, matchingPublicPair } from '../../src/collections/public-articles';
 
 test('leaders and biographies share one navigation entry and localized section label', () => {
   const people = navigation.filter(item => item.path === 'notable-figures');
@@ -59,6 +62,50 @@ test('home history never substitutes unrelated articles or seed data for unavail
   assert.deepEqual(saudiStateHistory([states[2], states[0]]), [states[0], states[2]]);
 });
 
+test('administrative region links contain only the thirteen regions, not governorates or seed substitutions', () => {
+  const regions = entries.filter(entry => entry.section === 'regions');
+  const alula = { ...regions[0], slug: 'alula-geography' };
+  const wrongSection = { ...regions[0], section: 'history' };
+  const input = [alula, wrongSection, ...regions.toReversed()];
+  const before = structuredClone(input);
+  assert.deepEqual(administrativeRegions(input), regions);
+  assert.deepEqual(administrativeRegions([]), []);
+  assert.deepEqual(administrativeRegions([alula, wrongSection]), []);
+  assert.deepEqual(administrativeRegions([regions[5], regions[0]]), [regions[0], regions[5]]);
+  assert.deepEqual(input, before);
+});
+
+test('regional batch covers all thirteen administrative seats with unique bilingual SEO and aligned citations', () => {
+  const expected = ['riyadh', 'makkah', 'madinah', 'qassim', 'eastern-province', 'asir', 'tabuk', 'hail', 'northern-borders', 'jazan', 'najran', 'bahah', 'jawf'];
+  assert.deepEqual(regionBatch.topics.map(topic => topic.slug), expected);
+  assert.deepEqual(regionBatch.topics.map(topic => topic.ar.facts[0].value), ['مدينة الرياض', 'مدينة مكة المكرمة', 'المدينة المنورة', 'بريدة', 'الدمام', 'أبها', 'مدينة تبوك', 'مدينة حائل', 'عرعر', 'مدينة جازان', 'مدينة نجران', 'مدينة الباحة', 'سكاكا']);
+  assert.deepEqual(regionBatch.updateExisting, ['riyadh', 'asir']);
+  assert.equal(new Set(regionBatch.topics.map(topic => topic.translationKey)).size, 13);
+  for (const locale of ['ar', 'en'] as const) {
+    assert.equal(new Set(regionBatch.topics.map(topic => topic[locale].seoTitle)).size, 13);
+    assert.equal(new Set(regionBatch.topics.map(topic => topic[locale].seoDescription)).size, 13);
+  }
+  for (const topic of regionBatch.topics) {
+    const pair = (['ar', 'en'] as const).map((locale, index) => {
+      const text = topic[locale];
+      assert.ok(text.seoTitle.length <= 60, topic.slug + ' title');
+      assert.ok(text.seoDescription.length >= 90 && text.seoDescription.length <= 160, topic.slug + ' description');
+      assert.equal(text.body.length, 4);
+      assert.equal(text.facts.length, 4);
+      assert.ok(text.body.map(part => part.text).join(' ').split(/\s+/).length >= 140, topic.slug);
+      for (const part of text.body) {
+        const citation = /\[([1-9]\d*(?:[،,]\s*[1-9]\d*)*)\]$/.exec(part.text);
+        assert.ok(citation, topic.slug);
+        assert.ok(citation[1].split(/[،,]\s*/).map(Number).every(number => number <= text.sources.length));
+      }
+      return decodePublicArticle({ ...text, id: index + 1, locale, section: topic.section, slug: topic.slug,
+        translationKey: topic.translationKey, kind: null, image: 1, reviewStatus: 'approved', _status: 'published', noIndex: false });
+    });
+    assert.equal(matchingPublicPair(pair[0], pair[1]), true);
+    assert.equal('reviewNotes' in pair[0], false);
+  }
+});
+
 test('all seven kings have expanded bilingual biographies, traceable sources and individual photographs', () => {
   const kings = entries.filter(entry => entry.kind === 'ruler');
   assert.equal(kings.length, 7);
@@ -77,6 +124,38 @@ test('all seven kings have expanded bilingual biographies, traceable sources and
     }
     assert.equal(entry.status, 'editorial-preview');
     assert.equal('reviewNotes' in entry, false);
+  }
+});
+
+test('discovery batch has six structurally publishable bilingual topics in three CMS-managed sections', () => {
+  assert.equal(discoveryBatch.topics.length, 6);
+  assert.deepEqual(discoveryBatch.sections.map(section => section.slug), ['economy', 'nature', 'tourism']);
+  assert.equal(new Set(discoveryBatch.topics.map(topic => topic.translationKey)).size, 6);
+  for (const section of discoveryBatch.sections) assert.equal(discoveryBatch.topics.filter(topic => topic.section === section.slug).length, 2);
+  for (const topic of discoveryBatch.topics) {
+    assert.equal(topic.image.type, 'illustration');
+    const pair = (['ar', 'en'] as const).map((locale, index) => {
+      const text = topic[locale];
+      assert.ok(text.seoTitle.length <= 70 && text.seoDescription.length <= 160, topic.slug);
+      assert.ok(text.body.length >= 4 && text.facts.length >= 4);
+      assert.ok(text.body.map(row => row.text).join(' ').split(/\s+/).length >= 160);
+      for (const row of text.body) {
+        const citation = /\[([1-9]\d*(?:[،,]\s*[1-9]\d*)*)\]$/.exec(row.text);
+        assert.ok(citation, topic.slug);
+        assert.ok(citation[1].split(/[،,]\s*/).map(Number).every(number => number <= text.sources.length));
+      }
+      assert.ok(text.sources.some(source => new URL(source.url).hostname === 'saudipedia.com'));
+      assert.ok(text.sources.some(source => new URL(source.url).hostname !== 'saudipedia.com'));
+      return decodePublicArticle({ ...text, id: index + 1, locale, section: topic.section, slug: topic.slug,
+        translationKey: topic.translationKey, period: topic.period ?? null, kind: null, image: 1,
+        reviewStatus: 'approved', _status: 'published', noIndex: true });
+    });
+    assert.equal(matchingPublicPair(pair[0], pair[1]), true);
+    assert.equal('reviewNotes' in pair[0], false);
+    for (const section of ['', '../admin', 'UPPERCASE', 'two words', null]) {
+      assert.throws(() => decodePublicArticle({ ...topic.ar, id: 1, locale: 'ar', slug: topic.slug,
+        translationKey: topic.translationKey, section, reviewStatus: 'approved', _status: 'published' }));
+    }
   }
 });
 

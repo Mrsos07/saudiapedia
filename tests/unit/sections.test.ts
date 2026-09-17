@@ -3,6 +3,51 @@ import test from 'node:test';
 import { APIError, type CollectionConfig, type PayloadRequest } from 'payload';
 import { Sections, enforceSectionSlugImmutable, protectReferencedSection } from '../../src/collections/Sections';
 import { roles } from '../../src/collections/access';
+import { navigationLabel, publicNavigation } from '../../src/lib/site';
+
+test('public navigation includes CMS sections and merges legacy biography listings without mutating input', () => {
+  const input = [
+    { slug: 'history', name: { ar: 'التاريخ', en: 'History' } },
+    { slug: 'people', name: { ar: 'اسم قديم', en: 'Old label' } },
+    { slug: 'rulers', name: { ar: 'الحكام', en: 'Rulers' } },
+    { slug: 'notable-figures', name: { ar: 'الشخصيات', en: 'People' } },
+    { slug: 'nature', name: { ar: 'البيئة والطبيعة', en: 'Nature & Environment' } },
+    { slug: 'economy', name: { ar: 'الاقتصاد والتنمية', en: 'Economy & Development' } },
+    { slug: 'tourism', name: { ar: 'السياحة والمعالم', en: 'Tourism & Landmarks' } },
+  ];
+  const before = structuredClone(input);
+  const result = publicNavigation(input);
+  assert.deepEqual(result.map(item => item.path), ['history', 'notable-figures', 'nature', 'economy', 'tourism']);
+  assert.deepEqual(result[1], { path: 'notable-figures', ar: 'شخصيات بارزة', en: 'Notable figures' });
+  assert.deepEqual(result[2], { path: 'nature', ar: 'البيئة والطبيعة', en: 'Nature & Environment' });
+  assert.deepEqual(input, before);
+  assert.deepEqual(publicNavigation([]), []);
+});
+
+test('header labels are compact in both languages without changing full names or routes', () => {
+  const sections = [
+    { slug: 'history', name: { ar: 'التاريخ', en: 'History' } },
+    { slug: 'regions', name: { ar: 'الجغرافيا والمناطق', en: 'Regions' } },
+    { slug: 'people', name: { ar: 'شخصيات بارزة', en: 'Notable figures' } },
+    { slug: 'heritage', name: { ar: 'التراث', en: 'Heritage' } },
+    { slug: 'economy', name: { ar: 'الاقتصاد والتنمية', en: 'Economy & Development' } },
+    { slug: 'nature', name: { ar: 'البيئة والطبيعة', en: 'Nature & Environment' } },
+    { slug: 'tourism', name: { ar: 'السياحة والمعالم', en: 'Tourism & Landmarks' } },
+  ];
+  const items = publicNavigation(sections);
+  const before = structuredClone(items);
+  assert.deepEqual(items.map(item => navigationLabel(item, 'ar')), ['التاريخ', 'المناطق', 'الشخصيات', 'التراث', 'الاقتصاد', 'الطبيعة', 'السياحة']);
+  assert.deepEqual(items.map(item => navigationLabel(item, 'en')), ['History', 'Regions', 'People', 'Heritage', 'Economy', 'Nature', 'Tourism']);
+  assert.deepEqual(items, before);
+  const custom = { path: 'custom', ar: 'قسم مخصص', en: 'Custom section' };
+  assert.equal(navigationLabel(custom, 'ar'), custom.ar);
+  assert.equal(navigationLabel(custom, 'en'), custom.en);
+});
+
+test('public navigation omits invalid and reserved slugs instead of linking outside encyclopedia sections', () => {
+  const input = ['../admin', 'search', 'privacy', 'credits', 'about', 'editorial-policy', 'geography', 'valid-section'].map(slug => ({ slug, name: { ar: 'قسم', en: 'Section' } }));
+  assert.deepEqual(publicNavigation(input).map(item => item.path), ['valid-section']);
+});
 
 function field(collection: CollectionConfig, name: string) {
   const result = collection.fields.find((item) => 'name' in item && item.name === name);

@@ -26,6 +26,9 @@ export function articleMetadata(entry: Entry, locale: Locale): Metadata {
     seo?.seoDescription?.trim() || entry.summary[locale],
     `/${entry.section}/${entry.slug}`, entry.status !== 'published' || seo?.noIndex === true,
   );
+  const images = [{ url: entry.image, alt: entry.imageAlt[locale] }];
+  metadata.openGraph = { ...metadata.openGraph, type: 'article', images };
+  metadata.twitter = { ...metadata.twitter, images };
   const canonical = safeCanonicalURL(seo?.canonicalURL);
   if (!canonical) return metadata;
   return {

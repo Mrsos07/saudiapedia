@@ -4,6 +4,7 @@ import { entries, entryPath } from '../../src/lib/encyclopedia';
 for (const locale of ['ar', 'en'] as const) {
   const ar = locale === 'ar';
   const label = ar ? 'شخصيات بارزة' : 'Notable figures';
+  const navLabel = ar ? 'الشخصيات' : 'People';
 
   test(`${locale}: homepage history presents the three Saudi states in chronological order`, async ({ page }) => {
     await page.goto(`/${locale}`);
@@ -25,12 +26,17 @@ for (const locale of ['ar', 'en'] as const) {
 
   test(`${locale}: unified leaders section, categories, breadcrumbs and language switch`, async ({ page }) => {
     await page.goto(`/${locale}`);
-    const link = page.locator('.desktop-nav').getByRole('link', { name: label, exact: true });
+    const link = page.locator('.desktop-nav').getByRole('link', { name: navLabel, exact: true });
     await expect(link).toHaveCount(1);
+    await expect(link).toHaveAttribute('title', label);
     await expect(page.locator('a[href$="/rulers"], a[href$="/people"]')).toHaveCount(0);
     await expect(page.locator('.site-footer').getByRole('link', { name: label, exact: true })).toBeVisible();
     await expect(page.getByRole('heading', { name: label, exact: true })).toBeVisible();
-    await expect(page.locator('.people-grid a[href$="/ghazi-al-gosaibi"]')).toHaveCount(2);
+    const kings = entries.filter(entry => entry.kind === 'ruler');
+    await expect(page.locator('.people-grid .person-card')).toHaveCount(7);
+    await expect(page.locator('.people-grid h3')).toHaveText(kings.map(entry => entry.title[locale]));
+    await expect(page.locator('.people-grid .person-portrait img')).toHaveCount(7);
+    await expect(page.locator('.people-grid a[href$="/ghazi-al-gosaibi"], .people-grid a[href$="/mohammed-abdu"]')).toHaveCount(0);
     await link.click();
     await expect(page).toHaveURL(new RegExp(`/${locale}/notable-figures$`));
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(label);
@@ -81,7 +87,7 @@ for (const locale of ['ar', 'en'] as const) {
     await page.getByRole('button', { name: ar ? 'القائمة' : 'Menu', exact: true }).click();
     const menu = page.locator('#mobile-navigation');
     await expect(menu.locator('a[href$="/rulers"]')).toHaveCount(0);
-    await menu.getByRole('link', { name: label, exact: true }).click();
+    await menu.getByRole('link', { name: navLabel, exact: true }).click();
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(label);
     await expect(menu).toHaveCount(0);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
