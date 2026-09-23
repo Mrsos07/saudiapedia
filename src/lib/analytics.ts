@@ -158,13 +158,13 @@ export function isTrackableAnalyticsPath(pathname: unknown): pathname is string 
 }
 
 export class AnalyticsBodyError extends Error {
-  constructor(public readonly status: 400 | 413 | 415) {
+  constructor(public readonly status: 400 | 408 | 413 | 415) {
     super('Invalid analytics request.');
   }
 }
 
 /** Enforce the actual streamed byte count, independent of Content-Length. */
-export async function readAnalyticsBody(request: Request): Promise<void> {
+export async function readAnalyticsBody(request: Request, timeout = 30000): Promise<void> {
   if (!/^application\/json(?:\s*;\s*charset=utf-8)?$/i.test(request.headers.get('content-type') ?? '')
     || (request.headers.has('content-encoding') && request.headers.get('content-encoding') !== 'identity')) {
     throw new AnalyticsBodyError(415);
@@ -178,9 +178,11 @@ export async function readAnalyticsBody(request: Request): Promise<void> {
   const reader = request.body.getReader();
   const bytes = new Uint8Array(ANALYTICS_BODY_LIMIT);
   let length = 0;
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  const expired = new Promise<never>((_, reject) => { timer = setTimeout(() => reject(new AnalyticsBodyError(408)), timeout); });
   try {
     while (true) {
-      const { value, done } = await reader.read();
+      const { value, done } = await Promise.race([reader.read(), expired]);
       if (done) break;
       if (length + value.byteLength > ANALYTICS_BODY_LIMIT) throw new AnalyticsBodyError(413);
       bytes.set(value, length);
@@ -195,6 +197,7 @@ export async function readAnalyticsBody(request: Request): Promise<void> {
     void reader.cancel().catch(() => undefined);
     throw error instanceof AnalyticsBodyError ? error : new AnalyticsBodyError(400);
   } finally {
+    clearTimeout(timer);
     reader.releaseLock();
   }
 }

@@ -113,6 +113,22 @@ test('reviewer inherited approval is not explicit intent; explicit reapproval pe
   assert.equal(renewed.reviewedBy, 42);
 });
 
+test('public SEO changes require renewed approval just like article text', async () => {
+  const changes = [{ seoTitle: 'Changed title' }, { seoDescription: 'Changed description' },
+    { canonicalURL: 'https://example.org/changed' }, { noIndex: true }];
+  for (const change of changes) {
+    for (const role of ['editor', 'translator', 'reviewer'] as const) {
+      const result = await save(role, change, approved(), true);
+      assert.equal(result.reviewStatus, 'draft');
+      assert.equal(result._status, 'draft');
+      assert.equal(result.reviewedBy, null);
+    }
+    const approvedChange = await save('reviewer', { ...change, reviewStatus: 'approved', _status: 'published' }, approved());
+    assert.equal(approvedChange.reviewStatus, 'approved');
+    assert.equal(approvedChange.reviewedBy, 42);
+  }
+});
+
 test('audit-only spoofing cannot replace existing approval; draft audit fields are cleared', async () => {
   const original = approved();
   const result = await save('editor', { reviewedBy: 999, reviewedAt: '1900-01-01' }, original);

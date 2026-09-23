@@ -15,6 +15,8 @@
 /test-results/
 /playwright-report/
 /.vscode/
+/.devin/mcp_config.local.json
+/.devin/config.local.json
 
 # next.js
 /.next/

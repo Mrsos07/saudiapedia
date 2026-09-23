@@ -1,5 +1,5 @@
 import { cache } from 'react';
-import { cmsConfigured } from './cms';
+import { cmsConfigured, type CMSReader } from './cms';
 import { seedSectionLabels, type Localized, type SeedSection } from './encyclopedia';
 
 export type SectionInfo = { slug: string; name: Localized; order: number };
@@ -20,6 +20,21 @@ function decodeSection(value: unknown): SectionInfo | null {
   return { slug: value.slug, name: { ar: value.nameAr, en: value.nameEn }, order };
 }
 
+export async function readSections(payload: CMSReader): Promise<SectionInfo[]> {
+  const sections: SectionInfo[] = [];
+  for (let page = 1; ; page += 1) {
+    const result = await payload.find({
+      collection: 'sections', overrideAccess: false, user: null, depth: 0, limit: 100, page, sort: ['order', 'id'],
+    });
+    for (const doc of result.docs) {
+      const section = decodeSection(doc);
+      if (!section) throw new Error('CMS returned an invalid section. Editorial data repair is required.');
+      sections.push(section);
+    }
+    if (!result.hasNextPage) return sections;
+  }
+}
+
 /** Public, request-scoped, uncached-across-requests list of encyclopedia
  * sections. Falls back to the four seed sections only when the CMS is fully
  * unconfigured (mirrors getContent()'s preview behavior) so local development
@@ -29,16 +44,7 @@ export const getSections = cache(async (): Promise<{ sections: SectionInfo[]; pr
   if (!cmsConfigured()) return { sections: seedSections, preview: true };
   const [{ getPayload }, { default: config }] = await Promise.all([import('payload'), import('../payload.config')]);
   const payload = await getPayload({ config });
-  const result = await payload.find({
-    collection: 'sections', overrideAccess: false, user: null, depth: 0, limit: 200, sort: 'order',
-  });
-  const sections: SectionInfo[] = [];
-  for (const doc of result.docs) {
-    const section = decodeSection(doc);
-    if (!section) throw new Error('CMS returned an invalid section. Editorial data repair is required.');
-    sections.push(section);
-  }
-  return { sections, preview: false };
+  return { sections: await readSections(payload), preview: false };
 });
 
 export function findSection(sections: SectionInfo[], slug: string): SectionInfo | undefined {

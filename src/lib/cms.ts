@@ -6,7 +6,10 @@ import { decodePublicArticle, groupPublicArticles, matchingPublicPair, type Publ
 export function cmsConfigured(): boolean {
   const databaseURL = process.env.DATABASE_URL?.trim();
   const secret = process.env.PAYLOAD_SECRET?.trim();
-  if (!databaseURL && !secret) return false;
+  if (!databaseURL && !secret) {
+    if (process.env.CMS_REQUIRED === 'true') throw new Error('CMS is required for this deployment.');
+    return false;
+  }
   if (!databaseURL || !secret) {
     throw new Error('Incomplete CMS configuration. Set both DATABASE_URL and PAYLOAD_SECRET, or leave both empty; see docs/cms.md.');
   }

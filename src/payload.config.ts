@@ -15,6 +15,7 @@ import { Categories } from './collections/Categories';
 import { Authors } from './collections/Authors';
 import { PageViews } from './collections/PageViews';
 import { Sections } from './collections/Sections';
+import { databaseConnectionOptions } from './lib/production';
 
 const baseDir = path.dirname(fileURLToPath(import.meta.url));
 const databaseURL = process.env.DATABASE_URL?.trim();
@@ -69,14 +70,13 @@ export default buildConfig({
   routes: { admin: '/admin', api: '/api' },
   i18n: { supportedLanguages: { ar, en }, fallbackLanguage: 'ar' },
   collections: [Users, Articles, Categories, Authors, Sections, Sources, Media, PageViews],
+  maxDepth: 2,
   db: postgresAdapter({
     pool: {
-      connectionString: databaseURL,
+      ...databaseConnectionOptions(process.env, process.env.CMS_DATABASE_CA_FILE ? readFileSync(process.env.CMS_DATABASE_CA_FILE, 'utf8') : undefined),
       max: 3,
       connectionTimeoutMillis: 15000,
-      ...(process.env.CMS_DATABASE_CA_FILE ? {
-        ssl: { ca: readFileSync(process.env.CMS_DATABASE_CA_FILE, 'utf8'), rejectUnauthorized: true },
-      } : {}),
+      statement_timeout: 15000,
     },
     schemaName: 'kingdom_cms',
     push: process.env.NODE_ENV !== 'production' && process.env.CMS_DB_PUSH === 'true',

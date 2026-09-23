@@ -1,5 +1,20 @@
-import { APIError, type CollectionConfig, type CollectionBeforeChangeHook } from 'payload';
+import { APIError, type CollectionConfig, type CollectionBeforeChangeHook, type CollectionBeforeOperationHook } from 'payload';
 import { hasRole, isAdmin, roles } from './access';
+
+export const enforceAccountOperations: CollectionBeforeOperationHook = ({ args, operation }) => {
+  if (operation === 'forgotPassword' || operation === 'resetPassword') {
+    throw new APIError('Password recovery is not configured. Contact an administrator.', 403);
+  }
+  if ((operation === 'create' || operation === 'update') && 'data' in args) {
+    const password: unknown = args.data?.password;
+    if (operation === 'update' && (password == null || password === '')) return args;
+    if (typeof password !== 'string' || !password.trim() || password.length > 256
+      || [...password].length < 15 || [...password].length > 128) {
+      throw new APIError('Use a password or passphrase of 15–128 characters.', 400);
+    }
+  }
+  return args;
+};
 
 // The built-in first-user operation bypasses create access, but still runs this hook.
 // A unique singleton prevents two simultaneous first-user requests creating two admins.
@@ -7,6 +22,7 @@ export const protectUser: CollectionBeforeChangeHook = async ({ data, operation,
   if (operation === 'create') {
     const existing = await req.payload.db.findOne({ collection: 'users', req, where: {} });
     if (!existing) {
+      if (process.env.CMS_ALLOW_BOOTSTRAP !== 'true') throw new APIError('Initial account setup is disabled.', 403);
       data.role = 'administrator';
       data.bootstrapKey = 'first-administrator';
       return data;
@@ -15,6 +31,7 @@ export const protectUser: CollectionBeforeChangeHook = async ({ data, operation,
   if (!hasRole(req, ['administrator'])) {
     throw new APIError('Only an administrator can create or change users.', 403);
   }
+  if (operation === 'update' && typeof data.password === 'string' && data.password) data.sessions = [];
   if (operation === 'create') data.bootstrapKey = null;
   else delete data.bootstrapKey;
   if (data.role !== undefined && !roles.includes(data.role)) {
@@ -50,7 +67,7 @@ export const Users: CollectionConfig = {
     // Deactivate/change accounts through an administrator; no accidental bootstrap reopening.
     delete: () => false,
   },
-  hooks: { beforeChange: [protectUser] },
+  hooks: { beforeOperation: [enforceAccountOperations], beforeChange: [protectUser] },
   fields: [
     { name: 'name', type: 'text', label: { ar: 'الاسم', en: 'Name' } },
     {

@@ -1,5 +1,5 @@
 import { APIError, type CollectionBeforeChangeHook, type CollectionBeforeDeleteHook, type CollectionConfig } from 'payload';
-import { isAdmin, isStaff, nonEmpty } from './access';
+import { boundPublicReads, isAdmin, isStaff, nonEmpty } from './access';
 
 type SectionDocument = { id: number | string; slug?: unknown };
 
@@ -23,7 +23,7 @@ export const enforceSectionSlugImmutable: CollectionBeforeChangeHook<SectionDocu
 export const protectReferencedSection: CollectionBeforeDeleteHook = async ({ id, req }) => {
   const section = await req.payload.findByID({
     collection: 'sections', id, overrideAccess: false, user: req.user, req, depth: 0, select: { slug: true },
-  }).catch(() => null);
+  });
   const slug = section && typeof section === 'object' && 'slug' in section ? section.slug : undefined;
   if (typeof slug !== 'string') return; // Already gone or inaccessible; nothing to protect.
   const [articles, categories] = await Promise.all([
@@ -52,7 +52,7 @@ export const Sections: CollectionConfig = {
   // fields. Only administrators create or delete sections; staff may adjust
   // display labels but not the slug (immutable, enforced below).
   access: { read: () => true, create: isAdmin, update: isStaff, delete: isAdmin },
-  hooks: { beforeChange: [enforceSectionSlugImmutable], beforeDelete: [protectReferencedSection] },
+  hooks: { beforeOperation: [boundPublicReads], beforeChange: [enforceSectionSlugImmutable], beforeDelete: [protectReferencedSection] },
   fields: [
     {
       name: 'slug', type: 'text', required: true, unique: true, label: { ar: 'الرابط المختصر', en: 'Slug' },

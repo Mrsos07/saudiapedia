@@ -1,6 +1,5 @@
 // Local operator utility. No credentials, query values, or row contents are logged.
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
-import { parseEnv } from 'node:util';
 import { randomUUID } from 'node:crypto';
 import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
@@ -71,10 +70,7 @@ try {
       foreignKeyCount: foreignKeys.rows[0].count, apiRoleAccess: access.rows, runtimeCrudRollback: true }));
   } else {
     // One-time administrator input explicitly supplied by the operator. Never used by Next.js.
-    const values = parseEnv(readFileSync('.env.example', 'utf8'));
-    const key = Object.keys(values).find(k => k.toLowerCase() === 'databasepassword');
-    if (!key || !values[key]?.trim()) throw new Error('Missing operator databasepassword');
-    const admin = await connect('postgres', values[key], ca);
+    const admin = await connect('postgres', required('CMS_DATABASE_ADMIN_PASSWORD'), ca);
     const tables = await admin.query("SELECT schemaname, tablename FROM pg_tables WHERE schemaname IN ('public', 'kingdom_cms') ORDER BY schemaname, tablename");
     const roles = await admin.query("SELECT rolname, rolsuper, rolcreatedb, rolcreaterole, rolbypassrls FROM pg_roles WHERE rolname IN ('kingdom_migrator','kingdom_runtime')");
     if (mode === 'inspect') {

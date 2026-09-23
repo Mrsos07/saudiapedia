@@ -1,5 +1,15 @@
 # Supabase CMS migration verification
 
+## Storage verification on 2026-09-23
+
+The operator authorized the private bucket `saudiapedia-media` in this same Supabase project. It has a 10 MiB file-size limit and JPEG/PNG/WebP/AVIF restrictions, with no public client Storage policies added. S3 is configured for `ap-northeast-1` using the project's direct storage endpoint.
+
+All 38 CMS media files were copied without changing CMS rows, IDs, publication states or URLs. Authenticated S3 reads matched their local size and SHA-256. All 38 also matched when read through the S3-enabled Payload server on a temporary loopback port, with no-store/nosniff headers. Direct anonymous S3 and public-storage URL reads were denied. Storage metadata showed 38 objects matching all 38 CMS filenames and sizes; the current CMS contains 78 approved published article documents.
+
+Credentials were supplied in a separate local window and saved using Windows DPAPI in `s3-credentials.xml` beside the existing vault. They were not printed or committed. The existing CMS launcher now loads this storage profile for dev/smoke. Render still requires its own secret environment settings and CA secret file; local verification is not proof of a successful Render deployment, authenticated production editing, backup restoration or updated provider-internal TLS.
+
+The sections below preserve the earlier initial-database verification and its limitations.
+
 ## Applied target
 
 - Project: `kingdomsaudi-cms`, reference `vexushpbyvaoangxyqcm`, organization `saudi`.
@@ -49,10 +59,7 @@ configured server; no administrator was provisioned by these checks.
   official Supabase CA. `pg_stat_ssl` reported **false** for the pooler-to-database
   connection; end-to-end TLS is not claimed. Review provider transport/enforcement
   before production and do not disable client certificate verification.
-- The operator password remains in `.env.example` as supplied for provisioning.
-  This is not safe secret storage; remove it locally once securely retained and
-  rotate it if it was shared, committed, or synchronized to an unintended destination.
-  The web runtime does not read this file or use that administrator password.
+- Provisioning and inspection now require `CMS_DATABASE_ADMIN_PASSWORD` in the operator's process environment, not a repository file. The launcher removes this variable from web, smoke-test and migration child processes. Historical provisioning used `.env.example`; the security review did not read or modify that secret. The operator must remove any old plaintext copy after securely retaining it and rotate it if it was shared, committed or synchronized to an unintended destination.
 - Private S3, mail delivery, backups/restore, network restrictions, and a production
   deployment were not configured or verified here. The production S3 guard remains.
 - The baseline was generated with local-development storage. Review/generate any

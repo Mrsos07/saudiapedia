@@ -2,7 +2,9 @@ param(
     [ValidateSet('prepare', 'inspect', 'provision', 'generate', 'migrate', 'rollback-last', 'verify', 'smoke', 'seed-sections', 'dev')]
     [string]$Action = 'inspect',
     [ValidatePattern('^[a-z][a-z0-9_]*$')]
-    [string]$MigrationName = 'initial'
+    [string]$MigrationName = 'initial',
+    [ValidateRange(1024, 65535)]
+    [int]$Port = 3000
 )
 $ErrorActionPreference = 'Stop'
 if ($env:OS -ne 'Windows_NT') { throw 'This local launcher requires Windows DPAPI.' }
@@ -37,7 +39,7 @@ if ($Action -eq 'prepare') {
 }
 if (-not (Test-Path $vaultFile)) { throw 'Run prepare first. Existing credentials are never regenerated automatically.' }
 $saved = Import-Clixml $vaultFile
-$names = @('DATABASE_URL', 'PAYLOAD_SECRET', 'CMS_DATABASE_CA_FILE', 'CMS_RUNTIME_PASSWORD', 'CMS_MIGRATOR_PASSWORD', 'CMS_DB_PUSH', 'SITE_INDEXABLE', 'CMS_SERVER_URL', 'NEXT_PUBLIC_SITE_URL', 'NODE_ENV', 'PAYLOAD_CONFIG_PATH')
+$names = @('DATABASE_URL', 'PAYLOAD_SECRET', 'CMS_DATABASE_CA_FILE', 'CMS_RUNTIME_PASSWORD', 'CMS_MIGRATOR_PASSWORD', 'CMS_DATABASE_ADMIN_PASSWORD', 'CMS_DB_PUSH', 'SITE_INDEXABLE', 'CMS_SERVER_URL', 'NEXT_PUBLIC_SITE_URL', 'NODE_ENV', 'PAYLOAD_CONFIG_PATH', 'S3_BUCKET', 'S3_REGION', 'S3_ENDPOINT', 'S3_ACCESS_KEY_ID', 'S3_SECRET_ACCESS_KEY', 'S3_FORCE_PATH_STYLE')
 $previous = @{}
 foreach ($name in $names) { $previous[$name] = [Environment]::GetEnvironmentVariable($name, 'Process') }
 Push-Location $root
@@ -48,10 +50,20 @@ try {
     $env:CMS_DATABASE_CA_FILE = Join-Path $vaultDir 'supabase-ca.crt'
     $env:CMS_DB_PUSH = 'false'
     $env:SITE_INDEXABLE = 'false'
-    $env:CMS_SERVER_URL = 'http://localhost:3000'
-    $env:NEXT_PUBLIC_SITE_URL = 'http://localhost:3000'
+    $env:CMS_SERVER_URL = 'http://localhost:' + $Port
+    $env:NEXT_PUBLIC_SITE_URL = $env:CMS_SERVER_URL
     $env:NODE_ENV = 'development'
     $env:PAYLOAD_CONFIG_PATH = 'src/payload.config.ts'
+    $storageFile = Join-Path $vaultDir 's3-credentials.xml'
+    if ($Action -in @('dev', 'smoke') -and (Test-Path $storageFile)) {
+        $storage = Import-Clixml $storageFile
+        $env:S3_BUCKET = $storage.Bucket
+        $env:S3_REGION = $storage.Region
+        $env:S3_ENDPOINT = $storage.Endpoint
+        $env:S3_ACCESS_KEY_ID = Unprotect-Value $storage.AccessKey
+        $env:S3_SECRET_ACCESS_KEY = Unprotect-Value $storage.SecretKey
+        $env:S3_FORCE_PATH_STYLE = 'true'
+    }
     $dbRole = 'kingdom_runtime'
     $dbPassword = $env:CMS_RUNTIME_PASSWORD
     if ($Action -in @('generate', 'migrate')) {
@@ -59,6 +71,9 @@ try {
         $dbPassword = $env:CMS_MIGRATOR_PASSWORD
     }
     $env:DATABASE_URL = 'postgresql://' + $dbRole + '.vexushpbyvaoangxyqcm:' + [Uri]::EscapeDataString($dbPassword) + '@aws-0-ap-northeast-1.pooler.supabase.com:5432/postgres'
+    if ($Action -notin @('inspect', 'provision')) {
+        Remove-Item Env:CMS_DATABASE_ADMIN_PASSWORD -ErrorAction SilentlyContinue
+    }
     if ($Action -in @('inspect', 'provision', 'verify')) {
         & node scripts/cms-database.mjs $Action
     } elseif ($Action -eq 'generate') {
@@ -77,12 +92,13 @@ try {
     } elseif ($Action -eq 'dev') {
         # The web process gets only the restricted runtime connection, never role provisioning secrets.
         Remove-Item Env:CMS_RUNTIME_PASSWORD, Env:CMS_MIGRATOR_PASSWORD
-        & node node_modules/next/dist/bin/next dev --hostname 127.0.0.1 --port 3000
+        & node node_modules/next/dist/bin/next dev --hostname 127.0.0.1 --port $Port
     }
     if ($LASTEXITCODE -ne 0) { throw 'CMS operation failed; review the sanitized output.' }
 } finally {
     foreach ($name in $names) { [Environment]::SetEnvironmentVariable($name, $previous[$name], 'Process') }
     $saved = $null
+    $storage = $null
     $dbPassword = $null
     Pop-Location
 }

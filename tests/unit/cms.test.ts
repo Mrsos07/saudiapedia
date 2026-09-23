@@ -6,7 +6,7 @@ import { cmsConfigured, getCMSEntries, mergePair, readCMSEntries, type CMSReader
 import { decodePublicArticle } from '../../src/collections/public-articles';
 import { readPairedArticles } from '../../src/collections/Articles';
 import { publishedArticleWhere } from '../../src/collections/access';
-import { GET } from '../../src/app/(payload)/api/[...slug]/route';
+import { GET, POST } from '../../src/app/(payload)/api/[...slug]/route';
 
 test('only fully empty CMS configuration permits demo; partial and weak settings fail before imports', async () => {
   const originalURL = process.env.DATABASE_URL;
@@ -40,6 +40,30 @@ test('only fully empty CMS configuration permits demo; partial and weak settings
     else process.env.DATABASE_URL = originalURL;
     if (originalSecret === undefined) delete process.env.PAYLOAD_SECRET;
     else process.env.PAYLOAD_SECRET = originalSecret;
+  }
+});
+
+test('REST guards fail safely before loading a database for invalid configuration, origins and large bodies', async () => {
+  const previous = { DATABASE_URL: process.env.DATABASE_URL, PAYLOAD_SECRET: process.env.PAYLOAD_SECRET, CMS_SERVER_URL: process.env.CMS_SERVER_URL };
+  const context = { params: Promise.resolve({ slug: ['articles'] }) };
+  try {
+    process.env.DATABASE_URL = 'postgresql://unused.invalid/test';
+    process.env.PAYLOAD_SECRET = '';
+    const unavailable = await GET(new Request('http://localhost/api/articles'), context);
+    assert.equal(unavailable.status, 503);
+    assert.doesNotMatch(await unavailable.text(), /postgresql|PAYLOAD_SECRET|stack|unused/);
+    process.env.PAYLOAD_SECRET = 'test-only-not-a-real-secret-32-characters';
+    process.env.CMS_SERVER_URL = 'https://example.org';
+    const foreign = await POST(new Request('https://example.org/api/articles', { method: 'POST', headers: { Origin: 'https://other.example' }, body: '{}' }), context);
+    assert.equal(foreign.status, 403);
+    const large = await POST(new Request('https://example.org/api/articles', { method: 'POST', headers: { Origin: 'https://example.org', 'Content-Length': '999999' }, body: '{}' }), context);
+    assert.equal(large.status, 413);
+    assert.equal(large.headers.get('Cache-Control'), 'private, no-store');
+  } finally {
+    for (const [key, value] of Object.entries(previous)) {
+      if (value === undefined) delete process.env[key];
+      else process.env[key] = value;
+    }
   }
 });
 

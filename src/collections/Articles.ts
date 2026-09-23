@@ -1,6 +1,6 @@
 import { randomUUID } from 'node:crypto';
 import { APIError, type Access, type CollectionBeforeChangeHook, type CollectionBeforeOperationHook, type CollectionConfig } from 'payload';
-import { canReview, hasRole, isAdmin, isStaff, nonEmpty, publishedArticleWhere, roles, validHTTPURL, validateURL } from './access';
+import { boundPublicReads, canReview, hasRole, isAdmin, isStaff, nonEmpty, publishedArticleWhere, roles, validHTTPURL, validateURL } from './access';
 import { decodePublicArticle, groupPublicArticles, matchingPublicPair, type PublicArticle } from './public-articles';
 import { canonicalRelationshipID, canonicalRelationshipIDs, MAX_ARTICLE_AUTHORS, sameEditorialRelations, validateEditorialRelations, type EditorialRelations } from './editorial-relations';
 
@@ -58,6 +58,7 @@ const reviewStates = ['draft', 'factual-review', 'translation-review', 'approved
 const substantiveFields = [
   'locale', 'translationKey', 'section', 'slug', 'title', 'summary', 'category', 'period',
   'kind', 'featured', 'image', 'imageAlt', 'facts', 'body', 'sources', 'categoryRef', 'authors',
+  'seoTitle', 'seoDescription', 'canonicalURL', 'noIndex',
 ];
 const approvalIntent = new WeakMap<object, boolean>();
 
@@ -206,7 +207,7 @@ export const Articles: CollectionConfig = {
     { fields: ['slug', 'locale', 'section'], unique: true },
     { fields: ['translationKey', 'locale'], unique: true },
   ],
-  hooks: { beforeOperation: [persistEditorialDraft], beforeValidate: [validateEditorialRelations], beforeChange: [enforceArticleWorkflow] },
+  hooks: { beforeOperation: [persistEditorialDraft, boundPublicReads], beforeValidate: [validateEditorialRelations], beforeChange: [enforceArticleWorkflow] },
   fields: [
     { name: 'title', label: { ar: 'عنوان المقال', en: 'Article title' }, type: 'text', required: true },
     { name: 'locale', label: { ar: 'لغة المقال', en: 'Article language' }, type: 'select', required: true, defaultValue: 'ar', options: [{ value: 'ar', label: { ar: 'العربية', en: 'Arabic' } }, { value: 'en', label: { ar: 'الإنجليزية', en: 'English' } }], index: true },
@@ -260,7 +261,7 @@ export const Articles: CollectionConfig = {
     { name: 'reviewedAt', label: { ar: 'تاريخ الاعتماد', en: 'Reviewed at' }, type: 'date', admin: { readOnly: true }, access: { create: () => false, update: () => false } },
     {
       type: 'collapsible', label: { ar: 'تحسين محركات البحث (SEO)', en: 'Search engine optimization (SEO)' },
-      admin: { description: { ar: 'حقول اختيارية لا تؤثر على سير المراجعة أو النشر. اتركها فارغة لاستخدام العنوان والملخص تلقائيًا.', en: 'Optional fields; they do not affect the review or publication workflow. Leave blank to fall back to the title and summary.' } },
+      admin: { description: { ar: 'حقول اختيارية تظهر للعامة وتخضع لإعادة الاعتماد عند تعديلها. اترك العنوان والوصف فارغين لاستخدام عنوان المقال وملخصه.', en: 'Optional public fields; changes require renewed approval. Leave title and description blank to use the article title and summary.' } },
       fields: [
         { name: 'seoGuidance', type: 'ui', admin: { components: { Field: '/components/admin/seo-guidance#ArticleSEO' } } },
         {

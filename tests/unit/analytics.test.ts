@@ -25,6 +25,15 @@ import {
 const now = new Date('2026-09-10T12:00:00Z');
 const source = (path: string) => readFile(new URL(`../../${path}`, import.meta.url), 'utf8');
 
+test('analytics request bodies have a deadline even when a client sends no bytes', async () => {
+  let cancelled = false;
+  const request = new Request('https://example.org/api/analytics/page-view', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: new ReadableStream({ cancel() { cancelled = true; } }), duplex: 'half',
+  } as RequestInit & { duplex: 'half' });
+  await assert.rejects(readAnalyticsBody(request, 20), (error: unknown) => error instanceof AnalyticsBodyError && error.status === 408);
+  assert.equal(cancelled, true);
+});
+
 test('month filters use Riyadh defaults and reject invalid, duplicate, or future years', () => {
   assert.deepEqual(parseAnalyticsMonth({}, now), { month: 9, year: 2026 });
   assert.deepEqual(parseAnalyticsMonth({ month: '2', year: '2020' }, now), { month: 2, year: 2020 });

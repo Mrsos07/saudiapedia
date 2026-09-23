@@ -12,6 +12,6 @@ export default defineConfig({
     url: 'http://localhost:3100/ar',
     reuseExistingServer: false,
     timeout: 120_000,
-    env: { DATABASE_URL: '', PAYLOAD_SECRET: '', SITE_INDEXABLE: 'false' },
+    env: { DATABASE_URL: '', PAYLOAD_SECRET: '', CMS_REQUIRED: 'false', CMS_DB_PUSH: 'false', SITE_INDEXABLE: 'false' },
   },
 });

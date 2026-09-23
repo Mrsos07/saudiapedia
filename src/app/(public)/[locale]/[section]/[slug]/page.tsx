@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { headers } from 'next/headers';
 import { ArticleTools } from '@/components/article-tools';
 import { ArticleText, EntryCard, PhotoCredit, SectionHeading } from '@/components/encyclopedia';
 import { getContent } from '@/lib/content';
@@ -31,6 +32,7 @@ export default async function Article({ params }: Props) {
   const { entry, locale, section, slug, entries } = await articleData(params);
   const ar = locale === 'ar';
   const preview = entry.status !== 'published';
+  const nonce = (await headers()).get('x-nonce') ?? undefined;
   const sectionName = await sectionDisplayName(section, locale);
   const listingSection = ['people', 'rulers'].includes(section) ? 'notable-figures' : section;
   const jsonLd = {
@@ -44,7 +46,7 @@ export default async function Article({ params }: Props) {
     ],
   };
   return <main id="main-content">
-    {!preview && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }} />}
+    {!preview && <script nonce={nonce} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }} />}
     <div className="page-hero"><div className="container article-header"><nav className="breadcrumbs" aria-label={ar ? 'مسار التنقل' : 'Breadcrumb'}><Link href={`/${locale}`}>{ar ? 'الرئيسية' : 'Home'}</Link><span>/</span><Link href={`/${locale}/${listingSection}`}>{sectionName}</Link><span>/</span><span>{entry.title[locale]}</span></nav><p className="eyebrow">{entry.category[locale]}</p><h1 className="page-heading">{entry.title[locale]}</h1><p className="page-intro">{entry.summary[locale]}</p><div className="article-meta">{entry.period && <span dir="ltr">{entry.period}</span>}<span className="status-pill">{preview ? (ar ? 'مقدمة قيد المراجعة' : 'Editorial preview') : (ar ? 'محتوى معتمد للنشر' : 'Approved for publication')}</span><span>{ar ? 'متاح بالعربية والإنجليزية' : 'Available in Arabic and English'}</span></div></div></div>
     <div className="container section article-shell"><aside className="article-aside"><nav className="toc" aria-label={ar ? 'في هذا المقال' : 'On this page'}><h2>{ar ? 'في هذا المقال' : 'On this page'}</h2>{entry.body.map((part, index) => <a href={`#section-${index}`} key={index}>{part.heading[locale]}</a>)}<a href="#sources">{ar ? 'المصادر والمراجع' : 'Sources & references'}</a></nav>{entry.facts.length > 0 && <div className="facts-box"><h2>{ar ? 'لمحة سريعة' : 'At a glance'}</h2><dl>{entry.facts.map((fact, i) => <div key={i}><dt>{fact.label[locale]}</dt><dd>{fact.value[locale]}</dd></div>)}</dl></div>}</aside>
     <article className="article-main">{preview && <div className="preview-notice"><strong>{ar ? 'تنبيه تحريري' : 'Editorial notice'}</strong><p>{ar ? 'هذه مقدمة تجريبية غير معتمدة. تتطلب استكمال التوثيق ومراجعة الحقائق والترجمة قبل النشر العام.' : 'This is an unapproved introductory preview. Sources, facts and translation require editorial review before public release.'}</p></div>}

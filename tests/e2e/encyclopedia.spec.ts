@@ -157,6 +157,36 @@ test('mobile menu, layout width, inherited font and not-found', async ({ page })
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('هذه الصفحة غير متاحة');
 });
 
+test('security headers enforce nonce scripts and search renders hostile input as text', async ({ page, request }) => {
+  await page.route('**/ar/search?*', async route => {
+    const response = await route.fetch();
+    const html = await response.text();
+    await route.fulfill({ response, body: html.replace('</body>', '<script>window.__auditCSP = 1</script></body>') });
+  });
+  const response = await page.goto('/ar/search?q=' + encodeURIComponent('<img src=x onerror="window.__auditXSS=1">'));
+  const headers = response!.headers();
+  const csp = headers['content-security-policy'];
+  expect(csp).toContain("object-src 'none'");
+  expect(csp).toContain("base-uri 'none'");
+  expect(csp).toContain("frame-ancestors 'self'");
+  expect(csp).toMatch(/script-src[^;]*'nonce-[A-Za-z0-9+/=]+'/);
+  expect(csp.split('script-src ')[1].split(';')[0]).not.toMatch(/unsafe-inline|unsafe-eval/);
+  expect(headers['x-content-type-options']).toBe('nosniff');
+  expect(headers['permissions-policy']).toContain('camera=()');
+  expect(headers['strict-transport-security']).toContain('max-age=31536000');
+  await expect(page.locator('img[src="x"]')).toHaveCount(0);
+  expect(await page.evaluate(() => '__auditXSS' in window)).toBe(false);
+  expect(await page.evaluate(() => '__auditCSP' in window)).toBe(false);
+  const next = await request.get('/en');
+  expect(next.headers()['content-security-policy']).not.toBe(csp);
+});
+
+test('protected media cannot enter the public image optimizer cache', async ({ request }) => {
+  const result = await request.get('/_next/image?url=%2Fapi%2Fmedia%2Ffile%2Fsecurity-fixture.webp&w=640&q=75');
+  expect(result.status()).toBe(400);
+  expect(await result.text()).toContain('not allowed');
+});
+
 test('unconfigured admin/API stay guarded; preview is excluded from sitemap', async ({ page, request }) => {
   await page.goto('/admin');
   await expect(page.getByRole('heading', { level: 1 })).toContainText('إعداد نظام إدارة المحتوى');
