@@ -1,5 +1,6 @@
 import { cmsConfigured } from '../../../../lib/cms';
 import { boundRequestBody, checkMutationOrigin, HTTPRequestError } from '../../../../lib/http-security';
+import { invalidatePublicContent, invalidatesPublicContent } from '../../../../lib/public-cache';
 
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
@@ -27,8 +28,8 @@ function handler(method: Method) {
       const origin = process.env.CMS_SERVER_URL || (process.env.NODE_ENV !== 'production' ? 'http://localhost:3000' : '');
       if (!origin) return unavailable();
       checkMutationOrigin(request, origin);
+      const { slug } = await context.params;
       if (!['GET', 'OPTIONS'].includes(method)) {
-        const { slug } = await context.params;
         const multipart = slug?.[0] === 'media' && /^multipart\/form-data(?:;|$)/i.test(request.headers.get('content-type') ?? '');
         request = await boundRequestBody(request, multipart ? 12 * 1024 * 1024 : 256 * 1024);
       }
@@ -36,6 +37,7 @@ function handler(method: Method) {
         import('@payloadcms/next/routes'), import('../../../../payload.config'),
       ]);
       const response = await routes[`REST_${method}`](config)(request, context);
+      if (invalidatesPublicContent(method, slug?.[0], response.status)) invalidatePublicContent();
       if (response.status >= 500) return unavailable();
       for (const [key, value] of Object.entries(responseHeaders)) response.headers.set(key, value);
       return response;

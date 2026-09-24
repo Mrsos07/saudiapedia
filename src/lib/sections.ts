@@ -1,5 +1,6 @@
 import { cache } from 'react';
 import { cmsConfigured, type CMSReader } from './cms';
+import { publicCache } from './public-cache';
 import { seedSectionLabels, type Localized, type SeedSection } from './encyclopedia';
 
 export type SectionInfo = { slug: string; name: Localized; order: number };
@@ -35,16 +36,19 @@ export async function readSections(payload: CMSReader): Promise<SectionInfo[]> {
   }
 }
 
-/** Public, request-scoped, uncached-across-requests list of encyclopedia
- * sections. Falls back to the four seed sections only when the CMS is fully
+const readPublicSections = publicCache(async () => {
+  const [{ getPayload }, { default: config }] = await Promise.all([import('payload'), import('../payload.config')]);
+  return readSections(await getPayload({ config }));
+}, 'cms-sections');
+
+/** Public list of encyclopedia sections, cached across requests until a
+ * content write (see public-cache.ts). Falls back to the four seed sections only when the CMS is fully
  * unconfigured (mirrors getContent()'s preview behavior) so local development
  * without a database still has working navigation. A configured but failing
  * database is a real error, not a silent fallback. */
 export const getSections = cache(async (): Promise<{ sections: SectionInfo[]; preview: boolean }> => {
   if (!cmsConfigured()) return { sections: seedSections, preview: true };
-  const [{ getPayload }, { default: config }] = await Promise.all([import('payload'), import('../payload.config')]);
-  const payload = await getPayload({ config });
-  return { sections: await readSections(payload), preview: false };
+  return { sections: await readPublicSections(), preview: false };
 });
 
 export function findSection(sections: SectionInfo[], slug: string): SectionInfo | undefined {

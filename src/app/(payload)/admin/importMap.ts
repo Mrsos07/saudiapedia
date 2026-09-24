@@ -6,6 +6,7 @@ import { AnalyticsNavLink } from '../../../components/admin/analytics-nav-link';
 import { ArticleSEO, AuthorSEO } from '../../../components/admin/seo-guidance';
 import { SectionPicker } from '../../../components/admin/section-picker';
 import { CollectionCards } from '@payloadcms/next/rsc';
+import { S3ClientUploadHandler } from '@payloadcms/storage-s3/client';
 
 // Explicit map: automatic generation is disabled to keep registrations reviewed.
 // `CollectionCards` is Payload's own built-in dashboard widget; sanitizeConfig
@@ -22,4 +23,7 @@ export const importMap: ImportMap = {
 	'/components/admin/seo-guidance#AuthorSEO': AuthorSEO,
 	'/components/admin/section-picker#SectionPicker': SectionPicker,
 	'@payloadcms/next/rsc#CollectionCards': CollectionCards,
+	// Registered by s3Storage as an admin provider even with clientUploads: false;
+	// it then receives enabled: false and only renders its children.
+	'@payloadcms/storage-s3/client#S3ClientUploadHandler': S3ClientUploadHandler,
 };

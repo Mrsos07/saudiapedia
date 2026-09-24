@@ -1,6 +1,7 @@
 import type { Payload } from 'payload';
 import type { ArticleSEO, Entry, ImageCredit } from './encyclopedia';
 import { decodePublicArticle, groupPublicArticles, matchingPublicPair, type PublicArticle } from '../collections/public-articles';
+import { publicCache } from './public-cache';
 
 /** Does not import Payload at runtime, initialize adapters, or expose secret values. */
 export function cmsConfigured(): boolean {
@@ -139,9 +140,13 @@ export async function readCMSEntries(payload: CMSReader): Promise<Entry[]> {
   return entries;
 }
 
-/** Public-only, uncached, paginated. Null means fully unconfigured, never failure. */
-export async function getCMSEntries(): Promise<Entry[] | null> {
-  if (!cmsConfigured()) return null;
+const readPublishedEntries = publicCache(async () => {
   const [{ getPayload }, { default: config }] = await Promise.all([import('payload'), import('../payload.config')]);
   return readCMSEntries(await getPayload({ config }));
+}, 'cms-entries');
+
+/** Public-only, paginated, cached across requests until a content write. Null means fully unconfigured, never failure. */
+export async function getCMSEntries(): Promise<Entry[] | null> {
+  if (!cmsConfigured()) return null;
+  return readPublishedEntries();
 }
