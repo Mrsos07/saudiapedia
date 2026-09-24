@@ -1,6 +1,9 @@
 import assert from 'node:assert/strict';
-import test from 'node:test';
-import { readFile } from 'node:fs/promises';
+import test, { type TestContext } from 'node:test';
+import { access, mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
+import os from 'node:os';
+import path from 'node:path';
+import { buildCacheDirectory, syncBuildCache } from '../../scripts/render';
 import { deploymentOrigins, productionEnvironment, productionBuildEnvironment, databaseConnectionOptions, verifyDeploymentOrigin } from '../../src/lib/production';
 import { cmsConfigured } from '../../src/lib/cms';
 import { GET as health } from '../../src/app/(payload)/api/health/route';
@@ -84,6 +87,81 @@ test('media transfer accepts only bounded, plain WebP filenames from the invento
   for (const change of [{ filename: '../secret.webp' }, { filename: 'C:\\secret.webp' }, { filename: 'nested/file.webp' }, { filesize: 'NaN' }, { filesize: 10485761 }, { mime_type: 'text/html' }]) {
     assert.equal(safeMediaRecord({ ...valid, ...change }), false);
   }
+});
+
+async function cacheFixture(t: TestContext) {
+  const directory = await mkdtemp(path.join(os.tmpdir(), 'saudiapedia-build-cache-'));
+  t.after(() => rm(directory, { recursive: true, force: true }));
+  const project = path.join(directory, 'project');
+  await mkdir(project);
+  await writeFile(path.join(project, 'package-lock.json'), '{"lockfileVersion":3}');
+  await writeFile(path.join(project, 'next.config.mjs'), 'export default {};');
+  const env = { ...productionBuildEnvironment(fixture()), RENDER: 'true', XDG_CACHE_HOME: path.join(directory, 'persistent') };
+  return { directory, project, env };
+}
+
+test('compiler cache is restricted to Render with an absolute persistent cache directory', async t => {
+  const { project, env } = await cacheFixture(t);
+  for (const change of [{ RENDER: '' }, { RENDER: 'false' }, { XDG_CACHE_HOME: '' }, { XDG_CACHE_HOME: 'relative-cache' }]) {
+    assert.equal(await buildCacheDirectory({ ...env, ...change }, project), null);
+    assert.equal(await syncBuildCache('save', { ...env, ...change }, project), false);
+  }
+});
+
+test('compiler cache survives a clean build workspace without persisting images, fetches or deployment metadata', async t => {
+  const { project, env } = await cacheFixture(t);
+  const local = path.join(project, '.next', 'cache');
+  assert.equal(await syncBuildCache('restore', env, project), false);
+  for (const name of ['turbopack', 'swc', 'webpack', 'images', 'fetch-cache']) {
+    await mkdir(path.join(local, name), { recursive: true });
+    await writeFile(path.join(local, name, 'fixture'), name);
+  }
+  await writeFile(path.join(local, '.tsbuildinfo'), 'typecheck-fixture');
+  await writeFile(path.join(project, '.next', 'render-origin.json'), 'deployment-fixture');
+  assert.equal(await syncBuildCache('save', env, project), true);
+  const persistent = await buildCacheDirectory(env, project);
+  assert.ok(persistent);
+  for (const excluded of ['images', 'fetch-cache', 'render-origin.json']) {
+    await assert.rejects(access(path.join(persistent, excluded)), { code: 'ENOENT' });
+  }
+  await rm(path.join(project, '.next'), { recursive: true });
+  assert.equal(await syncBuildCache('restore', env, project), true);
+  for (const name of ['turbopack', 'swc', 'webpack']) {
+    assert.equal(await readFile(path.join(local, name, 'fixture'), 'utf8'), name);
+  }
+  assert.equal(await readFile(path.join(local, '.tsbuildinfo'), 'utf8'), 'typecheck-fixture');
+  await assert.rejects(access(path.join(project, '.next', 'render-origin.json')), { code: 'ENOENT' });
+  for (const excluded of ['images', 'fetch-cache']) await assert.rejects(access(path.join(local, excluded)), { code: 'ENOENT' });
+  await rm(path.join(persistent, '.complete'));
+  assert.equal(await syncBuildCache('restore', env, project), false);
+});
+
+test('compiler cache identity follows dependencies, configuration, public environment, service and action key but not CMS secrets', async t => {
+  const { project, env } = await cacheFixture(t);
+  const original = await buildCacheDirectory(env, project);
+  assert.ok(original);
+  assert.equal(await buildCacheDirectory({ ...env, PAYLOAD_SECRET: 'changed-private-fixture' }, project), original);
+  for (const change of [{ NEXT_PUBLIC_SITE_URL: 'https://other.example' }, { NEXT_PUBLIC_FEATURE: 'changed' }, { RENDER_SERVICE_ID: 'srv-fixture' }, { NEXT_SERVER_ACTIONS_ENCRYPTION_KEY: Buffer.alloc(32, 2).toString('base64') }]) {
+    assert.notEqual(await buildCacheDirectory({ ...env, ...change }, project), original);
+  }
+  await writeFile(path.join(project, 'package-lock.json'), '{"lockfileVersion":3,"changed":true}');
+  const dependenciesChanged = await buildCacheDirectory(env, project);
+  assert.notEqual(dependenciesChanged, original);
+  await writeFile(path.join(project, 'next.config.mjs'), 'export default { poweredByHeader: false };');
+  assert.notEqual(await buildCacheDirectory(env, project), dependenciesChanged);
+});
+
+test('missing or unwritable compiler cache does not fail a deployment or save an empty cache', async t => {
+  const { project, env } = await cacheFixture(t);
+  assert.equal(await syncBuildCache('save', env, project), false);
+  const persistent = await buildCacheDirectory(env, project);
+  assert.ok(persistent);
+  await assert.rejects(access(path.join(persistent, '.complete')), { code: 'ENOENT' });
+  await writeFile(env.XDG_CACHE_HOME, 'not-a-directory');
+  await mkdir(path.join(project, '.next', 'cache', 'turbopack'), { recursive: true });
+  await writeFile(path.join(project, '.next', 'cache', 'turbopack', 'fixture'), 'compiler-fixture');
+  assert.equal(await syncBuildCache('restore', env, project), false);
+  assert.equal(await syncBuildCache('save', env, project), false);
 });
 
 test('Render blueprint and storage tooling do not seed, migrate, publish buckets or log secrets', async () => {
