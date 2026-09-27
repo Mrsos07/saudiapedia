@@ -23,7 +23,9 @@ export function EntryCard({ entry, locale, index, large = false }: { entry: Entr
   return <article className={`entry-card ${large ? 'large' : ''}${entry.kind === 'ruler' ? ' portrait-card' : ''}`}>
     <Link href={entryPath(entry, locale)} className="card-image" tabIndex={-1} aria-hidden="true"><PublicImage src={entry.image} alt="" fill sizes={large ? '(max-width: 700px) 100vw, 55vw' : '(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw'} /><span className="image-label">{entry.category[locale]}</span></Link>
     {entry.imageCredit && <PhotoCredit image={entry.image} locale={locale} credit={entry.imageCredit} />}
-    <div className="card-body"><div className="card-meta"><span>{entry.period || (locale === 'ar' ? 'من ذاكرة المكان' : 'Stories of place')}</span>{index !== undefined && <span>{String(index + 1).padStart(2, '0')}</span>}</div><h3><Link href={entryPath(entry, locale)}>{entry.title[locale]}</Link></h3><p>{entry.summary[locale]}</p><Link className="card-link" href={entryPath(entry, locale)}>{locale === 'ar' ? 'اقرأ الحكاية' : 'Read the story'}<Arrow locale={locale} /></Link></div>
+    <div className="card-body"><div className="card-meta"><span>{entry.period || (entry.kind
+      ? (locale === 'ar' ? 'سيرة وأثر' : 'Life and legacy')
+      : (locale === 'ar' ? 'من ذاكرة المكان' : 'Stories of place'))}</span>{index !== undefined && <span>{String(index + 1).padStart(2, '0')}</span>}</div><h3><Link href={entryPath(entry, locale)}>{entry.title[locale]}</Link></h3><p>{entry.summary[locale]}</p><Link className="card-link" href={entryPath(entry, locale)}>{locale === 'ar' ? 'اقرأ الحكاية' : 'Read the story'}<Arrow locale={locale} /></Link></div>
   </article>;
 }
 

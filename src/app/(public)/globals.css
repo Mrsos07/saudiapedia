@@ -210,6 +210,8 @@ button, a { transition: color 180ms ease, background-color 180ms ease, border-co
 .photo-credit-disclosure > summary:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; border-radius: 3px; }
 .photo-credit-content { margin-block: 4px 12px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 4px; background: var(--cream); color: var(--muted); overflow-wrap: anywhere; }
 .entry-card > .photo-credit-disclosure { margin-inline: 24px; }
+.entry-card > .photo-credit-disclosure > summary { color: var(--muted); font-size: 14px; font-weight: 400; }
+.entry-card > .photo-credit-disclosure + .card-body { padding-block-start: 4px; }
 .article-caption > .photo-credit-disclosure { flex-basis: 100%; }
 .hero .photo-credit { max-inline-size: 620px; color: #F2EEE3; }
 
@@ -324,6 +326,9 @@ button, a { transition: color 180ms ease, background-color 180ms ease, border-co
 .entry-card.portrait-card .card-image { aspect-ratio: 1; background: var(--cream); }
 .entry-card.portrait-card .card-image img { padding-block-end: 48px; }
 .entry-card.portrait-card:hover .card-image img { transform: none; }
+/* Mixed biography grids: one image height so titles and links align across cards. */
+.card-grid:has(.portrait-card) .card-image { aspect-ratio: 1; }
+.card-grid:has(.portrait-card) .entry-card:not(.portrait-card) .card-image img { object-position: center 20%; }
 .person-portrait { position: relative; inline-size: 100%; block-size: 220px; margin-block-end: 12px; background: var(--cream); }
 .person-portrait img { object-fit: contain; }
 .person-card > .photo-credit { inline-size: 100%; margin-block-end: 14px; }
@@ -361,6 +366,7 @@ button, a { transition: color 180ms ease, background-color 180ms ease, border-co
 .article-tools [role='status']:empty { display: none; }
 .related-section { padding-block: 64px 85px; border-block-start: 1px solid var(--line); background: var(--cream); }
 .related-section > h2, .related-section > .container > h2 { margin-block-end: 32px; }
+.related-section .card-body > p { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 4; line-clamp: 4; }
 
 /* Colophon */
 .site-footer { background: var(--deep-green); color: var(--cream); }
