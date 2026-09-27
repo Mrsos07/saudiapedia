@@ -41,11 +41,21 @@ for (const locale of ['ar', 'en'] as const) {
     await expect(page).toHaveURL(new RegExp(`/${locale}/notable-figures$`));
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(label);
     await expect(link).toHaveAttribute('aria-current', 'page');
-    await expect(page.locator('.entry-card')).toHaveCount(9);
-    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', new RegExp(`/${locale}/notable-figures$`));
-    await page.locator('.filter-tabs').getByRole('link', { name: ar ? 'ملوك المملكة العربية السعودية' : 'Kings of Saudi Arabia', exact: true }).click();
+    const kingsTab = page.locator('.filter-tabs').getByRole('link', { name: ar ? 'ملوك المملكة العربية السعودية' : 'Kings of Saudi Arabia', exact: true });
+    const allTab = page.locator('.filter-tabs').getByRole('link', { name: ar ? 'الكل' : 'All', exact: true });
+    // The listing opens on the Kingdom's rulers by default.
     await expect(page.locator('.entry-card')).toHaveCount(7);
-    await page.locator('.filter-tabs').getByRole('link', { name: ar ? 'الكل' : 'All', exact: true }).click();
+    await expect(page.locator('.entry-card h3')).toHaveText(kings.map(entry => entry.title[locale]));
+    await expect(kingsTab).toHaveClass(/active/);
+    await expect(page.locator('.filter-tabs a').nth(1)).toHaveText(ar ? 'ملوك المملكة العربية السعودية' : 'Kings of Saudi Arabia');
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', new RegExp(`/${locale}/notable-figures$`));
+    await allTab.click();
+    await expect(page).toHaveURL(new RegExp(`/${locale}/notable-figures\\?category=all$`));
+    await expect(page.locator('.entry-card')).toHaveCount(9);
+    await expect(allTab).toHaveClass(/active/);
+    await kingsTab.click();
+    await expect(page.locator('.entry-card')).toHaveCount(7);
+    await allTab.click();
     await expect(page.locator('.entry-card')).toHaveCount(9);
     await page.locator('.entry-card h3 a[href$="/king-abdulaziz"]').click();
     await expect(page).toHaveURL(new RegExp(`/${locale}/people/king-abdulaziz$`));
