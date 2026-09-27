@@ -4,6 +4,8 @@ import { readFile } from 'node:fs/promises';
 import { Children, createElement, isValidElement, type ReactNode } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { PhotoCredit, EntryCard } from '../../src/components/encyclopedia';
+import { PublicImage } from '../../src/components/public-image';
+import { mediaImageLoader } from '../../src/lib/media-image';
 import { decodePublicArticle } from '../../src/collections/public-articles';
 import { readCMSEntries, type CMSReader } from '../../src/lib/cms';
 import { articleMetadata, safeCanonicalURL } from '../../src/lib/article-metadata';
@@ -96,9 +98,13 @@ test('public media credits survive decoding and render visibly on cards in both 
     const imageLink = children[0];
     assert.ok(isValidElement<{ children: ReactNode }>(imageLink));
     const image = Children.toArray(imageLink.props.children)[0];
-    assert.ok(isValidElement<{ src: string; unoptimized: boolean }>(image));
+    assert.ok(isValidElement<{ src: string; alt: string }>(image));
+    assert.equal(image.type, PublicImage);
     assert.equal(image.props.src, media.url);
-    assert.equal(image.props.unoptimized, true);
+    // Protected media bypasses /_next/image through the endpoint loader, never the shared optimizer cache.
+    const rendered = PublicImage({ ...image.props, fill: true });
+    assert.equal(rendered.props.loader, mediaImageLoader);
+    assert.equal(PublicImage({ src: '/images/desert.jpg', alt: '', fill: true }).props.loader, undefined);
   }
 });
 
@@ -217,5 +223,6 @@ test('article route consumes the tested metadata helper and credit without optim
   const route = await readFile(new URL('../../src/app/(public)/[locale]/[section]/[slug]/page.tsx', import.meta.url), 'utf8');
   assert.match(route, /return articleMetadata\(entry, locale\)/);
   assert.match(route, /<PhotoCredit[^>]+credit=\{entry.imageCredit\}/);
-  assert.ok(route.includes("unoptimized={entry.image.startsWith('/api/')}"));
+  assert.match(route, /<PublicImage src=\{entry.image\}/);
+  assert.doesNotMatch(route, /from 'next\/image'/);
 });

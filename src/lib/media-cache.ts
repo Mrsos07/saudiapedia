@@ -1,4 +1,6 @@
+import sharp from 'sharp';
 import type { CollectionConfig, Plugin } from 'payload';
+import { requestedMediaWidth } from './media-image';
 
 type UploadHandler = NonNullable<Exclude<CollectionConfig['upload'], boolean | undefined>['handlers']>[number];
 type CachedMedia = { bytes: Uint8Array<ArrayBuffer>; headers: [string, string][] };
@@ -48,30 +50,64 @@ export function publicMediaKey(doc: unknown, filename: string | undefined): stri
   return JSON.stringify([stored, version, typeof filesize === 'number' ? filesize : null]);
 }
 
+const VARIANT_HEADERS_DROPPED = new Set(['content-length', 'content-type', 'etag', 'content-range', 'accept-ranges', 'last-modified']);
+
+/** Smaller WebP for an allowlisted width; keeps the original when it is already as small. */
+export async function resizeMedia(original: CachedMedia, width: number): Promise<CachedMedia> {
+  const input = Buffer.from(original.bytes.buffer, original.bytes.byteOffset, original.bytes.byteLength);
+  const output = await sharp(input, { limitInputPixels: 40000000 })
+    .resize({ width, withoutEnlargement: true })
+    .webp({ quality: 72, effort: 4 })
+    .toBuffer();
+  if (output.byteLength >= original.bytes.byteLength) return original;
+  const headers = original.headers.filter(([name]) => !VARIANT_HEADERS_DROPPED.has(name.toLowerCase()));
+  headers.push(['content-type', 'image/webp'], ['content-length', String(output.byteLength)]);
+  return { bytes: new Uint8Array(output), headers };
+}
+
+const serve = (media: CachedMedia) => new Response(media.bytes, { status: 200, headers: media.headers });
+
 /** Wraps the storage handler, which Payload calls only after its per-request file access check. */
 export function cachePublicMedia(handler: UploadHandler, cache = new MediaCache()): UploadHandler {
+  const resizing = new Map<string, Promise<CachedMedia>>();
+  const variant = (key: string, original: CachedMedia, width: number) => {
+    const variantKey = `${key}#w${width}`;
+    const hit = cache.get(variantKey);
+    if (hit) return Promise.resolve(hit);
+    let pending = resizing.get(variantKey);
+    if (!pending) {
+      pending = resizeMedia(original, width)
+        .then((media) => { cache.set(variantKey, media); return media; })
+        .catch(() => original)
+        .finally(() => resizing.delete(variantKey));
+      resizing.set(variantKey, pending);
+    }
+    return pending;
+  };
   // Payload's handler type is a union of sync/async returns; an async function yields Promise<Response | void>.
   const cached = (async (req, args) => {
     const key = publicMediaKey(args.doc, args.params.filename);
     if (!key || req.headers.get('range') || req.headers.get('if-none-match')) return handler(req, args);
-    const hit = cache.get(key);
-    if (hit) return new Response(hit.bytes, { status: 200, headers: hit.headers });
-    const response = await handler(req, args);
-    if (!(response instanceof Response)) return;
-    if (response.status !== 200 || !response.body) return response;
-    const length = Number(response.headers.get('content-length'));
-    if (!Number.isSafeInteger(length) || length < 1 || length > MAX_ITEM_BYTES) return response;
-    try {
-      const bytes = new Uint8Array(await response.arrayBuffer());
-      if (bytes.byteLength !== length) throw new Error('Incomplete media read.');
-      const headers = [...response.headers];
-      cache.set(key, { bytes, headers });
-      return new Response(bytes, { status: 200, headers });
-    } catch (error) {
-      // The browser left while storage was still sending; nobody receives this response.
-      if (req.signal?.aborted) return new Response(null, { status: 499 });
-      throw error;
+    const width = requestedMediaWidth(req.searchParams?.get('w'));
+    let original = cache.get(key);
+    if (!original) {
+      const response = await handler(req, args);
+      if (!(response instanceof Response)) return;
+      if (response.status !== 200 || !response.body) return response;
+      const length = Number(response.headers.get('content-length'));
+      if (!Number.isSafeInteger(length) || length < 1 || length > MAX_ITEM_BYTES) return response;
+      try {
+        const bytes = new Uint8Array(await response.arrayBuffer());
+        if (bytes.byteLength !== length) throw new Error('Incomplete media read.');
+        original = { bytes, headers: [...response.headers] };
+        cache.set(key, original);
+      } catch (error) {
+        // The browser left while storage was still sending; nobody receives this response.
+        if (req.signal?.aborted) return new Response(null, { status: 499 });
+        throw error;
+      }
     }
+    return serve(width ? await variant(key, original, width) : original);
   }) as UploadHandler;
   return cached;
 }

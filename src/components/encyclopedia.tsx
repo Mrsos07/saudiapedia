@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { administrativeRegions, entryPath, type Entry, type ImageCredit, type Locale } from '../lib/encyclopedia';
 import { imageCreditParts } from '../lib/image-credit';
+import { PublicImage } from './public-image';
 import { brand, intro, photoCredits, type NavigationItem } from '../lib/site';
 
 export function Arrow({ locale }: { locale: Locale }) { return <span aria-hidden="true" className="arrow">{locale === 'ar' ? '←' : '→'}</span>; }
@@ -20,7 +21,7 @@ export function SectionHeading({ locale, eyebrow, title, text, href, action }: {
 
 export function EntryCard({ entry, locale, index, large = false }: { entry: Entry; locale: Locale; index?: number; large?: boolean }) {
   return <article className={`entry-card ${large ? 'large' : ''}${entry.kind === 'ruler' ? ' portrait-card' : ''}`}>
-    <Link href={entryPath(entry, locale)} className="card-image" tabIndex={-1} aria-hidden="true"><Image src={entry.image} alt="" fill unoptimized={entry.image.startsWith('/api/')} sizes={large ? '(max-width: 700px) 100vw, 55vw' : '(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw'} /><span className="image-label">{entry.category[locale]}</span></Link>
+    <Link href={entryPath(entry, locale)} className="card-image" tabIndex={-1} aria-hidden="true"><PublicImage src={entry.image} alt="" fill sizes={large ? '(max-width: 700px) 100vw, 55vw' : '(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw'} /><span className="image-label">{entry.category[locale]}</span></Link>
     {entry.imageCredit && <PhotoCredit image={entry.image} locale={locale} credit={entry.imageCredit} />}
     <div className="card-body"><div className="card-meta"><span>{entry.period || (locale === 'ar' ? 'من ذاكرة المكان' : 'Stories of place')}</span>{index !== undefined && <span>{String(index + 1).padStart(2, '0')}</span>}</div><h3><Link href={entryPath(entry, locale)}>{entry.title[locale]}</Link></h3><p>{entry.summary[locale]}</p><Link className="card-link" href={entryPath(entry, locale)}>{locale === 'ar' ? 'اقرأ الحكاية' : 'Read the story'}<Arrow locale={locale} /></Link></div>
   </article>;
