@@ -249,7 +249,7 @@
       "ar": {
         "title": "الملك فهد بن عبدالعزيز آل سعود", "summary": "خامس ملوك المملكة؛ تولى الحكم عام 1982، وشهد عهده صدور النظام الأساسي للحكم ونظامي الشورى والمناطق، وتوسعات الحرمين الشريفين وأحداث حرب الخليج.",
         "category": "ملوك المملكة العربية السعودية", "seoTitle": "الملك فهد: أنظمة الحكم والخدمات والسياسة الإقليمية", "seoDescription": "تعرف على مسيرة الملك فهد من وزارتي المعارف والداخلية إلى الحكم، وأنظمة 1992 وتوسعات الحرمين وحرب الخليج وانتقال العرش عام 2005.",
-        "imageAlt": "الملك فهد بن عبدالعزيز خلال لقائه الرئيس رونالد ريغان في المكتب البيضاوي عام 1985",
+        "imageAlt": "صورة رسمية للملك فهد بن عبدالعزيز آل سعود عام 1982",
         "facts": [
           { "label": "الترتيب بين ملوك المملكة", "value": "الخامس" },
           { "label": "أول وزارة تولاها", "value": "وزارة المعارف، 1953م" },
@@ -272,7 +272,7 @@
       "en": {
         "title": "King Fahd bin Abdulaziz Al Saud", "summary": "The fifth Saudi king, Fahd acceded in 1982. His reign included the Basic Law of Governance, the Shura Council and provincial laws, expansions of the Two Holy Mosques and the Gulf War.",
         "category": "Kings of Saudi Arabia", "seoTitle": "King Fahd: Governance, Public Services and Regional Policy", "seoDescription": "Explore Fahd’s ministries and reign, the laws of 1992, mosque expansions, the Gulf War and the transfer of the throne in 2005.",
-        "imageAlt": "King Fahd bin Abdulaziz meeting President Ronald Reagan in the Oval Office in 1985",
+        "imageAlt": "Official portrait of King Fahd bin Abdulaziz Al Saud, 1982",
         "facts": [
           { "label": "Place in the royal succession", "value": "Fifth king" },
           { "label": "First ministerial appointment", "value": "Education, 1953" },
@@ -293,13 +293,13 @@
         ]
       },
       "image": {
-        "sourceUrl": "https://commons.wikimedia.org/wiki/File:President_Ronald_Reagan_and_King_Fahd_of_Saudi_Arabia_Meeting_in_The_Oval_Office_-_DPLA_-_0bb9c9488ecfad2bef4dd53ecfd78eb2.jpg",
-        "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1c/President_Ronald_Reagan_and_King_Fahd_of_Saudi_Arabia_Meeting_in_The_Oval_Office_-_DPLA_-_0bb9c9488ecfad2bef4dd53ecfd78eb2.jpg",
-        "author": "White House Photographic Office / Ronald Reagan Presidential Library / NARA",
-        "license": "Public domain — U.S. federal government work (PD-USGov)",
-        "licenseUrl": "https://commons.wikimedia.org/wiki/File:President_Ronald_Reagan_and_King_Fahd_of_Saudi_Arabia_Meeting_in_The_Oval_Office_-_DPLA_-_0bb9c9488ecfad2bef4dd53ecfd78eb2.jpg#Licensing",
-        "attribution": "King Fahd and President Ronald Reagan, 11 February 1985 — White House Photographic Office; Ronald Reagan Presidential Library / NARA, record 75853933, image C27253-9. Source: https://commons.wikimedia.org/wiki/File:President_Ronald_Reagan_and_King_Fahd_of_Saudi_Arabia_Meeting_in_The_Oval_Office_-_DPLA_-_0bb9c9488ecfad2bef4dd53ecfd78eb2.jpg . Public domain (PD-USGov).",
-        "altAr": "الملك فهد بن عبدالعزيز خلال لقائه الرئيس رونالد ريغان في المكتب البيضاوي عام 1985", "altEn": "King Fahd bin Abdulaziz meeting President Ronald Reagan in the Oval Office in 1985"
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fahd_of_Saudi_Arabia_Portrait.jpg",
+        "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Fahd_of_Saudi_Arabia_Portrait.jpg",
+        "author": "Saudi Press Agency (as credited on Wikimedia Commons); photographer not identified",
+        "license": "Public domain in Saudi Arabia — PD-Saudi Arabia (photograph published 1982); U.S. public-domain status not established",
+        "licenseUrl": "https://commons.wikimedia.org/wiki/File:Fahd_of_Saudi_Arabia_Portrait.jpg#Licensing",
+        "attribution": "Official portrait of King Fahd bin Abdulaziz, 1982 — Saudi Press Agency; photographer not identified. Source: https://commons.wikimedia.org/wiki/File:Fahd_of_Saudi_Arabia_Portrait.jpg (Commons SHA-1 79698b237af540580b43ddbebb9fb4ebe16d02dc, 632 × 794). Public domain in Saudi Arabia under PD-Saudi Arabia (Articles 19–20, Royal Decree M/41). The Commons template treats such works as U.S. public domain only if published before 20 November 1979, so this 1982 portrait may remain protected in the United States. Selected by the site operator on 2026-09-27.",
+        "altAr": "صورة رسمية للملك فهد بن عبدالعزيز آل سعود عام 1982", "altEn": "Official portrait of King Fahd bin Abdulaziz Al Saud, 1982"
       },
       "reviewNotes": ["Sources consulted on 2026-09-14. Exact birth date omitted because chronologies vary. Adoption of the royal title is not described as its first-ever historical use.", "Rejected the 1982 official portrait tagged only PD-Saudi Arabia: the file date does not meet the pre-1979 U.S. publication criterion in that template. Selected the documented U.S. government meeting photograph instead."]
     },
