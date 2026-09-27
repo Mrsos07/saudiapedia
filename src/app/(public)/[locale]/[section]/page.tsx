@@ -3,8 +3,10 @@ import Link from 'next/link';
 import { notFound, redirect } from 'next/navigation';
 import { EntryCard, RegionExplorer, SearchForm } from '@/components/encyclopedia';
 import { getContent } from '@/lib/content';
-import { isLocale, matchesSection } from '@/lib/encyclopedia';
-import { pageMetadata, navigation, photoCredits } from '@/lib/site';
+import { JsonLd } from '@/components/json-ld';
+import { entryPath, isLocale, matchesSection } from '@/lib/encyclopedia';
+import { brand, pageMetadata, navigation, photoCredits } from '@/lib/site';
+import { breadcrumbs, collectionPage } from '@/lib/structured-data';
 import { getSections, findSection } from '@/lib/sections';
 import type { Locale } from '@/lib/encyclopedia';
 import type { SectionInfo } from '@/lib/sections';
@@ -34,7 +36,10 @@ export async function generateMetadata({ params }: Props) {
   const title = titleFor(section, locale, sections);
   if (!title) return {};
   const { preview } = await getContent();
-  return pageMetadata(locale, title, locale === 'ar' ? `${title} في موسوعة المملكة العربية السعودية.` : `${title} in the Saudi Arabia encyclopedia.`, `/${section}`, preview);
+  return pageMetadata(locale, title, sectionDescription(title, locale), `/${section}`, preview);
+}
+function sectionDescription(title: string, locale: Locale) {
+  return locale === 'ar' ? `${title} في موسوعة المملكة العربية السعودية.` : `${title} in the Saudi Arabia encyclopedia.`;
 }
 
 function Policy({ section, locale }: { section: string; locale: Locale }) {
@@ -79,7 +84,10 @@ export default async function SectionPage({ params, searchParams }: Props) {
   const filtered = category ? relevant.filter(e => e.category[locale] === category) : relevant;
   const page = Math.max(1, Math.min(Math.ceil(filtered.length / 9) || 1, Number.parseInt(query.page || '1', 10) || 1));
   const pages = Math.ceil(filtered.length / 9);
-  return <main id="main-content"><div className="page-hero"><div className="container"><nav className="breadcrumbs" aria-label={ar ? 'مسار التنقل' : 'Breadcrumb'}><Link href={`/${locale}`}>{ar ? 'الرئيسية' : 'Home'}</Link><span>/</span><span>{title}</span></nav><p className="eyebrow">{ar ? 'اكتشف موسوعة المملكة' : 'EXPLORE THE ENCYCLOPEDIA'}</p><h1 className="page-heading">{title}</h1><p className="page-intro">{section === 'notable-figures' ? (ar ? 'حكّام المملكة وسير الشخصيات التي أسهمت في تاريخها وعلمها وثقافتها. استكشف الجميع أو اختر تصنيفًا.' : 'The Kingdom’s rulers and the people who shaped its history, scholarship and culture. Explore all biographies or choose a category.') : (ar ? 'مسارات في التاريخ والمكان والإنسان. اختر موضوعًا، وابدأ المعرفة من مصدرها.' : 'Explore history, place and people. Choose a subject and follow its story.')}</p></div></div>
+  const canonicalView = query.category === undefined && query.page === undefined;
+  const graph = [breadcrumbs([{ name: brand[locale], path: `/${locale}` }, { name: title, path: `/${locale}/${section}` }])];
+  if (canonicalView && !policy) graph.unshift(collectionPage(locale, title, sectionDescription(title, locale), `/${locale}/${section}`, filtered.slice(0, 9), entry => entryPath(entry, locale)));
+  return <main id="main-content">{!preview && <JsonLd graph={graph} />}<div className="page-hero"><div className="container"><nav className="breadcrumbs" aria-label={ar ? 'مسار التنقل' : 'Breadcrumb'}><Link href={`/${locale}`}>{ar ? 'الرئيسية' : 'Home'}</Link><span>/</span><span>{title}</span></nav><p className="eyebrow">{ar ? 'اكتشف موسوعة المملكة' : 'EXPLORE THE ENCYCLOPEDIA'}</p><h1 className="page-heading">{title}</h1><p className="page-intro">{section === 'notable-figures' ? (ar ? 'حكّام المملكة وسير الشخصيات التي أسهمت في تاريخها وعلمها وثقافتها. استكشف الجميع أو اختر تصنيفًا.' : 'The Kingdom’s rulers and the people who shaped its history, scholarship and culture. Explore all biographies or choose a category.') : (ar ? 'مسارات في التاريخ والمكان والإنسان. اختر موضوعًا، وابدأ المعرفة من مصدرها.' : 'Explore history, place and people. Choose a subject and follow its story.')}</p></div></div>
     {policy ? <Policy section={section} locale={locale} /> : <div className="container section">{preview && <p className="preview-notice">{ar ? 'مقدمات تحريرية قيد المراجعة؛ ليست مقالات معتمدة للنشر.' : 'Editorial introductions awaiting review; not publication-approved articles.'}</p>}{section === 'regions' && <RegionExplorer entries={entries} locale={locale} />}<div className="listing-toolbar"><span className="content-count">{filtered.length.toLocaleString(locale)} {ar ? 'موضوعًا متاحًا' : 'topics available'}</span><Link className="text-link" href={`/${locale}/search`}>{ar ? 'ابحث في جميع الأقسام' : 'Search all sections'}</Link></div>{categories.length > 1 && <nav className="filter-tabs" aria-label={ar ? 'تصفية الموضوعات' : 'Topic filters'}><Link className={!category ? 'active' : ''} href={`/${locale}/${section}${defaultCategory ? `?category=${ALL_CATEGORIES}` : ''}`}>{ar ? 'الكل' : 'All'}</Link>{categories.map(c => <Link key={c} className={c === category ? 'active' : ''} href={`/${locale}/${section}?category=${encodeURIComponent(c)}`}>{c}</Link>)}</nav>}<div className="card-grid">{filtered.slice((page - 1) * 9, page * 9).map(entry => <EntryCard entry={entry} locale={locale} key={`${entry.section}/${entry.slug}`} />)}</div>{!filtered.length && <div className="empty-state"><h2>{ar ? 'بانتظار المقالات المعتمدة' : 'Awaiting approved articles'}</h2><p>{ar ? 'تظهر الموضوعات بعد اعتماد النسختين العربية والإنجليزية.' : 'Topics appear once both Arabic and English versions are approved.'}</p><SearchForm locale={locale} compact /></div>}{pages > 1 && <nav className="pagination" aria-label={ar ? 'صفحات النتائج' : 'Result pages'}>{Array.from({ length: pages }, (_, i) => <Link key={i} className={page === i + 1 ? 'active' : ''} aria-current={page === i + 1 ? 'page' : undefined} href={`/${locale}/${section}?page=${i + 1}${categoryQuery ? `&category=${categoryQuery}` : ''}`}>{(i + 1).toLocaleString(locale)}</Link>)}</nav>}</div>}
   </main>;
 }

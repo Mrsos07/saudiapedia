@@ -61,7 +61,11 @@ export function mergePair(ar: PublicArticle, en: PublicArticle): Entry | null {
   // The shared asset must have a consistent public credit snapshot in both reads.
   if (credit?.attribution !== enCredit?.attribution || credit?.license !== enCredit?.license) return null;
 
+  const created = [ar.createdAt, en.createdAt].filter((value): value is string => Boolean(value)).sort();
+  const updated = [ar.updatedAt, en.updatedAt].filter((value): value is string => Boolean(value)).sort();
   return {
+    ...(created.length ? { datePublished: created[0] } : {}),
+    ...(updated.length ? { dateModified: updated[updated.length - 1] } : {}),
     section: ar.section,
     slug: ar.slug,
     title: localized(ar.title, en.title),
@@ -143,7 +147,7 @@ export async function readCMSEntries(payload: CMSReader): Promise<Entry[]> {
 const readPublishedEntries = publicCache(async () => {
   const [{ getPayload }, { default: config }] = await Promise.all([import('payload'), import('../payload.config')]);
   return readCMSEntries(await getPayload({ config }));
-}, 'cms-entries');
+}, 'cms-entries:v2');
 
 /** Public-only, paginated, cached across requests until a content write. Null means fully unconfigured, never failure. */
 export async function getCMSEntries(): Promise<Entry[] | null> {

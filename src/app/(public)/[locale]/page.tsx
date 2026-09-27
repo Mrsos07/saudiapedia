@@ -2,6 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { PublicImage } from '@/components/public-image';
+import { JsonLd } from '@/components/json-ld';
+import { organization, website } from '@/lib/structured-data';
 import { Arrow, EntryCard, PhotoCredit, RegionExplorer, SearchForm, SectionHeading } from '@/components/encyclopedia';
 import { getContent } from '@/lib/content';
 import { entryPath, isLocale, matchesSection, saudiStateHistory, seedSectionLabels } from '@/lib/encyclopedia';
@@ -28,6 +30,7 @@ export default async function Home({ params }: Props) {
   const heritage = entries.filter(e => e.section === 'heritage').slice(0, 3);
   const featuredKings = entries.filter(entry => entry.kind === 'ruler');
   return <main id="main-content">
+    {!preview && <JsonLd graph={[organization(), website(locale)]} />}
     <section className="hero" aria-labelledby="hero-title">
       <Image src="/images/desert.jpg" alt={ar ? 'وادي العلا وجروفه الصحراوية الصخرية' : 'AlUla valley and sandstone escarpments'} fill priority sizes="100vw" />
       <div className="hero-shade" />

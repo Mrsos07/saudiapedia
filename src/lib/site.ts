@@ -5,11 +5,16 @@ export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:30
 export const brand = { ar: 'موسوعة المملكة', en: 'Kingdom Encyclopedia' };
 export const intro = { ar: 'نافذتك إلى تاريخ المملكة العربية السعودية، وتنوّع أرضها، وإرث إنسانها.', en: 'A window into Saudi Arabia’s history, diverse landscapes and human heritage.' };
 
+/** Arabic is the default for visitors whose language matches neither version. */
+export function languageAlternates(path: string): Record<'ar' | 'en' | 'x-default', string> {
+  return { ar: `${siteUrl}/ar${path}`, en: `${siteUrl}/en${path}`, 'x-default': `${siteUrl}/ar${path}` };
+}
+
 export function pageMetadata(locale: Locale, title: string, description: string, path = '', noindex = false): Metadata {
   const url = `${siteUrl}/${locale}${path}`;
   return {
     metadataBase: new URL(siteUrl), title: `${title} | ${brand[locale]}`, description,
-    alternates: { canonical: url, languages: { ar: `${siteUrl}/ar${path}`, en: `${siteUrl}/en${path}` } },
+    alternates: { canonical: url, languages: languageAlternates(path) },
     robots: { index: !noindex && process.env.SITE_INDEXABLE === 'true', follow: true },
     openGraph: { title, description, url, siteName: brand[locale], locale: locale === 'ar' ? 'ar_SA' : 'en_US', type: 'website', images: [{ url: '/images/desert.jpg', width: 1920, height: 1280, alt: locale === 'ar' ? 'وادي العلا' : 'AlUla valley' }] },
     twitter: { card: 'summary_large_image', title, description, images: ['/images/desert.jpg'] },

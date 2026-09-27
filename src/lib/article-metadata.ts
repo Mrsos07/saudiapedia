@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import type { Entry, Locale } from './encyclopedia';
-import { pageMetadata } from './site';
+import { entryPath, type Entry, type Locale } from './encyclopedia';
+import { pageMetadata, siteUrl } from './site';
 
 /** Editorial canonical overrides are absolute, public URLs, never token-bearing URLs. */
 export function safeCanonicalURL(value: unknown): string | undefined {
@@ -16,6 +16,22 @@ export function safeCanonicalURL(value: unknown): string | undefined {
   } catch {
     return undefined;
   }
+}
+
+/** Only published, non-noindex, self-canonical translations belong in the sitemap. */
+export function indexableEntry(entry: Entry, locale: Locale): boolean {
+  const seo = entry.seo?.[locale];
+  const canonical = safeCanonicalURL(seo?.canonicalURL);
+  return entry.status === 'published' && seo?.noIndex !== true && (!canonical || canonical === `${siteUrl}${entryPath(entry, locale)}`);
+}
+
+/** hreflang links in the sitemap point only at indexable translations; Arabic is x-default when available. */
+export function entryAlternates(entry: Entry): Partial<Record<Locale | 'x-default', string>> {
+  const languages: Partial<Record<Locale | 'x-default', string>> = {};
+  for (const locale of ['ar', 'en'] as const) if (indexableEntry(entry, locale)) languages[locale] = `${siteUrl}${entryPath(entry, locale)}`;
+  const fallback = languages.ar ?? languages.en;
+  if (fallback) languages['x-default'] = fallback;
+  return languages;
 }
 
 /** Locale overrides do not change routes, hreflang, or the site-wide launch gate. */

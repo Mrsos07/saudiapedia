@@ -33,6 +33,9 @@ export type Entry = {
   body: { heading: Localized; text: Localized }[];
   sources: { title: Localized; url: string }[];
   status: 'editorial-preview' | 'published';
+  /** ISO timestamps from the CMS: earliest creation and latest update of the bilingual pair. */
+  datePublished?: string;
+  dateModified?: string;
 };
 
 const l = (ar: string, en: string): Localized => ({ ar, en });

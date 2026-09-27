@@ -24,7 +24,7 @@ test('public reads use the shared cache without authenticated or draft access', 
     readFile('src/lib/cms.ts', 'utf8'), readFile('src/lib/sections.ts', 'utf8'),
     readFile('src/app/(payload)/api/[...slug]/route.ts', 'utf8'),
   ]);
-  assert.match(cms, /publicCache\([\s\S]*readCMSEntries[\s\S]*'cms-entries'\)/);
+  assert.match(cms, /publicCache\([\s\S]*readCMSEntries[\s\S]*'cms-entries:v\d+'\)/);
   assert.match(sections, /publicCache\([\s\S]*readSections[\s\S]*'cms-sections'\)/);
   for (const source of [cms, sections]) {
     assert.match(source, /overrideAccess: false/);

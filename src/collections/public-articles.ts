@@ -21,12 +21,20 @@ export type PublicArticle = ArticleSEO & {
   facts: { label: string; value: string }[];
   body: { heading: string; text: string }[];
   sources: { title: string; url: string }[];
+  createdAt?: string;
+  updatedAt?: string;
 };
 
 const record = (value: unknown): value is Record<string, unknown> =>
   value !== null && typeof value === 'object' && !Array.isArray(value);
 const id = (value: unknown): value is ID => nonEmpty(value) || (typeof value === 'number' && Number.isSafeInteger(value));
 const optionalText = (value: unknown): value is string | null | undefined => value == null || typeof value === 'string';
+/** Dates only feed public SEO metadata; a malformed timestamp is omitted rather than failing the site. */
+const timestamp = (value: unknown): string | undefined => {
+  if (typeof value !== 'string' && !(value instanceof Date)) return undefined;
+  const time = new Date(value).getTime();
+  return Number.isFinite(time) ? new Date(time).toISOString() : undefined;
+};
 
 function invalid(): never {
   // Never echo a malformed document, URL, or credential into an error response.
@@ -82,7 +90,10 @@ export function decodePublicArticle(value: unknown): PublicArticle {
     if (!record(row) || !nonEmpty(row.title) || typeof row.url !== 'string' || !validHTTPURL(row.url)) return invalid();
     sources.push({ title: row.title, url: row.url });
   }
+  const createdAt = timestamp(value.createdAt);
+  const updatedAt = timestamp(value.updatedAt);
   return {
+    ...(createdAt ? { createdAt } : {}), ...(updatedAt ? { updatedAt } : {}),
     id: value.id, locale, section, kind: kind ?? null, image: decodedImage,
     translationKey: value.translationKey, slug: value.slug, title: value.title,
     summary: value.summary, category: value.category, period: value.period || null,

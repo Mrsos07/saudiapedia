@@ -202,7 +202,7 @@ test('locale SEO overrides reach standard and social metadata without changing h
       assert.equal(metadata.alternates?.canonical, `https://example.org/${locale}-original`);
       assert.equal(metadata.openGraph?.url, metadata.alternates?.canonical);
       assert.deepEqual(metadata.alternates?.languages, {
-        ar: `${siteUrl}/ar/people/test-person`, en: `${siteUrl}/en/people/test-person`,
+        ar: `${siteUrl}/ar/people/test-person`, en: `${siteUrl}/en/people/test-person`, 'x-default': `${siteUrl}/ar/people/test-person`,
       });
       assert.deepEqual(metadata.robots, { index: locale === 'en', follow: true });
     }
