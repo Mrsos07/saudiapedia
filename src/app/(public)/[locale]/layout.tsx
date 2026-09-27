@@ -14,7 +14,7 @@ export default async function Layout({ children, params }: { children: React.Rea
   if (!isLocale(locale)) notFound();
   const { sections } = await getSections();
   const navigation = publicNavigation(sections);
-  return <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'}><head>
+  return <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'} suppressHydrationWarning><head>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
     {/* User-specified family and stylesheet, deliberately not loaded a second time with next/font. */}
