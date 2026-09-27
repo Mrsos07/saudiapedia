@@ -16,6 +16,8 @@ import { Authors } from './collections/Authors';
 import { PageViews } from './collections/PageViews';
 import { Sections } from './collections/Sections';
 import { databaseConnectionOptions } from './lib/production';
+import { publicMediaCache } from './lib/media-cache';
+import { observeDatabasePool, payloadLogger } from './lib/payload-runtime';
 
 const baseDir = path.dirname(fileURLToPath(import.meta.url));
 const databaseURL = process.env.DATABASE_URL?.trim();
@@ -74,7 +76,11 @@ export default buildConfig({
   db: postgresAdapter({
     pool: {
       ...databaseConnectionOptions(process.env, process.env.CMS_DATABASE_CA_FILE ? readFileSync(process.env.CMS_DATABASE_CA_FILE, 'utf8') : undefined),
-      max: 3,
+      // Payload keeps its first connected client checked out, so four remain for queries.
+      max: 5,
+      // Reconnecting to the remote pooler costs a TLS handshake; keep a warm pool between visits.
+      idleTimeoutMillis: 120000,
+      keepAlive: true,
       connectionTimeoutMillis: 15000,
       statement_timeout: 15000,
     },
@@ -84,6 +90,8 @@ export default buildConfig({
     migrationDir: path.resolve(baseDir, 'collections/migrations'),
   }),
   sharp,
+  logger: payloadLogger,
+  onInit: observeDatabasePool,
   upload: { limits: { fileSize: 10 * 1024 * 1024 }, abortOnLimit: true },
   cors: [serverURL],
   csrf: [serverURL],
@@ -106,5 +114,5 @@ export default buildConfig({
         secretAccessKey: process.env.S3_SECRET_ACCESS_KEY!,
       },
     },
-  })] : [],
+  }), publicMediaCache] : [],
 });
