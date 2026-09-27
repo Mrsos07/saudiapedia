@@ -223,6 +223,27 @@ button, a { transition: color 180ms ease, background-color 180ms ease, border-co
 .map-coordinate { align-self: flex-start; color: var(--gold-ink); font-size: 13px; letter-spacing: .06em; }
 .map-label { color: var(--deep-green); font-size: 18px; font-weight: 700; }
 .region-visual small { margin-block-start: 6px; color: var(--muted); font-size: 13px; text-align: center; }
+.region-map { position: relative; inline-size: 100%; margin-block: 18px 10px; }
+.region-map svg { display: block; inline-size: 100%; block-size: auto; max-block-size: 440px; overflow: visible; }
+.region-shape { fill: #8DAE95; stroke: var(--paper); stroke-width: 1.3; stroke-linejoin: round; transition: fill 160ms ease; }
+.region-shape.unavailable { fill: #D6D2C4; }
+.region-map a { cursor: pointer; outline: none; }
+.region-map a:hover .region-shape, .region-map a:focus-visible .region-shape { fill: var(--green); }
+.region-map a:focus-visible .region-shape { stroke: var(--gold); stroke-width: 3; }
+.region-tooltip { position: absolute; z-index: 5; inline-size: max-content; min-inline-size: 210px; max-inline-size: 260px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 4px; background: var(--paper); box-shadow: var(--shadow); color: var(--deep-green); font-size: 15px; line-height: 1.5; pointer-events: none; }
+.region-tooltip strong { display: block; margin-block-end: 8px; font-size: 19px; font-weight: 800; }
+.region-tooltip dl { display: grid; gap: 4px; margin: 0; }
+.region-tooltip dl > div { display: flex; justify-content: space-between; gap: 14px; }
+.region-tooltip dt { color: var(--muted); }
+.region-tooltip dd { margin: 0; font-weight: 700; font-variant-numeric: tabular-nums; }
+.region-tooltip span { display: block; margin-block-start: 10px; padding-block-start: 8px; border-block-start: 1px solid var(--line); color: var(--green); font-size: 14px; }
+.region-visual .region-map-source { max-inline-size: 420px; font-size: 12px; }
+.region-map-source a { text-decoration: underline; text-decoration-thickness: 1px; }
+.region-visual .map-hint-touch { display: none; }
+@media (hover: none) {
+  .region-visual .map-hint-pointer { display: none; }
+  .region-visual .map-hint-touch { display: block; }
+}
 .region-content > p:not(.eyebrow) { margin-block: 22px 28px; color: var(--muted); font-size: 21px; }
 .region-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 28px; }
 .region-links a { display: flex; align-items: center; gap: 12px; min-block-size: 56px; padding-block: 12px; border-block-end: 1px solid var(--line); color: var(--deep-green); font-size: 19px; }

@@ -142,6 +142,26 @@ test('Arabic search and empty results, with section filtering', async ({ page })
   await expect(page.getByRole('heading', { name: 'لم نعثر على نتائج' })).toBeVisible();
 });
 
+test('interactive region map shows census data on hover and focus, and opens the region', async ({ page }) => {
+  await page.goto('/en/regions');
+  const map = page.locator('.region-map');
+  await expect(map.locator('a[data-region]')).toHaveCount(13);
+  await expect(page.locator('.region-tooltip')).toHaveCount(0);
+  await map.locator('a[data-region="riyadh"] path').hover();
+  const tooltip = page.locator('.region-tooltip');
+  await expect(tooltip).toContainText('Riyadh Region');
+  await expect(tooltip).toContainText('8,591,748');
+  await expect(tooltip).toContainText('1 of 13');
+  await page.mouse.move(0, 0);
+  await expect(tooltip).toHaveCount(0);
+  await map.locator('a[data-region="jazan"]').focus();
+  await expect(tooltip).toContainText('Jazan');
+  await expect(tooltip).toContainText('1,404,997');
+  await map.locator('a[data-region="asir"] path').click();
+  await expect(page).toHaveURL(/\/en\/regions\/asir$/);
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Asir');
+});
+
 test('region navigation, pagination and required public credits', async ({ page }) => {
   await page.goto('/en/regions');
   await expect(page.locator('.region-links a')).toHaveCount(13);

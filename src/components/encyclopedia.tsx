@@ -3,6 +3,9 @@ import Link from 'next/link';
 import { administrativeRegions, entryPath, type Entry, type ImageCredit, type Locale } from '../lib/encyclopedia';
 import { imageCreditParts } from '../lib/image-credit';
 import { PublicImage } from './public-image';
+import { InteractiveRegionMap } from './region-map';
+import { REGION_MAP_VIEWBOX, REGION_SHAPES } from '../lib/region-map';
+import { CENSUS_2022, regionStatistics } from '../lib/region-facts';
 import { brand, intro, photoCredits, type NavigationItem } from '../lib/site';
 
 export function Arrow({ locale }: { locale: Locale }) { return <span aria-hidden="true" className="arrow">{locale === 'ar' ? '←' : '→'}</span>; }
@@ -59,9 +62,34 @@ export function PhotoCredit({ image, locale, credit: cmsCredit }: { image: strin
   return <span className="photo-credit">{credit[locale]} · <Link href={`/${locale}/credits`}>{credit.author} / {credit.license}</Link></span>;
 }
 
+function RegionMap({ regions, locale }: { regions: Entry[]; locale: Locale }) {
+  const ar = locale === 'ar';
+  const labels = ar
+    ? { seat: 'المقر الإداري', population: 'عدد السكان', share: 'من سكان المملكة', rank: 'الترتيب سكانيًا', action: 'اضغط لاستكشاف المنطقة' }
+    : { seat: 'Regional seat', population: 'Population', share: 'Share of national', rank: 'Population rank', action: 'Click to explore the region' };
+  return <InteractiveRegionMap labels={labels}>
+    <svg viewBox={REGION_MAP_VIEWBOX} role="group" aria-label={ar ? 'خريطة تفاعلية مبسطة للمناطق الإدارية الثلاث عشرة' : 'Simplified interactive map of the thirteen administrative regions'}>
+      {REGION_SHAPES.map(shape => {
+        const entry = regions.find(item => item.slug === shape.slug);
+        const stats = regionStatistics(shape.slug);
+        if (!entry || !stats) return <path key={shape.slug} className="region-shape unavailable" d={shape.path} />;
+        const population = stats.population.toLocaleString(locale);
+        const name = entry.title[locale];
+        return <a key={shape.slug} href={entryPath(entry, locale)} data-region={shape.slug} data-name={name} data-seat={stats.seat[locale]} data-population={population}
+          data-share={(stats.share / 100).toLocaleString(locale, { style: 'percent', maximumFractionDigits: 1 })}
+          data-rank={ar ? `${stats.rank.toLocaleString(locale)} من ${REGION_SHAPES.length.toLocaleString(locale)}` : `${stats.rank} of ${REGION_SHAPES.length}`}
+          aria-label={`${name}. ${labels.population}: ${population}. ${labels.seat}: ${stats.seat[locale]}`}>
+          <path className="region-shape" d={shape.path} />
+        </a>;
+      })}
+    </svg>
+  </InteractiveRegionMap>;
+}
+
 export function RegionExplorer({ entries, locale }: { entries: Entry[]; locale: Locale }) {
   const regions = administrativeRegions(entries);
-  return <div className="region-explorer"><div className="region-visual"><span className="map-coordinate" dir="ltr">23.8859° N · 45.0792° E</span><Image src="/brand/saudi-map-logo.svg" width={520} height={440} alt={locale === 'ar' ? 'رسم مبسط للحدود الحالية للمملكة، وليس خريطة للمناطق الإدارية' : 'Generalized outline of modern Saudi Arabia, not administrative boundaries'} /><span className="map-label">{locale === 'ar' ? 'المملكة العربية السعودية' : 'SAUDI ARABIA'}</span><small>{locale === 'ar' ? 'رسم جغرافي مبسّط · اختر منطقة من القائمة' : 'Generalized outline · choose a region from the list'}</small></div><div className="region-content"><p className="eyebrow">{locale === 'ar' ? 'أرض واحدة، عوالم متعددة' : 'ONE LAND, MANY WORLDS'}</p><h2>{locale === 'ar' ? 'لكل منطقة… حكاية' : 'Every region has a story.'}</h2><p>{locale === 'ar' ? 'من جبال الجنوب إلى سواحل البحر الأحمر، ومن واحات الشرق إلى صحارى الشمال. اكتشف تنوّع المملكة عبر مناطقها.' : 'From southern mountains to the Red Sea coast, from eastern oases to northern deserts. Discover a remarkable diversity of place.'}</p><div className="region-links">{regions.map((entry, i) => <Link href={entryPath(entry, locale)} key={entry.slug}><span className="region-number">{String(i + 1).padStart(2, '0')}</span>{entry.title[locale]}<Arrow locale={locale} /></Link>)}</div></div></div>;
+  const ar = locale === 'ar';
+  return <div className="region-explorer"><div className="region-visual"><span className="map-coordinate" dir="ltr">23.8859° N · 45.0792° E</span><RegionMap regions={regions} locale={locale} /><small className="map-hint-pointer">{ar ? 'مرّر المؤشر على منطقة لعرض بياناتها، واضغط عليها للانتقال إلى صفحتها.' : 'Hover over a region to see its data; click to open its page.'}</small><small className="map-hint-touch">{ar ? 'المس أي منطقة للانتقال إلى صفحتها.' : 'Tap a region to open its page.'}</small><small className="region-map-source">{ar ? 'السكان: ' : 'Population: '}<a href={CENSUS_2022.source.url} target="_blank" rel="noreferrer">{CENSUS_2022.source.title[locale]}</a>{ar ? ' · حدود تقريبية مبسطة وليست رسمية، مبنية على Natural Earth' : ' · Simplified, unofficial boundaries made with Natural Earth'}</small></div><div className="region-content"><p className="eyebrow">{locale === 'ar' ? 'أرض واحدة، عوالم متعددة' : 'ONE LAND, MANY WORLDS'}</p><h2>{locale === 'ar' ? 'لكل منطقة… حكاية' : 'Every region has a story.'}</h2><p>{locale === 'ar' ? 'من جبال الجنوب إلى سواحل البحر الأحمر، ومن واحات الشرق إلى صحارى الشمال. اكتشف تنوّع المملكة عبر مناطقها.' : 'From southern mountains to the Red Sea coast, from eastern oases to northern deserts. Discover a remarkable diversity of place.'}</p><div className="region-links">{regions.map((entry, i) => <Link href={entryPath(entry, locale)} key={entry.slug}><span className="region-number">{String(i + 1).padStart(2, '0')}</span>{entry.title[locale]}<Arrow locale={locale} /></Link>)}</div></div></div>;
 }
 
 export function SiteFooter({ locale, navigation }: { locale: Locale; navigation: readonly NavigationItem[] }) {
