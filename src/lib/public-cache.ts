@@ -10,6 +10,12 @@ export function publicCache<T>(read: () => Promise<T>, key: string): () => Promi
   return unstable_cache(read, [key], { tags: [PUBLIC_CONTENT_TAG], revalidate: PUBLIC_CONTENT_TTL_SECONDS });
 }
 
+/** Payload treats POST + X-(Payload-)HTTP-Method-Override: GET as a read (admin relationship/list queries). */
+export function effectiveMethod(method: string, request: Pick<Request, 'headers'>): string {
+  const override = request.headers.get('X-Payload-HTTP-Method-Override') ?? request.headers.get('X-HTTP-Method-Override');
+  return method === 'POST' && override === 'GET' ? 'GET' : method;
+}
+
 /** Runs after Payload has committed the REST operation. Denied requests changed nothing. */
 export function invalidatesPublicContent(method: string, collection: string | undefined, status: number): boolean {
   return !['GET', 'HEAD', 'OPTIONS'].includes(method) && status !== 401 && status !== 403

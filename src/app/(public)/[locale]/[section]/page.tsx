@@ -7,6 +7,7 @@ import { JsonLd } from '@/components/json-ld';
 import { entryPath, isLocale, matchesSection } from '@/lib/encyclopedia';
 import { brand, pageMetadata, navigation, photoCredits } from '@/lib/site';
 import { breadcrumbs, collectionPage } from '@/lib/structured-data';
+import { keyed } from '@/lib/structure';
 import { getSections, findSection } from '@/lib/sections';
 import type { Locale } from '@/lib/encyclopedia';
 import type { SectionInfo } from '@/lib/sections';
@@ -72,7 +73,9 @@ export default async function SectionPage({ params, searchParams }: Props) {
   const { entries, preview } = await getContent();
   const policy = section in policies;
   const query = await searchParams;
-  const relevant = entries.filter(entry => matchesSection(entry, section));
+  const index = keyed(entries);
+  // Children appear inside their parent's hub; list them here only when the parent lives in another section.
+  const relevant = entries.filter(entry => matchesSection(entry, section) && !(entry.parentKey && index.get(entry.parentKey)?.section === entry.section));
   // Notable figures opens on the Kingdom's rulers; `?category=all` is the explicit unfiltered view.
   const rulerCategory = section === 'notable-figures' ? relevant.find(e => e.kind === 'ruler')?.category[locale] : undefined;
   const categories = [...new Set([...(rulerCategory ? [rulerCategory] : []), ...relevant.map(e => e.category[locale])])];

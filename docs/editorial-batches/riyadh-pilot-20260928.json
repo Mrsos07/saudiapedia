@@ -1,0 +1,200 @@
+{
+  "researchDate": "2026-09-28",
+  "status": "staging-pilot",
+  "reviewNotes": [
+    "Structural pilot for the Riyadh region hub, modelled on the nine-part regional template of the King Abdulaziz Public Library's Encyclopedia of Saudi Arabia and on Arabic Wikipedia/Saudipedia linking patterns. Loaded into the local staging database only; production publication requires a separate editorial approval.",
+    "Facts are taken from the Saudipedia pages listed per topic (retrieved 2026-09-28) and, for At-Turaif, the UNESCO World Heritage listing. These references share few independent publishers and are not described as independent corroboration.",
+    "Omitted on purpose because sources conflict or date quickly: governorate populations, areas and centre counts (the Kharj page gives both 21 and 32 centres), exact elevations, distances that differ between pages (Wadi Al-Dawasir 613 km vs 650 km), officeholders, project values and visitor figures. Governorate class (A/B) is omitted because two Saudipedia pages disagree for Afif and Al-Ghat.",
+    "Region population, seat and rank in the infobox come from src/lib/region-facts.ts (2022 census), not from this batch.",
+    "Internal links use [[section/slug|label]] and resolve only to published articles; unpublished targets render as plain text."
+  ],
+  "updateExisting": {
+    "regions/riyadh": { "entityType": "region", "related": ["people/king-abdulaziz", "people/king-salman", "history/first-saudi-state", "history/second-saudi-state", "history/third-saudi-state"] },
+    "tourism/saudi-national-museum": { "entityType": "site", "siteType": "museum", "parent": "regions/riyadh-city" },
+    "history/diriyah-history": { "related": ["regions/diriyah-governorate"] }
+  },
+  "topics": [
+    {
+      "section": "regions", "slug": "riyadh", "translationKey": "research-20260911-riyadh", "replaceBody": true,
+      "sources": [
+        { "ar": "سعوديبيديا: منطقة الرياض", "en": "Saudipedia: Riyadh Region (Arabic)", "url": "https://saudipedia.com/%D9%85%D9%86%D8%B7%D9%82%D8%A9-%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6" },
+        { "ar": "سعوديبيديا: قائمة محافظات منطقة الرياض", "en": "Saudipedia: List of Riyadh Region governorates (Arabic)", "url": "https://saudipedia.com/%D9%82%D8%A7%D8%A6%D9%85%D8%A9-%D9%85%D8%AD%D8%A7%D9%81%D8%B8%D8%A7%D8%AA-%D9%85%D9%86%D8%B7%D9%82%D8%A9-%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6" },
+        { "ar": "سعوديبيديا: حي الطريف", "en": "Saudipedia: At-Turaif District (Arabic)", "url": "https://saudipedia.com/%D8%AD%D9%8A-%D8%A7%D9%84%D8%B7%D8%B1%D9%8A%D9%81" },
+        { "ar": "سعوديبيديا: قصر المصمك", "en": "Saudipedia: Masmak Palace (Arabic)", "url": "https://saudipedia.com/%D9%82%D8%B5%D8%B1-%D8%A7%D9%84%D9%85%D8%B5%D9%85%D9%83" }
+      ],
+      "body": [
+        { "role": "overview",
+          "ar": { "heading": "نظرة عامة", "paragraphs": ["منطقة الرياض إحدى المناطق الإدارية الثلاث عشرة في المملكة العربية السعودية، وتضم العاصمة [[regions/riyadh-city|الرياض]] مقر الجهات الحكومية والمنظمات الدولية في المملكة. وهي الثانية بين المناطق من حيث المساحة، والأولى من حيث عدد السكان. [1]", "تشكلت المنطقة إداريًا عام 1412هـ/1992م، وتجمع في نطاقها عاصمتين تاريخيتين: [[regions/diriyah-governorate|الدرعية]] عاصمة الدولة السعودية الأولى، والرياض عاصمة الدولة السعودية الثانية والمملكة العربية السعودية. [1]"] },
+          "en": { "heading": "Overview", "paragraphs": ["Riyadh Region is one of the thirteen administrative regions of Saudi Arabia and contains the capital, [[regions/riyadh-city|Riyadh]], seat of government bodies and international organizations in the Kingdom. It is the second-largest region by area and the first by population. [1]", "The region was formed administratively in 1412 AH/1992 CE and contains two historic capitals: [[regions/diriyah-governorate|Diriyah]], capital of the First Saudi State, and Riyadh, capital of the Second Saudi State and of the Kingdom of Saudi Arabia. [1]"] } },
+        { "role": "administration",
+          "ar": { "heading": "التقسيم الإداري", "paragraphs": ["تتبع المنطقة 22 محافظة إضافة إلى مدينة الرياض مقر الإمارة، وهي بذلك أكثر المناطق عددًا في المحافظات، ويتبع هذه المحافظات نحو 504 مراكز إدارية. [1][2]", "المحافظات هي: الدرعية، والخرج، والدوادمي، والمجمعة، والقويعية، ووادي الدواسر، والأفلاج، والزلفي، وشقراء، وحوطة بني تميم، وعفيف، والغاط، والسليل، وضرماء، والمزاحمية، ورماح، وثادق، وحريملاء، والحريق، ومرات، والدلم، والرين. [2]"] },
+          "en": { "heading": "Administration", "paragraphs": ["The region comprises 22 governorates in addition to the city of Riyadh, the seat of the emirate, making it the region with the most governorates; around 504 administrative centres report to them. [1][2]", "The governorates are Diriyah, Al-Kharj, Al-Dawadmi, Al-Majmaah, Al-Quwayiyah, Wadi Al-Dawasir, Al-Aflaj, Al-Zulfi, Shaqra, Hawtat Bani Tamim, Afif, Al-Ghat, Al-Sulayyil, Dhurma, Al-Muzahmiyah, Rumah, Thadiq, Huraymila, Al-Hariq, Marat, Al-Dilam and Al-Rayn. [2]"] } },
+        { "role": "geography",
+          "ar": { "heading": "الجغرافيا والمناخ", "paragraphs": ["تقع المنطقة وسط المملكة فوق هضبة نجد، وتحدها المنطقة الشرقية من الشرق والشمال الشرقي، ومنطقة القصيم من الشمال، ومنطقتا نجران وعسير من الجنوب، ومنطقة مكة المكرمة وجزء من منطقة المدينة المنورة من الغرب. [1]", "تمتد في شرق الهضبة سلسلة جبال طويق من شمال محافظة الزلفي حتى صحراء الربع الخالي جنوبًا، وتتفرع منها أودية تقوم عليها مدن وقرى عديدة. والمناخ قاري جاف في عمومه، حار صيفًا بارد شتاءً، وأمطاره شتوية قليلة في الغالب، ويختلف من محافظة إلى أخرى باختلاف التضاريس. [1]"] },
+          "en": { "heading": "Geography and climate", "paragraphs": ["The region lies in central Saudi Arabia on the Najd plateau. It borders the Eastern Province to the east and north-east, Al-Qassim to the north, Najran and Asir to the south, and Makkah and part of Madinah to the west. [1]", "The Tuwaiq escarpment runs along the eastern edge of the plateau from north of Al-Zulfi to the Rub al Khali, and many towns and villages sit along the valleys that branch from it. The climate is broadly dry and continental, hot in summer and cold in winter, with sparse, mostly winter rainfall that varies with terrain across the governorates. [1]"] } },
+        { "role": "history",
+          "ar": { "heading": "التاريخ والتطور", "paragraphs": ["قامت في الدرعية [[history/first-saudi-state|الدولة السعودية الأولى]] التي أسسها الإمام محمد بن سعود عام 1139هـ/1727م، ثم أصبحت الرياض عاصمة [[history/second-saudi-state|الدولة السعودية الثانية]]. [1]", "ومن الرياض انطلق توحيد المملكة؛ إذ استعاد الملك [[people/king-abdulaziz|عبدالعزيز بن عبدالرحمن]] المدينة عام 1319هـ/1902م عبر [[heritage/masmak-fortress|قصر المصمك]]، وبعد ثلاثين عامًا أُعلن توحيد المملكة عام 1351هـ/1932م، في مسيرة [[history/third-saudi-state|الدولة السعودية الثالثة]]. [1][4]"] },
+          "en": { "heading": "History and development", "paragraphs": ["Diriyah was the seat of the [[history/first-saudi-state|First Saudi State]], founded by Imam Muhammad bin Saud in 1139 AH/1727 CE; Riyadh later became the capital of the [[history/second-saudi-state|Second Saudi State]]. [1]", "The unification of the Kingdom began from Riyadh: King [[people/king-abdulaziz|Abdulaziz bin Abdulrahman]] recovered the city in 1319 AH/1902 CE through [[heritage/masmak-fortress|Masmak Palace]], and thirty years later the Kingdom's unification was proclaimed in 1351 AH/1932 CE, as part of the [[history/third-saudi-state|Third Saudi State]]. [1][4]"] } },
+        { "role": "antiquities",
+          "ar": { "heading": "الآثار والمواقع التاريخية", "paragraphs": ["يُعد [[heritage/at-turaif|حي الطريف]] في الدرعية من أبرز مواقع المنطقة، وقد سُجل في قائمة التراث العالمي لليونسكو عام 1431هـ/2010م بوصفه ثاني موقع سعودي بعد الحِجر، ويضم قصر سلوى مقر حكم الدولة السعودية الأولى. [3]", "وفي قلب الرياض يقف [[heritage/masmak-fortress|قصر المصمك]] الذي تحوّل من حصن إلى متحف يوثق مراحل تأسيس المملكة، إضافة إلى مواقع أثرية أقدم في محافظات مثل [[regions/al-kharj|الخرج]]. [4]"] },
+          "en": { "heading": "Antiquities and historic sites", "paragraphs": ["[[heritage/at-turaif|At-Turaif District]] in Diriyah is among the region's most important sites. It was inscribed on the UNESCO World Heritage List in 1431 AH/2010 CE as Saudi Arabia's second site after Hegra, and contains Salwa Palace, seat of the First Saudi State. [3]", "In central Riyadh, [[heritage/masmak-fortress|Masmak Palace]] has changed from a fortress into a museum documenting the founding of the Kingdom, and older archaeological sites exist in governorates such as [[regions/al-kharj|Al-Kharj]]. [4]"] } },
+        { "role": "heritage",
+          "ar": { "heading": "التراث والعمارة", "paragraphs": ["لا تزال المنطقة تحتفظ بنماذج من العمارة النجدية القديمة، أبرزها حي الطريف بوصفه من أكبر المدن الطينية في العالم. [1][3]", "ويمثل قصر المصمك هذا الطراز؛ فقد شُيّد من الطين المخلوط بالتبن على أساسات حجرية، وزُخرفت جدرانه بفتحات مثلثة ومستطيلة ورسوم مستوحاة من النخيل والنجوم والأهلة. [4]"] },
+          "en": { "heading": "Heritage and architecture", "paragraphs": ["The region preserves examples of historic Najdi architecture, most notably At-Turaif, described as one of the largest earthen cities in the world. [1][3]", "Masmak Palace represents this style: it was built of mud mixed with straw on stone foundations, and its walls carry triangular and rectangular openings and motifs inspired by palms, stars and crescents. [4]"] } },
+        { "role": "services",
+          "ar": { "heading": "التعليم والخدمات", "paragraphs": ["تضم المنطقة ثماني جامعات حكومية، وهو أعلى عدد بين مناطق المملكة، منها جامعة الملك سعود وجامعة الأميرة نورة بنت عبدالرحمن في الرياض، وجامعة المجمعة في [[regions/al-majmaah|المجمعة]]. [1]"] },
+          "en": { "heading": "Education and services", "paragraphs": ["The region has eight public universities, the most of any region, including King Saud University and Princess Nourah bint Abdulrahman University in Riyadh and Majmaah University in [[regions/al-majmaah|Al-Majmaah]]. [1]"] } },
+        { "role": "tourism",
+          "ar": { "heading": "السياحة والطبيعة", "paragraphs": ["تجمع المنطقة بين المعالم التاريخية التي تحولت إلى وجهات جذب، مثل حي الطريف وقصر المصمك و[[tourism/saudi-national-museum|المتحف الوطني السعودي]]، وبين بيئات طبيعية كوادي حنيفة وعيون الخرج ورياض المجمعة. [1]"] },
+          "en": { "heading": "Tourism and nature", "paragraphs": ["The region combines historic landmarks that now attract visitors, such as At-Turaif, Masmak Palace and the [[tourism/saudi-national-museum|National Museum of Saudi Arabia]], with natural settings such as Wadi Hanifah, the springs of Al-Kharj and the rawdahs of Al-Majmaah. [1]"] } }
+      ]
+    },
+    {
+      "section": "regions", "slug": "riyadh-city", "translationKey": "riyadh-pilot-20260928-riyadh-city", "entityType": "city", "parent": "regions/riyadh",
+      "ar": { "title": "مدينة الرياض", "summary": "عاصمة المملكة العربية السعودية ومقر إمارة منطقة الرياض، تقع بجوار الدرعية، وفيها قصر الحكم وقصر المصمك.", "category": "مدينة" },
+      "en": { "title": "Riyadh (city)", "summary": "Capital of Saudi Arabia and seat of the Riyadh Region emirate, beside Diriyah, home to Qasr Al-Hukm and Masmak Palace.", "category": "City" },
+      "facts": [
+        { "ar": ["المكانة", "عاصمة المملكة العربية السعودية"], "en": ["Status", "Capital of Saudi Arabia"] },
+        { "ar": ["المنطقة", "منطقة الرياض"], "en": ["Region", "Riyadh Region"] }
+      ],
+      "sources": [
+        { "ar": "سعوديبيديا: مدينة الرياض", "en": "Saudipedia: Riyadh city (Arabic)", "url": "https://saudipedia.com/%D9%85%D8%AF%D9%8A%D9%86%D8%A9-%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6" },
+        { "ar": "سعوديبيديا: منطقة الرياض", "en": "Saudipedia: Riyadh Region (Arabic)", "url": "https://saudipedia.com/%D9%85%D9%86%D8%B7%D9%82%D8%A9-%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6" }
+      ],
+      "body": [
+        { "role": "overview",
+          "ar": { "heading": "العاصمة", "paragraphs": ["مدينة الرياض عاصمة المملكة العربية السعودية وكبرى مدنها من حيث عدد السكان، وتقع بجوار [[regions/diriyah-governorate|الدرعية]] عاصمة الدولة السعودية الأولى، وتتبع إداريًا إمارة [[regions/riyadh|منطقة الرياض]] التي تتخذ منها مقرًا. [1]", "لا تشكل مدينة الرياض سوى جزء صغير من مساحة المنطقة رغم أن اسمها يُستخدم أحيانًا مرادفًا للمنطقة كلها. [1][2]"] },
+          "en": { "heading": "The capital", "paragraphs": ["Riyadh is the capital of Saudi Arabia and its largest city by population. It lies beside [[regions/diriyah-governorate|Diriyah]], capital of the First Saudi State, and is the seat of the [[regions/riyadh|Riyadh Region]] emirate. [1]", "Although its name is sometimes used for the whole region, the city covers only a small part of the region's area. [1][2]"] } },
+        { "role": "history",
+          "ar": { "heading": "مركز الحكم", "paragraphs": ["شكلت الرياض والدرعية معًا حجر الأساس للدول السعودية الثلاث، وفي الرياض يقع قصر الحكم مقر الإمارة، وعلى مقربة منه [[heritage/masmak-fortress|قصر المصمك]] المرتبط باستعادة الملك عبدالعزيز المدينة عام 1319هـ/1902م. [1]"] },
+          "en": { "heading": "Seat of government", "paragraphs": ["Riyadh and Diriyah together formed the foundation of the three Saudi states. Riyadh contains Qasr Al-Hukm, seat of the emirate, near [[heritage/masmak-fortress|Masmak Palace]], associated with King Abdulaziz's recovery of the city in 1319 AH/1902 CE. [1]"] } }
+      ]
+    },
+    {
+      "section": "regions", "slug": "diriyah-governorate", "translationKey": "riyadh-pilot-20260928-diriyah", "entityType": "governorate", "parent": "regions/riyadh", "related": ["history/diriyah-history", "history/first-saudi-state"],
+      "ar": { "title": "محافظة الدرعية", "summary": "محافظة شمال غرب مدينة الرياض على ضفاف وادي حنيفة، أُسست عام 850هـ/1446م، وكانت عاصمة الدولة السعودية الأولى، وتضم حي الطريف المسجل في التراث العالمي.", "category": "محافظة" },
+      "en": { "title": "Diriyah Governorate", "summary": "A governorate north-west of Riyadh on Wadi Hanifah, founded in 850 AH/1446 CE, capital of the First Saudi State and home to the World Heritage site of At-Turaif.", "category": "Governorate" },
+      "facts": [
+        { "ar": ["المنطقة", "منطقة الرياض"], "en": ["Region", "Riyadh Region"] },
+        { "ar": ["التأسيس", "850هـ/1446م"], "en": ["Founded", "850 AH/1446 CE"] },
+        { "ar": ["الاسم القديم", "العوجا"], "en": ["Historic name", "Al-Awja"] }
+      ],
+      "sources": [
+        { "ar": "سعوديبيديا: محافظة الدرعية", "en": "Saudipedia: Diriyah Governorate (Arabic)", "url": "https://saudipedia.com/%D9%85%D8%AD%D8%A7%D9%81%D8%B8%D8%A9-%D8%A7%D9%84%D8%AF%D8%B1%D8%B9%D9%8A%D8%A9" },
+        { "ar": "سعوديبيديا: حي الطريف", "en": "Saudipedia: At-Turaif District (Arabic)", "url": "https://saudipedia.com/%D8%AD%D9%8A-%D8%A7%D9%84%D8%B7%D8%B1%D9%8A%D9%81" }
+      ],
+      "body": [
+        { "role": "history",
+          "ar": { "heading": "النشأة والتاريخ", "paragraphs": ["أُسست الدرعية عام 850هـ/1446م على يد مانع المريدي، ثم أصبحت عاصمة [[history/first-saudi-state|الدولة السعودية الأولى]] التي أسسها الإمام محمد بن سعود عام 1139هـ/1727م، وهي الموطن الأول لأسرة آل سعود. [1]", "يرجح مؤرخون أن الاسم نُسب إلى عشيرة الدروع التي ينتمي إليها مانع المريدي، وكانت تُعرف قديمًا باسم العوجا إشارة إلى موقعها المتعرج على وادي حنيفة. [1]"] },
+          "en": { "heading": "Origins and history", "paragraphs": ["Diriyah was founded in 850 AH/1446 CE by Mani al-Muraydi and later became the capital of the [[history/first-saudi-state|First Saudi State]], founded by Imam Muhammad bin Saud in 1139 AH/1727 CE; it is the ancestral home of the Al Saud. [1]", "Historians link the name to the Duru' clan of Mani al-Muraydi. It was once called Al-Awja, a reference to its winding position on Wadi Hanifah. [1]"] } },
+        { "role": "geography",
+          "ar": { "heading": "الموقع والطبيعة", "paragraphs": ["تقع الدرعية على ضفاف وادي حنيفة شمال غرب مدينة الرياض بنحو 20 كم، وإلى الشمال منها على مجرى الوادي بلدتا الجبيلة والعيينة. ويمتد وادي حنيفة أكثر من 120 كم من غرب العيينة باتجاه الجنوب الشرقي. [1]"] },
+          "en": { "heading": "Location and landscape", "paragraphs": ["Diriyah lies on Wadi Hanifah about 20 km north-west of central Riyadh, with Al-Jubaylah and Al-Uyaynah upstream to the north. Wadi Hanifah runs for more than 120 km from west of Al-Uyaynah towards the south-east. [1]"] } },
+        { "role": "antiquities",
+          "ar": { "heading": "حي الطريف", "paragraphs": ["يضم قلب الدرعية [[heritage/at-turaif|حي الطريف]] الذي بُني منتصف القرن الثامن عشر الميلادي، وفيه قصر سلوى مقر حكم الدولة السعودية الأولى وجامع الطريف. [2]"] },
+          "en": { "heading": "At-Turaif", "paragraphs": ["Central Diriyah contains [[heritage/at-turaif|At-Turaif]], built in the mid-eighteenth century CE, with Salwa Palace, seat of the First Saudi State, and the At-Turaif Mosque. [2]"] } },
+        { "role": "services",
+          "ar": { "heading": "التطوير", "paragraphs": ["تتولى هيئة تطوير بوابة الدرعية، المؤسسة بأمر ملكي عام 1438هـ/2017م، تطوير الدرعية عمرانيًا واقتصاديًا وثقافيًا وإدارة بيئتها ومرافقها. [1]"] },
+          "en": { "heading": "Development", "paragraphs": ["The Diriyah Gate Development Authority, established by royal order in 1438 AH/2017 CE, is responsible for Diriyah's urban, economic and cultural development and for managing its environment and public facilities. [1]"] } }
+      ]
+    },
+    {
+      "section": "regions", "slug": "al-kharj", "translationKey": "riyadh-pilot-20260928-al-kharj", "entityType": "governorate", "parent": "regions/riyadh",
+      "ar": { "title": "محافظة الخرج", "summary": "محافظة جنوب شرق مدينة الرياض بنحو 80 كم، ذكرها ياقوت الحموي واديًا من أرض اليمامة، وتضم قصر الملك عبدالعزيز في السيح وعيونًا ومواقع أثرية قديمة.", "category": "محافظة" },
+      "en": { "title": "Al-Kharj Governorate", "summary": "A governorate about 80 km south-east of Riyadh, described by Yaqut al-Hamawi as a valley of Al-Yamamah, with King Abdulaziz's palace at Al-Sih, springs and ancient archaeological sites.", "category": "Governorate" },
+      "facts": [
+        { "ar": ["المنطقة", "منطقة الرياض"], "en": ["Region", "Riyadh Region"] },
+        { "ar": ["الموقع", "جنوب شرق مدينة الرياض بنحو 80 كم"], "en": ["Location", "About 80 km south-east of Riyadh"] }
+      ],
+      "sources": [
+        { "ar": "سعوديبيديا: محافظة الخرج", "en": "Saudipedia: Al-Kharj Governorate (Arabic)", "url": "https://saudipedia.com/%D9%85%D8%AD%D8%A7%D9%81%D8%B8%D8%A9-%D8%A7%D9%84%D8%AE%D8%B1%D8%AC" }
+      ],
+      "body": [
+        { "role": "geography",
+          "ar": { "heading": "الموقع والتسمية", "paragraphs": ["تقع الخرج على الحدود الشرقية لمنطقة الرياض، على بعد نحو 80 كم جنوب شرق مدينة الرياض، وتحدها محافظة الأحساء من الشرق، ومدينة الرياض من الشمال، ومحافظة الدلم من الغرب، ومحافظة الأفلاج من الجنوب. [1]", "ذكر ياقوت الحموي في «معجم البلدان» أن الخَرْج وادٍ فيه قرى من أرض اليمامة، ووصفه بأنه من خير أودية اليمامة، أرضه أرض زرع ونخل. [1]"] },
+          "en": { "heading": "Location and name", "paragraphs": ["Al-Kharj lies on the eastern edge of Riyadh Region, about 80 km south-east of Riyadh, bordered by Al-Ahsa to the east, Riyadh to the north, Al-Dilam to the west and Al-Aflaj to the south. [1]", "In his Mu'jam al-Buldan, Yaqut al-Hamawi described Al-Kharj as a valley with villages in the land of Al-Yamamah and among its best valleys, a land of crops and palms. [1]"] } },
+        { "role": "antiquities",
+          "ar": { "heading": "الآثار", "paragraphs": ["كشفت دراسات التنقيب في الخرج عن مواقع من العصر الحجري القديم يعود بعضها إلى نحو 100 ألف عام، وعن آثار سكنى بشري في موقع عين الضلع غرب واحة الخرج يقدر عمرها بنحو 5,000 عام. [1]", "كما وُجدت مزارع قديمة ومنشآت معمارية من القرن الخامس الهجري، ونقوش ثمودية وكتابات عربية غير منقوطة. [1]"] },
+          "en": { "heading": "Archaeology", "paragraphs": ["Excavations in Al-Kharj have revealed Palaeolithic sites, some around 100,000 years old, and traces of human settlement at Ain al-Dil', west of the Al-Kharj oasis, estimated at about 5,000 years old. [1]", "Old farms and buildings from the fifth century AH have also been found, together with Thamudic inscriptions and undotted Arabic writing. [1]"] } },
+        { "role": "tourism",
+          "ar": { "heading": "المعالم", "paragraphs": ["تحتضن الخرج قصر الملك [[people/king-abdulaziz|عبدالعزيز]] في السيح، الذي أُسس عام 1359هـ/1940م ويُعد أيقونة المحافظة التاريخية. وتضم عيونًا كانت رافدًا للمزارع قديمًا وأصبحت معالم للتنزه، منها عيون السيح وماوان والخبي والضاحي. [1]"] },
+          "en": { "heading": "Landmarks", "paragraphs": ["Al-Kharj is home to King [[people/king-abdulaziz|Abdulaziz]]'s palace at Al-Sih, founded in 1359 AH/1940 CE and regarded as the governorate's historic icon. Its springs, once a lifeline for farms, are now leisure sites, including Al-Sih, Mawan, Al-Khubbi and Al-Dahi. [1]"] } }
+      ]
+    },
+    {
+      "section": "regions", "slug": "al-majmaah", "translationKey": "riyadh-pilot-20260928-al-majmaah", "entityType": "governorate", "parent": "regions/riyadh",
+      "ar": { "title": "محافظة المجمعة", "summary": "محافظة شمال غرب مدينة الرياض بنحو 180 كم، يرجع عمران مدينتها إلى عام 820هـ/1417م، وتضم جامعة المجمعة ومواقع أثرية ورياضًا طبيعية.", "category": "محافظة" },
+      "en": { "title": "Al-Majmaah Governorate", "summary": "A governorate about 180 km north-west of Riyadh whose town dates to 820 AH/1417 CE, home to Majmaah University, archaeological sites and natural rawdahs.", "category": "Governorate" },
+      "facts": [
+        { "ar": ["المنطقة", "منطقة الرياض"], "en": ["Region", "Riyadh Region"] },
+        { "ar": ["بداية العمران", "820هـ/1417م"], "en": ["Settled", "820 AH/1417 CE"] }
+      ],
+      "sources": [
+        { "ar": "سعوديبيديا: محافظة المجمعة", "en": "Saudipedia: Al-Majmaah Governorate (Arabic)", "url": "https://saudipedia.com/%D9%85%D8%AD%D8%A7%D9%81%D8%B8%D8%A9-%D8%A7%D9%84%D9%85%D8%AC%D9%85%D8%B9%D8%A9" }
+      ],
+      "body": [
+        { "role": "history",
+          "ar": { "heading": "النشأة والتسمية", "paragraphs": ["يرجع عمران مدينة المجمعة، قاعدة المحافظة، إلى عام 820هـ/1417م على يد عبدالله بن سيف الشمري، إذ تجمع الناس حوله في الموضع فسُمي بالمجمعة. [1]", "وتشير روايات أخرى إلى أن التسمية جاءت من تجمع الأودية فوقها، ولا سيما وادي المشقر وروافده ووادي الكلب. [1]"] },
+          "en": { "heading": "Origins and name", "paragraphs": ["The town of Al-Majmaah, seat of the governorate, dates to 820 AH/1417 CE, when Abdullah bin Saif al-Shammari settled there and people gathered around him, giving it its name. [1]", "Other accounts link the name to the meeting of valleys above the town, notably Wadi Al-Mishqar and its tributaries and Wadi Al-Kalb. [1]"] } },
+        { "role": "geography",
+          "ar": { "heading": "الموقع", "paragraphs": ["تقع المجمعة شمال غرب مدينة الرياض بنحو 180 كم، وتحدها محافظة ثادق من الجنوب، ومحافظة شقراء من الغرب، ومحافظتا الغاط والزلفي من الشمال الغربي، ومنطقة القصيم من الشمال. [1]"] },
+          "en": { "heading": "Location", "paragraphs": ["Al-Majmaah lies about 180 km north-west of Riyadh, bordered by Thadiq to the south, Shaqra to the west, Al-Ghat and Al-Zulfi to the north-west and Al-Qassim to the north. [1]"] } },
+        { "role": "services",
+          "ar": { "heading": "التعليم", "paragraphs": ["تضم المحافظة جامعة المجمعة التي أُنشئت عام 1430هـ/2009م، والمعهد العلمي الذي أُسس عام 1374هـ/1955م ضمن خمسة معاهد افتُتحت في العام نفسه. [1]"] },
+          "en": { "heading": "Education", "paragraphs": ["The governorate hosts Majmaah University, established in 1430 AH/2009 CE, and the Scientific Institute, founded in 1374 AH/1955 CE as one of five institutes opened that year. [1]"] } },
+        { "role": "tourism",
+          "ar": { "heading": "الآثار والرياض الطبيعية", "paragraphs": ["من مواقعها الأثرية مرقب جبل منيخ، وبيت الربيعة الأثري، وموقع غيلان، وقصر العسكر، وسور البلد القديم. ومن رياضها الطبيعية روضة النظيم وروضة الخشم وروضة حطابة. [1]"] },
+          "en": { "heading": "Heritage sites and rawdahs", "paragraphs": ["Its archaeological sites include the Mount Munikh watchtower, the Al-Rubayah heritage house, the Ghaylan site, Al-Askar Palace and the old town wall. Its natural rawdahs include Rawdat Al-Nazim, Rawdat Al-Khashm and Rawdat Hattabah. [1]"] } }
+      ]
+    },
+    {
+      "section": "heritage", "slug": "masmak-fortress", "translationKey": "riyadh-pilot-20260928-masmak", "entityType": "site", "siteType": "historical", "parent": "regions/riyadh-city", "related": ["people/king-abdulaziz"],
+      "ar": { "title": "قصر المصمك", "summary": "حصن طيني تاريخي في حي الثميري وسط الرياض، ارتبط باستعادة الملك عبدالعزيز الرياض عام 1319هـ/1902م، وأصبح متحفًا لمراحل تأسيس المملكة.", "category": "موقع تاريخي" },
+      "en": { "title": "Masmak Palace", "summary": "A historic earthen fortress in Al-Thumairi, central Riyadh, linked to King Abdulaziz's recovery of Riyadh in 1319 AH/1902 CE, now a museum of the Kingdom's founding.", "category": "Historic site" },
+      "facts": [
+        { "ar": ["الموقع", "حي الثميري، وسط الرياض"], "en": ["Location", "Al-Thumairi, central Riyadh"] },
+        { "ar": ["المساحة", "3,885 م²"], "en": ["Area", "3,885 m²"] },
+        { "ar": ["افتتاحه متحفًا", "1416هـ/1996م"], "en": ["Opened as a museum", "1416 AH/1996 CE"] }
+      ],
+      "sources": [
+        { "ar": "سعوديبيديا: قصر المصمك", "en": "Saudipedia: Masmak Palace (Arabic)", "url": "https://saudipedia.com/%D9%82%D8%B5%D8%B1-%D8%A7%D9%84%D9%85%D8%B5%D9%85%D9%83" }
+      ],
+      "body": [
+        { "role": "history",
+          "ar": { "heading": "المكانة التاريخية", "paragraphs": ["ارتبط قصر المصمك بمعركة استعادة الرياض عام 1319هـ/1902م، حين دخل منه الملك [[people/king-abdulaziz|عبدالعزيز بن عبدالرحمن]] المدينة، وهو الحدث الذي مهد لإعلان توحيد المملكة بعد ثلاثين عامًا. [1]", "اسم القصر مأخوذ من «المسمك» دلالة على سمك جدرانه ومتانتها، واستُخدم حامية عسكرية ثم مستودعًا للأسلحة، قبل أن يُرمم ويُفتتح متحفًا عام 1416هـ/1996م. [1]"] },
+          "en": { "heading": "Historical significance", "paragraphs": ["Masmak Palace is tied to the recovery of Riyadh in 1319 AH/1902 CE, when King [[people/king-abdulaziz|Abdulaziz bin Abdulrahman]] entered the city through it, the event that led to the Kingdom's unification thirty years later. [1]", "The name comes from 'al-musammak', referring to its thick, solid walls. It served as a garrison and then an arms store before being restored and opened as a museum in 1416 AH/1996 CE. [1]"] } },
+        { "role": "heritage",
+          "ar": { "heading": "العمارة", "paragraphs": ["شُيّد القصر من الطين المخلوط بالتبن على أساسات حجرية، ويبدو قلعة شبه رباعية بأربعة أبراج مراقبة أسطوانية، وباب من خشب الأثل والنخل، ويضم نحو 44 غرفة ومجلسين ومسجدًا وبئرًا. [1]"] },
+          "en": { "heading": "Architecture", "paragraphs": ["Built of mud mixed with straw on stone foundations, the palace is a near-square fortress with four cylindrical watchtowers and a door of tamarisk and palm wood. It has about 44 rooms, two majlis halls, a mosque and a well. [1]"] } },
+        { "role": "tourism",
+          "ar": { "heading": "المتحف", "paragraphs": ["يضم المتحف قاعات عرض للصور والخرائط والمجسمات والمواد الفيلمية التي توثق توحيد المملكة واستعادة الرياض، ويستضيف مناسبات رسمية في الأعياد الدينية والوطنية. [1]"] },
+          "en": { "heading": "The museum", "paragraphs": ["The museum's galleries hold photographs, maps, models and film documenting the Kingdom's unification and the recovery of Riyadh, and it hosts official events during religious and national holidays. [1]"] } }
+      ]
+    },
+    {
+      "section": "heritage", "slug": "at-turaif", "translationKey": "riyadh-pilot-20260928-at-turaif", "entityType": "site", "siteType": "historical", "parent": "regions/diriyah-governorate", "related": ["history/first-saudi-state", "history/diriyah-history"],
+      "ar": { "title": "حي الطريف", "summary": "حي تاريخي في قلب الدرعية بُني منتصف القرن الثامن عشر الميلادي، مقر حكم الدولة السعودية الأولى، ومسجل في قائمة التراث العالمي لليونسكو منذ 2010.", "category": "موقع تراث عالمي" },
+      "en": { "title": "At-Turaif District", "summary": "A historic district at the heart of Diriyah, built in the mid-eighteenth century CE, seat of the First Saudi State and a UNESCO World Heritage site since 2010.", "category": "World Heritage site" },
+      "facts": [
+        { "ar": ["الموقع", "الدرعية، منطقة الرياض"], "en": ["Location", "Diriyah, Riyadh Region"] },
+        { "ar": ["التسجيل في التراث العالمي", "1431هـ/2010م"], "en": ["World Heritage inscription", "1431 AH/2010 CE"] },
+        { "ar": ["من معالمه", "قصر سلوى، جامع الطريف"], "en": ["Landmarks", "Salwa Palace, At-Turaif Mosque"] }
+      ],
+      "sources": [
+        { "ar": "سعوديبيديا: حي الطريف", "en": "Saudipedia: At-Turaif District (Arabic)", "url": "https://saudipedia.com/%D8%AD%D9%8A-%D8%A7%D9%84%D8%B7%D8%B1%D9%8A%D9%81" },
+        { "ar": "اليونسكو: حي الطريف في الدرعية", "en": "UNESCO: At-Turaif District in ad-Dir'iyah", "url": "https://whc.unesco.org/en/list/1329/" }
+      ],
+      "body": [
+        { "role": "history",
+          "ar": { "heading": "مقر الحكم", "paragraphs": ["استقر أئمة [[history/first-saudi-state|الدولة السعودية الأولى]] في حي الطريف بدءًا من الإمام عبدالعزيز بن محمد بن سعود، واتسع الحي في عهد الإمام سعود بن عبدالعزيز، وفي آخر عهد الإمام عبدالله بن سعود حاصرت القوات العثمانية الدرعية ستة أشهر عام 1233هـ/1818م. [1]"] },
+          "en": { "heading": "Seat of government", "paragraphs": ["The imams of the [[history/first-saudi-state|First Saudi State]] lived in At-Turaif from Imam Abdulaziz bin Muhammad bin Saud onwards. The district grew under Imam Saud bin Abdulaziz, and late in the reign of Imam Abdullah bin Saud, Ottoman forces besieged Diriyah for six months in 1233 AH/1818 CE. [1]"] } },
+        { "role": "heritage",
+          "ar": { "heading": "العمارة والمعارض", "paragraphs": ["يوصف الحي بأنه من أكبر الأحياء الطينية في العالم، ويضم قصر سلوى مقر الحكم وجامع الطريف. ويحتضن اليوم معارض منها معرض الدرعية في قصر سلوى، ومعرض الحياة الاجتماعية، ومعرض الخيل العربية، ومعرض التجارة والمال. [1]"] },
+          "en": { "heading": "Architecture and galleries", "paragraphs": ["The district is described as one of the largest earthen districts in the world and contains Salwa Palace, the seat of government, and the At-Turaif Mosque. Today it hosts galleries including the Diriyah Gallery at Salwa Palace and galleries on social life, Arabian horses, and trade and finance. [1]"] } },
+        { "role": "antiquities",
+          "ar": { "heading": "التراث العالمي", "paragraphs": ["سُجل حي الطريف في قائمة التراث العالمي لليونسكو عام 1431هـ/2010م، بوصفه ثاني موقع سعودي يُسجل بعد الحِجر، وافتُتح مشروع تطويره عام 1440هـ/2018م، وبدأ استقبال الزوار عام 1444هـ/2022م. [1][2]"] },
+          "en": { "heading": "World Heritage", "paragraphs": ["At-Turaif was inscribed on the UNESCO World Heritage List in 1431 AH/2010 CE as Saudi Arabia's second site after Hegra. Its development project was inaugurated in 1440 AH/2018 CE, and it began receiving visitors in 1444 AH/2022 CE. [1][2]"] } }
+      ]
+    }
+  ]
+}

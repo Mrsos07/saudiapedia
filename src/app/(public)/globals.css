@@ -377,6 +377,26 @@ button, a { transition: color 180ms ease, background-color 180ms ease, border-co
 .article-content code, .article-content pre { font-family: inherit; }
 .article-content hr { margin-block: 36px; border: 0; border-block-start: 1px solid var(--line); }
 .article-section { scroll-margin-block-start: var(--header-offset); }
+.toc a.toc-auto { font-size: 16px; }
+.article-content .wiki-link { text-decoration-style: dotted; text-underline-offset: 4px; }
+.entity-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; margin: 8px 0 28px; padding: 0 !important; list-style: none; }
+.entity-list li + li { margin: 0 !important; }
+.article-content .entity-list a { display: grid; grid-template-columns: 1fr auto; grid-template-areas: 'badge arrow' 'title arrow' 'summary summary'; gap: 4px 12px; block-size: 100%; padding: 16px 18px; border: 1px solid var(--line); border-radius: 4px; background: var(--paper); color: var(--deep-green); text-decoration: none; transition: border-color 160ms ease, box-shadow 160ms ease; }
+.entity-list .entity-badge { grid-area: badge; color: var(--gold-ink); font-size: 14px; font-weight: 700; line-height: 1.4; }
+.entity-list strong { grid-area: title; font-size: 20px; line-height: 1.35; }
+.entity-list .entity-summary { grid-area: summary; display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; color: var(--muted); font-size: 16px; line-height: 1.6; }
+.entity-list .arrow { grid-area: arrow; align-self: center; color: var(--green); }
+.nav-box { margin-block: 44px 8px; border: 1px solid var(--line); border-radius: 4px; font-size: 17px; line-height: 1.6; }
+.article-content .nav-box h2 { margin: 0; padding: 12px 18px; border-block-end: 1px solid var(--line); background: var(--cream); font-size: 19px; }
+.article-content .nav-box ul { display: flex; flex-wrap: wrap; gap: 4px 0; margin: 0; padding: 14px 18px; list-style: none; }
+.article-content .nav-box li { margin: 0; }
+.nav-box li:not(:last-child)::after { content: '·'; margin-inline: 10px; color: var(--gold); }
+.article-content .nav-box a { text-decoration: none; }
+.nav-box [aria-current] { color: var(--deep-green); font-weight: 700; }
+@media (hover: hover) {
+  .article-content .entity-list a:hover { border-color: #B9C5B4; box-shadow: var(--shadow); }
+  .article-content .nav-box a:hover { text-decoration: underline; }
+}
 .source-list { padding-inline-start: 24px; color: var(--muted); font-size: 17px; line-height: 1.8; }
 .source-list li { padding-inline-start: 6px; margin-block-end: 14px; scroll-margin-block-start: var(--header-offset); }
 .inline-citations a { margin-inline: 3px; color: var(--green); text-decoration: underline; white-space: nowrap; }

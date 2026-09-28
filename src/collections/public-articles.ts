@@ -1,6 +1,18 @@
 import type { ArticleSEO, Entry, ImageCredit } from '../lib/encyclopedia';
 import { safeCanonicalURL } from '../lib/article-metadata';
+import { richTextPlain, sanitizeRichText, type RichNode } from '../lib/rich-text';
 import { nonEmpty, validHTTPURL } from './access';
+import { bodyRoles, entityTypes, siteTypes } from './structure-relations';
+
+export type EntityType = (typeof entityTypes)[number];
+export type SiteType = (typeof siteTypes)[number];
+export type BodyRole = (typeof bodyRoles)[number];
+const oneOf = <T extends string>(values: readonly T[], value: unknown): T | undefined =>
+  typeof value === 'string' && (values as readonly string[]).includes(value) ? value as T : undefined;
+/** A populated relationship exposes its translation key; a bare ID means the target is not public. */
+const populatedKey = (value: unknown): string | undefined =>
+  value !== null && typeof value === 'object' && !Array.isArray(value) && nonEmpty((value as { translationKey?: unknown }).translationKey)
+    ? (value as { translationKey: string }).translationKey : undefined;
 
 type ID = number | string;
 type Image = ID | ({ id: ID; published?: boolean; url?: string | null } & ImageCredit) | null;
@@ -19,10 +31,15 @@ export type PublicArticle = ArticleSEO & {
   image: Image;
   imageAlt: string | null;
   facts: { label: string; value: string }[];
-  body: { heading: string; text: string }[];
+  body: { heading: string; text: string; role?: BodyRole; content?: RichNode[] }[];
   sources: { title: string; url: string }[];
   createdAt?: string;
   updatedAt?: string;
+  entityType?: EntityType;
+  siteType?: SiteType;
+  /** Translation keys of publicly readable targets only; unpublished targets are never populated. */
+  parentKey?: string;
+  relatedKeys?: string[];
 };
 
 const record = (value: unknown): value is Record<string, unknown> =>
@@ -83,8 +100,12 @@ export function decodePublicArticle(value: unknown): PublicArticle {
   const body: PublicArticle['body'] = [];
   const sources: PublicArticle['sources'] = [];
   for (const row of value.body) {
-    if (!record(row) || !nonEmpty(row.heading) || !nonEmpty(row.text)) return invalid();
-    body.push({ heading: row.heading, text: row.text });
+    if (!record(row) || !nonEmpty(row.heading) || !optionalText(row.text)) return invalid();
+    const content = sanitizeRichText(row.content);
+    const text = row.text ?? '';
+    if (!nonEmpty(text) && !richTextPlain(content)) return invalid();
+    const role = oneOf(bodyRoles, row.role);
+    body.push({ heading: row.heading, text, ...(role ? { role } : {}), ...(content ? { content } : {}) });
   }
   for (const row of value.sources) {
     if (!record(row) || !nonEmpty(row.title) || typeof row.url !== 'string' || !validHTTPURL(row.url)) return invalid();
@@ -92,8 +113,14 @@ export function decodePublicArticle(value: unknown): PublicArticle {
   }
   const createdAt = timestamp(value.createdAt);
   const updatedAt = timestamp(value.updatedAt);
+  const entityType = oneOf(entityTypes, value.entityType);
+  const siteType = entityType === 'site' ? oneOf(siteTypes, value.siteType) : undefined;
+  const parentKey = populatedKey(value.parent);
+  const relatedKeys = Array.isArray(value.related) ? [...new Set(value.related.map(populatedKey).filter((key): key is string => Boolean(key)))] : [];
   return {
     ...(createdAt ? { createdAt } : {}), ...(updatedAt ? { updatedAt } : {}),
+    ...(entityType ? { entityType } : {}), ...(siteType ? { siteType } : {}),
+    ...(parentKey ? { parentKey } : {}), ...(relatedKeys.length ? { relatedKeys } : {}),
     id: value.id, locale, section, kind: kind ?? null, image: decodedImage,
     translationKey: value.translationKey, slug: value.slug, title: value.title,
     summary: value.summary, category: value.category, period: value.period || null,

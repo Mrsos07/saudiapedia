@@ -1,6 +1,6 @@
 import { cmsConfigured } from '../../../../lib/cms';
 import { boundRequestBody, checkMutationOrigin, HTTPRequestError } from '../../../../lib/http-security';
-import { invalidatePublicContent, invalidatesPublicContent } from '../../../../lib/public-cache';
+import { effectiveMethod, invalidatePublicContent, invalidatesPublicContent } from '../../../../lib/public-cache';
 
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
@@ -37,7 +37,7 @@ function handler(method: Method) {
         import('@payloadcms/next/routes'), import('../../../../payload.config'),
       ]);
       const response = await routes[`REST_${method}`](config)(request, context);
-      if (invalidatesPublicContent(method, slug?.[0], response.status)) invalidatePublicContent();
+      if (invalidatesPublicContent(effectiveMethod(method, request), slug?.[0], response.status)) invalidatePublicContent();
       if (response.status >= 500) return unavailable();
       for (const [key, value] of Object.entries(responseHeaders)) response.headers.set(key, value);
       return response;

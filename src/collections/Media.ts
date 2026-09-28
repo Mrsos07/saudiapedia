@@ -131,7 +131,9 @@ export const Media: CollectionConfig = {
     create: isStaff, update: isStaff, delete: isAdmin,
   },
   upload: {
-    staticDir: path.resolve(process.cwd(), 'private-uploads'),
+    // Local staging only (scripts/staging-local.mjs); production uses S3 and never sets this.
+    staticDir: process.env.NODE_ENV !== 'production' && process.env.CMS_LOCAL_UPLOAD_DIR
+      ? path.resolve(process.env.CMS_LOCAL_UPLOAD_DIR) : path.resolve(process.cwd(), 'private-uploads'),
     mimeTypes: ['image/jpeg', 'image/png', 'image/webp', 'image/avif'],
     pasteURL: false,
     constructorOptions: { limitInputPixels: 40000000 },

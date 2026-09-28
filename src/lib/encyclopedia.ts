@@ -1,4 +1,6 @@
 import kingBatch from '../../docs/editorial-batches/saudi-kings.json' with { type: 'json' };
+import type { BodyRole, EntityType, SiteType } from '../collections/public-articles';
+import type { RichNode } from './rich-text';
 
 /** Introductory editorial previews, not publication-approved encyclopedia articles. */
 export type Locale = 'ar' | 'en';
@@ -30,7 +32,13 @@ export type Entry = {
   featured?: boolean;
   kind?: 'ruler' | 'notable';
   facts: { label: Localized; value: Localized }[];
-  body: { heading: Localized; text: Localized }[];
+  body: { heading: Localized; text: Localized; role?: BodyRole; content?: Partial<Record<Locale, RichNode[]>> }[];
+  /** Structure from the CMS; absent for seed previews. `key` is the bilingual translation key. */
+  key?: string;
+  entityType?: EntityType;
+  siteType?: SiteType;
+  parentKey?: string;
+  relatedKeys?: string[];
   sources: { title: Localized; url: string }[];
   status: 'editorial-preview' | 'published';
   /** ISO timestamps from the CMS: earliest creation and latest update of the bilingual pair. */

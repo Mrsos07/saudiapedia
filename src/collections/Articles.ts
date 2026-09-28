@@ -3,6 +3,9 @@ import { APIError, type Access, type CollectionBeforeChangeHook, type Collection
 import { boundPublicReads, canReview, hasRole, isAdmin, isStaff, nonEmpty, publishedArticleWhere, roles, validHTTPURL, validateURL } from './access';
 import { decodePublicArticle, groupPublicArticles, matchingPublicPair, type PublicArticle } from './public-articles';
 import { canonicalRelationshipID, canonicalRelationshipIDs, MAX_ARTICLE_AUTHORS, sameEditorialRelations, validateEditorialRelations, type EditorialRelations } from './editorial-relations';
+import { bodyRoles, entityTypes, MAX_RELATED_ARTICLES, siteTypes, validateStructureRelations } from './structure-relations';
+import { articleEditor } from './article-editor';
+import { richTextPlain, sanitizeRichText } from '../lib/rich-text';
 
 export const readPairedArticles: Access = async ({ req }) => {
   if (hasRole(req, roles)) return true;
@@ -58,8 +61,15 @@ const reviewStates = ['draft', 'factual-review', 'translation-review', 'approved
 const substantiveFields = [
   'locale', 'translationKey', 'section', 'slug', 'title', 'summary', 'category', 'period',
   'kind', 'featured', 'image', 'imageAlt', 'facts', 'body', 'sources', 'categoryRef', 'authors',
-  'seoTitle', 'seoDescription', 'canonicalURL', 'noIndex',
+  'seoTitle', 'seoDescription', 'canonicalURL', 'noIndex', 'entityType', 'siteType', 'parent', 'related',
 ];
+
+/** A body row is complete with a heading and either formatted or plain text. */
+export function completeBodyRow(row: unknown): boolean {
+  if (!row || typeof row !== 'object') return false;
+  const { heading, text, content } = row as Record<string, unknown>;
+  return nonEmpty(heading) && (nonEmpty(text) || richTextPlain(sanitizeRichText(content)).length > 0);
+}
 const approvalIntent = new WeakMap<object, boolean>();
 
 // Payload normally saves draft=true only into versions, leaving the old public
@@ -96,8 +106,8 @@ function canonical(value: unknown): unknown {
 function contentChanged(data: Record<string, unknown>, original: Record<string, unknown>): boolean {
   return substantiveFields.some((key) => {
     if (!(key in data)) return false;
-    const normalize = (value: unknown) => key === 'categoryRef' ? canonicalRelationshipID(value)
-      : key === 'authors' ? canonicalRelationshipIDs(value)
+    const normalize = (value: unknown) => key === 'categoryRef' || key === 'parent' ? canonicalRelationshipID(value)
+      : key === 'authors' || key === 'related' ? canonicalRelationshipIDs(value)
       : key === 'image' && value && typeof value === 'object' && 'id' in value
       ? value.id : canonical(value);
     return JSON.stringify(normalize(data[key])) !== JSON.stringify(normalize(original[key]));
@@ -108,7 +118,7 @@ function requirePublishable(doc: Record<string, unknown>) {
   for (const field of ['title', 'summary', 'category', 'slug', 'translationKey']) {
     if (!nonEmpty(doc[field])) throw new APIError(`${field} is required for approval.`, 400);
   }
-  if (!Array.isArray(doc.body) || !doc.body.length || doc.body.some((row) => !nonEmpty(row?.heading) || !nonEmpty(row?.text))) {
+  if (!Array.isArray(doc.body) || !doc.body.length || doc.body.some((row) => !completeBodyRow(row))) {
     throw new APIError('Approval requires at least one complete body section (heading and text).', 400);
   }
   if (!Array.isArray(doc.sources) || !doc.sources.length || doc.sources.some((row) => !nonEmpty(row?.title) || !validHTTPURL(row?.url))) {
@@ -207,7 +217,7 @@ export const Articles: CollectionConfig = {
     { fields: ['slug', 'locale', 'section'], unique: true },
     { fields: ['translationKey', 'locale'], unique: true },
   ],
-  hooks: { beforeOperation: [persistEditorialDraft, boundPublicReads], beforeValidate: [validateEditorialRelations], beforeChange: [enforceArticleWorkflow] },
+  hooks: { beforeOperation: [persistEditorialDraft, boundPublicReads], beforeValidate: [validateEditorialRelations, validateStructureRelations], beforeChange: [enforceArticleWorkflow] },
   fields: [
     { name: 'title', label: { ar: 'عنوان المقال', en: 'Article title' }, type: 'text', required: true },
     { name: 'locale', label: { ar: 'لغة المقال', en: 'Article language' }, type: 'select', required: true, defaultValue: 'ar', options: [{ value: 'ar', label: { ar: 'العربية', en: 'Arabic' } }, { value: 'en', label: { ar: 'الإنجليزية', en: 'English' } }], index: true },
@@ -244,10 +254,38 @@ export const Articles: CollectionConfig = {
     { name: 'period', label: { ar: 'الفترة الزمنية', en: 'Period' }, type: 'text' },
     { name: 'kind', label: { ar: 'نوع الشخصية', en: 'Person type' }, type: 'select', options: [{ value: 'ruler', label: { ar: 'حاكم', en: 'Ruler' } }, { value: 'notable', label: { ar: 'شخصية بارزة', en: 'Notable person' } }] },
     { name: 'featured', label: { ar: 'مقال مميز', en: 'Featured article' }, type: 'checkbox', defaultValue: false },
+    {
+      type: 'collapsible', label: { ar: 'البنية والترابط', en: 'Structure and links' },
+      admin: { description: { ar: 'يحدّد نوع الكيان وموقعه في التسلسل (منطقة ← محافظة ← موقع) والمقالات المرتبطة. اربط المقال بمقالات بلغته نفسها، وطابق الترجمتين.', en: 'Entity type, place in the hierarchy (region → governorate → site) and related articles. Link to articles in the same language and match both translations.' } },
+      fields: [
+        { name: 'entityType', label: { ar: 'نوع الكيان', en: 'Entity type' }, type: 'select', index: true, options: entityTypes.map(value => ({ value, label: {
+          region: { ar: 'منطقة إدارية', en: 'Administrative region' }, governorate: { ar: 'محافظة', en: 'Governorate' }, city: { ar: 'مدينة', en: 'City' },
+          site: { ar: 'موقع', en: 'Site' }, person: { ar: 'شخصية', en: 'Person' }, event: { ar: 'حقبة أو حدث', en: 'Period or event' }, topic: { ar: 'موضوع', en: 'Topic' },
+        }[value] })) },
+        { name: 'siteType', label: { ar: 'نوع الموقع', en: 'Site type' }, type: 'select', admin: { condition: (data) => data?.entityType === 'site' }, options: siteTypes.map(value => ({ value, label: {
+          historical: { ar: 'تاريخي', en: 'Historical' }, religious: { ar: 'ديني', en: 'Religious' }, tourism: { ar: 'سياحي', en: 'Tourism' }, nature: { ar: 'طبيعي', en: 'Natural' }, museum: { ar: 'متحف', en: 'Museum' },
+        }[value] })) },
+        { name: 'parent', label: { ar: 'يتبع', en: 'Part of' }, type: 'relationship', relationTo: 'articles', index: true, maxDepth: 1,
+          admin: { description: { ar: 'المقال الأعلى في التسلسل، مثل المنطقة لمحافظة أو المحافظة لموقع.', en: 'The article above this one, such as the region of a governorate or the governorate of a site.' } } },
+        { name: 'related', label: { ar: 'مقالات مرتبطة', en: 'Related articles' }, type: 'relationship', relationTo: 'articles', hasMany: true, maxRows: MAX_RELATED_ARTICLES, maxDepth: 1,
+          admin: { description: { ar: 'شخصيات وأماكن وأحداث ذات صلة. تظهر الصلة في الاتجاهين تلقائيًا.', en: 'Related people, places and events. Links are shown in both directions automatically.' } } },
+      ],
+    },
     { name: 'image', label: { ar: 'الصورة', en: 'Image' }, type: 'relationship', relationTo: 'media' },
     { name: 'imageAlt', label: { ar: 'النص البديل للصورة', en: 'Image alternative text' }, type: 'text', admin: { description: { ar: 'صِف الصورة نفسها بكل لغة. إذا لم يتوفر الوصفان، يستخدم الموقع العام صورة سياقية موضّحة بصفتها هذه، ولا يستخدم عنوان المقال مطلقًا كنص بديل.', en: 'Describe the same image in each language. Without both descriptions, the public site uses a labeled contextual photograph, never the article title as alt text.' } } },
     { name: 'facts', label: { ar: 'معلومات موجزة', en: 'Facts' }, type: 'array', fields: [{ name: 'label', label: { ar: 'عنوان المعلومة', en: 'Fact label' }, type: 'text' }, { name: 'value', label: { ar: 'قيمة المعلومة', en: 'Fact value' }, type: 'text' }] },
-    { name: 'body', label: { ar: 'محتوى المقال', en: 'Article body' }, type: 'array', fields: [{ name: 'heading', label: { ar: 'العنوان الفرعي', en: 'Heading' }, type: 'text' }, { name: 'text', label: { ar: 'النص', en: 'Text' }, type: 'textarea' }] },
+    { name: 'body', label: { ar: 'محتوى المقال', en: 'Article body' }, type: 'array', fields: [
+      { name: 'heading', label: { ar: 'العنوان الفرعي', en: 'Heading' }, type: 'text' },
+      { name: 'role', label: { ar: 'دور القسم', en: 'Section role' }, type: 'select', options: bodyRoles.map(value => ({ value, label: {
+        overview: { ar: 'نظرة عامة', en: 'Overview' }, administration: { ar: 'التقسيم الإداري', en: 'Administration' }, geography: { ar: 'الجغرافيا', en: 'Geography' },
+        history: { ar: 'التاريخ والتطور', en: 'History' }, antiquities: { ar: 'الآثار والمواقع التاريخية', en: 'Antiquities and historic sites' }, heritage: { ar: 'التراث والعادات', en: 'Heritage and customs' },
+        religious: { ar: 'الأماكن الدينية', en: 'Religious sites' }, culture: { ar: 'الحركة الثقافية', en: 'Culture' }, economy: { ar: 'الاقتصاد', en: 'Economy' },
+        nature: { ar: 'الطبيعة والحياة الفطرية', en: 'Nature and wildlife' }, tourism: { ar: 'السياحة', en: 'Tourism' }, services: { ar: 'الخدمات والتنمية', en: 'Services and development' },
+      }[value] })), admin: { description: { ar: 'اختياري. يضع القوائم التلقائية (المحافظات، المواقع، الشخصيات) بجانب القسم المناسب في صفحة المنطقة.', en: 'Optional. Places automatic lists (governorates, sites, people) beside the matching section on hub pages.' } } },
+      { name: 'content', label: { ar: 'النص المنسّق', en: 'Formatted text' }, type: 'richText', editor: articleEditor,
+        admin: { description: { ar: 'يدعم العناوين والقوائم والاقتباس والروابط الداخلية لمقالات منشورة والخارجية. يُعرض بدل النص البسيط إذا مُلئ.', en: 'Headings, lists, quotes, internal links to published articles and external links. Shown instead of plain text when filled.' } } },
+      { name: 'text', label: { ar: 'النص البسيط', en: 'Plain text' }, type: 'textarea', admin: { description: { ar: 'للمقالات السابقة. استخدم النص المنسّق للمحتوى الجديد.', en: 'For existing articles. Use formatted text for new content.' } } },
+    ] },
     {
       name: 'sources', label: { ar: 'المصادر', en: 'Sources' }, type: 'array',
       admin: { description: { ar: 'استشهادات عامة؛ انسخ المراجع المتحقق منها من مكتبة المصادر الخاصة. حافظ على ترتيب الروابط نفسه في الترجمتين.', en: 'Public citations; copy verified references from the private source library. Match URL order between translations.' } },

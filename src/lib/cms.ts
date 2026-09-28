@@ -63,9 +63,17 @@ export function mergePair(ar: PublicArticle, en: PublicArticle): Entry | null {
 
   const created = [ar.createdAt, en.createdAt].filter((value): value is string => Boolean(value)).sort();
   const updated = [ar.updatedAt, en.updatedAt].filter((value): value is string => Boolean(value)).sort();
+  // Structure is optional: a translation mismatch drops the link instead of hiding the pair or failing the site.
+  const entityType = ar.entityType === en.entityType ? ar.entityType : undefined;
+  const siteType = entityType === 'site' && ar.siteType === en.siteType ? ar.siteType : undefined;
+  const parentKey = ar.parentKey && ar.parentKey === en.parentKey ? ar.parentKey : undefined;
+  const relatedKeys = (ar.relatedKeys ?? []).filter(key => en.relatedKeys?.includes(key));
   return {
     ...(created.length ? { datePublished: created[0] } : {}),
     ...(updated.length ? { dateModified: updated[updated.length - 1] } : {}),
+    key: ar.translationKey,
+    ...(entityType ? { entityType } : {}), ...(siteType ? { siteType } : {}),
+    ...(parentKey ? { parentKey } : {}), ...(relatedKeys.length ? { relatedKeys } : {}),
     section: ar.section,
     slug: ar.slug,
     title: localized(ar.title, en.title),
@@ -78,17 +86,23 @@ export function mergePair(ar: PublicArticle, en: PublicArticle): Entry | null {
     imageCredit: credit,
     seo: { ar: articleSEO(ar), en: articleSEO(en) },
     imageAlt: image ? localized(ar.imageAlt!, en.imageAlt!) : localized(
-      'عمارة طينية في الدرعية، صورة سياقية وليست صورة للشخصية',
-      'Earthen architecture in Diriyah, a contextual photograph, not a portrait of the person',
+      'عمارة طينية في الدرعية، صورة سياقية وليست صورة لموضوع المقال',
+      'Earthen architecture in Diriyah, a contextual photograph, not an image of the article subject',
     ),
     facts: ar.facts.map((fact, index) => ({
       label: localized(fact.label, en.facts[index].label),
       value: localized(fact.value, en.facts[index].value),
     })),
-    body: ar.body.map((section, index) => ({
-      heading: localized(section.heading, en.body[index].heading),
-      text: localized(section.text, en.body[index].text),
-    })),
+    body: ar.body.map((section, index) => {
+      const other = en.body[index];
+      const content = { ...(section.content ? { ar: section.content } : {}), ...(other.content ? { en: other.content } : {}) };
+      return {
+        heading: localized(section.heading, other.heading),
+        text: localized(section.text, other.text),
+        ...(section.role ? { role: section.role } : {}),
+        ...(content.ar || content.en ? { content } : {}),
+      };
+    }),
     sources: ar.sources.map((source, index) => ({ title: localized(source.title, en.sources[index].title), url: source.url })),
     status: 'published',
   };
@@ -147,7 +161,7 @@ export async function readCMSEntries(payload: CMSReader): Promise<Entry[]> {
 const readPublishedEntries = publicCache(async () => {
   const [{ getPayload }, { default: config }] = await Promise.all([import('payload'), import('../payload.config')]);
   return readCMSEntries(await getPayload({ config }));
-}, 'cms-entries:v2');
+}, 'cms-entries:v3');
 
 /** Public-only, paginated, cached across requests until a content write. Null means fully unconfigured, never failure. */
 export async function getCMSEntries(): Promise<Entry[] | null> {

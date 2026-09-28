@@ -144,7 +144,8 @@ test('images require the same released asset and bilingual alt; fallback describ
     '/api/media/file/photo.webp?token=secret', '/api/media/file/photo.webp#fragment', 'https://[', 'javascript:alert(1)']) {
     const entry = await run({ image: { ...media, url }, imageAlt: 'Person title' });
     assert.equal(entry.image, '/images/diriyah.jpg');
-    assert.match(entry.imageAlt.en, /Diriyah.*not a portrait/);
+    // The same honest fallback serves people, regions and sites: it never claims to depict the subject.
+    assert.match(entry.imageAlt.en, /Diriyah.*not an image of the article subject/);
     assert.match(entry.imageAlt.ar, /الدرعية/);
   }
   for (const image of [null, 7, { ...media, published: false }, media]) {

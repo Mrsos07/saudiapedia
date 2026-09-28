@@ -268,3 +268,6 @@ textarea {
   .cms-analytics__filters button { margin-inline-start: 0; width: 100%; }
   .cms-analytics__bar-row { grid-template-columns: 7ch 1fr 6ch; font-size: 13px; }
 }
+/* Lexical parks hidden floating tools (drag handle, link editor) at -10000px. In RTL that
+   becomes ~10,000px of horizontal overflow and pushes the edit view off-screen. */
+.rich-text-lexical { overflow-x: clip; }
