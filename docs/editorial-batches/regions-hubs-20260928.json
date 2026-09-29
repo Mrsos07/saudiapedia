@@ -1,0 +1,1289 @@
+{
+  "researchDate": "2026-09-28",
+  "status": "staging-pilot",
+  "reviewNotes": [
+    "Region hubs for the twelve remaining administrative regions, following the Riyadh pilot template. Each hub cites the region's Saudipedia page (retrieved 2026-09-28); sections use body roles so automatic lists attach beside the matching section.",
+    "Omitted on purpose: officeholders and deputies, visitor/pilgrim counts, project values and targets, airport capacities, per-sector percentages and other fast-changing statistics. Governorate A/B classes are omitted. Where a source page's prose and table disagree (Jawf and Northern Borders governorate counts, Jazan's count including the city), names are listed without a count.",
+    "Known source errors excluded: Jazan does not face the Gulf of Aqaba; the Tabuk page's claim of human and elephant footprints dated to 500 BCE is not repeated.",
+    "Existing regional topic articles are linked, not rewritten: Historic Jeddah becomes a historical site under Makkah; Farasan Islands Reserve a natural site under Jazan; Ithra a tourism site under the Eastern Province; AlUla geography and Hegra are related to Madinah.",
+    "Region population, seat and rank in the infobox come from src/lib/region-facts.ts (2022 census)."
+  ],
+  "updateExisting": {
+    "history/historic-jeddah": {
+      "entityType": "site",
+      "siteType": "historical",
+      "parent": "regions/makkah"
+    },
+    "nature/farasan-islands-reserve": {
+      "entityType": "site",
+      "siteType": "nature",
+      "parent": "regions/jazan"
+    },
+    "tourism/ithra": {
+      "entityType": "site",
+      "siteType": "tourism",
+      "parent": "regions/eastern-province"
+    },
+    "regions/alula-geography": {
+      "related": [
+        "regions/madinah"
+      ]
+    },
+    "history/hegra-history": {
+      "related": [
+        "regions/madinah"
+      ]
+    },
+    "heritage/saudi-date-palm-cultivation": {
+      "related": [
+        "regions/qassim",
+        "regions/eastern-province"
+      ]
+    }
+  },
+  "topics": [
+    {
+      "section": "regions",
+      "slug": "makkah",
+      "translationKey": "research-20260917-region-makkah",
+      "replaceBody": true,
+      "entityType": "region",
+      "related": [
+        "people/king-faisal"
+      ],
+      "sources": [
+        {
+          "ar": "سعوديبيديا: منطقة مكة المكرمة",
+          "en": "Saudipedia: Makkah Region (Arabic)",
+          "url": "https://saudipedia.com/%D9%85%D9%86%D8%B7%D9%82%D8%A9-%D9%85%D9%83%D8%A9-%D8%A7%D9%84%D9%85%D9%83%D8%B1%D9%85%D8%A9"
+        }
+      ],
+      "body": [
+        {
+          "role": "overview",
+          "ar": {
+            "heading": "نظرة عامة",
+            "paragraphs": [
+              "منطقة مكة المكرمة إحدى المناطق الإدارية الثلاث عشرة، ومدينة مكة المكرمة عاصمتها الإدارية ومقر إمارتها. تحدها منطقة الرياض من الشرق، والمدينة المنورة من الشمال، ومنطقتا عسير والباحة من الجنوب، والبحر الأحمر من الغرب. [1]",
+              "يقع في نطاقها المسجد الحرام وفيه الكعبة المشرفة قبلة المسلمين، وتضم مقر رابطة العالم الإسلامي ومقر منظمة التعاون الإسلامي. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Overview",
+            "paragraphs": [
+              "Makkah Region is one of the thirteen administrative regions; the city of Makkah is its administrative capital and the seat of its emirate. It borders Riyadh Region to the east, Madinah to the north, Asir and Al-Bahah to the south and the Red Sea to the west. [1]",
+              "It contains the Masjid al-Haram and the Kaaba, the qibla of Muslims, as well as the headquarters of the Muslim World League and the Organisation of Islamic Cooperation. [1]"
+            ]
+          }
+        },
+        {
+          "role": "administration",
+          "ar": {
+            "heading": "التقسيم الإداري",
+            "paragraphs": [
+              "تتكون المنطقة من 16 محافظة و128 مركزًا، أربع منها على ساحل البحر الأحمر، ومحافظة الطائف أكبرها مساحة. [1]",
+              "المحافظات هي: جدة، والطائف، والقنفذة، والليث، ورابغ، وخليص، والخرمة، ورنية، وتربة، والجموم، والكامل، وميسان، والمويه، وأضم، والعرضيات، وبحرة. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Administration",
+            "paragraphs": [
+              "The region has 16 governorates and 128 centres; four governorates lie on the Red Sea coast and Taif is the largest by area. [1]",
+              "The governorates are Jeddah, Taif, Al-Qunfudhah, Al-Lith, Rabigh, Khulais, Al-Khurmah, Ranyah, Turabah, Al-Jumum, Al-Kamil, Maysan, Al-Muwayh, Adham, Al-Ardiyat and Bahrah. [1]"
+            ]
+          }
+        },
+        {
+          "role": "geography",
+          "ar": {
+            "heading": "الجغرافيا والسكان والمناخ",
+            "paragraphs": [
+              "تبلغ مساحة المنطقة نحو 137 ألف كم²، وهي الرابعة بين المناطق مساحةً والثانية سكانًا بعد الرياض بحسب تعداد 2022، ويعيش معظم سكانها في مدينة مكة المكرمة ومحافظة جدة. [1]",
+              "مناخها انتقالي بين تأثيرات البحر المتوسط والمناخ الموسمي، ترتفع حرارته في مكة المكرمة مقارنة بجدة والطائف، وتسجل الطائف أعلى معدلات الأمطار في المنطقة. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Geography, population and climate",
+            "paragraphs": [
+              "The region covers about 137,000 km², the fourth largest by area and the second most populous after Riyadh in the 2022 census; most residents live in Makkah city and Jeddah. [1]",
+              "Its climate is transitional between Mediterranean and monsoon influences. Makkah is warmer than Jeddah and Taif, and Taif records the region's highest rainfall. [1]"
+            ]
+          }
+        },
+        {
+          "role": "antiquities",
+          "ar": {
+            "heading": "المعالم التاريخية",
+            "paragraphs": [
+              "تضم المنطقة [[history/historic-jeddah|جدة التاريخية]] المسجلة في قائمة التراث العالمي لليونسكو، ومحافظة الطائف مقر [[heritage/souq-okaz|سوق عكاظ]] الذي يعود تاريخه إلى نحو عام 500م ويُعد من أبرز التجمعات الثقافية في الجزيرة العربية. [1]",
+              "حافظت مكة المكرمة على أقدم ترسيم لحدودها، وهو حدود الحرم المحددة بعلامات تحيط بجهاتها الأربع. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Historic sites",
+            "paragraphs": [
+              "The region includes [[history/historic-jeddah|Historic Jeddah]], inscribed on the UNESCO World Heritage List, and Taif, home of [[heritage/souq-okaz|Souq Okaz]], which dates to around 500 CE and was one of the Arabian Peninsula's major cultural gatherings. [1]",
+              "Makkah has kept its oldest boundary, the limits of the Haram, marked by boundary stones on all four sides. [1]"
+            ]
+          }
+        },
+        {
+          "role": "economy",
+          "ar": {
+            "heading": "الاقتصاد والنقل",
+            "paragraphs": [
+              "تقع على ساحل المنطقة مدينة الملك عبدالله الاقتصادية في محافظة رابغ التي أُنشئت عام 2005م، وميناء الملك عبدالله. ويُعد مطار الملك عبدالعزيز الدولي في جدة البوابة الجوية الرئيسة للمنطقة، ويربط قطار الحرمين منذ 2018م مكة المكرمة وجدة ومدينة الملك عبدالله الاقتصادية والمدينة المنورة. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Economy and transport",
+            "paragraphs": [
+              "King Abdullah Economic City in Rabigh, established in 2005, and King Abdullah Port lie on the region's coast. King Abdulaziz International Airport in Jeddah is the main air gateway, and since 2018 the Haramain railway has linked Makkah, Jeddah, King Abdullah Economic City and Madinah. [1]"
+            ]
+          }
+        },
+        {
+          "role": "history",
+          "ar": {
+            "heading": "الإدارة بعد التأسيس",
+            "paragraphs": [
+              "خضعت المنطقة بعد تأسيس المملكة لإدارة الملك [[people/king-faisal|فيصل بن عبدالعزيز]] مدة 34 عامًا، حين كان نائبًا للملك المؤسس ثم وليًا للعهد في عهد الملك سعود. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Administration after unification",
+            "paragraphs": [
+              "After the founding of the Kingdom the region was administered for 34 years by [[people/king-faisal|Faisal bin Abdulaziz]], first as viceroy for the founding king and later as crown prince under King Saud. [1]"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "section": "regions",
+      "slug": "madinah",
+      "translationKey": "research-20260917-region-madinah",
+      "replaceBody": true,
+      "entityType": "region",
+      "related": [
+        "regions/alula-geography",
+        "history/hegra-history"
+      ],
+      "sources": [
+        {
+          "ar": "سعوديبيديا: منطقة المدينة المنورة",
+          "en": "Saudipedia: Madinah Region (Arabic)",
+          "url": "https://saudipedia.com/%D9%85%D9%86%D8%B7%D9%82%D8%A9-%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9-%D8%A7%D9%84%D9%85%D9%86%D9%88%D8%B1%D8%A9"
+        }
+      ],
+      "body": [
+        {
+          "role": "overview",
+          "ar": {
+            "heading": "نظرة عامة",
+            "paragraphs": [
+              "تتوسط منطقة المدينة المنورة الجزء الغربي من المملكة، وهي الثالثة بين المناطق مساحةً والرابعة سكانًا بحسب تعداد 2022، وتبلغ مساحتها نحو 150 ألف كم². [1]"
+            ]
+          },
+          "en": {
+            "heading": "Overview",
+            "paragraphs": [
+              "Madinah Region lies in the western part of the Kingdom. It is the third largest region by area and the fourth by population in the 2022 census, covering about 150,000 km². [1]"
+            ]
+          }
+        },
+        {
+          "role": "history",
+          "ar": {
+            "heading": "التاريخ والمكانة الدينية",
+            "paragraphs": [
+              "عُرفت المنطقة قبل الإسلام بنشوء مدينة يثرب وهجرات القبائل إليها، وبعد الهجرة النبوية أصبحت المدينة المنورة منطلق الدعوة الإسلامية وعاصمة الخلافة. [1]",
+              "تنبع مكانتها من المسجد النبوي الذي يضم قبر النبي صلى الله عليه وسلم، ومن [[heritage/quba-mosque|مسجد قباء]] أول مسجد بُني في الإسلام. [1]"
+            ]
+          },
+          "en": {
+            "heading": "History and religious significance",
+            "paragraphs": [
+              "Before Islam the area was known for the town of Yathrib and the tribes that settled there. After the Hijra, Madinah became the starting point of the Islamic call and the capital of the caliphate. [1]",
+              "Its standing comes from the Prophet's Mosque, which contains the Prophet's grave, and from [[heritage/quba-mosque|Quba Mosque]], the first mosque built in Islam. [1]"
+            ]
+          }
+        },
+        {
+          "role": "administration",
+          "ar": {
+            "heading": "التقسيم الإداري",
+            "paragraphs": [
+              "تتبع المنطقة ثماني محافظات و96 مركزًا، هي: ينبع، والعلا، والمهد، والحناكية، وبدر، وخيبر، والعيص، ووادي الفرع. ولها هيئة تطوير تأسست بأمر ملكي عام 1431هـ/2009م. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Administration",
+            "paragraphs": [
+              "The region has eight governorates and 96 centres: Yanbu, AlUla, Al-Mahd, Al-Hinakiyah, Badr, Khaybar, Al-Ais and Wadi Al-Fara. Its development authority was established by royal order in 1431 AH/2009 CE. [1]"
+            ]
+          }
+        },
+        {
+          "role": "antiquities",
+          "ar": {
+            "heading": "الآثار والمواقع",
+            "paragraphs": [
+              "تضم محافظة العلا مدائن صالح ([[history/hegra-history|الحِجر]])، أول موقع سعودي يُسجل في قائمة التراث العالمي لليونسكو، وتحتفظ المنطقة بآثار ونقوش قديمة. [1]",
+              "ويقصد الزوار في المدينة المنورة مساجد تاريخية منها قباء والقبلتين، ومواقع مثل جبل أحد ومقبرة شهدائه وموقع غزوة الخندق. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Antiquities and sites",
+            "paragraphs": [
+              "AlUla contains Mada'in Salih ([[history/hegra-history|Hegra]]), the first Saudi site inscribed on the UNESCO World Heritage List, and the region preserves ancient remains and inscriptions. [1]",
+              "In Madinah, visitors go to historic mosques such as Quba and Al-Qiblatayn and to sites such as Mount Uhud, the martyrs' cemetery beside it and the site of the Battle of the Trench. [1]"
+            ]
+          }
+        },
+        {
+          "role": "economy",
+          "ar": {
+            "heading": "الاقتصاد والخدمات",
+            "paragraphs": [
+              "في المنطقة منجم مهد الذهب الذي تدل آثاره على استغلاله قبل نحو ثلاثة آلاف عام، وبدأ إنتاجه الحديث عام 1988م. ويخدمها مطار الأمير محمد بن عبدالعزيز في المدينة المنورة ومطار الأمير عبدالمحسن بن عبدالعزيز في ينبع، وفيها الجامعة الإسلامية وجامعة طيبة. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Economy and services",
+            "paragraphs": [
+              "The Mahd adh-Dhahab gold mine shows signs of working some three thousand years ago; modern production began in 1988. The region is served by Prince Mohammad bin Abdulaziz Airport in Madinah and Prince Abdulmohsin bin Abdulaziz Airport in Yanbu, and hosts the Islamic University and Taibah University. [1]"
+            ]
+          }
+        },
+        {
+          "role": "geography",
+          "ar": {
+            "heading": "المناخ",
+            "paragraphs": [
+              "مناخ المنطقة حار في عمومه، معتدل نسبيًا شتاءً، وأمطاره قليلة تهطل غالبًا بين نوفمبر ويناير. وتقع جغرافيا [[regions/alula-geography|العلا]] في شمالها. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Climate",
+            "paragraphs": [
+              "The climate is generally hot and relatively mild in winter, with little rain, mostly between November and January. The landscape of [[regions/alula-geography|AlUla]] lies in the north of the region. [1]"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "section": "regions",
+      "slug": "qassim",
+      "translationKey": "research-20260917-region-qassim",
+      "replaceBody": true,
+      "entityType": "region",
+      "related": [
+        "heritage/saudi-date-palm-cultivation"
+      ],
+      "sources": [
+        {
+          "ar": "سعوديبيديا: منطقة القصيم",
+          "en": "Saudipedia: Al-Qassim Region (Arabic)",
+          "url": "https://saudipedia.com/%D9%85%D9%86%D8%B7%D9%82%D8%A9-%D8%A7%D9%84%D9%82%D8%B5%D9%8A%D9%85"
+        }
+      ],
+      "body": [
+        {
+          "role": "overview",
+          "ar": {
+            "heading": "نظرة عامة",
+            "paragraphs": [
+              "تقع منطقة القصيم وسط شمال المملكة على مسافة متساوية تقريبًا من الساحلين الشرقي والغربي، وتحدها مناطق حائل والمدينة المنورة والرياض والشرقية، وتلتقي في شمالها الغربي بمنطقة الحدود الشمالية. ومقر إمارتها مدينة بريدة. [1]",
+              "القصيم إحدى خمس مناطق لا يحمل اسمها اسم عاصمتها الإدارية، ومساحتها نحو 73 ألف كم². [1]"
+            ]
+          },
+          "en": {
+            "heading": "Overview",
+            "paragraphs": [
+              "Al-Qassim lies in the north-centre of the Kingdom, roughly equidistant from the eastern and western coasts. It borders Hail, Madinah, Riyadh and the Eastern Province and touches the Northern Borders in the north-west. Its emirate is based in Buraidah. [1]",
+              "It is one of five regions not named after their capital and covers about 73,000 km². [1]"
+            ]
+          }
+        },
+        {
+          "role": "administration",
+          "ar": {
+            "heading": "التقسيم الإداري",
+            "paragraphs": [
+              "تشكلت المنطقة إداريًا عام 1992م، وتتبعها 13 محافظة و154 مركزًا، هي: عنيزة، والرس، والمذنب، والبكيرية، والبدائع، والأسياح، والنبهانية، وعيون الجواء، ورياض الخبراء، والشماسية، وعقلة الصقور، وضرية، وأبانات. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Administration",
+            "paragraphs": [
+              "Formed administratively in 1992, the region has 13 governorates and 154 centres: Unaizah, Ar-Rass, Al-Mithnab, Al-Bukayriyah, Al-Badai, Al-Asyah, An-Nabhaniyah, Uyun Al-Jiwa, Riyadh Al-Khabra, Ash-Shimasiyah, Uqlat As-Suqur, Dariyah and Abanat. [1]"
+            ]
+          }
+        },
+        {
+          "role": "economy",
+          "ar": {
+            "heading": "الزراعة",
+            "paragraphs": [
+              "رغم ندرة الأمطار، تُصنف القصيم منطقة زراعية وتتميز بوفرة الغطاء النباتي، وفيها من أكبر مزارع النخيل وأسواق التمور في العالم، ويقطعها من الغرب إلى الشرق وادي الرمة أطول المجاري المائية الموسمية في المملكة. انظر أيضًا [[heritage/saudi-date-palm-cultivation|زراعة النخيل في السعودية]]. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Agriculture",
+            "paragraphs": [
+              "Despite scarce rain, Al-Qassim is classed as an agricultural region with rich vegetation, some of the world's largest palm farms and date markets, and Wadi Al-Rumah, the Kingdom's longest seasonal watercourse, running west to east. See also [[heritage/saudi-date-palm-cultivation|date palm cultivation in Saudi Arabia]]. [1]"
+            ]
+          }
+        },
+        {
+          "role": "geography",
+          "ar": {
+            "heading": "المناخ",
+            "paragraphs": [
+              "مناخ القصيم حار معظم السنة، تبلغ حرارته ذروتها في أغسطس وسبتمبر، وتنخفض شتاءً حتى نحو خمس درجات مئوية في بعض المحافظات، وأمطاره قليلة تقتصر غالبًا على الربيع والشتاء. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Climate",
+            "paragraphs": [
+              "Al-Qassim is hot for most of the year, peaking in August and September and falling to about 5 °C in some governorates in winter; its sparse rain falls mostly in spring and winter. [1]"
+            ]
+          }
+        },
+        {
+          "role": "history",
+          "ar": {
+            "heading": "التاريخ والأدب",
+            "paragraphs": [
+              "عُرفت القصيم محطةً لستة من طرق الحج والتجارة التاريخية، وورد ذكر مواضعها في الشعر العربي، ومنها عيون الجواء في معلقة عنترة بن شداد. وفيها قصر الملك [[people/king-abdulaziz|عبدالعزيز]] في قبة، من أكبر القصور التاريخية في المنطقة. [1]"
+            ]
+          },
+          "en": {
+            "heading": "History and literature",
+            "paragraphs": [
+              "Al-Qassim was a stop on six historic pilgrimage and trade routes, and its places appear in Arabic poetry, including Uyun Al-Jiwa in the ode of Antarah ibn Shaddad. It contains King [[people/king-abdulaziz|Abdulaziz]]'s palace at Qubbah, one of the largest historic palaces in the region. [1]"
+            ]
+          }
+        },
+        {
+          "role": "services",
+          "ar": {
+            "heading": "الخدمات",
+            "paragraphs": [
+              "في المنطقة جامعة القصيم ومقرها بريدة، ومطار الأمير نايف بن عبدالعزيز الدولي غرب بريدة. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Services",
+            "paragraphs": [
+              "The region hosts Qassim University, based in Buraidah, and Prince Nayef bin Abdulaziz International Airport west of Buraidah. [1]"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "section": "regions",
+      "slug": "eastern-province",
+      "translationKey": "research-20260917-region-eastern-province",
+      "replaceBody": true,
+      "entityType": "region",
+      "related": [
+        "heritage/saudi-date-palm-cultivation"
+      ],
+      "sources": [
+        {
+          "ar": "سعوديبيديا: المنطقة الشرقية",
+          "en": "Saudipedia: Eastern Province (Arabic)",
+          "url": "https://saudipedia.com/%D8%A7%D9%84%D9%85%D9%86%D8%B7%D9%82%D8%A9-%D8%A7%D9%84%D8%B4%D8%B1%D9%82%D9%8A%D8%A9"
+        }
+      ],
+      "body": [
+        {
+          "role": "overview",
+          "ar": {
+            "heading": "نظرة عامة",
+            "paragraphs": [
+              "المنطقة الشرقية أكبر مناطق المملكة مساحةً بنحو 540 ألف كم²، أي أكثر من ربع مساحة البلاد، وتمتد من ساحل الخليج العربي حتى صحراء الدهناء، ومن الحدود الكويتية شمالًا إلى الربع الخالي جنوبًا. ومدينة الدمام مقر إمارتها. [1]",
+              "ظهر اسمها الحالي عام 1412هـ/1992م مع تطبيق نظام المناطق، وهي ثالث المناطق سكانًا بحسب تعداد 2022. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Overview",
+            "paragraphs": [
+              "The Eastern Province is the Kingdom's largest region, about 540,000 km² or more than a quarter of the country, stretching from the Arabian Gulf coast to the Dahna desert and from the Kuwaiti border to the Rub al Khali. Dammam is the seat of its emirate. [1]",
+              "Its present name dates from 1412 AH/1992 CE, when the regions system was introduced, and it is the third most populous region in the 2022 census. [1]"
+            ]
+          }
+        },
+        {
+          "role": "history",
+          "ar": {
+            "heading": "التاريخ",
+            "paragraphs": [
+              "تُعد المنطقة من أقدم مواطن الاستقرار البشري في الجزيرة العربية لوفرة عيونها وخصوبة أرضها، وعُرفت عبر التاريخ بأسماء منها الجرهاء وهجر وإقليم البحرين. [1]",
+              "وفي [[heritage/al-ahsa-oasis|الأحساء]] مسجد جواثا الذي يعود بناؤه إلى السنة السابعة للهجرة، وعلى جزيرة تاروت ميناء دارين الذي كان منفذًا تجاريًا لبضائع الهند إلى الخليج. [1]"
+            ]
+          },
+          "en": {
+            "heading": "History",
+            "paragraphs": [
+              "Abundant springs and fertile land made the area one of the oldest settled parts of Arabia, known over time as Gerrha, Hajar and the province of Bahrain. [1]",
+              "[[heritage/al-ahsa-oasis|Al-Ahsa]] has the Jawatha Mosque, dating to the seventh year of the Hijra, and Tarut Island has the old port of Darin, once a gateway for goods from India into the Gulf. [1]"
+            ]
+          }
+        },
+        {
+          "role": "administration",
+          "ar": {
+            "heading": "التقسيم الإداري",
+            "paragraphs": [
+              "تتكون المنطقة من 12 محافظة إضافة إلى مدينة الدمام، و116 مركزًا إداريًا، ومحافظة الأحساء أكبرها مساحة. والمحافظات هي: الأحساء، وحفر الباطن، والجبيل، والقطيف، والخبر، والخفجي، والعديد، ورأس تنورة، وبقيق، والنعيرية، وقرية العليا، والبيضاء. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Administration",
+            "paragraphs": [
+              "The province has 12 governorates besides Dammam and 116 administrative centres; Al-Ahsa is the largest by area. The governorates are Al-Ahsa, Hafar Al-Batin, Jubail, Qatif, Khobar, Khafji, Al-Udayd, Ras Tanura, Abqaiq, An-Nairyah, Qaryat Al-Ulya and Al-Bayda. [1]"
+            ]
+          }
+        },
+        {
+          "role": "geography",
+          "ar": {
+            "heading": "الطبيعة والمناخ",
+            "paragraphs": [
+              "تجمع المنطقة بين البيئات الصحراوية والساحلية ومجاري المياه، وتضم جزرًا مأهولة مثل تاروت وجنة، وأكبرها جزيرة أبوعلي. ومناخها معتدل غالبًا، حار رطب بين مايو وأغسطس، مع أمطار شتوية قليلة. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Landscape and climate",
+            "paragraphs": [
+              "The province combines desert, coastal and wadi environments and includes inhabited islands such as Tarut and Jana, the largest being Abu Ali. Its climate is usually mild but hot and humid from May to August, with little winter rain. [1]"
+            ]
+          }
+        },
+        {
+          "role": "economy",
+          "ar": {
+            "heading": "الموانئ والاقتصاد",
+            "paragraphs": [
+              "تحتضن سواحل المنطقة ستة موانئ في الدمام والجبيل ورأس تنورة والخفجي ورأس الخير، منها ميناء الملك عبدالعزيز في الدمام الميناء الرئيس للمملكة على الخليج، وميناء الملك فهد الصناعي في الجبيل الذي أُنشئ عام 1402هـ/1982م، وميناء رأس تنورة النفطي. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Ports and economy",
+            "paragraphs": [
+              "Six ports line the coast at Dammam, Jubail, Ras Tanura, Khafji and Ras Al-Khair, including King Abdulaziz Port in Dammam, the Kingdom's main Gulf port, King Fahd Industrial Port in Jubail, built in 1402 AH/1982 CE, and the Ras Tanura oil terminal. [1]"
+            ]
+          }
+        },
+        {
+          "role": "culture",
+          "ar": {
+            "heading": "التعليم والثقافة",
+            "paragraphs": [
+              "انطلق التعليم النظامي في المنطقة عام 1360هـ/1941م بافتتاح المدرسة الأميرية في الهفوف. وفيها ناديان أدبيان: نادي المنطقة الشرقية الأدبي في الدمام، ونادي الأحساء الأدبي في الهفوف. ومن معالمها الثقافية مركز [[tourism/ithra|إثراء]]. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Education and culture",
+            "paragraphs": [
+              "Formal schooling began in 1360 AH/1941 CE with the Amiriyah School in Hofuf. The province has two literary clubs, in Dammam and in Hofuf, and cultural landmarks such as [[tourism/ithra|Ithra]]. [1]"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "section": "regions",
+      "slug": "asir",
+      "translationKey": "research-20260911-asir",
+      "replaceBody": true,
+      "entityType": "region",
+      "sources": [
+        {
+          "ar": "سعوديبيديا: منطقة عسير",
+          "en": "Saudipedia: Asir Region (Arabic)",
+          "url": "https://saudipedia.com/%D9%85%D9%86%D8%B7%D9%82%D8%A9-%D8%B9%D8%B3%D9%8A%D8%B1"
+        }
+      ],
+      "body": [
+        {
+          "role": "overview",
+          "ar": {
+            "heading": "نظرة عامة",
+            "paragraphs": [
+              "تقع منطقة عسير جنوب غرب المملكة، وتحدها نجران شرقًا، وجازان وجزء من اليمن جنوبًا، ومكة المكرمة والباحة شمالًا، والرياض من الشمال الشرقي، وتطل على البحر الأحمر غربًا. تشكلت إداريًا عام 1412هـ/1992م، ومساحتها نحو 80 ألف كم²، ومدينة أبها عاصمتها الإدارية. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Overview",
+            "paragraphs": [
+              "Asir lies in the south-west of the Kingdom, bordered by Najran to the east, Jazan and part of Yemen to the south, Makkah and Al-Bahah to the north and Riyadh to the north-east, with the Red Sea to the west. It was formed in 1412 AH/1992 CE, covers about 80,000 km², and Abha is its capital. [1]"
+            ]
+          }
+        },
+        {
+          "role": "administration",
+          "ar": {
+            "heading": "التقسيم الإداري",
+            "paragraphs": [
+              "تضم المنطقة 18 محافظة و128 مركزًا إضافة إلى أبها، وأكبر تجمعاتها السكانية في محافظة خميس مشيط. والمحافظات: خميس مشيط، وبيشة، والنماص، ومحايل، وتثليث، ورجال ألمع، وظهران الجنوب، وسراة عبيدة، وأحد رفيدة، وبلقرن، والمجاردة، وتنومة، وطريب، وبارق، والبرك، والحرجة، والأمواه، والفرشة. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Administration",
+            "paragraphs": [
+              "The region has 18 governorates and 128 centres besides Abha; Khamis Mushait has the largest share of its population. The governorates are Khamis Mushait, Bisha, An-Namas, Muhayil, Tathlith, Rijal Alma, Dhahran Al-Janub, Sarat Abidah, Ahad Rufaidah, Balqarn, Al-Majardah, Tanomah, Tarib, Bariq, Al-Birk, Al-Harajah, Al-Amwah and Al-Farshah. [1]"
+            ]
+          }
+        },
+        {
+          "role": "geography",
+          "ar": {
+            "heading": "الجبال والمناخ",
+            "paragraphs": [
+              "تُصنف عسير منطقة جبلية تضم نحو 29% من جبال المملكة وأعلى 12 قمة فيها، أعلاها [[nature/jabal-al-sawda|جبل السودة]] غرب أبها. ويُرجح أن اسمها مأخوذ من عسر مسالكها، وتطل على البحر الأحمر بواجهة تقع عليها محافظات رجال ألمع ومحايل والبرك. [1]",
+              "مناخها بارد نسبيًا شتاءً معتدل صيفًا، وأمطارها متواترة بحكم وقوعها في مهب الرياح الموسمية، وتزداد في مرتفعاتها. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Mountains and climate",
+            "paragraphs": [
+              "Asir is a mountainous region with about 29% of the Kingdom's mountains and its twelve highest peaks, the highest being [[nature/jabal-al-sawda|Jabal Al-Sawda]] west of Abha. Its name is thought to refer to its difficult passes; its Red Sea frontage includes Rijal Alma, Muhayil and Al-Birk. [1]",
+              "Winters are relatively cold and summers mild, and monsoon winds bring frequent rain, heavier in the highlands. [1]"
+            ]
+          }
+        },
+        {
+          "role": "heritage",
+          "ar": {
+            "heading": "التراث",
+            "paragraphs": [
+              "لا يزال التراث حاضرًا في النقوش التي تزين المباني والأواني، وقد أُدرج فن [[heritage/al-qatt-al-asiri|القط العسيري]] في قائمة اليونسكو للتراث الثقافي غير المادي. وتحتفظ الأزياء الشعبية بلونيها الأسود والأحمر. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Heritage",
+            "paragraphs": [
+              "Heritage remains visible in the painted decoration of buildings and household objects; the [[heritage/al-qatt-al-asiri|Al-Qatt Al-Asiri]] art was added to UNESCO's intangible cultural heritage list. Traditional dress still favours black and red. [1]"
+            ]
+          }
+        },
+        {
+          "role": "antiquities",
+          "ar": {
+            "heading": "القرى التاريخية",
+            "paragraphs": [
+              "في المنطقة آلاف القرى التاريخية، منها [[tourism/al-muftaha-village|قرية المفتاحة]] غرب أبها التي تحولت إلى معلم سياحي وتضم مركز الملك فهد الثقافي، وقرية رجال ألمع على بعد نحو 45 كم من أبها، وفيها قصور متراصة تصل إلى ستة طوابق مزينة بأحجار المرو الأبيض ونقوش القط العسيري. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Historic villages",
+            "paragraphs": [
+              "The region has thousands of historic villages, including [[tourism/al-muftaha-village|Al-Muftaha]] west of Abha, now a visitor attraction with the King Fahd Cultural Centre, and Rijal Alma about 45 km from Abha, whose tightly packed palaces rise up to six storeys, faced with white quartz and decorated inside with Al-Qatt Al-Asiri. [1]"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "section": "regions",
+      "slug": "tabuk",
+      "translationKey": "research-20260917-region-tabuk",
+      "replaceBody": true,
+      "entityType": "region",
+      "sources": [
+        {
+          "ar": "سعوديبيديا: منطقة تبوك",
+          "en": "Saudipedia: Tabuk Region (Arabic)",
+          "url": "https://saudipedia.com/%D9%85%D9%86%D8%B7%D9%82%D8%A9-%D8%AA%D8%A8%D9%88%D9%83"
+        }
+      ],
+      "body": [
+        {
+          "role": "overview",
+          "ar": {
+            "heading": "نظرة عامة",
+            "paragraphs": [
+              "تقع منطقة تبوك في شمال غرب المملكة، وتحدها الأردن شمالًا، وخليج العقبة والبحر الأحمر غربًا، ومنطقتا الجوف وحائل شرقًا، والمدينة المنورة جنوبًا. وهي المنطقة الوحيدة التي تطل على البحر الأحمر وخليج العقبة معًا، ومساحتها نحو 136 ألف كم². [1]"
+            ]
+          },
+          "en": {
+            "heading": "Overview",
+            "paragraphs": [
+              "Tabuk lies in the north-west, bordered by Jordan to the north, the Gulf of Aqaba and the Red Sea to the west, Al-Jawf and Hail to the east and Madinah to the south. It is the only region facing both the Red Sea and the Gulf of Aqaba and covers about 136,000 km². [1]"
+            ]
+          }
+        },
+        {
+          "role": "administration",
+          "ar": {
+            "heading": "التقسيم الإداري",
+            "paragraphs": [
+              "تتبع المنطقة ست محافظات إضافة إلى مدينة تبوك مقر الإمارة، و83 مركزًا. والمحافظات: الوجه، وضباء، وتيماء، وأملج، وحقل، والبدع. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Administration",
+            "paragraphs": [
+              "The region has six governorates besides the city of Tabuk, the seat of the emirate, and 83 centres. The governorates are Al-Wajh, Duba, Tayma, Umluj, Haql and Al-Bad. [1]"
+            ]
+          }
+        },
+        {
+          "role": "geography",
+          "ar": {
+            "heading": "الساحل والجزر والمناخ",
+            "paragraphs": [
+              "تطل جميع محافظاتها عدا تيماء ومدينة تبوك على البحر الأحمر، وتضم نحو مئة جزيرة مرجانية ورملية وبركانية. ويتفاوت مناخها بين الساحل والداخل، ويتساقط الثلج شتاءً على جبل اللوز. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Coast, islands and climate",
+            "paragraphs": [
+              "Every governorate except Tayma and the city of Tabuk has a Red Sea coast, and the region has about a hundred coral, sandy and volcanic islands. The climate varies between coast and interior, and snow falls on Jabal Al-Lawz in winter. [1]"
+            ]
+          }
+        },
+        {
+          "role": "history",
+          "ar": {
+            "heading": "التاريخ",
+            "paragraphs": [
+              "كانت المنطقة موطنًا لأقوام منهم الثموديون والأنباط والآراميون، وتدل على ذلك النقوش الثمودية واليونانية والمواقع الأثرية في [[regions/tayma|تيماء]] وغيرها. [1]"
+            ]
+          },
+          "en": {
+            "heading": "History",
+            "paragraphs": [
+              "The area was home to peoples including the Thamudic tribes, the Nabataeans and the Arameans, as shown by Thamudic and Greek inscriptions and archaeological sites in [[regions/tayma|Tayma]] and elsewhere. [1]"
+            ]
+          }
+        },
+        {
+          "role": "economy",
+          "ar": {
+            "heading": "المشروعات الكبرى",
+            "paragraphs": [
+              "تقع في نطاق المنطقة ثلاثة من المشروعات الكبرى المرتبطة بـ[[economy/saudi-vision-2030|رؤية السعودية 2030]]: نيوم، وأمالا، والبحر الأحمر. وتتصدر الزراعة وصيد الأسماك أنشطتها الاقتصادية التقليدية. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Major projects",
+            "paragraphs": [
+              "Three of the Kingdom's giga-projects linked to [[economy/saudi-vision-2030|Saudi Vision 2030]] lie in the region: NEOM, AMAALA and the Red Sea project. Farming and fishing lead its traditional economy. [1]"
+            ]
+          }
+        },
+        {
+          "role": "services",
+          "ar": {
+            "heading": "الخدمات",
+            "paragraphs": [
+              "في المنطقة جامعة تبوك، ومطار الأمير سلطان بن عبدالعزيز الدولي في مدينة تبوك، ومطار الوجه. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Services",
+            "paragraphs": [
+              "The region has the University of Tabuk, Prince Sultan bin Abdulaziz International Airport in Tabuk city and Al-Wajh airport. [1]"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "section": "regions",
+      "slug": "hail",
+      "translationKey": "research-20260917-region-hail",
+      "replaceBody": true,
+      "entityType": "region",
+      "sources": [
+        {
+          "ar": "سعوديبيديا: منطقة حائل",
+          "en": "Saudipedia: Hail Region (Arabic)",
+          "url": "https://saudipedia.com/%D9%85%D9%86%D8%B7%D9%82%D8%A9-%D8%AD%D8%A7%D8%A6%D9%84"
+        }
+      ],
+      "body": [
+        {
+          "role": "overview",
+          "ar": {
+            "heading": "نظرة عامة",
+            "paragraphs": [
+              "تقع منطقة حائل وسط الجزء الشمالي من المملكة، وتحيط بها مناطق الجوف والحدود الشمالية وتبوك والمدينة المنورة والقصيم. وهي السابعة مساحةً بنحو 120 ألف كم²، وتحمل اسم عاصمتها الإدارية حائل. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Overview",
+            "paragraphs": [
+              "Hail lies in the centre of the Kingdom's northern half, surrounded by Al-Jawf, the Northern Borders, Tabuk, Madinah and Al-Qassim. It is the seventh largest region, about 120,000 km², and shares its name with its capital. [1]"
+            ]
+          }
+        },
+        {
+          "role": "administration",
+          "ar": {
+            "heading": "التقسيم الإداري",
+            "paragraphs": [
+              "تتكون المنطقة من ثماني محافظات إضافة إلى مدينة حائل مقر الإمارة، و109 مراكز. والمحافظات: بقعاء، والحائط، والغزالة، والشنان، والسليمي، وسميراء، والشملي، وموقق. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Administration",
+            "paragraphs": [
+              "The region has eight governorates besides the city of Hail and 109 centres. The governorates are Baqaa, Al-Hait, Al-Ghazalah, Ash-Shinan, As-Sulaimi, Samira, Ash-Shamli and Mawqaq. [1]"
+            ]
+          }
+        },
+        {
+          "role": "geography",
+          "ar": {
+            "heading": "الجغرافيا والمناخ",
+            "paragraphs": [
+              "يتوزع سطح المنطقة بين صحراء النفود في الشمال وجبال شمر في الوسط، التي تتفرع إلى جبلي أجا وسلمى، وتقع مدينة حائل على الأطراف الشرقية لأجا. ومناخها قاري حار نهارًا صيفًا وبارد شتاءً، وأفضل مواسم زيارتها الربيع. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Geography and climate",
+            "paragraphs": [
+              "The land divides between the Nafud desert in the north and the Shammar mountains in the centre, which branch into the Aja and Salma ranges; Hail city sits on the eastern flanks of Aja. The climate is continental, hot by day in summer and cold in winter, and spring is the best season to visit. [1]"
+            ]
+          }
+        },
+        {
+          "role": "history",
+          "ar": {
+            "heading": "التاريخ",
+            "paragraphs": [
+              "يمتد تاريخ المنطقة من العصور الحجرية حتى العصر الإسلامي، وكانت محطة على طريق الحج الكوفي ومسارات التجارة، وترتبط بشخصية حاتم الطائي المعروف بكرمه، وتحتضن أجا آثار قصره. [1]"
+            ]
+          },
+          "en": {
+            "heading": "History",
+            "paragraphs": [
+              "The area's history runs from the Stone Age to the Islamic era. It was a station on the Kufa pilgrimage road and trade routes and is associated with Hatim al-Tai, famed for his generosity, whose palace remains lie in the Aja mountains. [1]"
+            ]
+          }
+        },
+        {
+          "role": "antiquities",
+          "ar": {
+            "heading": "مواقع التراث العالمي",
+            "paragraphs": [
+              "سُجلت عام 1436هـ/2015م مواقع الفنون الصخرية في جبة وراطا والمنجور في قائمة التراث العالمي لليونسكو، بعد أن نشر الرحالة الفرنسي شارل هوبر نقوشًا من المنطقة عام 1884م. [1]"
+            ]
+          },
+          "en": {
+            "heading": "World Heritage sites",
+            "paragraphs": [
+              "In 1436 AH/2015 CE the rock-art sites of Jubbah and of Rata and Al-Manjur were inscribed on the UNESCO World Heritage List, following the French traveller Charles Huber's publication of inscriptions from the area in 1884. [1]"
+            ]
+          }
+        },
+        {
+          "role": "tourism",
+          "ar": {
+            "heading": "الفعاليات والخدمات",
+            "paragraphs": [
+              "تنظم المنطقة منذ 1427هـ/2006م رالي حائل الدولي «تحدي النفود الكبير». وفيها جامعة حائل التي تأسست عام 1426هـ/2005م، ومطار حائل الدولي. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Events and services",
+            "paragraphs": [
+              "Since 1427 AH/2006 CE the region has hosted the Hail International Rally, the 'Great Nafud Challenge'. It is home to the University of Hail, founded in 1426 AH/2005 CE, and Hail International Airport. [1]"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "section": "regions",
+      "slug": "northern-borders",
+      "translationKey": "research-20260917-region-northern-borders",
+      "replaceBody": true,
+      "entityType": "region",
+      "sources": [
+        {
+          "ar": "سعوديبيديا: منطقة الحدود الشمالية",
+          "en": "Saudipedia: Northern Borders Region (Arabic)",
+          "url": "https://saudipedia.com/%D9%85%D9%86%D8%B7%D9%82%D8%A9-%D8%A7%D9%84%D8%AD%D8%AF%D9%88%D8%AF-%D8%A7%D9%84%D8%B4%D9%85%D8%A7%D9%84%D9%8A%D8%A9"
+        }
+      ],
+      "body": [
+        {
+          "role": "overview",
+          "ar": {
+            "heading": "نظرة عامة",
+            "paragraphs": [
+              "تقع منطقة الحدود الشمالية في أقصى شمال المملكة، وتحدها العراق والأردن شمالًا، والمنطقة الشرقية جنوبًا، والقصيم وحائل من الجنوب الغربي، والجوف غربًا. وعرعر عاصمتها الإدارية ومقر إمارتها، ومساحتها نحو 104 آلاف كم². [1]"
+            ]
+          },
+          "en": {
+            "heading": "Overview",
+            "paragraphs": [
+              "The Northern Borders region lies in the far north, bordered by Iraq and Jordan to the north, the Eastern Province to the south, Al-Qassim and Hail to the south-west and Al-Jawf to the west. Arar is its capital; it covers about 104,000 km². [1]"
+            ]
+          }
+        },
+        {
+          "role": "administration",
+          "ar": {
+            "heading": "التقسيم الإداري",
+            "paragraphs": [
+              "تشكلت المنطقة إداريًا عام 1992م، وهي من أقل المناطق عددًا في المحافظات، إذ تتبعها إضافة إلى عرعر محافظات رفحاء وطريف والعويقيلة، ومراكز إدارية عدة. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Administration",
+            "paragraphs": [
+              "Formed in 1992, the region has among the fewest governorates: besides Arar it includes Rafha, Turaif and Al-Uwayqilah, along with several administrative centres. [1]"
+            ]
+          }
+        },
+        {
+          "role": "history",
+          "ar": {
+            "heading": "التاريخ",
+            "paragraphs": [
+              "اكتسبت المنطقة أهميتها من موقعها الرابط بالعالم الخارجي ومن محطات المياه والرعي على درب زبيدة، ومن قراها الأثرية لينة وزبالا ولوقة ودوقرة. وقبل أكثر من سبعين عامًا كانت محطة لخط التابلاين لتصدير النفط، ونشأ حول محطاته مجتمع حضري وسط البادية. [1]"
+            ]
+          },
+          "en": {
+            "heading": "History",
+            "paragraphs": [
+              "The region's importance comes from its position linking the Kingdom to the outside world, its water and grazing stations on the Darb Zubaydah pilgrim road and its ancient villages of Linah, Zubala, Luqah and Duqrah. More than seventy years ago it hosted stations on the Tapline oil export pipeline, around which an urban community grew in the desert. [1]"
+            ]
+          }
+        },
+        {
+          "role": "economy",
+          "ar": {
+            "heading": "التعدين",
+            "paragraphs": [
+              "تُعد المنطقة مركزًا لصناعة التعدين في المملكة، وفيها مدينة وعد الشمال المخصصة لاستخلاص المعادن، ومنجم الجلاميد للفوسفات. ويربط قطار الشمال مناجمها بموانئ المملكة. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Mining",
+            "paragraphs": [
+              "The region is a centre of the Kingdom's mining industry, with Waad Al-Shamal, a city built for mineral processing, and the Al-Jalamid phosphate mine. The North railway links its mines to the Kingdom's ports. [1]"
+            ]
+          }
+        },
+        {
+          "role": "nature",
+          "ar": {
+            "heading": "الطبيعة والمناخ",
+            "paragraphs": [
+              "مناخ المنطقة قاري حار صيفًا شديد البرودة شتاءً، قد تنخفض حرارته دون الصفر في يناير وفبراير، وتتساقط الثلوج أحيانًا على مرتفعاتها. وهي موئل للطيور ووجهة لرياضة القنص بالصقور، وتضم محميات منها معيلة والعويصي والغرابة. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Nature and climate",
+            "paragraphs": [
+              "The climate is continental, hot in summer and very cold in winter, sometimes below freezing in January and February, with occasional snow on high ground. The region is a bird habitat and a destination for falconry, with reserves including Mu'ayla, Al-Uwaysi and Al-Ghurabah. [1]"
+            ]
+          }
+        },
+        {
+          "role": "services",
+          "ar": {
+            "heading": "الخدمات",
+            "paragraphs": [
+              "في المنطقة جامعة الحدود الشمالية ومقرها عرعر، ومطار عرعر الإقليمي ومطار رفحاء. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Services",
+            "paragraphs": [
+              "The region has Northern Border University, based in Arar, and airports at Arar and Rafha. [1]"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "section": "regions",
+      "slug": "jazan",
+      "translationKey": "research-20260917-region-jazan",
+      "replaceBody": true,
+      "entityType": "region",
+      "sources": [
+        {
+          "ar": "سعوديبيديا: منطقة جازان",
+          "en": "Saudipedia: Jazan Region (Arabic)",
+          "url": "https://saudipedia.com/%D9%85%D9%86%D8%B7%D9%82%D8%A9-%D8%AC%D8%A7%D8%B2%D8%A7%D9%86"
+        }
+      ],
+      "body": [
+        {
+          "role": "overview",
+          "ar": {
+            "heading": "نظرة عامة",
+            "paragraphs": [
+              "تقع منطقة جازان في جنوب غرب المملكة، ويرسم البحر الأحمر حدودها الغربية، وتحدها عسير شمالًا وشرقًا واليمن جنوبًا. وهي ثاني أصغر المناطق مساحةً بنحو 13 ألف كم²، ومن أعلاها كثافة سكانية. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Overview",
+            "paragraphs": [
+              "Jazan lies in the south-west, with the Red Sea along its western edge, Asir to the north and east and Yemen to the south. It is the second-smallest region, about 13,000 km², and among the most densely populated. [1]"
+            ]
+          }
+        },
+        {
+          "role": "administration",
+          "ar": {
+            "heading": "التقسيم الإداري",
+            "paragraphs": [
+              "مدينة جازان مقر الإمارة، وتتبع المنطقة محافظات: صبيا، وأبو عريش، وصامطة، وبيش، وجزر فرسان، والدرب، والحرث، وضمد، والريث، والدائر، وأحد المسارحة، والعيدابي، والعارضة، وهروب، وفيفا، والطوال. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Administration",
+            "paragraphs": [
+              "Jazan city is the seat of the emirate. The region's governorates are Sabya, Abu Arish, Samtah, Baish, Farasan Islands, Ad-Darb, Al-Harth, Damad, Ar-Rayth, Ad-Dair, Ahad Al-Masarihah, Al-Idabi, Al-Aridah, Harub, Fifa and At-Tuwal. [1]"
+            ]
+          }
+        },
+        {
+          "role": "geography",
+          "ar": {
+            "heading": "الجغرافيا والمناخ",
+            "paragraphs": [
+              "تتنوع تضاريسها بين الجبال والسهول والجزر، ومن جزرها المأهولة فرسان الكبير وسجيد وقماح ضمن أرخبيل [[nature/farasan-islands-reserve|جزر فرسان]]. وأعلى نقاطها جبل العريف شمال شرق فيفا. [1]",
+              "مناخها شديد الحرارة صيفًا معتدل شتاءً، عدا المرتفعات المعتدلة التي تهطل عليها الأمطار طوال العام. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Geography and climate",
+            "paragraphs": [
+              "Its landscape ranges from mountains to plains and islands; inhabited islands include Farasan Al-Kabir, Sajid and Qummah in the [[nature/farasan-islands-reserve|Farasan Islands]] archipelago. Its highest point is Jabal Al-Urayf north-east of Fifa. [1]",
+              "Summers are very hot and winters mild, except in the temperate highlands, which receive rain year-round. [1]"
+            ]
+          }
+        },
+        {
+          "role": "economy",
+          "ar": {
+            "heading": "الزراعة وصيد الأسماك",
+            "paragraphs": [
+              "تُعد الزراعة وصيد الأسماك عماد اقتصاد المنطقة، وهي من المناطق المصنفة زراعية، وتضم عددًا من السدود. وتمثل مرتفعاتها موطن زراعة البن في المملكة، ومن محاصيلها الخضار والفواكه والفل والكادي. [1]",
+              "وفي المنطقة مدينة جازان للصناعات الأساسية والتحويلية وميناؤها الصناعي. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Farming and fishing",
+            "paragraphs": [
+              "Farming and fishing underpin the economy; Jazan is classed as an agricultural region and has several dams. Its highlands are the home of coffee cultivation in the Kingdom, alongside vegetables, fruit, jasmine and kadi. [1]",
+              "The region also hosts Jazan City for Primary and Downstream Industries and its industrial port. [1]"
+            ]
+          }
+        },
+        {
+          "role": "tourism",
+          "ar": {
+            "heading": "السياحة والخدمات",
+            "paragraphs": [
+              "من معالمها جزيرة المرجان، وقرية جازان التراثية، وبحيرة سد وادي جازان، ومسجد وقصر النجدي في فرسان، وقلعة الدوسرية، ووادي لجب. وفيها جامعة جازان التي تأسست عام 1426هـ/2005م. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Tourism and services",
+            "paragraphs": [
+              "Attractions include Al-Marjan Island, Jazan Heritage Village, the Wadi Jazan dam lake, Al-Najdi Mosque and Palace on Farasan, Al-Dawsariyah Fort and Wadi Lajab. Jazan University was founded in 1426 AH/2005 CE. [1]"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "section": "regions",
+      "slug": "najran",
+      "translationKey": "research-20260917-region-najran",
+      "replaceBody": true,
+      "entityType": "region",
+      "sources": [
+        {
+          "ar": "سعوديبيديا: منطقة نجران",
+          "en": "Saudipedia: Najran Region (Arabic)",
+          "url": "https://saudipedia.com/%D9%85%D9%86%D8%B7%D9%82%D8%A9-%D9%86%D8%AC%D8%B1%D8%A7%D9%86"
+        },
+        {
+          "ar": "سعوديبيديا: منطقة حمى الثقافية",
+          "en": "Saudipedia: Hima Cultural Area (Arabic)",
+          "url": "https://saudipedia.com/%D9%85%D9%86%D8%B7%D9%82%D8%A9-%D8%AD%D9%85%D9%89-%D8%A7%D9%84%D8%AB%D9%82%D8%A7%D9%81%D9%8A%D8%A9"
+        }
+      ],
+      "body": [
+        {
+          "role": "overview",
+          "ar": {
+            "heading": "نظرة عامة",
+            "paragraphs": [
+              "تقع منطقة نجران جنوب غرب المملكة، وتحدها المنطقة الشرقية من الشمال والشمال الشرقي، والرياض من الشمال، وعسير غربًا، واليمن جنوبًا. ومساحتها نحو 130 ألف كم². [1]"
+            ]
+          },
+          "en": {
+            "heading": "Overview",
+            "paragraphs": [
+              "Najran lies in the south-west, bordered by the Eastern Province to the north and north-east, Riyadh to the north, Asir to the west and Yemen to the south. It covers about 130,000 km². [1]"
+            ]
+          }
+        },
+        {
+          "role": "administration",
+          "ar": {
+            "heading": "التقسيم الإداري",
+            "paragraphs": [
+              "تتبع المنطقة ست محافظات إضافة إلى مدينة نجران مقر الإمارة، و65 مركزًا. والمحافظات: شرورة، وحبونا، وبدر الجنوب، ويدمة، وثار، وخباش. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Administration",
+            "paragraphs": [
+              "The region has six governorates besides the city of Najran and 65 centres. The governorates are Sharurah, Hubuna, Badr Al-Janub, Yadamah, Thar and Khabash. [1]"
+            ]
+          }
+        },
+        {
+          "role": "history",
+          "ar": {
+            "heading": "التاريخ",
+            "paragraphs": [
+              "تُعد نجران من أقدم مواطن الاستقرار البشري في الجزيرة العربية، وتشهد على ذلك نقوش منطقة حمى الصخرية وموقع الأخدود الأثري. [1]"
+            ]
+          },
+          "en": {
+            "heading": "History",
+            "paragraphs": [
+              "Najran is among the oldest places of human settlement in Arabia, as shown by the rock art of Hima and the archaeological site of Al-Ukhdud. [1]"
+            ]
+          }
+        },
+        {
+          "role": "antiquities",
+          "ar": {
+            "heading": "التراث العالمي والعمارة",
+            "paragraphs": [
+              "سُجلت [[heritage/hima-cultural-area|منطقة حمى الثقافية]] في قائمة التراث العالمي لليونسكو عام 1442هـ/2021م، وتضم نقوشًا تصور الصيد وأساليب الحياة. [1][2]",
+              "وتعكس عمارة المنطقة تاريخها الطويل بقراها التاريخية وقصورها وقلاعها، ومنها قصر الإمارة التاريخي الذي أُسس عام 1363هـ/1944م، والبيوت والأبراج الطينية. [1]"
+            ]
+          },
+          "en": {
+            "heading": "World Heritage and architecture",
+            "paragraphs": [
+              "The [[heritage/hima-cultural-area|Hima Cultural Area]] was inscribed on the UNESCO World Heritage List in 1442 AH/2021 CE; its rock art depicts hunting and ways of life. [1][2]",
+              "The region's architecture reflects its long history in historic villages, palaces and forts, including the historic Emirate Palace founded in 1363 AH/1944 CE, and earthen houses and towers. [1]"
+            ]
+          }
+        },
+        {
+          "role": "economy",
+          "ar": {
+            "heading": "الاقتصاد والزراعة",
+            "paragraphs": [
+              "يعتمد اقتصاد المنطقة على التجارة والتعدين والصناعة، وفي محافظة ثار منجم للنحاس والزنك، وفي حبونا مدينة صناعية. ورغم امتداد الربع الخالي في أجزائها الوسطى والشرقية، فهي منطقة زراعية خصبة ومصدر مهم للحمضيات، ويقسم وادي نجران عاصمتها إلى قسمين. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Economy and farming",
+            "paragraphs": [
+              "The economy rests on trade, mining and industry, with a copper and zinc mine in Thar and an industrial city in Hubuna. Although the Rub al Khali covers its central and eastern parts, the region is fertile farmland and an important source of citrus, and Wadi Najran divides the capital in two. [1]"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "section": "regions",
+      "slug": "bahah",
+      "translationKey": "research-20260917-region-bahah",
+      "replaceBody": true,
+      "entityType": "region",
+      "sources": [
+        {
+          "ar": "سعوديبيديا: منطقة الباحة",
+          "en": "Saudipedia: Al-Bahah Region (Arabic)",
+          "url": "https://saudipedia.com/%D9%85%D9%86%D8%B7%D9%82%D8%A9-%D8%A7%D9%84%D8%A8%D8%A7%D8%AD%D8%A9"
+        }
+      ],
+      "body": [
+        {
+          "role": "overview",
+          "ar": {
+            "heading": "نظرة عامة",
+            "paragraphs": [
+              "منطقة الباحة أصغر المناطق مساحةً بنحو 12 ألف كم²، وأقلها سكانًا بحسب تعداد 2022، وتقع في جنوب غرب المملكة بين منطقتي مكة المكرمة وعسير. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Overview",
+            "paragraphs": [
+              "Al-Bahah is the smallest region, about 12,000 km², and the least populous in the 2022 census. It lies in the south-west between Makkah and Asir. [1]"
+            ]
+          }
+        },
+        {
+          "role": "administration",
+          "ar": {
+            "heading": "التقسيم الإداري",
+            "paragraphs": [
+              "تتبع المنطقة تسع محافظات إضافة إلى مدينة الباحة مقر الإمارة، و42 مركزًا. والمحافظات: بلجرشي، والمندق، والمخواة، وقلوة، والعقيق، والقرى، وبني حسن، وغامد الزناد، والحجرة. ومحافظة العقيق أكبرها مساحةً وغامد الزناد أصغرها. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Administration",
+            "paragraphs": [
+              "The region has nine governorates besides the city of Al-Bahah and 42 centres: Baljurashi, Al-Mandaq, Al-Makhwah, Qilwah, Al-Aqiq, Al-Qura, Bani Hasan, Ghamid Al-Zinad and Al-Hajrah. Al-Aqiq is the largest and Ghamid Al-Zinad the smallest. [1]"
+            ]
+          }
+        },
+        {
+          "role": "geography",
+          "ar": {
+            "heading": "الجغرافيا والمناخ",
+            "paragraphs": [
+              "تنقسم المنطقة إلى سهول تهامة وجبال السراة والحجاز، وأعلى نقاطها جبل أثرب جنوب شرق بلجرشي. ويسهم ارتفاعها والرياح الرطبة القادمة من تهامة في اعتدال حرارتها ربيعًا وصيفًا، مع برودة شتوية وأمطار على مدار العام. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Geography and climate",
+            "paragraphs": [
+              "The region divides into the Tihamah plains and the Sarawat and Hijaz mountains; its highest point is Jabal Athrib south-east of Baljurashi. Altitude and moist winds from Tihamah keep spring and summer mild, with cold winters and rain year-round. [1]"
+            ]
+          }
+        },
+        {
+          "role": "antiquities",
+          "ar": {
+            "heading": "الآثار",
+            "paragraphs": [
+              "تضم المنطقة آثارًا من العصرين الحجري القديم والحديث في مواقع منها الهريتة وجبل النير وجبال عيسان، وأطلال عشرين قرية في خرائب معشوقة، و[[heritage/dhi-ain-village|قرية ذي عين]] الأثرية المبنية على جبل من الحجارة البيضاء، ويعود تأسيسها إلى القرن السادس عشر الميلادي. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Antiquities",
+            "paragraphs": [
+              "The region has Palaeolithic and Neolithic remains at sites such as Al-Hurayyitah, Jabal Al-Nir and the Aysan mountains, the ruins of twenty villages at Kharaib Mashuqah, and the heritage village of [[heritage/dhi-ain-village|Dhi Ain]] on a mountain of white stone, founded in the sixteenth century CE. [1]"
+            ]
+          }
+        },
+        {
+          "role": "economy",
+          "ar": {
+            "heading": "الزراعة والأسواق الشعبية",
+            "paragraphs": [
+              "الزراعة النشاط الاقتصادي الرئيس، تسود في المرتفعات ذات المدرجات الزراعية وغابات العرعر، بينما تنشط تربية المواشي في السهل. وتضم المنطقة أسواقًا شعبية تاريخية، وجامعة الباحة. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Farming and traditional markets",
+            "paragraphs": [
+              "Farming is the main activity, dominant in the terraced, juniper-covered highlands, while livestock raising prevails on the plain. The region has historic traditional markets and Al-Baha University. [1]"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "section": "regions",
+      "slug": "jawf",
+      "translationKey": "research-20260917-region-jawf",
+      "replaceBody": true,
+      "entityType": "region",
+      "sources": [
+        {
+          "ar": "سعوديبيديا: منطقة الجوف",
+          "en": "Saudipedia: Al-Jawf Region (Arabic)",
+          "url": "https://saudipedia.com/%D9%85%D9%86%D8%B7%D9%82%D8%A9-%D8%A7%D9%84%D8%AC%D9%88%D9%81"
+        }
+      ],
+      "body": [
+        {
+          "role": "overview",
+          "ar": {
+            "heading": "نظرة عامة",
+            "paragraphs": [
+              "تقع منطقة الجوف شمال المملكة، وتحدها الأردن شمالًا، والحدود الشمالية شرقًا، وتبوك غربًا، وحائل جنوبًا. ومدينة سكاكا عاصمتها الإدارية ومقر إمارتها، ومساحتها نحو 85 ألف كم². [1]",
+              "استمدت المنطقة اسمها من انخفاض أرضها، إذ يعني الجوف المكان المنخفض. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Overview",
+            "paragraphs": [
+              "Al-Jawf lies in the north, bordered by Jordan to the north, the Northern Borders to the east, Tabuk to the west and Hail to the south. Sakaka is its capital; it covers about 85,000 km². [1]",
+              "The name refers to its low-lying land: al-jawf means a depression. [1]"
+            ]
+          }
+        },
+        {
+          "role": "administration",
+          "ar": {
+            "heading": "التقسيم الإداري",
+            "paragraphs": [
+              "لا توجد في المنطقة محافظة تحمل اسم الجوف، بل يُطلق الاسم على نطاقها كله، الذي يضم مدينة سكاكا ومحافظات القريات و[[regions/dumat-al-jandal|دومة الجندل]] وطبرجل وصوير، ومراكز إدارية عدة. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Administration",
+            "paragraphs": [
+              "No governorate is named Al-Jawf; the name covers the whole region, which includes Sakaka and the governorates of Al-Qurayyat, [[regions/dumat-al-jandal|Dumat Al-Jandal]], Tabarjal and Suwayr, with several administrative centres. [1]"
+            ]
+          }
+        },
+        {
+          "role": "antiquities",
+          "ar": {
+            "heading": "الآثار",
+            "paragraphs": [
+              "تضم المنطقة مواقع توثق بداية الاستيطان البشري والعصر الإسلامي المبكر، منها النقوش الأثرية وقلعة زعبل في سكاكا، وقلعة مويسن، وقلعة مارد، وقصر كاف، ومسجد عمر بن الخطاب، وكانت محطة على طريق قاري يربط الجزيرة العربية بالشمال. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Antiquities",
+            "paragraphs": [
+              "Sites here record early human settlement and the early Islamic period, including inscriptions and Zabal Castle in Sakaka, Muwaysin Castle, Marid Castle, Kaf Palace and the Mosque of Umar ibn al-Khattab. The region was a station on an overland route linking Arabia to the north. [1]"
+            ]
+          }
+        },
+        {
+          "role": "economy",
+          "ar": {
+            "heading": "الزراعة والطاقة المتجددة",
+            "paragraphs": [
+              "توصف الجوف بأنها سلة غذاء متنوعة، وتضم أكبر مزرعة زيتون في المملكة وتعتمد وسائل ري حديثة. وتُعد مركزًا للطاقة المتجددة، ففيها مزرعة رياح في دومة الجندل ومحطة سكاكا للطاقة الشمسية. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Farming and renewable energy",
+            "paragraphs": [
+              "Al-Jawf is described as a varied food basket, with the Kingdom's largest olive farm and modern irrigation. It is also a renewable-energy hub, with a wind farm at Dumat Al-Jandal and the Sakaka solar power plant. [1]"
+            ]
+          }
+        },
+        {
+          "role": "nature",
+          "ar": {
+            "heading": "الطبيعة والمناخ",
+            "paragraphs": [
+              "تقع بحيرة دومة الجندل شمال المنطقة، وتشهد ضفافها مهرجانات واحتفالات. ومناخ الجوف صحراوي قاري، حار جاف صيفًا بارد شتاءً قد يبلغ حد التجمد في يناير. وفيها جامعة الجوف ومقرها سكاكا. [1]"
+            ]
+          },
+          "en": {
+            "heading": "Nature and climate",
+            "paragraphs": [
+              "Dumat Al-Jandal Lake lies in the north of the region and hosts festivals on its shores. The climate is desert-continental, hot and dry in summer and cold in winter, sometimes freezing in January. Jouf University is based in Sakaka. [1]"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

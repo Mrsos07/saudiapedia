@@ -1,0 +1,170 @@
+{
+  "researchDate": "2026-09-28",
+  "status": "staging-pilot",
+  "reviewNotes": [
+    "Heritage, religious and natural sites attached to their regions, plus two governorates, each citing its own Saudipedia page (retrieved 2026-09-28).",
+    "Conflicts resolved conservatively: Hima's World Heritage inscription is dated to the 44th session (24 July 2021) from its own page, not the 2022 local celebration mentioned on the Najran page; Al-Ahsa palm counts differ (about 3 million vs 2.5 million in the Guinness citation) and are omitted; Tayma's '85,000-year' inscriptions claim is not repeated.",
+    "Omitted: visitor numbers, investment values, project phases and room counts, officeholders and governorate populations."
+  ],
+  "topics": [
+    {
+      "section": "heritage", "slug": "souq-okaz", "translationKey": "heritage-20260928-souq-okaz", "entityType": "site", "siteType": "historical", "parent": "regions/makkah",
+      "ar": { "title": "سوق عكاظ", "summary": "موقع أثري في محافظة الطائف، من أقدم أسواق العرب في الجاهلية والإسلام، وملتقى للتجارة والشعر والأحلاف، بدأ نحو عام 501م.", "category": "موقع تاريخي" },
+      "en": { "title": "Souq Okaz", "summary": "An archaeological site in Taif, one of the oldest Arab markets before and after Islam and a meeting place for trade, poetry and alliances, dating to about 501 CE.", "category": "Historic site" },
+      "facts": [{ "ar": ["الموقع", "محافظة الطائف، منطقة مكة المكرمة"], "en": ["Location", "Taif, Makkah Region"] }, { "ar": ["البداية", "نحو 501م"], "en": ["Began", "About 501 CE"] }, { "ar": ["موسمه", "من أول ذي القعدة إلى العشرين منه"], "en": ["Season", "1–20 Dhu al-Qadah"] }],
+      "sources": [{ "ar": "سعوديبيديا: سوق عكاظ", "en": "Saudipedia: Souq Okaz (Arabic)", "url": "https://saudipedia.com/%D8%B3%D9%88%D9%82-%D8%B9%D9%83%D8%A7%D8%B8" }],
+      "body": [
+        { "role": "history",
+          "ar": { "heading": "النشأة والتاريخ", "paragraphs": ["سوق عكاظ موقع أثري في محافظة الطائف بـ[[regions/makkah|منطقة مكة المكرمة]]، بدأ نحو عام 501م قبل ظهور الإسلام بقرابة مئة عام، وكان ملتقى للتجارة والفكر والأدب بين القبائل العربية. [1]", "ظل السوق مركزًا تجاريًا في العصر الإسلامي ومحطة على طريق الحج القادم من اليمن، حتى القرن السادس الهجري، وتعرض للتخريب على أيدي الخوارج الحرورية سنة 129هـ/747م. [1]"] },
+          "en": { "heading": "Origins and history", "paragraphs": ["Souq Okaz is an archaeological site in Taif, [[regions/makkah|Makkah Region]]. It began around 501 CE, about a century before Islam, as a meeting place for trade, ideas and literature among the Arab tribes. [1]", "It remained a trading centre in the Islamic era and a station on the pilgrimage road from Yemen until the sixth century AH, despite being sacked by the Haruri Kharijites in 129 AH/747 CE. [1]"] } },
+        { "role": "culture",
+          "ar": { "heading": "الموسم والشعر", "paragraphs": ["كان السوق يبدأ أول ذي القعدة ويستمر حتى العشرين منه، ثم ينتقل الناس إلى سوق مجنة فذي المجاز قبل الحج، وتُجلب إليه بضائع من هجر والعراق والشام وفارس واليمن. [1]", "اكتسب اسمه من «المعاكظة» أي تباري الشعراء في قصائد الفخر، وكانت تُعلن فيه الأحلاف والصلح والإجارة لكثرة من يجتمع فيه من العرب. [1]"] },
+          "en": { "heading": "Season and poetry", "paragraphs": ["The market opened on the first of Dhu al-Qadah and ran until the twentieth, after which people moved on to the markets of Majannah and Dhu al-Majaz before the Hajj. Goods came from Hajar, Iraq, Syria, Persia and Yemen. [1]", "Its name comes from mu'akazah, the contest of poets reciting boasts, and alliances, truces and protections were announced there because so many Arabs gathered. [1]"] } },
+        { "role": "antiquities",
+          "ar": { "heading": "الآثار", "paragraphs": ["على هضبة السرايا الحمراء رسوم صخرية ونقوش إسلامية تذكارية بالخط الكوفي غير المنقوط تعود إلى القرون الأولى للهجرة، وفي وادي لوان شرق السوق موقعان آخران للرسوم الصخرية. [1]"] },
+          "en": { "heading": "Remains", "paragraphs": ["The Red Saraya plateau carries rock drawings and commemorative Islamic inscriptions in undotted Kufic from the early Islamic centuries, and Wadi Luwan east of the market has two further rock-art sites. [1]"] } }
+      ]
+    },
+    {
+      "section": "heritage", "slug": "hima-cultural-area", "translationKey": "heritage-20260928-hima", "entityType": "site", "siteType": "historical", "parent": "regions/najran",
+      "ar": { "title": "منطقة حمى الثقافية", "summary": "من أكبر مجمعات الفن الصخري في العالم، في محافظة ثار شمال مدينة نجران، ومسجلة في قائمة التراث العالمي لليونسكو منذ 2021.", "category": "موقع تراث عالمي" },
+      "en": { "title": "Hima Cultural Area", "summary": "One of the world's largest rock-art complexes, in Thar governorate north of Najran city, inscribed on the UNESCO World Heritage List in 2021.", "category": "World Heritage site" },
+      "facts": [{ "ar": ["الموقع", "محافظة ثار، منطقة نجران"], "en": ["Location", "Thar, Najran Region"] }, { "ar": ["التسجيل في التراث العالمي", "1442هـ/2021م"], "en": ["World Heritage inscription", "1442 AH/2021 CE"] }, { "ar": ["من آباره", "أم نخلة، القراين، الجناح، سقيا، الحماطة، الحبيسة"], "en": ["Wells include", "Umm Nakhlah, Al-Qarain, Al-Janah, Saqya, Al-Hamatah, Al-Habisah"] }],
+      "sources": [{ "ar": "سعوديبيديا: منطقة حمى الثقافية", "en": "Saudipedia: Hima Cultural Area (Arabic)", "url": "https://saudipedia.com/%D9%85%D9%86%D8%B7%D9%82%D8%A9-%D8%AD%D9%85%D9%89-%D8%A7%D9%84%D8%AB%D9%82%D8%A7%D9%81%D9%8A%D8%A9" }],
+      "body": [
+        { "role": "overview",
+          "ar": { "heading": "الموقع والأهمية", "paragraphs": ["تقع منطقة حمى الثقافية في محافظة ثار شمال مدينة نجران بنحو 130 كم، في [[regions/najran|منطقة نجران]]، وتحكي آثارها تاريخًا يعود إلى الألف السابع قبل الميلاد، وتُعد من أكبر مجمعات الفن الصخري في العالم. [1]"] },
+          "en": { "heading": "Location and importance", "paragraphs": ["The Hima Cultural Area lies in Thar governorate, about 130 km north of Najran city in [[regions/najran|Najran Region]]. Its remains reach back to the seventh millennium BCE, and it is one of the largest rock-art complexes in the world. [1]"] } },
+        { "role": "history",
+          "ar": { "heading": "محطة القوافل", "paragraphs": ["كانت آبار حمى محطة على طرق القوافل بين جنوب الجزيرة العربية وشمالها، وتضم رسومًا لمشاهد الصيد والرعي وأشكالًا آدمية، وكتابات بخطوط قديمة، ومن أبرزها نقش الملك يوسف أسار يثأر الذي سجل فيه انتصاره سنة 518م. [1]"] },
+          "en": { "heading": "A caravan station", "paragraphs": ["The Hima wells were a station on caravan routes between south and north Arabia. The rock art shows hunting, herding and human figures alongside ancient scripts, including the inscription of King Yusuf As'ar Yath'ar recording his victory in 518 CE. [1]"] } },
+        { "role": "antiquities",
+          "ar": { "heading": "التراث العالمي", "paragraphs": ["أعلنت لجنة التراث العالمي في دورتها الرابعة والأربعين في 24 يوليو 2021م تسجيل منطقة حمى الثقافية في قائمة التراث العالمي، ومن مواقعها جبل صيدح وجبل حمى وجبل الكوكب. [1]"] },
+          "en": { "heading": "World Heritage", "paragraphs": ["At its 44th session on 24 July 2021 the World Heritage Committee inscribed the Hima Cultural Area on the World Heritage List. Its sites include Jabal Saidah, Jabal Hima and Jabal Al-Kawkab. [1]"] } }
+      ]
+    },
+    {
+      "section": "heritage", "slug": "dhi-ain-village", "translationKey": "heritage-20260928-dhi-ain", "entityType": "site", "siteType": "historical", "parent": "regions/bahah",
+      "ar": { "title": "قرية ذي عين", "summary": "قرية تراثية في محافظة المخواة بمنطقة الباحة، على قمة جبل صخري أبيض، تعود إلى نهاية القرن العاشر الهجري، وسُميت بعين ماء تجري تحت مزارعها.", "category": "قرية تراثية" },
+      "en": { "title": "Dhi Ain Village", "summary": "A heritage village in Al-Makhwah, Al-Bahah, on a white rock hill, dating to the end of the tenth century AH and named after the spring that waters its farms.", "category": "Heritage village" },
+      "facts": [{ "ar": ["الموقع", "محافظة المخواة، منطقة الباحة"], "en": ["Location", "Al-Makhwah, Al-Bahah Region"] }, { "ar": ["التاريخ", "نهاية القرن العاشر الهجري"], "en": ["Dates to", "End of the tenth century AH"] }],
+      "sources": [{ "ar": "سعوديبيديا: قرية ذي عين", "en": "Saudipedia: Dhi Ain Village (Arabic)", "url": "https://saudipedia.com/%D9%82%D8%B1%D9%8A%D8%A9-%D8%B0%D9%8A-%D8%B9%D9%8A%D9%86" }],
+      "body": [
+        { "role": "overview",
+          "ar": { "heading": "الموقع والتسمية", "paragraphs": ["تقع قرية ذي عين في محافظة المخواة بـ[[regions/bahah|منطقة الباحة]] على قمة جبل صخري أبيض يطل على وادي راش، وتبعد نحو 25 كم عن مدينة الباحة، ويعود تاريخها إلى نهاية القرن العاشر الهجري. [1]", "اكتسبت اسمها من عين تتدفق من الجبال وتجري تحت أشجار القرية، فتسقي الكادي والنباتات العطرية والليمون والموز. [1]"] },
+          "en": { "heading": "Location and name", "paragraphs": ["Dhi Ain lies in Al-Makhwah, [[regions/bahah|Al-Bahah Region]], on a white rock hill above Wadi Rash, about 25 km from Al-Bahah city, and dates to the end of the tenth century AH. [1]", "It is named after a spring that flows from the mountains beneath the village trees, watering kadi, aromatic plants, lemons and bananas. [1]"] } },
+        { "role": "heritage",
+          "ar": { "heading": "العمارة", "paragraphs": ["تضم القرية نحو 85 منزلًا يصل بعضها إلى خمسة طوابق، بُنيت جدرانها من الحجارة الصلبة المستخرجة من الجبال المحيطة وكُسيت بحجر المرو، واستُخدم الطين والطوب اللبن في دواخلها، وفيها مسجد صغير وحصون تكشف ما حولها. [1]", "تعمل هيئة التراث على تأهيل القرية لتكون من المواقع المرشحة لقائمة التراث العالمي. [1]"] },
+          "en": { "heading": "Architecture", "paragraphs": ["The village has about 85 houses, some five storeys high, built of hard stone from the surrounding mountains and faced with quartz, with mud and mud-brick inside, plus a small mosque and watchtowers. [1]", "The Heritage Commission is rehabilitating the village with a view to a future World Heritage nomination. [1]"] } }
+      ]
+    },
+    {
+      "section": "heritage", "slug": "al-qatt-al-asiri", "translationKey": "heritage-20260928-qatt-asiri", "entityType": "topic", "related": ["regions/asir", "tourism/al-muftaha-village"],
+      "ar": { "title": "القط العسيري", "summary": "فن تقليدي للنقش والزخرفة على جدران البيوت في عسير، تتقنه النساء، وأُدرج عام 2017 في القائمة التمثيلية للتراث الثقافي غير المادي لليونسكو.", "category": "فنون تقليدية" },
+      "en": { "title": "Al-Qatt Al-Asiri", "summary": "A traditional art of painted wall decoration in Asir homes, practised by women, added to UNESCO's Representative List of the Intangible Cultural Heritage in 2017.", "category": "Traditional arts" },
+      "facts": [{ "ar": ["المنطقة", "عسير"], "en": ["Region", "Asir"] }, { "ar": ["التسجيل في اليونسكو", "1439هـ/2017م، تراث غير مادي"], "en": ["UNESCO listing", "1439 AH/2017 CE, intangible heritage"] }],
+      "sources": [{ "ar": "سعوديبيديا: القط العسيري", "en": "Saudipedia: Al-Qatt Al-Asiri (Arabic)", "url": "https://saudipedia.com/%D8%A7%D9%84%D9%82%D8%B7-%D8%A7%D9%84%D8%B9%D8%B3%D9%8A%D8%B1%D9%8A" }],
+      "body": [
+        { "role": "heritage",
+          "ar": { "heading": "الفن والتقنية", "paragraphs": ["القط العسيري فن تقليدي من فنون النقش والزخرفة في [[regions/asir|منطقة عسير]]، يقوم على رسم أشكال هندسية ونباتية بألوان أساسية مباشرة على جدران المجالس والردهات. [1]", "أتقنته نساء المنطقة منذ القدم، وتُسمى الرسامة «القطّاطة»، ومن رائداته فاطمة بنت علي أبو قحاص. ومن أشكاله: البنات والأرياش والمحاريب والأمشاط والكف والشبكة. [1]"] },
+          "en": { "heading": "Art and technique", "paragraphs": ["Al-Qatt Al-Asiri is a traditional decorative art of [[regions/asir|Asir]], painting geometric and plant motifs in primary colours directly onto the walls of reception rooms and halls. [1]", "Women of the region have long practised it; a painter is called a qattatah, and Fatimah bint Ali Abu Qahhas is among its pioneers. Its motifs include al-banat, al-aryash, al-maharib, al-amshat, the palm and the net. [1]"] } },
+        { "role": "culture",
+          "ar": { "heading": "الرمزية والحضور اليوم", "paragraphs": ["جاءت التسمية من «القط» أي القطع عرضًا، إشارة إلى الحزام الذي يُرسم وسط الحائط. وكانت دقة الرسوم وتعدد ألوانها تدل على ثراء الأسرة. [1]", "أُدرج الفن عام 1439هـ/2017م في القائمة التمثيلية للتراث الثقافي غير المادي لليونسكو، وتحولت منازل قرى مثل [[tourism/al-muftaha-village|المفتاحة]] ورجال إلى معارض مفتوحة له. [1]"] },
+          "en": { "heading": "Meaning and present day", "paragraphs": ["The name comes from qatt, cutting across, referring to the band painted through the middle of the wall. The precision and colours of the work once signalled a family's wealth. [1]", "It was added to UNESCO's Representative List of the Intangible Cultural Heritage in 1439 AH/2017 CE, and houses in villages such as [[tourism/al-muftaha-village|Al-Muftaha]] and Rijal have become open galleries of it. [1]"] } }
+      ]
+    },
+    {
+      "section": "tourism", "slug": "al-muftaha-village", "translationKey": "heritage-20260928-al-muftaha", "entityType": "site", "siteType": "tourism", "parent": "regions/asir", "related": ["heritage/al-qatt-al-asiri"],
+      "ar": { "title": "قرية المفتاحة", "summary": "قرية تراثية في أبها تحولت منذ مطلع التسعينيات إلى مركز ثقافي للفنون التراثية والتشكيلية، وتضم مركز الملك فهد الثقافي ومسرح طلال مداح.", "category": "وجهة ثقافية" },
+      "en": { "title": "Al-Muftaha Village", "summary": "A heritage village in Abha that has been a cultural centre for traditional and visual arts since the early 1990s, with the King Fahd Cultural Centre and the Talal Maddah Theatre.", "category": "Cultural destination" },
+      "facts": [{ "ar": ["الموقع", "مدينة أبها، منطقة عسير"], "en": ["Location", "Abha, Asir Region"] }, { "ar": ["الجهة المشرفة", "وزارة الثقافة"], "en": ["Managed by", "Ministry of Culture"] }],
+      "sources": [{ "ar": "سعوديبيديا: قرية المفتاحة", "en": "Saudipedia: Al-Muftaha Village (Arabic)", "url": "https://saudipedia.com/%D9%82%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D9%85%D9%81%D8%AA%D8%A7%D8%AD%D8%A9" }],
+      "body": [
+        { "role": "overview",
+          "ar": { "heading": "القرية", "paragraphs": ["قرية المفتاحة قرية سياحية في مدينة أبها بـ[[regions/asir|منطقة عسير]]، وتُعد مركزًا للفنون التراثية والتشكيلية والفوتوغرافية والحرف اليدوية، وتشرف عليها وزارة الثقافة. [1]", "تحولت منذ مطلع التسعينيات إلى معلم سياحي يصون تراث المنطقة، وتضم مركز الملك فهد الثقافي ومسرح طلال مداح أحد أكبر المسارح في المملكة. [1]"] },
+          "en": { "heading": "The village", "paragraphs": ["Al-Muftaha is a visitor village in Abha, [[regions/asir|Asir Region]], and a centre for traditional, visual and photographic arts and crafts, managed by the Ministry of Culture. [1]", "Since the early 1990s it has been a landmark preserving the region's heritage, with the King Fahd Cultural Centre and the Talal Maddah Theatre, one of the largest in the Kingdom. [1]"] } },
+        { "role": "culture",
+          "ar": { "heading": "الفنون والسوق", "paragraphs": ["بُنيت القرية على الطراز العسيري، وتزين أروقتها جداريات فناني المنطقة ونقوش [[heritage/al-qatt-al-asiri|القط العسيري]]، ومن معالمها سوق الثلاثاء أحد أقدم الأسواق الشعبية في عسير. [1]"] },
+          "en": { "heading": "Arts and market", "paragraphs": ["Built in the Asiri style, the village's arcades carry murals by regional artists and [[heritage/al-qatt-al-asiri|Al-Qatt Al-Asiri]] decoration. Its Tuesday Market is one of Asir's oldest traditional markets. [1]"] } }
+      ]
+    },
+    {
+      "section": "nature", "slug": "jabal-al-sawda", "translationKey": "geography-20260928-jabal-al-sawda", "entityType": "site", "siteType": "nature", "parent": "regions/asir",
+      "ar": { "title": "جبال السودة", "summary": "أعلى قمم المملكة بارتفاع 3,015 م، على بعد نحو 20 كم من أبها ضمن جبال السروات، ومن معالم متنزه عسير الوطني.", "category": "جبال" },
+      "en": { "title": "Jabal Al-Sawda", "summary": "The Kingdom's highest peak at 3,015 m, about 20 km from Abha in the Sarawat range and part of Asir National Park.", "category": "Mountains" },
+      "facts": [{ "ar": ["الارتفاع", "3,015 م"], "en": ["Elevation", "3,015 m"] }, { "ar": ["السلسلة", "جبال السروات"], "en": ["Range", "Sarawat mountains"] }, { "ar": ["الموقع", "نحو 20 كم من أبها"], "en": ["Location", "About 20 km from Abha"] }],
+      "sources": [{ "ar": "سعوديبيديا: جبال السودة", "en": "Saudipedia: Jabal Al-Sawda (Arabic)", "url": "https://saudipedia.com/%D8%AC%D8%A8%D9%84-%D8%A7%D9%84%D8%B3%D9%88%D8%AF%D8%A9" }],
+      "body": [
+        { "role": "geography",
+          "ar": { "heading": "الموقع والتكوين", "paragraphs": ["جبال السودة أعلى قمم المملكة بارتفاع 3,015 م، تقع في [[regions/asir|منطقة عسير]] على بعد نحو 20 كم من أبها، ضمن جبال السروات الممتدة من شمال الطائف حتى الحدود اليمنية. [1]", "تتكون من صخور نارية كالجرانيت وصخور متحولة كالنايس والشيست، ويغطيها العرعر والطلح والزيتون البري، وتزيد الأمطار الموسمية مراعيها ونباتاتها العطرية. [1]"] },
+          "en": { "heading": "Location and geology", "paragraphs": ["Jabal Al-Sawda is the Kingdom's highest peak at 3,015 m, in [[regions/asir|Asir]] about 20 km from Abha, part of the Sarawat range that runs from north of Taif to the Yemeni border. [1]", "It is made of igneous rocks such as granite and metamorphic gneiss and schist, covered with juniper, acacia and wild olive; monsoon rains expand its pastures and aromatic plants. [1]"] } },
+        { "role": "tourism",
+          "ar": { "heading": "السياحة", "paragraphs": ["تُعد السودة من معالم متنزه عسير الوطني، ويمارس زوارها التسلق والطيران الشراعي والتخييم، ويربط طريق عقبة الصماء قمتها بمنحدرات تهامة باتجاه رجال ألمع. [1]"] },
+          "en": { "heading": "Tourism", "paragraphs": ["Al-Sawda is part of Asir National Park; visitors climb, paraglide and camp, and the Aqabat Al-Sama road links the summit to the Tihamah slopes towards Rijal Alma. [1]"] } }
+      ]
+    },
+    {
+      "section": "regions", "slug": "dumat-al-jandal", "translationKey": "regions-20260928-dumat-al-jandal", "entityType": "governorate", "parent": "regions/jawf",
+      "ar": { "title": "محافظة دومة الجندل", "summary": "محافظة في منطقة الجوف غرب سكاكا، من أقدم الحواضر في شمال الجزيرة العربية، وفيها قلعة مارد ومسجد عمر بن الخطاب وبحيرة دومة الجندل.", "category": "محافظة" },
+      "en": { "title": "Dumat Al-Jandal Governorate", "summary": "A governorate in Al-Jawf west of Sakaka and one of northern Arabia's oldest towns, with Marid Castle, the Mosque of Umar ibn al-Khattab and Dumat Al-Jandal Lake.", "category": "Governorate" },
+      "facts": [{ "ar": ["الموقع", "غرب سكاكا بنحو 40 كم"], "en": ["Location", "About 40 km west of Sakaka"] }],
+      "sources": [{ "ar": "سعوديبيديا: محافظة دومة الجندل", "en": "Saudipedia: Dumat Al-Jandal Governorate (Arabic)", "url": "https://saudipedia.com/%D9%85%D8%AD%D8%A7%D9%81%D8%B8%D8%A9-%D8%AF%D9%88%D9%85%D8%A9-%D8%A7%D9%84%D8%AC%D9%86%D8%AF%D9%84" }],
+      "body": [
+        { "role": "history",
+          "ar": { "heading": "التاريخ", "paragraphs": ["تقع دومة الجندل في [[regions/jawf|منطقة الجوف]] غرب سكاكا بنحو 40 كم، وهي من الحواضر التاريخية البارزة في شمال الجزيرة العربية بفضل موقعها بين حضارات الشرق القديمة، ويعود أقدم ذكر لها إلى النصف الأول من الألف الأول قبل الميلاد في حملة الملك الآشوري سنحاريب. [1]"] },
+          "en": { "heading": "History", "paragraphs": ["Dumat Al-Jandal lies in [[regions/jawf|Al-Jawf]], about 40 km west of Sakaka. Its position between the ancient civilisations of the Near East made it a leading town of northern Arabia; its earliest mention dates to the first half of the first millennium BCE, in a campaign of the Assyrian king Sennacherib. [1]"] } },
+        { "role": "antiquities",
+          "ar": { "heading": "الآثار والطبيعة", "paragraphs": ["من آثارها قلعة مارد التي يعود تاريخها إلى القرن الأول قبل الميلاد وتحوي نقوشًا لممالك مرت بها، وحي الدرع التاريخي، ومسجد عمر بن الخطاب. وفيها بحيرة تُعد من عناصر الجذب في المنطقة. [1]"] },
+          "en": { "heading": "Remains and landscape", "paragraphs": ["Its remains include Marid Castle, dating to the first century BCE with inscriptions of the kingdoms that passed through, the historic Al-Dir' quarter and the Mosque of Umar ibn al-Khattab. Its lake is one of the region's attractions. [1]"] } }
+      ]
+    },
+    {
+      "section": "regions", "slug": "tayma", "translationKey": "regions-20260928-tayma", "entityType": "governorate", "parent": "regions/tabuk",
+      "ar": { "title": "محافظة تيماء", "summary": "محافظة في منطقة تبوك جنوب شرق مدينة تبوك بنحو 265 كم، تعاقبت عليها الحضارات منذ العصر الحجري الحديث، ومنها «حجر تيماء» المعروض في متحف اللوفر.", "category": "محافظة" },
+      "en": { "title": "Tayma Governorate", "summary": "A governorate of Tabuk about 265 km south-east of Tabuk city, settled since the Neolithic, and the origin of the 'Tayma Stone' now in the Louvre.", "category": "Governorate" },
+      "facts": [{ "ar": ["الموقع", "جنوب شرق مدينة تبوك بنحو 265 كم"], "en": ["Location", "About 265 km south-east of Tabuk"] }],
+      "sources": [{ "ar": "سعوديبيديا: محافظة تيماء", "en": "Saudipedia: Tayma Governorate (Arabic)", "url": "https://saudipedia.com/%D9%85%D8%AD%D8%A7%D9%81%D8%B8%D8%A9-%D8%AA%D9%8A%D9%85%D8%A7%D8%A1" }],
+      "body": [
+        { "role": "history",
+          "ar": { "heading": "تعاقب الحضارات", "paragraphs": ["تقع تيماء في [[regions/tabuk|منطقة تبوك]] جنوب شرق مدينة تبوك بنحو 265 كم، وتشير أقدم آثارها إلى العصر الحجري الحديث، ثم ازدهرت في العصرين البرونزي والحديدي حتى صارت من أهم مدن شمال الجزيرة العربية. [1]", "تذكر نقوش من القرنين الثامن والسادس قبل الميلاد أن أحد ملوك بابل اتخذها عاصمة، ونُقلت منها عام 1884م مسلة تحمل نقشًا آراميًا تُعرض في متحف اللوفر باسم «حجر تيماء». [1]"] },
+          "en": { "heading": "Successive civilisations", "paragraphs": ["Tayma lies in [[regions/tabuk|Tabuk Region]], about 265 km south-east of Tabuk city. Its oldest remains are Neolithic, and it flourished in the Bronze and Iron Ages to become one of the main towns of northern Arabia. [1]", "Inscriptions from the eighth to sixth centuries BCE record that a Babylonian king made it his capital, and a stele with an Aramaic inscription taken from Tayma in 1884 is displayed in the Louvre as the 'Tayma Stone'. [1]"] } },
+        { "role": "antiquities",
+          "ar": { "heading": "المعالم", "paragraphs": ["من معالمها السور الخارجي المبني في القرن السادس قبل الميلاد، وهو من أطول الأسوار التاريخية في الجزيرة العربية، وقصر الحمراء، وقصر الرضم، وبئر هداج، وقصر السموأل «الأبلق الفرد»، وقصر البجيدي من العصر العباسي. [1]"] },
+          "en": { "heading": "Landmarks", "paragraphs": ["Landmarks include the outer wall built in the sixth century BCE, one of the longest historic walls in Arabia, Qasr Al-Hamra, Qasr Al-Radm, the Haddaj well, the palace of Al-Samaw'al ('Al-Ablaq Al-Fard') and the Abbasid-era Qasr Al-Bujaydi. [1]"] } }
+      ]
+    },
+    {
+      "section": "heritage", "slug": "al-ahsa-oasis", "translationKey": "heritage-20260928-al-ahsa-oasis", "entityType": "site", "siteType": "historical", "parent": "regions/eastern-province", "related": ["heritage/saudi-date-palm-cultivation"],
+      "ar": { "title": "واحة الأحساء", "summary": "أكبر واحة نخيل قائمة بذاتها في العالم وفق موسوعة غينيس، ومسجلة في قائمة التراث العالمي لليونسكو منذ 2018 منظرًا ثقافيًا يجسد تفاعل الإنسان مع بيئته.", "category": "موقع تراث عالمي" },
+      "en": { "title": "Al-Ahsa Oasis", "summary": "The world's largest self-contained oasis according to Guinness World Records, inscribed on the UNESCO World Heritage List in 2018 as a cultural landscape of human interaction with the environment.", "category": "World Heritage site" },
+      "facts": [{ "ar": ["الموقع", "محافظة الأحساء، المنطقة الشرقية"], "en": ["Location", "Al-Ahsa, Eastern Province"] }, { "ar": ["التسجيل في التراث العالمي", "1439هـ/2018م"], "en": ["World Heritage inscription", "1439 AH/2018 CE"] }],
+      "sources": [{ "ar": "سعوديبيديا: واحة الأحساء", "en": "Saudipedia: Al-Ahsa Oasis (Arabic)", "url": "https://saudipedia.com/%D9%88%D8%A7%D8%AD%D8%A9-%D8%A7%D9%84%D8%A3%D8%AD%D8%B3%D8%A7%D8%A1" }],
+      "body": [
+        { "role": "overview",
+          "ar": { "heading": "الواحة والتسمية", "paragraphs": ["تقع واحة الأحساء في [[regions/eastern-province|المنطقة الشرقية]]، وأدت خصوبة أرضها وكثرة نخيلها وعيونها إلى وصفها بأكبر واحة نخيل وسط الرمال في العالم. [1]", "يُطلق عليها محليًا «الحسا» نسبة إلى الحِسي، وهي أرض صخرية مغطاة برمل تختزن مياه الأمطار فيُستخرج الماء منها بحفر قليل، وقد ذكرها ياقوت الحموي في «معجم البلدان». [1]"] },
+          "en": { "heading": "The oasis and its name", "paragraphs": ["Al-Ahsa Oasis lies in the [[regions/eastern-province|Eastern Province]]. Its fertile land, palms and springs have earned it the description of the largest palm oasis amid the sands in the world. [1]", "Locally called al-Hasa, from hisi, rocky ground under sand that stores rainwater reachable by shallow digging, it is mentioned by Yaqut al-Hamawi in Mu'jam al-Buldan. [1]"] } },
+        { "role": "economy",
+          "ar": { "heading": "الزراعة", "paragraphs": ["تُعد الواحة سلة غذاء المنطقة الشرقية، وتشتهر بالتمور والقمح والفاكهة و«الأرز الحساوي» الذي تحتاج زراعته إلى حرارة الصيف العالية. انظر [[heritage/saudi-date-palm-cultivation|زراعة النخيل في السعودية]]. [1]"] },
+          "en": { "heading": "Farming", "paragraphs": ["The oasis is the Eastern Province's food basket, known for dates, wheat, fruit and Hasawi rice, which needs the intense summer heat. See [[heritage/saudi-date-palm-cultivation|date palm cultivation]]. [1]"] } },
+        { "role": "antiquities",
+          "ar": { "heading": "الاعتراف العالمي", "paragraphs": ["سُجلت الواحة في قائمة التراث العالمي في اجتماع لجنة التراث العالمي بالمنامة في 29 يونيو 2018م، بوصفها منظرًا طبيعيًا وثقافيًا يجسد تفاعل الإنسان مع بيئته. ودخلت موسوعة غينيس عام 2020م أكبرَ واحة قائمة بذاتها في العالم، وانضمت الأحساء إلى شبكة اليونسكو للمدن المبدعة. [1]"] },
+          "en": { "heading": "Global recognition", "paragraphs": ["The oasis was inscribed on the World Heritage List at the Committee's meeting in Manama on 29 June 2018 as a cultural landscape of human interaction with the environment. In 2020 Guinness World Records named it the largest self-contained oasis in the world, and Al-Ahsa joined the UNESCO Creative Cities Network. [1]"] } }
+      ]
+    },
+    {
+      "section": "heritage", "slug": "quba-mosque", "translationKey": "heritage-20260928-quba-mosque", "entityType": "site", "siteType": "religious", "parent": "regions/madinah", "related": ["people/king-fahd", "people/king-salman"],
+      "ar": { "title": "مسجد قباء", "summary": "أول مسجد بُني في الإسلام، شُيد في السنة الأولى للهجرة جنوب غرب المدينة المنورة على طريق الهجرة، وثاني المساجد مساحةً في المدينة بعد المسجد النبوي.", "category": "مكان ديني" },
+      "en": { "title": "Quba Mosque", "summary": "The first mosque built in Islam, founded in the first year of the Hijra south-west of Madinah on the Hijra road, and the city's second-largest mosque after the Prophet's Mosque.", "category": "Religious site" },
+      "facts": [{ "ar": ["التأسيس", "السنة الأولى للهجرة/622م"], "en": ["Founded", "1 AH/622 CE"] }, { "ar": ["البعد عن المسجد النبوي", "نحو 3.5 كم"], "en": ["Distance from the Prophet's Mosque", "About 3.5 km"] }],
+      "sources": [{ "ar": "سعوديبيديا: مسجد قباء", "en": "Saudipedia: Quba Mosque (Arabic)", "url": "https://saudipedia.com/%D9%85%D8%B3%D8%AC%D8%AF-%D9%82%D8%A8%D8%A7%D8%A1" }],
+      "body": [
+        { "role": "history",
+          "ar": { "heading": "التأسيس والمكانة", "paragraphs": ["مسجد قباء أول مسجد بُني في الإسلام، أسسه النبي صلى الله عليه وسلم وصحابته في السنة الأولى للهجرة/622م جنوب غرب [[regions/madinah|المدينة المنورة]] على طريق الهجرة، ويبعد عن المسجد النبوي نحو 3.5 كم. [1]", "كان النبي صلى الله عليه وسلم يأتيه ماشيًا أو راكبًا ليصلي فيه، خاصة يوم السبت. وذكر ياقوت الحموي أن اسمه مأخوذ من بئر قباء، وعُرف قديمًا بمسجد بني عوف. [1]"] },
+          "en": { "heading": "Foundation and standing", "paragraphs": ["Quba Mosque is the first mosque built in Islam, founded by the Prophet and his companions in 1 AH/622 CE south-west of [[regions/madinah|Madinah]] on the Hijra road, about 3.5 km from the Prophet's Mosque. [1]", "The Prophet visited it on foot or riding to pray, especially on Saturdays. Yaqut al-Hamawi says it takes its name from the well of Quba; it was once called the Mosque of Banu Awf. [1]"] } },
+        { "role": "religious",
+          "ar": { "heading": "العمارة والتوسعات", "paragraphs": ["جُددت عمارته عبر العصور، منها تجديد عثمان بن عفان، وبناء عمر بن عبدالعزيز أول مئذنة فيه. وفي العهد السعودي أمر الملك [[people/king-fahd|فهد]] عام 1405هـ/1985م بتوسعته إلى نحو تسعة أضعاف مساحته مع المحافظة على طرازه، وافتُتحت التوسعة عام 1407هـ/1987م. [1]", "أُعلن في 7 رمضان 1443هـ/8 أبريل 2022م عن مشروع الملك [[people/king-salman|سلمان]] لتوسعة مسجد قباء، أكبر توسعة في تاريخه. [1]"] },
+          "en": { "heading": "Architecture and expansions", "paragraphs": ["It has been rebuilt many times, including by Uthman ibn Affan and by Umar ibn Abd al-Aziz, who added its first minaret. In 1405 AH/1985 CE King [[people/king-fahd|Fahd]] ordered it enlarged about ninefold while keeping its style; the expansion opened in 1407 AH/1987 CE. [1]", "On 7 Ramadan 1443 AH/8 April 2022 CE the King [[people/king-salman|Salman]] Project to expand Quba Mosque, the largest in its history, was announced. [1]"] } }
+      ]
+    }
+  ]
+}

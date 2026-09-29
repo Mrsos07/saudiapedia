@@ -12,7 +12,7 @@ type Locale = (typeof locales)[number];
 type Doc = Record<string, unknown> & { id: number };
 type BatchRow = { role?: string; ar: { heading: string; paragraphs: string[] }; en: { heading: string; paragraphs: string[] } };
 type BatchTopic = {
-  section: string; slug: string; translationKey: string; replaceBody?: boolean; entityType?: string; siteType?: string; parent?: string; related?: string[];
+  section: string; slug: string; translationKey: string; replaceBody?: boolean; entityType?: string; siteType?: string; parent?: string; related?: string[]; period?: string; kind?: 'ruler' | 'notable';
   ar?: { title: string; summary: string; category: string }; en?: { title: string; summary: string; category: string };
   facts?: { ar: [string, string]; en: [string, string] }[]; sources: { ar: string; en: string; url: string }[]; body: BatchRow[];
 };
@@ -106,16 +106,23 @@ async function main() {
     }
     console.log(`Copied ${sections.docs.length} sections, ${articles.length} public articles and ${mediaMap.size} public media records.`);
 
-    // Riyadh pilot batch: pass 1 creates/updates content, pass 2 links hierarchy and relations.
-    const batch = JSON.parse(await readFile('docs/editorial-batches/riyadh-pilot-20260928.json', 'utf8')) as { topics: BatchTopic[]; updateExisting: Record<string, { entityType?: string; siteType?: string; parent?: string; related?: string[] }> };
+    // Structure batches (CLI arguments, default: Riyadh pilot): pass 1 creates missing topics,
+    // pass 2 writes rich content, hierarchy and relations once every batch topic has an ID.
+    type Batch = { topics: BatchTopic[]; updateExisting?: Record<string, { entityType?: string; siteType?: string; parent?: string; related?: string[] }> };
+    const files = process.argv.slice(2).length ? process.argv.slice(2) : ['docs/editorial-batches/riyadh-pilot-20260928.json'];
+    const batches: Batch[] = await Promise.all(files.map(async file => JSON.parse(await readFile(file, 'utf8')) as Batch));
+    const batch: Required<Batch> = { topics: batches.flatMap(item => item.topics), updateExisting: Object.assign({}, ...batches.map(item => item.updateExisting ?? {})) };
     const approve = { reviewStatus: 'approved', _status: 'published' } as const;
     for (const topic of batch.topics) {
       const route = `${topic.section}/${topic.slug}`;
       for (const locale of locales) {
         if (ids.get(route)?.[locale]) continue;
+        const existing = await payload.find({ collection: 'articles', ...as, limit: 1, where: { and: [{ translationKey: { equals: topic.translationKey } }, { locale: { equals: locale } }] } });
+        if (existing.docs[0]) { ids.set(route, { ...(ids.get(route) ?? {}), [locale]: existing.docs[0].id } as Record<Locale, number>); continue; }
         const text = topic[locale]!;
         const data = {
           title: text.title, locale, translationKey: topic.translationKey, section: topic.section, slug: topic.slug, summary: text.summary, category: text.category,
+          ...(topic.period ? { period: topic.period } : {}), ...(topic.kind ? { kind: topic.kind } : {}),
           facts: (topic.facts ?? []).map(fact => ({ label: fact[locale][0], value: fact[locale][1] })), sources: topic.sources.map(source => ({ title: source[locale], url: source.url })),
           body: topic.body.map(row => ({ heading: row[locale].heading, text: row[locale].paragraphs.join('\n\n') })), noIndex: false, ...approve,
         };
@@ -151,7 +158,7 @@ async function main() {
       }
     }
     const pilot = await payload.count({ collection: 'articles', ...as, where: { entityType: { exists: true } } });
-    console.log(`Riyadh pilot applied: ${batch.topics.length} topics (${pilot.totalDocs} structured documents).`);
+    console.log(`Applied ${files.length} batch file(s): ${batch.topics.length} topics (${pilot.totalDocs} structured documents).`);
   } finally {
     // Payload keeps its first pool client checked out, so pool shutdown can wait forever in a script.
     await Promise.race([payload.destroy(), new Promise(resolve => setTimeout(resolve, 5000))]);

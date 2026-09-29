@@ -1,0 +1,65 @@
+{
+  "researchDate": "2026-09-28",
+  "status": "staging-pilot",
+  "reviewNotes": [
+    "Founders of the first and second Saudi states and a cultural figure linked to Asir, each citing their Saudipedia biography (retrieved 2026-09-28).",
+    "The imams use kind=notable with the category 'Imams of the Saudi states', not kind=ruler: the homepage and the default notable-figures tab are defined as the seven kings (AGENTS.md), and that presentation rule is not changed by this batch.",
+    "Omitted: the named assassin of Imam Turki (the page is truncated at that point) and album/concert counts for Talal Maddah beyond what the page states in its summary."
+  ],
+  "topics": [
+    {
+      "section": "people", "slug": "imam-muhammad-bin-saud", "translationKey": "people-20260928-imam-muhammad-bin-saud", "entityType": "person", "kind": "notable", "period": "1679–1765",
+      "related": ["history/first-saudi-state", "regions/diriyah-governorate", "heritage/at-turaif", "history/diriyah-history"],
+      "ar": { "title": "الإمام محمد بن سعود", "summary": "مؤسس الدولة السعودية الأولى عام 1139هـ/1727م وأول أئمتها، اتخذ الدرعية عاصمة، وحكم أربعين عامًا وحّد خلالها معظم نجد.", "category": "أئمة الدولة السعودية" },
+      "en": { "title": "Imam Muhammad bin Saud", "summary": "Founder and first imam of the First Saudi State in 1139 AH/1727 CE, who made Diriyah its capital and ruled for forty years, uniting most of Najd.", "category": "Imams of the Saudi states" },
+      "facts": [{ "ar": ["الميلاد والوفاة", "1090–1179هـ/1679–1765م"], "en": ["Born – died", "1090–1179 AH/1679–1765 CE"] }, { "ar": ["تأسيس الدولة", "1139هـ/1727م"], "en": ["Founded the state", "1139 AH/1727 CE"] }, { "ar": ["العاصمة", "الدرعية"], "en": ["Capital", "Diriyah"] }, { "ar": ["الخلف", "الإمام عبدالعزيز بن محمد"], "en": ["Successor", "Imam Abdulaziz bin Muhammad"] }],
+      "sources": [{ "ar": "سعوديبيديا: محمد بن سعود بن محمد بن مقرن", "en": "Saudipedia: Muhammad bin Saud bin Muhammad bin Muqrin (Arabic)", "url": "https://saudipedia.com/%D9%85%D8%AD%D9%85%D8%AF-%D8%A8%D9%86-%D8%B3%D8%B9%D9%88%D8%AF-%D8%A8%D9%86-%D9%85%D8%AD%D9%85%D8%AF-%D8%A8%D9%86-%D9%85%D9%82%D8%B1%D9%86" }],
+      "body": [
+        { "role": "overview",
+          "ar": { "heading": "النسب والنشأة", "paragraphs": ["الإمام محمد بن سعود بن محمد بن مقرن (1090–1179هـ/1679–1765م) مؤسس [[history/first-saudi-state|الدولة السعودية الأولى]] عام 1139هـ/1727م، وقائد جيوشها في سنواتها الأولى، اتخذ [[regions/diriyah-governorate|الدرعية]] عاصمة والشريعة الإسلامية دستورًا للحكم. [1]", "ينتسب أسلافه إلى بني حنيفة الذين استقروا على ضفاف وادي حنيفة، وعاد أجداده عام 850هـ/1446م إلى وسط الجزيرة العربية فأسسوا الدرعية. وكان والده سعود بن محمد قد حكم إمارة الدرعية عام 1132هـ/1719م. [1]"] },
+          "en": { "heading": "Lineage and early life", "paragraphs": ["Imam Muhammad bin Saud bin Muhammad bin Muqrin (1090–1179 AH/1679–1765 CE) founded the [[history/first-saudi-state|First Saudi State]] in 1139 AH/1727 CE and led its armies in its early years, making [[regions/diriyah-governorate|Diriyah]] its capital and Islamic law its constitution. [1]", "His forebears belonged to Banu Hanifah, who had settled along Wadi Hanifah; his ancestors returned to central Arabia in 850 AH/1446 CE and founded Diriyah. His father, Saud bin Muhammad, ruled the emirate of Diriyah from 1132 AH/1719 CE. [1]"] } },
+        { "role": "history",
+          "ar": { "heading": "تأسيس الدولة", "paragraphs": ["تولى إمارة الدرعية عام 1139هـ/1727م، ووفّر الأمن داخلها وعلى طرق الحج والتجارة، ونظّم شؤونها الاقتصادية، ووسّع علاقاتها بالقبائل والحواضر، فانتقلت الدرعية من إمارة إلى دولة. [1]", "وفي عام 1157هـ/1744م انتقل إليه الشيخ محمد بن عبدالوهاب فأيد دعوته الإصلاحية. وقاد الإمام حملات لتوحيد وسط الجزيرة العربية، منها 12 معركة لضم الرياض، وفقد ابنيه فيصل وسعود في إحدى المعارك عام 1160هـ/1746م. [1]"] },
+          "en": { "heading": "Founding the state", "paragraphs": ["He took charge of Diriyah in 1139 AH/1727 CE, secured it and the pilgrimage and trade routes through it, organised its economy and widened its ties with tribes and towns, turning the emirate into a state. [1]", "In 1157 AH/1744 CE Sheikh Muhammad ibn Abd al-Wahhab moved to Diriyah, and the imam supported his reform call. He led campaigns to unite central Arabia, including twelve battles for Riyadh, and lost his sons Faisal and Saud in a battle in 1160 AH/1746 CE. [1]"] } },
+        { "role": "administration",
+          "ar": { "heading": "الحكم والإرث", "paragraphs": ["اعتمد في إدارة البلاد على العدل وتشجيع العلم، ووضع حدًا للغارات وقطع الطرق، ونقل مركز الحكم في الدرعية إلى حي [[heritage/at-turaif|الطريف]]. وتوفي عام 1179هـ/1765م بعد حكم دام أربعين عامًا، وخلفه ابنه الإمام عبدالعزيز. [1]"] },
+          "en": { "heading": "Rule and legacy", "paragraphs": ["He governed with an emphasis on justice and learning, ended raiding and highway robbery, and moved the seat of government in Diriyah to [[heritage/at-turaif|At-Turaif]]. He died in 1179 AH/1765 CE after forty years of rule and was succeeded by his son, Imam Abdulaziz. [1]"] } }
+      ]
+    },
+    {
+      "section": "people", "slug": "imam-turki-bin-abdullah", "translationKey": "people-20260928-imam-turki-bin-abdullah", "entityType": "person", "kind": "notable", "period": "1769–1834",
+      "related": ["history/second-saudi-state", "regions/riyadh-city", "people/imam-muhammad-bin-saud"],
+      "ar": { "title": "الإمام تركي بن عبدالله", "summary": "مؤسس الدولة السعودية الثانية عام 1240هـ/1824م وحفيد الإمام محمد بن سعود، وأول من اتخذ الرياض قاعدة للحكم السعودي.", "category": "أئمة الدولة السعودية" },
+      "en": { "title": "Imam Turki bin Abdullah", "summary": "Founder of the Second Saudi State in 1240 AH/1824 CE, grandson of Imam Muhammad bin Saud and the first to make Riyadh the seat of Saudi rule.", "category": "Imams of the Saudi states" },
+      "facts": [{ "ar": ["الميلاد والوفاة", "1183–1249هـ/1769–1834م"], "en": ["Born – died", "1183–1249 AH/1769–1834 CE"] }, { "ar": ["مدة الحكم", "1240–1249هـ/1824–1834م"], "en": ["Reign", "1240–1249 AH/1824–1834 CE"] }, { "ar": ["العاصمة", "الرياض"], "en": ["Capital", "Riyadh"] }],
+      "sources": [{ "ar": "سعوديبيديا: تركي بن عبدالله بن محمد بن سعود", "en": "Saudipedia: Turki bin Abdullah bin Muhammad bin Saud (Arabic)", "url": "https://saudipedia.com/%D8%AA%D8%B1%D9%83%D9%8A-%D8%A8%D9%86-%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%84%D9%87-%D8%A8%D9%86-%D9%85%D8%AD%D9%85%D8%AF-%D8%A8%D9%86-%D8%B3%D8%B9%D9%88%D8%AF" }],
+      "body": [
+        { "role": "overview",
+          "ar": { "heading": "النشأة والدفاع عن الدرعية", "paragraphs": ["الإمام تركي بن عبدالله بن محمد بن سعود (1183–1249هـ/1769–1834م) مؤسس [[history/second-saudi-state|الدولة السعودية الثانية]] وحفيد [[people/imam-muhammad-bin-saud|الإمام محمد بن سعود]]. [1]", "اشتهر بالشجاعة، وكان في مقدمة المدافعين عن الدرعية أمام الجيش العثماني، وفقد في الدفاع عنها ابنه فهد وأخويه محمد وسعود، ورفض الاستسلام. وارتبط اسمه بسيفه «الأجرب» الذي ذكره في قصيدته المشهورة. [1]"] },
+          "en": { "heading": "Early life and the defence of Diriyah", "paragraphs": ["Imam Turki bin Abdullah bin Muhammad bin Saud (1183–1249 AH/1769–1834 CE) founded the [[history/second-saudi-state|Second Saudi State]] and was a grandson of [[people/imam-muhammad-bin-saud|Imam Muhammad bin Saud]]. [1]", "Known for his courage, he was among the foremost defenders of Diriyah against the Ottoman army, losing his son Fahd and his brothers Muhammad and Saud, and refused to surrender. His name is tied to his sword, al-Ajrab, which he mentions in a famous poem. [1]"] } },
+        { "role": "history",
+          "ar": { "heading": "استعادة الحكم", "paragraphs": ["في رمضان 1238هـ/مايو 1823م أقبل من بلدة الحلوة ومعه ثلاثون رجلًا، واستقر في عرقة، فالتف حوله أنصار من الوشم وسدير وغيرهما، ثم استرد [[regions/riyadh-city|الرياض]] عام 1240هـ/1824م واتخذها عاصمة بعد أن دُمرت الدرعية. [1]", "وبحلول سنة 1241هـ/1825م بايعته بلدان نجد كلها، ثم ضم الأحساء. واستمرت الدولة التي أسسها 69 عامًا حتى 1309هـ/1891م. [1]"] },
+          "en": { "heading": "Restoring rule", "paragraphs": ["In Ramadan 1238 AH/May 1823 CE he came from the town of Al-Hulwah with thirty men and settled in Irqah, where supporters from Al-Washm, Sudair and elsewhere rallied to him. He recovered [[regions/riyadh-city|Riyadh]] in 1240 AH/1824 CE and made it the capital after Diriyah's destruction. [1]", "By 1241 AH/1825 CE all the towns of Najd had pledged allegiance, and he later added Al-Ahsa. The state he founded lasted 69 years, until 1309 AH/1891 CE. [1]"] } },
+        { "role": "administration",
+          "ar": { "heading": "وفاته", "paragraphs": ["اغتيل الإمام تركي في آخر يوم من ذي الحجة 1249هـ/1834م بعد خروجه من صلاة الجمعة ماشيًا إلى قصره دون حراسة، بعد حكم دام تسعة أعوام. [1]"] },
+          "en": { "heading": "Death", "paragraphs": ["Imam Turki was assassinated on the last day of Dhu al-Hijjah 1249 AH/1834 CE as he walked unguarded from Friday prayer to his palace, after nine years of rule. [1]"] } }
+      ]
+    },
+    {
+      "section": "people", "slug": "talal-maddah", "translationKey": "people-20260928-talal-maddah", "entityType": "person", "kind": "notable", "period": "1940–2000",
+      "related": ["tourism/al-muftaha-village", "regions/makkah"],
+      "ar": { "title": "طلال مداح", "summary": "مغنٍّ وملحّن سعودي من مكة المكرمة (1940–2000)، لُقّب «صوت الأرض»، وأسهم في إيصال الأغنية السعودية إلى جمهور عربي وعالمي.", "category": "الفن" },
+      "en": { "title": "Talal Maddah", "summary": "A Saudi singer and composer from Makkah (1940–2000), known as 'the Voice of the Earth', who carried Saudi song to Arab and international audiences.", "category": "Arts" },
+      "facts": [{ "ar": ["الميلاد والوفاة", "1360–1421هـ/1940–2000م"], "en": ["Born – died", "1360–1421 AH/1940–2000 CE"] }, { "ar": ["مكان الميلاد", "مكة المكرمة"], "en": ["Birthplace", "Makkah"] }, { "ar": ["المجال", "الغناء والتلحين"], "en": ["Field", "Singing and composing"] }],
+      "sources": [{ "ar": "سعوديبيديا: طلال مداح", "en": "Saudipedia: Talal Maddah (Arabic)", "url": "https://saudipedia.com/%D8%B7%D9%84%D8%A7%D9%84-%D9%85%D8%AF%D8%A7%D8%AD" }],
+      "body": [
+        { "role": "overview",
+          "ar": { "heading": "حياته", "paragraphs": ["طلال مداح (1360–1421هـ/1940–2000م) مغنٍّ وملحّن سعودي، وُلد في [[regions/makkah|مكة المكرمة]] واسمه طلال بن عبدالشيخ الجابري، ولُقّب بمداح نسبة إلى زوج خالته علي المداح الذي رباه بعد وفاة والديه. ومن ألقابه «صوت الأرض» و«قيثارة الشرق». [1]", "انطلق عام 1379هـ/1959م وهو في التاسعة عشرة، وأضاف للعود وترًا جديدًا، وكان أول فنان سعودي تسجله جمعية المؤلفين والموسيقيين في فرنسا. [1]"] },
+          "en": { "heading": "Life", "paragraphs": ["Talal Maddah (1360–1421 AH/1940–2000 CE) was a Saudi singer and composer born in [[regions/makkah|Makkah]] as Talal bin Abdulshaikh Al-Jabiri; he took the name Maddah from his aunt's husband, Ali Al-Maddah, who raised him after his parents died. He was called 'the Voice of the Earth' and 'the Lyre of the East'. [1]", "His career began in 1379 AH/1959 CE at nineteen; he added a string to the oud and was the first Saudi artist registered by the French society of authors and composers. [1]"] } },
+        { "role": "culture",
+          "ar": { "heading": "مسيرته", "paragraphs": ["ظهر مع بداية البث التلفزيوني في منتصف الستينيات، وغنى في لبنان وسوريا ومصر وتونس ولندن وواشنطن، وتعاون مع ملحنين منهم سراج عمر، وشعراء منهم بدر بن عبدالمحسن وإبراهيم خفاجي. وشارك في أوبريت مهرجان الجنادرية أحد عشر عامًا، ولحّن وغنى «وطني الحبيب». [1]", "قلّده الملك [[people/king-fahd|فهد بن عبدالعزيز]] وسام الاستحقاق من الدرجة الثانية، وفي عام 1440هـ/2019م سُمي مسرح [[tourism/al-muftaha-village|المفتاحة]] في مركز الملك فهد الثقافي بأبها باسمه. [1]"] },
+          "en": { "heading": "Career", "paragraphs": ["He appeared at the start of television broadcasting in the mid-1960s and performed in Lebanon, Syria, Egypt, Tunisia, London and Washington. He worked with composers such as Siraj Omar and poets including Badr bin Abdulmohsen and Ibrahim Khafaji, sang in the Janadriyah festival operetta for eleven years, and composed and sang 'Watani Al-Habib'. [1]", "King [[people/king-fahd|Fahd bin Abdulaziz]] awarded him the Order of Merit, second class, and in 1440 AH/2019 CE the [[tourism/al-muftaha-village|Al-Muftaha]] theatre at the King Fahd Cultural Centre in Abha was named after him. [1]"] } }
+      ]
+    }
+  ]
+}

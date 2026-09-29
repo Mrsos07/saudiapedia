@@ -1,0 +1,137 @@
+{
+  "researchDate": "2026-09-28",
+  "status": "staging-pilot",
+  "reviewNotes": [
+    "Landforms that span several regions are modelled as natural sites related (not parented) to each region they cross, so they appear in every relevant region hub. Each article cites its own Saudipedia page (retrieved 2026-09-28); the unification article also cites the Masmak Palace page for the 1319 AH/1902 CE recovery of Riyadh, which the unification page dates to 1901.",
+    "Known source errors excluded: the Tuwaiq page's '500 million years' age contradicts its own Jurassic dating, and its 800 km length differs from the Riyadh Region page (1,000 km), so neither figure is used. The Darb Zubaydah page places the Umayyad capital in Baghdad; that sentence is not used. The Rub al Khali page's placement of the Ghawar field inside the desert is not repeated. The Wadi Al-Rumah page's continuation to Kuwait is omitted.",
+    "Omitted: reserve and oil/gas reserve figures, investment values and officeholders."
+  ],
+  "topics": [
+    {
+      "section": "nature", "slug": "rub-al-khali", "translationKey": "geography-20260928-rub-al-khali", "entityType": "site", "siteType": "nature", "related": ["regions/eastern-province", "regions/riyadh", "regions/najran", "nature/uruq-bani-maarid"],
+      "ar": { "title": "صحراء الربع الخالي", "summary": "أوسع مسطح رملي متصل في العالم، يشغل جنوب شرق المملكة في المنطقة الشرقية والرياض ونجران، وسُمي بالربع الخالي لخلوه من الاستيطان الدائم.", "category": "صحارى" },
+      "en": { "title": "Rub al Khali", "summary": "The world's largest continuous sand sea, covering the Kingdom's south-east across the Eastern Province, Riyadh and Najran, named the 'Empty Quarter' for its lack of permanent settlement.", "category": "Deserts" },
+      "facts": [{ "ar": ["المساحة داخل المملكة", "نحو 430 ألف كم²"], "en": ["Area in the Kingdom", "About 430,000 km²"] }, { "ar": ["المناطق", "الشرقية، الرياض، نجران"], "en": ["Regions", "Eastern Province, Riyadh, Najran"] }],
+      "sources": [{ "ar": "سعوديبيديا: صحراء الربع الخالي", "en": "Saudipedia: Rub al Khali (Arabic)", "url": "https://saudipedia.com/%D8%B5%D8%AD%D8%B1%D8%A7%D8%A1-%D8%A7%D9%84%D8%B1%D8%A8%D8%B9-%D8%A7%D9%84%D8%AE%D8%A7%D9%84%D9%8A" }],
+      "body": [
+        { "role": "geography",
+          "ar": { "heading": "الامتداد والتسمية", "paragraphs": ["صحراء الربع الخالي أكبر تجمع رملي في المملكة وأوسع مسطح رملي متصل في العالم، تبلغ مساحتها داخل المملكة نحو 430 ألف كم²، وتشغل جنوب شرق البلاد في [[regions/eastern-province|المنطقة الشرقية]] و[[regions/riyadh|منطقة الرياض]] و[[regions/najran|منطقة نجران]]. [1]", "سُميت بالربع الخالي لأنها تشكل نحو ربع الجزيرة العربية، ولخلوها من الاستيطان الدائم إلا من قلة من البدو الرحل، وتُعد أشد مناطق المملكة حرارة وجفافًا. وتطلق بعض المصادر اسم «الأحقاف» على جزئها الجنوبي. [1]"] },
+          "en": { "heading": "Extent and name", "paragraphs": ["The Rub al Khali is the Kingdom's largest sand body and the world's largest continuous sand sea, about 430,000 km² within Saudi Arabia, covering the south-east across the [[regions/eastern-province|Eastern Province]], [[regions/riyadh|Riyadh]] and [[regions/najran|Najran]]. [1]", "It is called the Empty Quarter because it forms roughly a quarter of the Arabian Peninsula and has no permanent settlement beyond a few nomads; it is the hottest and driest part of the Kingdom. Some sources call its southern part al-Ahqaf. [1]"] } },
+        { "role": "nature",
+          "ar": { "heading": "المحميات والمعالم", "paragraphs": ["تتخلل الصحراء محميتان: محمية الشيبة، ومحمية [[nature/uruq-bani-maarid|عروق بني معارض]] في جنوبها الغربي. وعلى أطرافها الجنوبية الشرقية حقل الشيبة النفطي المكتشف عام 1968م، وفيها منفذ الربع الخالي البري الوحيد مع سلطنة عمان. [1]"] },
+          "en": { "heading": "Reserves and landmarks", "paragraphs": ["Two protected areas lie within it: the Shaybah reserve and [[nature/uruq-bani-maarid|Uruq Bani Maarid]] in the south-west. The Shaybah oil field, discovered in 1968, lies on its south-eastern edge, and the Rub al Khali border crossing is the only land crossing with Oman. [1]"] } }
+      ]
+    },
+    {
+      "section": "nature", "slug": "dahna-desert", "translationKey": "geography-20260928-dahna", "entityType": "site", "siteType": "nature", "related": ["regions/northern-borders", "regions/hail", "regions/qassim", "regions/riyadh", "regions/eastern-province", "nature/rub-al-khali"],
+      "ar": { "title": "صحراء الدهناء", "summary": "ثالثة كبرى صحاري المملكة، شريط رملي أحمر متقوس بطول نحو 1,200 كم يصل النفود الكبير بالربع الخالي عبر خمس مناطق.", "category": "صحارى" },
+      "en": { "title": "Dahna Desert", "summary": "The Kingdom's third-largest desert, an arc of red sand about 1,200 km long linking the Great Nafud to the Rub al Khali across five regions.", "category": "Deserts" },
+      "facts": [{ "ar": ["المساحة", "نحو 45 ألف كم²"], "en": ["Area", "About 45,000 km²"] }, { "ar": ["الطول", "نحو 1,200 كم"], "en": ["Length", "About 1,200 km"] }],
+      "sources": [{ "ar": "سعوديبيديا: صحراء الدهناء", "en": "Saudipedia: Dahna Desert (Arabic)", "url": "https://saudipedia.com/%D8%B5%D8%AD%D8%B1%D8%A7%D8%A1-%D8%A7%D9%84%D8%AF%D9%87%D9%86%D8%A7%D8%A1" }],
+      "body": [
+        { "role": "geography",
+          "ar": { "heading": "الامتداد", "paragraphs": ["صحراء الدهناء، أو النفود الصغير، ثالثة كبرى صحاري المملكة، تمتد رمالها من منطقة الحدود الشمالية نزولًا إلى حائل والقصيم والرياض حتى المنطقة الشرقية، على هيئة شريط متقوس بطول نحو 1,200 كم ومساحة نحو 45 ألف كم². [1]", "تتصل أطرافها الشمالية بصحراء النفود الكبير، والجنوبية بـ[[nature/rub-al-khali|الربع الخالي]]، ويبلغ ارتفاع كثبانها الحمراء عن سطح الأرض نحو 120 م. [1]"] },
+          "en": { "heading": "Extent", "paragraphs": ["The Dahna, or Lesser Nafud, is the Kingdom's third-largest desert. Its sands run from the Northern Borders through Hail, Al-Qassim and Riyadh to the Eastern Province in an arc about 1,200 km long covering some 45,000 km². [1]", "Its northern end joins the Great Nafud and its southern end the [[nature/rub-al-khali|Rub al Khali]]; its red dunes rise about 120 m above the ground. [1]"] } },
+        { "role": "history",
+          "ar": { "heading": "المكانة والمحميات", "paragraphs": ["كانت الدهناء ملتقى لقوات الملك [[people/king-abdulaziz|عبدالعزيز]]، وهي اليوم مقر دائم لمهرجان الملك عبدالعزيز للإبل. وتضم محميات منها محمية الإمام عبدالعزيز بن محمد الملكية ومحمية الملك عبدالعزيز الملكية التي تقصدها العائلات في الربيع. [1]"] },
+          "en": { "heading": "Significance and reserves", "paragraphs": ["The Dahna was a gathering ground for King [[people/king-abdulaziz|Abdulaziz]]'s forces and is now the permanent site of the King Abdulaziz Camel Festival. Its reserves include the Imam Abdulaziz bin Muhammad Royal Reserve and the King Abdulaziz Royal Reserve, popular in spring. [1]"] } }
+      ]
+    },
+    {
+      "section": "nature", "slug": "sarawat-mountains", "translationKey": "geography-20260928-sarawat", "entityType": "site", "siteType": "nature", "related": ["regions/asir", "regions/bahah", "regions/jazan", "regions/najran", "regions/makkah", "nature/jabal-al-sawda"],
+      "ar": { "title": "جبال السروات", "summary": "أعلى سلسلة جبلية في المملكة، تمتد من حدود اليمن حتى شمال الطائف، وتضم أعلى القمم مثل السودة وتحتضن أعلى معدلات التنوع الأحيائي البري.", "category": "جبال" },
+      "en": { "title": "Sarawat Mountains", "summary": "The Kingdom's highest mountain range, running from the Yemeni border to north of Taif, with its highest peaks such as Al-Sawda and its richest land biodiversity.", "category": "Mountains" },
+      "facts": [{ "ar": ["أعلى قمة", "جبل السودة 3,015 م"], "en": ["Highest peak", "Jabal Al-Sawda, 3,015 m"] }, { "ar": ["الامتداد", "من حدود اليمن حتى شمال الطائف"], "en": ["Extent", "Yemeni border to north of Taif"] }],
+      "sources": [{ "ar": "سعوديبيديا: جبال السروات", "en": "Saudipedia: Sarawat Mountains (Arabic)", "url": "https://saudipedia.com/%D8%AC%D8%A8%D8%A7%D9%84-%D8%A7%D9%84%D8%B3%D8%B1%D9%88%D8%A7%D8%AA" }],
+      "body": [
+        { "role": "geography",
+          "ar": { "heading": "الامتداد والقمم", "paragraphs": ["جبال السروات أعلى سلسلة جبلية في المملكة، وتمثل الجزء الجنوبي من المرتفعات الغربية، وتمتد من حدود اليمن حتى شمال الطائف عبر [[regions/bahah|الباحة]] و[[regions/asir|عسير]] و[[regions/najran|نجران]] و[[regions/jazan|جازان]] ومحافظة الطائف. [1]", "من قممها [[nature/jabal-al-sawda|جبل السودة]] 3,015 م، وجبل فرواع 3,004 م، وجبل أثرب 2,447 م. وتنحدر منها أودية عميقة نحو البحر الأحمر منها خلب وجازان وضمد وبيش وحلي والليث. [1]"] },
+          "en": { "heading": "Extent and peaks", "paragraphs": ["The Sarawat are the Kingdom's highest range, the southern part of the western highlands, running from the Yemeni border to north of Taif through [[regions/bahah|Al-Bahah]], [[regions/asir|Asir]], [[regions/najran|Najran]], [[regions/jazan|Jazan]] and Taif. [1]", "Peaks include [[nature/jabal-al-sawda|Jabal Al-Sawda]] (3,015 m), Jabal Farwa (3,004 m) and Jabal Athrib (2,447 m). Deep wadis descend to the Red Sea, among them Khulab, Jazan, Damad, Baish, Hali and Al-Lith. [1]"] } },
+        { "role": "nature",
+          "ar": { "heading": "العقبات والتنوع الأحيائي", "paragraphs": ["تربط أعاليها بسهول تهامة عقبات منها الهدا وشعار والصماء وعقبة الملك عبدالله. وتحتضن أعلى معدلات التنوع الأحيائي في البيئات البرية السعودية، بغابات العرعر والطلح والزيتون البري والأعشاب العطرية، وفيها أهم المتنزهات الوطنية في عسير والطائف والباحة. [1]"] },
+          "en": { "heading": "Passes and biodiversity", "paragraphs": ["Mountain roads such as Al-Hada, Shaar, Al-Sama and the King Abdullah pass link the heights to the Tihamah plains. The range has the highest biodiversity of Saudi land environments, with juniper, acacia, wild olive and aromatic herbs, and the main national parks of Asir, Taif and Al-Bahah. [1]"] } }
+      ]
+    },
+    {
+      "section": "nature", "slug": "tuwaiq-mountains", "translationKey": "geography-20260928-tuwaiq", "entityType": "site", "siteType": "nature", "related": ["regions/riyadh", "nature/wadi-hanifah", "history/first-saudi-state"],
+      "ar": { "title": "جبال طويق", "summary": "سلسلة جبلية تكوّن هضبة ضيقة وسط المملكة، تمتد من نفود الثويرات في الزلفي إلى مشارف الربع الخالي، وتُعرف أيضًا بالعارض أو عارض اليمامة.", "category": "جبال" },
+      "en": { "title": "Tuwaiq Mountains", "summary": "An escarpment forming a narrow plateau in central Saudi Arabia, from the Thuwayrat sands near Al-Zulfi to the edge of the Rub al Khali, also known as Al-Arid.", "category": "Mountains" },
+      "facts": [{ "ar": ["أسماء أخرى", "العارض، عارض اليمامة"], "en": ["Other names", "Al-Arid, Arid Al-Yamamah"] }, { "ar": ["الارتفاع عن السهول المحيطة", "حتى 600 م"], "en": ["Height above surrounding plains", "Up to 600 m"] }],
+      "sources": [{ "ar": "سعوديبيديا: جبل طويق", "en": "Saudipedia: Tuwaiq Mountains (Arabic)", "url": "https://saudipedia.com/%D8%AC%D8%A8%D9%84-%D8%B7%D9%88%D9%8A%D9%82" }],
+      "body": [
+        { "role": "geography",
+          "ar": { "heading": "الامتداد والتكوين", "paragraphs": ["جبال طويق سلسلة تكوّن هضبة ضيقة في [[regions/riyadh|منطقة الرياض]]، تبدأ من نفود الثويرات في محافظة الزلفي مرورًا بإقليمي الوشم والعارض حتى مشارف الربع الخالي، وترتفع عن السهول المحيطة حتى 600 م. [1]", "سُميت «طويق» تصغيرًا لطوق لأن مرتفعاتها تشكل هيئة الطوق، وتتميز بجروف حادة من الغرب وانحدار تدريجي نحو الشرق، وتتألف من صخور جيرية تحمل رؤوسًا مرجانية تدل على أن المياه غمرت المنطقة قديمًا. [1]"] },
+          "en": { "heading": "Extent and formation", "paragraphs": ["The Tuwaiq escarpment forms a narrow plateau in [[regions/riyadh|Riyadh Region]], from the Thuwayrat sands in Al-Zulfi through Al-Washm and Al-Arid to the edge of the Rub al Khali, rising up to 600 m above the surrounding plains. [1]", "Its name, a diminutive of tawq (collar), reflects its ring-like shape. It has sheer western cliffs and a gentle eastern slope and is made of limestone with coral remains showing the area was once under water. [1]"] } },
+        { "role": "history",
+          "ar": { "heading": "الأودية والتاريخ", "paragraphs": ["تنحدر من جانبها الشرقي أودية أهمها [[nature/wadi-hanifah|وادي حنيفة]]، ويعود الاستيطان على أطرافها إلى ما قبل التاريخ، وعبرتها قديمًا قوافل الحج والتجارة. وعلى سفوحها قاتل الجيش السعودي القوات العثمانية عام 1233هـ/1818م عند غزوها الدرعية عاصمة [[history/first-saudi-state|الدولة السعودية الأولى]]. [1]"] },
+          "en": { "heading": "Wadis and history", "paragraphs": ["Wadis descend from its eastern side, chief among them [[nature/wadi-hanifah|Wadi Hanifah]]. Settlement along its edges dates to prehistory, and pilgrim and trade caravans crossed it. On its slopes Saudi forces fought the Ottoman army in 1233 AH/1818 CE during the invasion of Diriyah, capital of the [[history/first-saudi-state|First Saudi State]]. [1]"] } }
+      ]
+    },
+    {
+      "section": "nature", "slug": "wadi-hanifah", "translationKey": "geography-20260928-wadi-hanifah", "entityType": "site", "siteType": "nature", "parent": "regions/diriyah-governorate", "related": ["regions/riyadh-city", "history/second-saudi-state"],
+      "ar": { "title": "وادي حنيفة", "summary": "مجرى مائي موسمي وسط المملكة بطول نحو 160 كم، ينشأ غرب العيينة ويصب في رمال السهباء، وعلى ضفافه قامت الدرعية والرياض.", "category": "أودية" },
+      "en": { "title": "Wadi Hanifah", "summary": "A seasonal watercourse in central Saudi Arabia about 160 km long, rising west of Al-Uyaynah and ending in the Al-Sahba sands, on whose banks Diriyah and Riyadh grew.", "category": "Wadis" },
+      "facts": [{ "ar": ["الطول", "نحو 160 كم"], "en": ["Length", "About 160 km"] }, { "ar": ["المنبع والمصب", "غرب العيينة، رمال السهباء بالخرج"], "en": ["Source and end", "West of Al-Uyaynah; Al-Sahba sands, Al-Kharj"] }],
+      "sources": [{ "ar": "سعوديبيديا: وادي حنيفة", "en": "Saudipedia: Wadi Hanifah (Arabic)", "url": "https://saudipedia.com/%D9%88%D8%A7%D8%AF%D9%8A-%D8%AD%D9%86%D9%8A%D9%81%D8%A9" }],
+      "body": [
+        { "role": "geography",
+          "ar": { "heading": "المسار", "paragraphs": ["وادي حنيفة مجرى مائي موسمي في [[regions/diriyah-governorate|محافظة الدرعية]]، يبلغ طوله نحو 160 كم، ينشأ غرب العيينة ويتجه إلى الجنوب الشرقي حتى يصب في رمال قرية السهباء بمحافظة الخرج، وتغذيه روافد كثيرة أشهرها واديا لحا ولبن. [1]"] },
+          "en": { "heading": "Course", "paragraphs": ["Wadi Hanifah is a seasonal watercourse in [[regions/diriyah-governorate|Diriyah]], about 160 km long. It rises west of Al-Uyaynah and runs south-east to the sands of Al-Sahba in Al-Kharj, fed by many tributaries, notably Wadi Laha and Wadi Laban. [1]"] } },
+        { "role": "history",
+          "ar": { "heading": "الوادي والتاريخ", "paragraphs": ["بفضل مياهه وأراضيه الزراعية شكّل الوادي مركز إمداد تاريخيًا، فنشأت على ضفافه المدن، وقامت عليه عاصمتا الدولتين السعوديتين الأولى والثانية: الدرعية ثم [[regions/riyadh-city|الرياض]]. [1]"] },
+          "en": { "heading": "The wadi in history", "paragraphs": ["Its water and farmland made it a historic lifeline; towns grew along its banks, including the capitals of the first and second Saudi states, Diriyah and then [[regions/riyadh-city|Riyadh]]. [1]"] } },
+        { "role": "tourism",
+          "ar": { "heading": "التطوير والمتنزهات", "paragraphs": ["يُعد الوادي المصرف الطبيعي الأكبر للمياه في مدينة الرياض، وأكبر متنزه مفتوح في المملكة، وتشرف الهيئة الملكية لمدينة الرياض على تأهيله منذ 1406هـ/1986م، وتنتشر على ضفافه متنزهات تغطيها أشجار الأثل والطلح والسمر. [1]"] },
+          "en": { "heading": "Rehabilitation and parks", "paragraphs": ["The wadi is Riyadh's largest natural drainage channel and the Kingdom's largest open park. The Royal Commission for Riyadh City has overseen its rehabilitation since 1406 AH/1986 CE, and parks shaded by tamarisk and acacia line its banks. [1]"] } }
+      ]
+    },
+    {
+      "section": "nature", "slug": "wadi-al-rumah", "translationKey": "geography-20260928-wadi-al-rumah", "entityType": "site", "siteType": "nature", "related": ["regions/qassim", "regions/hail", "regions/madinah"],
+      "ar": { "title": "وادي الرمة", "summary": "أطول المجاري المائية الموسمية في المملكة بطول نحو 510 كم، ينبع من حرة خيبر ويعبر سبع محافظات في حائل والقصيم حتى نفود الثويرات.", "category": "أودية" },
+      "en": { "title": "Wadi Al-Rumah", "summary": "The Kingdom's longest seasonal watercourse, about 510 km, rising in the Khaybar lava field and crossing seven governorates of Hail and Al-Qassim to the Thuwayrat sands.", "category": "Wadis" },
+      "facts": [{ "ar": ["الطول", "نحو 510 كم"], "en": ["Length", "About 510 km"] }, { "ar": ["المنبع", "حرة خيبر"], "en": ["Source", "Khaybar lava field"] }],
+      "sources": [{ "ar": "سعوديبيديا: وادي الرمة", "en": "Saudipedia: Wadi Al-Rumah (Arabic)", "url": "https://saudipedia.com/%D9%88%D8%A7%D8%AF%D9%8A-%D8%A7%D9%84%D8%B1%D9%85%D8%A9" }],
+      "body": [
+        { "role": "geography",
+          "ar": { "heading": "المسار", "paragraphs": ["وادي الرمة أطول المجاري المائية الموسمية في المملكة بطول نحو 510 كم، تكوّن خلال العصور المطيرة، وينبع من حرة خيبر شمال [[regions/madinah|منطقة المدينة المنورة]] متجهًا شرقًا حتى يصب في نفود الثويرات جنوب محافظة الأسياح. [1]", "يعبر سبع محافظات: عنيزة ورياض الخبراء والرس والأسياح وعقلة الصقور في [[regions/qassim|القصيم]]، والحائط والسليمي في [[regions/hail|حائل]]، ويقع معظم حوضه في القصيم، وأهم روافده واديا الشعبة والجرير. [1]"] },
+          "en": { "heading": "Course", "paragraphs": ["Wadi Al-Rumah is the Kingdom's longest seasonal watercourse, about 510 km, formed during Arabia's wet periods. It rises in the Khaybar lava field in northern [[regions/madinah|Madinah]] and runs east to the Thuwayrat sands south of Al-Asyah. [1]", "It crosses seven governorates: Unaizah, Riyadh Al-Khabra, Ar-Rass, Al-Asyah and Uqlat As-Suqur in [[regions/qassim|Al-Qassim]], and Al-Hait and As-Sulaimi in [[regions/hail|Hail]]. Most of its basin lies in Al-Qassim; its main tributaries are Wadi Al-Shuabah and Wadi Al-Jarir. [1]"] } }
+      ]
+    },
+    {
+      "section": "history", "slug": "darb-zubaydah", "translationKey": "history-20260928-darb-zubaydah", "entityType": "site", "siteType": "historical", "related": ["regions/northern-borders", "regions/hail", "regions/qassim", "regions/madinah", "regions/makkah"],
+      "ar": { "title": "درب زبيدة", "summary": "طريق الحج الكوفي الذي يصل العراق بمكة المكرمة عبر خمس مناطق سعودية، عُرف منذ ما قبل الإسلام، وسُمي بعين ماء حفرتها زبيدة بنت جعفر.", "category": "طرق تاريخية" },
+      "en": { "title": "Darb Zubaydah", "summary": "The Kufa pilgrimage road linking Iraq to Makkah through five Saudi regions, used since before Islam and named after the spring dug by Zubaydah bint Ja'far.", "category": "Historic routes" },
+      "facts": [{ "ar": ["الطول داخل المملكة", "نحو 1,400 كم"], "en": ["Length in the Kingdom", "About 1,400 km"] }, { "ar": ["المناطق", "الحدود الشمالية، حائل، القصيم، المدينة المنورة، مكة المكرمة"], "en": ["Regions", "Northern Borders, Hail, Al-Qassim, Madinah, Makkah"] }],
+      "sources": [{ "ar": "سعوديبيديا: درب زبيدة", "en": "Saudipedia: Darb Zubaydah (Arabic)", "url": "https://saudipedia.com/%D8%AF%D8%B1%D8%A8-%D8%B2%D8%A8%D9%8A%D8%AF%D8%A9" }],
+      "body": [
+        { "role": "history",
+          "ar": { "heading": "الطريق عبر التاريخ", "paragraphs": ["درب زبيدة، أو طريق الحج الكوفي، طريق بري يصل العراق بمكة المكرمة مرورًا بـ[[regions/northern-borders|الحدود الشمالية]] و[[regions/hail|حائل]] و[[regions/qassim|القصيم]] و[[regions/madinah|المدينة المنورة]] و[[regions/makkah|مكة المكرمة]]، وعُرف طريقًا للتجارة منذ ما قبل الإسلام. [1]", "سلكته الجيوش الإسلامية في طريقها إلى العراق في خلافة عمر بن الخطاب بقيادة سعد بن أبي وقاص، فظهرت مواضع أصبحت لاحقًا محطات رئيسة للحجاج. [1]"] },
+          "en": { "heading": "The road through history", "paragraphs": ["Darb Zubaydah, the Kufa pilgrimage road, links Iraq to Makkah through the [[regions/northern-borders|Northern Borders]], [[regions/hail|Hail]], [[regions/qassim|Al-Qassim]], [[regions/madinah|Madinah]] and [[regions/makkah|Makkah]]. It was a trade route before Islam. [1]", "Muslim armies under Sa'd ibn Abi Waqqas took it to Iraq in the caliphate of Umar ibn al-Khattab, and places along it later became major pilgrim stations. [1]"] } },
+        { "role": "antiquities",
+          "ar": { "heading": "العمارة والتسمية", "paragraphs": ["رُصف الطريق بالحجارة في بعض مساراته، ووُفرت عليه موارد المياه والأعلام والمنارات والمنازل، ويبلغ طوله داخل المملكة نحو 1,400 كم. واشتُق اسمه من عين ماء في مكة المكرمة أمرت بحفرها زبيدة بنت جعفر زوجة الخليفة هارون الرشيد. [1]", "وأظهرت الكشوفات في مدينة فيد الأثرية على الطريق شبكة دقيقة من الآبار والقنوات والبرك والقصور المحصنة. [1]"] },
+          "en": { "heading": "Engineering and name", "paragraphs": ["Parts of the road were paved with stone and supplied with water sources, markers, beacons and stations; it runs about 1,400 km within the Kingdom. Its name comes from a spring in Makkah dug on the order of Zubaydah bint Ja'far, wife of Caliph Harun al-Rashid. [1]", "Excavations at Fayd on the road revealed an elaborate network of wells, channels, pools and fortified palaces. [1]"] } }
+      ]
+    },
+    {
+      "section": "history", "slug": "unification-of-saudi-arabia", "translationKey": "history-20260928-unification", "entityType": "event", "period": "1902–1932", "related": ["people/king-abdulaziz", "history/third-saudi-state", "heritage/masmak-fortress", "regions/riyadh", "regions/qassim", "regions/eastern-province", "regions/asir", "regions/hail", "regions/makkah", "regions/jazan"],
+      "ar": { "title": "توحيد المملكة العربية السعودية", "summary": "مسيرة الملك عبدالعزيز من استعادة الرياض عام 1902 إلى إعلان توحيد البلاد باسم المملكة العربية السعودية في 23 سبتمبر 1932، يوم الوطني.", "category": "أحداث تاريخية" },
+      "en": { "title": "Unification of Saudi Arabia", "summary": "King Abdulaziz's path from the recovery of Riyadh in 1902 to the proclamation of the Kingdom of Saudi Arabia on 23 September 1932, now National Day.", "category": "Historical events" },
+      "facts": [{ "ar": ["استعادة الرياض", "1319هـ/1902م"], "en": ["Recovery of Riyadh", "1319 AH/1902 CE"] }, { "ar": ["إعلان التوحيد", "21 جمادى الأولى 1351هـ/23 سبتمبر 1932م"], "en": ["Proclamation", "21 Jumada al-Ula 1351 AH/23 September 1932"] }],
+      "sources": [
+        { "ar": "سعوديبيديا: توحيد المملكة العربية السعودية", "en": "Saudipedia: Unification of Saudi Arabia (Arabic)", "url": "https://saudipedia.com/%D8%AA%D9%88%D8%AD%D9%8A%D8%AF-%D8%A7%D9%84%D9%85%D9%85%D9%84%D9%83%D8%A9-%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9" },
+        { "ar": "سعوديبيديا: قصر المصمك", "en": "Saudipedia: Masmak Palace (Arabic)", "url": "https://saudipedia.com/%D9%82%D8%B5%D8%B1-%D8%A7%D9%84%D9%85%D8%B5%D9%85%D9%83" }
+      ],
+      "body": [
+        { "role": "history",
+          "ar": { "heading": "من الكويت إلى الرياض", "paragraphs": ["بعد انتهاء [[history/second-saudi-state|الدولة السعودية الثانية]] عام 1309هـ/1891م خرجت أسرة آل سعود من الرياض، وتنقل الإمام عبدالرحمن بن فيصل بين البادية وقطر حتى استقر في الكويت عام 1311هـ/1893م. [1]", "خرج [[people/king-abdulaziz|عبدالعزيز بن عبدالرحمن]] من الكويت بقلة من الرجال، واعتمد السرية والمباغتة، واستعاد الرياض عبر [[heritage/masmak-fortress|قصر المصمك]] عام 1319هـ/1902م، ثم تنازل له والده عن الحكم. [1][2]"] },
+          "en": { "heading": "From Kuwait to Riyadh", "paragraphs": ["After the end of the [[history/second-saudi-state|Second Saudi State]] in 1309 AH/1891 CE the Al Saud left Riyadh; Imam Abdulrahman bin Faisal moved between the desert and Qatar before settling in Kuwait in 1311 AH/1893 CE. [1]", "[[people/king-abdulaziz|Abdulaziz bin Abdulrahman]] set out from Kuwait with a small force, relied on secrecy and surprise, and recovered Riyadh through [[heritage/masmak-fortress|Masmak Palace]] in 1319 AH/1902 CE; his father then ceded rule to him. [1][2]"] } },
+        { "role": "administration",
+          "ar": { "heading": "مراحل التوحيد", "paragraphs": ["بدأ التوحيد بجنوب نجد، ثم [[regions/qassim|القصيم]] التي اكتمل ضمها بعد معركة روضة مهنا عام 1324هـ/1906م، ثم [[regions/eastern-province|الأحساء والقطيف]] عام 1331هـ/1913م، و[[regions/asir|عسير]] بعد معركة حجلا عام 1338هـ/1920م، و[[regions/hail|حائل]]. [1]", "ودخلت قواته مكة المكرمة سلمًا، ثم اكتمل ضم الحجاز بعد حصار جدة، واستُكمل التوحيد في [[regions/jazan|جازان]] وتهامة عسير بعد معاهدة مكة المكرمة عام 1345هـ/1926م. [1]"] },
+          "en": { "heading": "Stages of unification", "paragraphs": ["Unification began in southern Najd, then [[regions/qassim|Al-Qassim]], secured after the Battle of Rawdat Muhanna in 1324 AH/1906 CE; [[regions/eastern-province|Al-Ahsa and Qatif]] in 1331 AH/1913 CE; [[regions/asir|Asir]] after the Battle of Hajla in 1338 AH/1920 CE; and [[regions/hail|Hail]]. [1]", "His forces entered Makkah peacefully, the Hijaz was completed after the siege of Jeddah, and unification reached [[regions/jazan|Jazan]] and Tihamat Asir after the Makkah Treaty of 1345 AH/1926 CE. [1]"] } },
+        { "role": "overview",
+          "ar": { "heading": "الإعلان واليوم الوطني", "paragraphs": ["تدرج لقب الملك عبدالعزيز من أمير نجد عام 1902م إلى سلطان نجد وملحقاتها عام 1920م، ثم ملك الحجاز وسلطان نجد وملحقاتها عام 1926م. [1]", "وفي 17 جمادى الأولى 1351هـ/18 سبتمبر 1932م صدر أمر ملكي بتوحيد البلاد وتسميتها المملكة العربية السعودية ابتداءً من 21 جمادى الأولى 1351هـ/23 سبتمبر 1932م، وهو اليوم الذي تحتفل به المملكة يومًا وطنيًا، في مسيرة [[history/third-saudi-state|الدولة السعودية الثالثة]]. [1]"] },
+          "en": { "heading": "Proclamation and National Day", "paragraphs": ["King Abdulaziz's title rose from Emir of Najd in 1902 to Sultan of Najd and its Dependencies in 1920 and King of the Hijaz and Sultan of Najd and its Dependencies in 1926. [1]", "On 17 Jumada al-Ula 1351 AH/18 September 1932 a royal order unified the country as the Kingdom of Saudi Arabia with effect from 21 Jumada al-Ula 1351 AH/23 September 1932, the date celebrated as National Day, in the course of the [[history/third-saudi-state|Third Saudi State]]. [1]"] } }
+      ]
+    }
+  ]
+}
