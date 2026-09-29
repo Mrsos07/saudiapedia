@@ -5,6 +5,7 @@
 // 3. the Riyadh structural pilot batch, with [[section/slug|label]] converted to Lexical internal links
 import { readFile } from 'node:fs/promises';
 import type { Payload, PayloadRequest } from 'payload';
+import { paragraphsToLexical } from '../src/lib/rich-text-authoring';
 
 const PRODUCTION = 'https://saudiknowledge.com';
 const locales = ['ar', 'en'] as const;
@@ -25,25 +26,7 @@ async function publicJSON<T>(route: string): Promise<T> {
   return response.json() as Promise<T>;
 }
 
-const lexicalText = (text: string) => ({ type: 'text', text, format: 0, detail: 0, mode: 'normal', style: '', version: 1 });
-function paragraph(text: string, locale: Locale, resolve: (route: string) => number | undefined) {
-  const children: unknown[] = [];
-  let last = 0;
-  for (const match of text.matchAll(/\[\[([a-z0-9-]+\/[a-z0-9-]+)\|([^\]]+)\]\]/g)) {
-    if (match.index > last) children.push(lexicalText(text.slice(last, match.index)));
-    const id = resolve(match[1]);
-    children.push(id ? {
-      type: 'link', version: 3, direction: locale === 'ar' ? 'rtl' : 'ltr', format: '', indent: 0,
-      fields: { linkType: 'internal', newTab: false, doc: { relationTo: 'articles', value: id } }, children: [lexicalText(match[2])],
-    } : lexicalText(match[2]));
-    last = match.index + match[0].length;
-  }
-  if (last < text.length) children.push(lexicalText(text.slice(last)));
-  return { type: 'paragraph', version: 1, direction: locale === 'ar' ? 'rtl' : 'ltr', format: '', indent: 0, textFormat: 0, children };
-}
-const richText = (paragraphs: string[], locale: Locale, resolve: (route: string) => number | undefined) => ({
-  root: { type: 'root', version: 1, direction: locale === 'ar' ? 'rtl' : 'ltr', format: '', indent: 0, children: paragraphs.map(text => paragraph(text, locale, resolve)) },
-});
+const richText = paragraphsToLexical;
 
 async function main() {
   const [{ getPayload }, { default: config }] = await Promise.all([import('payload'), import('../src/payload.config')]);

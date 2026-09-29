@@ -42,7 +42,7 @@ function environment(creds, role = 'runtime') {
     STAGING_ADMIN_PASSWORD: creds.admin,
     DATABASE_URL: role === 'migrator' ? url('kingdom_migrator', creds.migrator) : url('kingdom_runtime', creds.runtime),
     PAYLOAD_SECRET: creds.payloadSecret, CMS_SERVER_URL: 'http://localhost:3300', NEXT_PUBLIC_SITE_URL: 'http://localhost:3300',
-    PAYLOAD_CONFIG_PATH: 'src/payload.config.ts', CMS_LOCAL_UPLOAD_DIR: uploadsDir,
+    PAYLOAD_CONFIG_PATH: 'src/payload.config.ts', CMS_LOCAL_UPLOAD_DIR: uploadsDir, MCP_ENABLED: 'true',
   };
 }
 async function waitForDatabase(creds) {
