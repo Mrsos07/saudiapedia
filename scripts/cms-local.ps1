@@ -1,6 +1,7 @@
 param(
-    [ValidateSet('prepare', 'inspect', 'provision', 'generate', 'migrate', 'migrate-status', 'backup', 'rollback-last', 'verify', 'smoke', 'seed-sections', 'dev')]
+    [ValidateSet('prepare', 'inspect', 'provision', 'generate', 'migrate', 'migrate-status', 'backup', 'rollback-last', 'verify', 'smoke', 'seed-sections', 'publish-structure', 'transfer', 'dev')]
     [string]$Action = 'inspect',
+    [switch]$Apply,
     [ValidatePattern('^[a-z][a-z0-9_]*$')]
     [string]$MigrationName = 'initial',
     [ValidateRange(1024, 65535)]
@@ -66,7 +67,7 @@ try {
     }
     $dbRole = 'kingdom_runtime'
     $dbPassword = $env:CMS_RUNTIME_PASSWORD
-    if ($Action -in @('generate', 'migrate', 'migrate-status', 'backup')) {
+    if ($Action -in @('generate', 'migrate', 'migrate-status', 'backup', 'transfer')) {
         $dbRole = 'kingdom_migrator'
         $dbPassword = $env:CMS_MIGRATOR_PASSWORD
     }
@@ -110,6 +111,24 @@ try {
     } elseif ($Action -eq 'smoke') {
         Remove-Item Env:CMS_RUNTIME_PASSWORD, Env:CMS_MIGRATOR_PASSWORD
         & node --import tsx scripts/cms-smoke.ts
+    } elseif ($Action -eq 'transfer') {
+        # Executes the verified vault/transfer/transfer.sql (from scripts/replica-diff.mjs) as one transaction.
+        # The file begins with a guard that aborts if production changed since its source backup.
+        $transferDir = Join-Path $vaultDir 'transfer'
+        if (-not (Test-Path (Join-Path $transferDir 'transfer.sql'))) { throw 'No transfer.sql; run scripts/replica-diff.mjs first.' }
+        $conninfo = 'host=aws-0-ap-northeast-1.pooler.supabase.com port=5432 dbname=postgres user=kingdom_migrator.vexushpbyvaoangxyqcm sslmode=verify-full sslrootcert=/vault/supabase-ca.crt'
+        $env:PGPASSWORD = $dbPassword
+        try {
+            & docker run --rm -e PGPASSWORD -v "${vaultDir}:/vault:ro" postgres:17 psql $conninfo -v ON_ERROR_STOP=1 -q -f /vault/transfer/transfer.sql
+            if ($LASTEXITCODE -ne 0) { throw 'Transfer failed and was rolled back; production is unchanged.' }
+            Write-Output 'Transfer committed.'
+        } finally {
+            Remove-Item Env:PGPASSWORD -ErrorAction SilentlyContinue
+        }
+    } elseif ($Action -eq 'publish-structure') {
+        # Runtime role only; writes happen only with -Apply after an administrator signs in via Edge.
+        Remove-Item Env:CMS_RUNTIME_PASSWORD, Env:CMS_MIGRATOR_PASSWORD
+        if ($Apply) { & node --import tsx scripts/publish-structure.ts --apply } else { & node --import tsx scripts/publish-structure.ts }
     } elseif ($Action -eq 'seed-sections') {
         Remove-Item Env:CMS_RUNTIME_PASSWORD, Env:CMS_MIGRATOR_PASSWORD
         & node --import tsx scripts/seed-sections.ts

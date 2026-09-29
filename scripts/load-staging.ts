@@ -3,20 +3,12 @@
 // 1. first staging administrator (password from the local credentials file, never printed)
 // 2. public copy of production sections, published article pairs and their public media (anonymous GET only)
 // 3. the Riyadh structural pilot batch, with [[section/slug|label]] converted to Lexical internal links
-import { readFile } from 'node:fs/promises';
 import type { Payload, PayloadRequest } from 'payload';
-import { paragraphsToLexical } from '../src/lib/rich-text-authoring';
+import { applyStructureBatches } from './lib/apply-structure-batches';
 
 const PRODUCTION = 'https://saudiknowledge.com';
-const locales = ['ar', 'en'] as const;
-type Locale = (typeof locales)[number];
+type Locale = 'ar' | 'en';
 type Doc = Record<string, unknown> & { id: number };
-type BatchRow = { role?: string; ar: { heading: string; paragraphs: string[] }; en: { heading: string; paragraphs: string[] } };
-type BatchTopic = {
-  section: string; slug: string; translationKey: string; replaceBody?: boolean; entityType?: string; siteType?: string; parent?: string; related?: string[]; period?: string; kind?: 'ruler' | 'notable';
-  ar?: { title: string; summary: string; category: string }; en?: { title: string; summary: string; category: string };
-  facts?: { ar: [string, string]; en: [string, string] }[]; sources: { ar: string; en: string; url: string }[]; body: BatchRow[];
-};
 
 if (!process.env.DATABASE_URL?.includes('@127.0.0.1:55432/')) throw new Error('Refusing to run: DATABASE_URL is not the local staging database.');
 
@@ -25,8 +17,6 @@ async function publicJSON<T>(route: string): Promise<T> {
   if (!response.ok) throw new Error(`Production public read failed: ${route.split('?')[0]} ${response.status}`);
   return response.json() as Promise<T>;
 }
-
-const richText = paragraphsToLexical;
 
 async function main() {
   const [{ getPayload }, { default: config }] = await Promise.all([import('payload'), import('../src/payload.config')]);
@@ -89,59 +79,9 @@ async function main() {
     }
     console.log(`Copied ${sections.docs.length} sections, ${articles.length} public articles and ${mediaMap.size} public media records.`);
 
-    // Structure batches (CLI arguments, default: Riyadh pilot): pass 1 creates missing topics,
-    // pass 2 writes rich content, hierarchy and relations once every batch topic has an ID.
-    type Batch = { topics: BatchTopic[]; updateExisting?: Record<string, { entityType?: string; siteType?: string; parent?: string; related?: string[] }> };
     const files = process.argv.slice(2).length ? process.argv.slice(2) : ['docs/editorial-batches/riyadh-pilot-20260928.json'];
-    const batches: Batch[] = await Promise.all(files.map(async file => JSON.parse(await readFile(file, 'utf8')) as Batch));
-    const batch: Required<Batch> = { topics: batches.flatMap(item => item.topics), updateExisting: Object.assign({}, ...batches.map(item => item.updateExisting ?? {})) };
-    const approve = { reviewStatus: 'approved', _status: 'published' } as const;
-    for (const topic of batch.topics) {
-      const route = `${topic.section}/${topic.slug}`;
-      for (const locale of locales) {
-        if (ids.get(route)?.[locale]) continue;
-        const existing = await payload.find({ collection: 'articles', ...as, limit: 1, where: { and: [{ translationKey: { equals: topic.translationKey } }, { locale: { equals: locale } }] } });
-        if (existing.docs[0]) { ids.set(route, { ...(ids.get(route) ?? {}), [locale]: existing.docs[0].id } as Record<Locale, number>); continue; }
-        const text = topic[locale]!;
-        const data = {
-          title: text.title, locale, translationKey: topic.translationKey, section: topic.section, slug: topic.slug, summary: text.summary, category: text.category,
-          ...(topic.period ? { period: topic.period } : {}), ...(topic.kind ? { kind: topic.kind } : {}),
-          facts: (topic.facts ?? []).map(fact => ({ label: fact[locale][0], value: fact[locale][1] })), sources: topic.sources.map(source => ({ title: source[locale], url: source.url })),
-          body: topic.body.map(row => ({ heading: row[locale].heading, text: row[locale].paragraphs.join('\n\n') })), noIndex: false, ...approve,
-        };
-        const created = await payload.create({ collection: 'articles', ...as, data: data as never });
-        ids.set(route, { ...(ids.get(route) ?? {}), [locale]: created.id } as Record<Locale, number>);
-      }
-    }
-    const resolver = (locale: Locale) => (route: string) => ids.get(route)?.[locale];
-    const relationIDs = (routes: string[] | undefined, locale: Locale) => (routes ?? []).map(route => ids.get(route)?.[locale]).filter((id): id is number => Boolean(id));
-    for (const topic of batch.topics) {
-      for (const locale of locales) {
-        const id = ids.get(`${topic.section}/${topic.slug}`)![locale];
-        const data: Record<string, unknown> = {
-          ...(topic.entityType ? { entityType: topic.entityType } : {}), ...(topic.siteType ? { siteType: topic.siteType } : {}),
-          ...(topic.parent ? { parent: ids.get(topic.parent)?.[locale] ?? null } : {}), related: relationIDs(topic.related, locale),
-          body: topic.body.map(row => ({ heading: row[locale].heading, role: row.role, text: '', content: richText(row[locale].paragraphs, locale, resolver(locale)) })),
-          sources: topic.sources.map(source => ({ title: source[locale], url: source.url })), ...approve,
-        };
-        await payload.update({ collection: 'articles', id, ...as, data: data as never });
-      }
-    }
-    for (const [route, change] of Object.entries(batch.updateExisting)) {
-      for (const locale of locales) {
-        const id = ids.get(route)?.[locale];
-        if (!id) continue;
-        const current = await payload.findByID({ collection: 'articles', id, ...as }) as Doc;
-        const kept = Array.isArray(current.related) ? current.related.filter((value): value is number => typeof value === 'number') : [];
-        const related = [...new Set([...kept, ...relationIDs(change.related, locale)])];
-        await payload.update({ collection: 'articles', id, ...as, data: {
-          ...(change.entityType ? { entityType: change.entityType } : {}), ...(change.siteType ? { siteType: change.siteType } : {}),
-          ...(change.parent ? { parent: ids.get(change.parent)?.[locale] ?? null } : {}), ...(change.related ? { related } : {}), ...approve,
-        } as never });
-      }
-    }
-    const pilot = await payload.count({ collection: 'articles', ...as, where: { entityType: { exists: true } } });
-    console.log(`Applied ${files.length} batch file(s): ${batch.topics.length} topics (${pilot.totalDocs} structured documents).`);
+    const plan = await applyStructureBatches(payload, user!, files, { apply: true, log: () => {} });
+    console.log(`Applied ${files.length} batch file(s): ${plan.create.length} created, ${plan.update.length} updated, ${plan.relink.length} linked.`);
   } finally {
     // Payload keeps its first pool client checked out, so pool shutdown can wait forever in a script.
     await Promise.race([payload.destroy(), new Promise(resolve => setTimeout(resolve, 5000))]);
