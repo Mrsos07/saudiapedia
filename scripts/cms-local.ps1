@@ -1,5 +1,5 @@
 param(
-    [ValidateSet('prepare', 'inspect', 'provision', 'generate', 'migrate', 'rollback-last', 'verify', 'smoke', 'seed-sections', 'dev')]
+    [ValidateSet('prepare', 'inspect', 'provision', 'generate', 'migrate', 'migrate-status', 'backup', 'rollback-last', 'verify', 'smoke', 'seed-sections', 'dev')]
     [string]$Action = 'inspect',
     [ValidatePattern('^[a-z][a-z0-9_]*$')]
     [string]$MigrationName = 'initial',
@@ -39,7 +39,7 @@ if ($Action -eq 'prepare') {
 }
 if (-not (Test-Path $vaultFile)) { throw 'Run prepare first. Existing credentials are never regenerated automatically.' }
 $saved = Import-Clixml $vaultFile
-$names = @('DATABASE_URL', 'PAYLOAD_SECRET', 'CMS_DATABASE_CA_FILE', 'CMS_RUNTIME_PASSWORD', 'CMS_MIGRATOR_PASSWORD', 'CMS_DATABASE_ADMIN_PASSWORD', 'CMS_DB_PUSH', 'SITE_INDEXABLE', 'CMS_SERVER_URL', 'NEXT_PUBLIC_SITE_URL', 'NODE_ENV', 'PAYLOAD_CONFIG_PATH', 'S3_BUCKET', 'S3_REGION', 'S3_ENDPOINT', 'S3_ACCESS_KEY_ID', 'S3_SECRET_ACCESS_KEY', 'S3_FORCE_PATH_STYLE')
+$names = @('DATABASE_URL', 'PAYLOAD_SECRET', 'PGPASSWORD', 'CMS_DATABASE_CA_FILE', 'CMS_RUNTIME_PASSWORD', 'CMS_MIGRATOR_PASSWORD', 'CMS_DATABASE_ADMIN_PASSWORD', 'CMS_DB_PUSH', 'SITE_INDEXABLE', 'CMS_SERVER_URL', 'NEXT_PUBLIC_SITE_URL', 'NODE_ENV', 'PAYLOAD_CONFIG_PATH', 'S3_BUCKET', 'S3_REGION', 'S3_ENDPOINT', 'S3_ACCESS_KEY_ID', 'S3_SECRET_ACCESS_KEY', 'S3_FORCE_PATH_STYLE')
 $previous = @{}
 foreach ($name in $names) { $previous[$name] = [Environment]::GetEnvironmentVariable($name, 'Process') }
 Push-Location $root
@@ -66,7 +66,7 @@ try {
     }
     $dbRole = 'kingdom_runtime'
     $dbPassword = $env:CMS_RUNTIME_PASSWORD
-    if ($Action -in @('generate', 'migrate')) {
+    if ($Action -in @('generate', 'migrate', 'migrate-status', 'backup')) {
         $dbRole = 'kingdom_migrator'
         $dbPassword = $env:CMS_MIGRATOR_PASSWORD
     }
@@ -81,6 +81,30 @@ try {
         & node node_modules/payload/bin.js migrate:create $MigrationName
     } elseif ($Action -eq 'migrate') {
         & node node_modules/payload/bin.js migrate
+    } elseif ($Action -eq 'migrate-status') {
+        # Read-only: lists applied and pending migrations.
+        & node node_modules/payload/bin.js migrate:status
+    } elseif ($Action -eq 'backup') {
+        # Logical backup of the CMS schema (data + DDL) with Docker's pg_dump 17 over verified TLS.
+        # The dump contains account password hashes: it stays in the local vault, outside OneDrive and Git.
+        if (-not (Test-Path $env:CMS_DATABASE_CA_FILE)) { throw 'Run inspect first to download the official CA.' }
+        $backupDir = Join-Path $vaultDir 'backups'
+        New-Item -ItemType Directory -Path $backupDir -Force | Out-Null
+        $file = 'kingdom_cms-' + (Get-Date -Format 'yyyyMMdd-HHmmss') + '.dump'
+        $conninfo = 'host=aws-0-ap-northeast-1.pooler.supabase.com port=5432 dbname=postgres user=kingdom_migrator.vexushpbyvaoangxyqcm sslmode=verify-full sslrootcert=/vault/supabase-ca.crt'
+        $env:PGPASSWORD = $dbPassword
+        try {
+            # "-e PGPASSWORD" passes the value from this process environment, never on the command line.
+            & docker run --rm -e PGPASSWORD -v "${vaultDir}:/vault:ro" -v "${backupDir}:/backup" postgres:17 pg_dump $conninfo --schema=kingdom_cms --format=custom --no-owner --no-privileges --file=/backup/$file
+            if ($LASTEXITCODE -ne 0) { throw 'pg_dump failed.' }
+            $entries = & docker run --rm -v "${backupDir}:/backup:ro" postgres:17 pg_restore --list /backup/$file
+            if ($LASTEXITCODE -ne 0) { throw 'Backup verification failed.' }
+            $tables = @($entries | Where-Object { $_ -match ' TABLE DATA kingdom_cms ' }).Count
+            $size = [math]::Round((Get-Item (Join-Path $backupDir $file)).Length / 1KB)
+            Write-Output "Backup written: $(Join-Path $backupDir $file) ($size KiB, $tables tables with data). Keep it private: it includes password hashes."
+        } finally {
+            Remove-Item Env:PGPASSWORD -ErrorAction SilentlyContinue
+        }
     } elseif ($Action -eq 'rollback-last') {
         & node node_modules/payload/bin.js migrate:down
     } elseif ($Action -eq 'smoke') {

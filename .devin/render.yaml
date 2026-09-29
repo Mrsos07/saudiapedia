@@ -48,3 +48,6 @@ services:
         sync: false
       - key: S3_FORCE_PATH_STYLE
         value: "true"
+      # CMS MCP endpoint (/api/mcp) for AI agents; returns 404 unless exactly "true". Operator-controlled.
+      - key: MCP_ENABLED
+        sync: false
