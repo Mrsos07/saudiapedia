@@ -6,6 +6,7 @@ import { createRateLimiter, handleMessage, SUPPORTED_PROTOCOL_VERSIONS } from '.
 import { toolList, type ToolContext } from '../../src/mcp/tools';
 import { paragraphsToLexical, richNodesToParagraphs } from '../../src/lib/rich-text-authoring';
 import { sanitizeRichText } from '../../src/lib/rich-text';
+import { authenticateAgentKey, hashKey } from '../../src/mcp/api-key';
 
 const context = { payload: {}, user: { id: 1, collection: 'users', role: 'editor' } } as unknown as ToolContext;
 const open = { consume: () => true };
@@ -95,6 +96,23 @@ test('authoring format round-trips paragraphs and internal links through Lexical
   const lexical = paragraphsToLexical(['See [[regions/riyadh|Riyadh]] and [[x/missing|plain]]. [1]'], 'en', route => route === 'regions/riyadh' ? 5 : undefined);
   const withPopulatedLink = JSON.parse(JSON.stringify(lexical).replace('"value":5', '"value":{"section":"regions","slug":"riyadh"}'));
   assert.deepEqual(richNodesToParagraphs(sanitizeRichText(withPopulatedLink)), ['See [[regions/riyadh|Riyadh]] and plain. [1]']);
+});
+
+test('agent keys: hashed at rest, constant-time, bound to a non-administrator account', async () => {
+  const key = `ksmcp_${'A'.repeat(43)}`;
+  const env = { MCP_API_KEY_SHA256: hashKey(key).toString('hex'), MCP_AGENT_EMAIL: 'Agent@Example.org' };
+  const reviewer = async (email: string) => email === 'agent@example.org' ? { id: 7, email, role: 'reviewer', lockUntil: null } : undefined;
+  assert.deepEqual(await authenticateAgentKey(key, env, reviewer), { user: { id: 7, email: 'agent@example.org', role: 'reviewer', lockUntil: null, collection: 'users' } });
+  assert.equal(await authenticateAgentKey('eyJhbGciOi.jwt.token', env, reviewer), null, 'non-key bearer tokens fall through to session auth');
+  assert.deepEqual(await authenticateAgentKey(`ksmcp_${'B'.repeat(43)}`, env, reviewer), { error: 'Invalid agent key.' });
+  assert.deepEqual(await authenticateAgentKey('ksmcp_short', env, reviewer), { error: 'Invalid agent key.' });
+  assert.deepEqual(await authenticateAgentKey(key, { MCP_AGENT_EMAIL: 'agent@example.org' }, reviewer), { error: 'Agent keys are not configured on this server.' });
+  assert.deepEqual(await authenticateAgentKey(key, { ...env, MCP_API_KEY_SHA256: 'not-a-hash' }, reviewer), { error: 'Agent keys are not configured on this server.' });
+  assert.deepEqual(await authenticateAgentKey(key, env, async () => undefined), { error: 'The agent account does not exist.' });
+  assert.deepEqual(await authenticateAgentKey(key, env, async email => ({ id: 1, email, role: 'administrator' })), { error: 'Agent keys may act only as an editor, translator or reviewer account.' });
+  assert.deepEqual(await authenticateAgentKey(key, env, async email => ({ id: 7, email, role: 'reviewer', lockUntil: new Date(Date.now() + 60000).toISOString() })), { error: 'The agent account is locked.' });
+  const script = await readFile('scripts/mcp-key.mjs', 'utf8');
+  assert.doesNotMatch(script, /writeFile|appendFile/, 'the generator never stores the key');
 });
 
 test('the MCP route is off by default, POST-only, bearer-only and never trusts cookies', async () => {

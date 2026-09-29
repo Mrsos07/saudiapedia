@@ -3,6 +3,7 @@ import { hasRole, roles } from '../../../../collections/access';
 import { cmsConfigured } from '../../../../lib/cms';
 import { boundRequestBody, HTTPRequestError } from '../../../../lib/http-security';
 import { createRateLimiter, handleMessage, SUPPORTED_PROTOCOL_VERSIONS } from '../../../../mcp/protocol';
+import { authenticateAgentKey } from '../../../../mcp/api-key';
 
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
@@ -46,9 +47,20 @@ export async function POST(request: Request): Promise<Response> {
 
   const { default: config } = await import('../../../../payload.config');
   const payload = await getPayload({ config });
-  // Only the Authorization header is forwarded: browser session cookies can never authenticate MCP calls.
-  const { user } = await payload.auth({ headers: new Headers({ Authorization: authorization }) });
-  if (!user || user.collection !== 'users' || !hasRole({ user }, roles)) return reject(401, 'The token is invalid, expired, or not an editorial account.', { ...challenge, 'WWW-Authenticate': 'Bearer realm="kingdomsaudi-cms", error="invalid_token"' });
+  const invalid = (message: string) => reject(401, message, { ...challenge, 'WWW-Authenticate': 'Bearer realm="kingdomsaudi-cms", error="invalid_token"' });
+  // 1) Long-lived agent key (hash in MCP_API_KEY_SHA256), acting as MCP_AGENT_EMAIL.
+  const agent = await authenticateAgentKey(authorization.slice(7), process.env, async email => {
+    const { docs } = await payload.find({ collection: 'users', overrideAccess: true, depth: 0, limit: 1, where: { email: { equals: email } }, select: { email: true, name: true, role: true, lockUntil: true } as never });
+    return docs[0] as never;
+  });
+  if (agent && 'error' in agent) {
+    payload.logger.warn({ mcp: { auth: 'agent-key-rejected', reason: agent.error } }, 'mcp authentication failed');
+    return invalid(agent.error);
+  }
+  // 2) Otherwise a short-lived CMS session token. Only the Authorization header is forwarded:
+  // browser session cookies can never authenticate MCP calls.
+  const user = agent ? agent.user as never : (await payload.auth({ headers: new Headers({ Authorization: authorization }) })).user;
+  if (!user || user.collection !== 'users' || !hasRole({ user }, roles)) return invalid('The token is invalid, expired, or not an editorial account.');
 
   const account = `${user.collection}:${user.id}`;
   const response = await handleMessage(body, { payload, user }, limiter(account), entry => {

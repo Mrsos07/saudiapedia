@@ -51,3 +51,9 @@ services:
       # CMS MCP endpoint (/api/mcp) for AI agents; returns 404 unless exactly "true". Operator-controlled.
       - key: MCP_ENABLED
         sync: false
+      # SHA-256 of the long-lived agent key from scripts/mcp-key.mjs (the key itself is never stored here).
+      - key: MCP_API_KEY_SHA256
+        sync: false
+      # CMS account the agent key acts as (editor, translator or reviewer; administrators are refused).
+      - key: MCP_AGENT_EMAIL
+        sync: false
