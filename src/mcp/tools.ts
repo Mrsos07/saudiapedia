@@ -16,7 +16,7 @@ export type ToolAnnotations = { title: string; readOnlyHint: boolean; destructiv
 export type Tool = { name: string; description: string; annotations: ToolAnnotations; write: boolean; input: Schema<unknown>; run: (input: never, context: ToolContext) => Promise<Record<string, unknown>> };
 
 const locales: Locale[] = ['ar', 'en'];
-const ARTICLE_FIELDS = ['title', 'summary', 'category', 'period', 'kind', 'section', 'slug', 'translationKey', 'locale', 'entityType', 'siteType', 'parent', 'related', 'facts', 'body', 'sources', 'image', 'imageAlt', 'seoTitle', 'seoDescription', 'canonicalURL', 'noIndex', 'reviewStatus', '_status', 'updatedAt', 'createdAt'];
+const ARTICLE_FIELDS = ['title', 'summary', 'category', 'categoryRef', 'period', 'kind', 'section', 'slug', 'translationKey', 'locale', 'entityType', 'siteType', 'parent', 'related', 'facts', 'body', 'sources', 'image', 'imageAlt', 'seoTitle', 'seoDescription', 'canonicalURL', 'noIndex', 'reviewStatus', '_status', 'updatedAt', 'createdAt'];
 const select = Object.fromEntries(ARTICLE_FIELDS.map(field => [field, true]));
 
 /** An editorial failure the agent can act on (never an internal stack trace). */
@@ -44,6 +44,7 @@ const sharedFields = {
   sources: s.array(source, 40, 'Citations in [n] order; replaces the list.', 1),
   noIndex: s.boolean('Exclude this article from search engines.'),
   image: s.integer(0, 2147483647, 'ID of an existing media asset (see search_media), shared by both translations; 0 removes the image. Uploading files is done in the admin panel.'),
+  subsection: s.integer(0, 2147483647, 'ID of a subsection of the article\'s section (see list_categories), shared by both translations; its names replace the category text in public tabs and menus. 0 unlinks it.'),
 };
 const expectedUpdatedAt = s.object({ ar: s.string({ max: 40 }), en: s.string({ max: 40 }) }, ['ar', 'en'], 'updatedAt values from get_article; the write is refused if either document changed since.');
 
@@ -66,6 +67,7 @@ function view(doc: Doc) {
     body: Array.isArray(doc.body) ? doc.body.map(row => ({ heading: (row as Doc).heading, role: (row as Doc).role ?? null, paragraphs: paragraphsOf(row as Doc) })) : [],
     sources: Array.isArray(doc.sources) ? doc.sources.map(row => ({ title: (row as Doc).title, url: (row as Doc).url })) : [],
     image: doc.image && typeof doc.image === 'object' ? (doc.image as Doc).id : doc.image ?? null, imageAlt: doc.imageAlt ?? null,
+    subsection: doc.categoryRef && typeof doc.categoryRef === 'object' ? (doc.categoryRef as Doc).id : doc.categoryRef ?? null,
     seoTitle: doc.seoTitle ?? null, seoDescription: doc.seoDescription ?? null, noIndex: doc.noIndex === true,
     reviewStatus: doc.reviewStatus, status: doc._status, updatedAt: doc.updatedAt,
   };
@@ -156,6 +158,7 @@ async function structureData(context: ToolContext, input: SharedInput, locale: L
     ...(input.related !== undefined ? { related: input.related.map(value => routes.get(value)![locale]) } : {}),
     ...(input.sources !== undefined ? { sources: input.sources.map(item => ({ title: item.title[locale], url: item.url })) } : {}),
     ...(input.image !== undefined ? { image: input.image || null } : {}),
+    ...(input.subsection !== undefined ? { categoryRef: input.subsection || null } : {}),
   };
 }
 async function assertImage(context: ToolContext, id: number | undefined, req: PayloadRequest) {
@@ -177,6 +180,8 @@ async function checklist(context: ToolContext, key: string) {
   for (const field of ['section', 'slug', 'period', 'kind', 'entityType', 'siteType'] as const) if ((ar[field] ?? null) !== (en[field] ?? null)) errors.push(`"${field}" differs between translations.`);
   const imageID = (doc: Doc) => doc.image && typeof doc.image === 'object' ? (doc.image as Doc).id : doc.image ?? null;
   if (imageID(ar) !== imageID(en)) errors.push('The translations use different images.');
+  const subsectionID = (doc: Doc) => doc.categoryRef && typeof doc.categoryRef === 'object' ? (doc.categoryRef as Doc).id : doc.categoryRef ?? null;
+  if (subsectionID(ar) !== subsectionID(en)) errors.push('The translations use different subsections; the public site would hide the pair.');
   if (ar.image && typeof ar.image === 'object' && (ar.image as Doc).published !== true) errors.push(`Media asset ${String(imageID(ar))} is not approved for public delivery; a reviewer must enable it in the admin panel (or set image to 0).`);
   if (imageID(ar) && (!text(ar.imageAlt).trim() || !text(en.imageAlt).trim())) warnings.push('Image alt text is missing in one language; the public site will fall back to a contextual photo.');
   for (const field of ['facts', 'body', 'sources'] as const) {

@@ -5,7 +5,9 @@ import { SiteHeader } from '@/components/site-header';
 import { SiteFooter } from '@/components/encyclopedia';
 import { PageViewTracker } from '@/components/page-view-tracker';
 import { getSections } from '@/lib/sections';
+import { getContent } from '@/lib/content';
 import { publicNavigation } from '@/lib/site';
+import { withSubsections } from '@/lib/subsections';
 import '../globals.css';
 
 // Raster icons first: search engines need a square favicon of at least 48 px (built by scripts/build-brand-assets.mjs).
@@ -16,13 +18,14 @@ export const metadata: Metadata = { icons: {
 export default async function Layout({ children, params }: { children: React.ReactNode; params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
-  const { sections } = await getSections();
+  const [{ sections }, { entries }] = await Promise.all([getSections(), getContent()]);
   const navigation = publicNavigation(sections);
+  const header = withSubsections(navigation, entries, locale);
   return <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'} suppressHydrationWarning><head>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
     {/* User-specified family and stylesheet, deliberately not loaded a second time with next/font. */}
     {/* eslint-disable-next-line @next/next/no-page-custom-font */}
     <link href="https://fonts.googleapis.com/css2?family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet" />
-  </head><body><a className="skip-link" href="#main-content">{locale === 'ar' ? 'تخطَّ إلى المحتوى' : 'Skip to content'}</a><SiteHeader locale={locale} navigation={navigation} />{children}<SiteFooter locale={locale} navigation={navigation} /><PageViewTracker /></body></html>;
+  </head><body><a className="skip-link" href="#main-content">{locale === 'ar' ? 'تخطَّ إلى المحتوى' : 'Skip to content'}</a><SiteHeader locale={locale} navigation={header} />{children}<SiteFooter locale={locale} navigation={navigation} /><PageViewTracker /></body></html>;
 }

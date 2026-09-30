@@ -4,11 +4,11 @@ import { notFound, redirect } from 'next/navigation';
 import { EntryCard, RegionExplorer, SearchForm } from '@/components/encyclopedia';
 import { getContent } from '@/lib/content';
 import { JsonLd } from '@/components/json-ld';
-import { entryPath, isLocale, matchesSection } from '@/lib/encyclopedia';
-import { brand, pageMetadata, navigation, photoCredits } from '@/lib/site';
+import { entryPath, isLocale } from '@/lib/encyclopedia';
+import { brand, pageMetadata, photoCredits, sectionName } from '@/lib/site';
 import { breadcrumbs, collectionPage } from '@/lib/structured-data';
-import { keyed } from '@/lib/structure';
-import { getSections, findSection } from '@/lib/sections';
+import { sectionCategories, sectionListing } from '@/lib/subsections';
+import { getSections } from '@/lib/sections';
 import type { Locale } from '@/lib/encyclopedia';
 import type { SectionInfo } from '@/lib/sections';
 
@@ -26,9 +26,7 @@ const policies = {
 // static policy pages, and administrator-managed sections from the CMS. Any
 // of the three can supply a valid page title for this dynamic [section] route.
 function titleFor(section: string, locale: Locale, sections: SectionInfo[]) {
-  return navigation.find(n => n.path === section)?.[locale]
-    ?? policies[section as keyof typeof policies]?.[locale]
-    ?? findSection(sections, section)?.name[locale];
+  return policies[section as keyof typeof policies]?.[locale] ?? sectionName(section, sections)?.[locale];
 }
 export async function generateMetadata({ params }: Props) {
   const { locale, section } = await params;
@@ -73,13 +71,9 @@ export default async function SectionPage({ params, searchParams }: Props) {
   const { entries, preview } = await getContent();
   const policy = section in policies;
   const query = await searchParams;
-  const index = keyed(entries);
-  // Children appear inside their parent's hub; list them here only when the parent lives in another section.
-  const relevant = entries.filter(entry => matchesSection(entry, section) && !(entry.parentKey && index.get(entry.parentKey)?.section === entry.section));
+  const relevant = sectionListing(entries, section);
   // Notable figures opens on the Kingdom's rulers; `?category=all` is the explicit unfiltered view.
-  const rulerCategory = section === 'notable-figures' ? relevant.find(e => e.kind === 'ruler')?.category[locale] : undefined;
-  const categories = [...new Set([...(rulerCategory ? [rulerCategory] : []), ...relevant.map(e => e.category[locale])])];
-  const defaultCategory = rulerCategory && categories.length > 1 ? rulerCategory : '';
+  const { categories, defaultCategory } = sectionCategories(relevant, section, locale);
   const requested = typeof query.category === 'string' ? query.category : undefined;
   const category = requested === undefined ? defaultCategory
     : requested !== ALL_CATEGORIES && categories.includes(requested) ? requested : '';

@@ -49,7 +49,7 @@ function field(collection: CollectionConfig, name: string) {
   return result;
 }
 
-test('collections are staff-only for read/create/update, administrator-only for delete, and authors are not login accounts', async () => {
+test('categories are public to read (subsection names), authors staff-only; staff create/update, administrators delete; authors are not login accounts', async () => {
   for (const collection of [Categories, Authors]) {
     assert.deepEqual(collection.admin?.group, { ar: 'المحتوى', en: 'Content' });
     assert.equal(collection.admin?.useAsTitle, 'nameAr');
@@ -62,7 +62,7 @@ test('collections are staff-only for read/create/update, administrator-only for 
       for (const operation of ['read', 'create', 'update', 'delete'] as const) {
         const access = collection.access?.[operation];
         assert.ok(access);
-        assert.equal(await access({ req }), operation === 'delete' ? admin : staff);
+        assert.equal(await access({ req }), operation === 'delete' ? admin : operation === 'read' && collection === Categories ? true : staff);
       }
     }
     for (const name of ['nameAr', 'nameEn']) {

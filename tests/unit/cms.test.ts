@@ -157,6 +157,17 @@ test('images require the same released asset and bilingual alt; fallback describ
   await assert.rejects(run({ image: media, imageAlt: 'Photo' }, { image: { ...media, url: '/api/media/file/other.webp' }, imageAlt: 'Photo' }), /inconsistent bilingual/);
 });
 
+test('a linked subsection of the same section names the category; otherwise the article text is kept', async () => {
+  const run = async (ar: Record<string, unknown>, en = ar) => (await readCMSEntries(reader([[article('ar', ar), article('en', en)]])))[0];
+  const plain = await run({});
+  const subsection = (overrides: Record<string, unknown> = {}) => ({ id: 5, nameAr: ' الفن ', nameEn: 'Arts', section: plain.section, ...overrides });
+  assert.deepEqual((await run({ categoryRef: subsection() })).category, { ar: 'الفن', en: 'Arts' });
+  for (const categoryRef of [5, null, subsection({ section: 'other-section' }), subsection({ nameEn: '' }), 'bad']) {
+    assert.deepEqual((await run({ categoryRef })).category, plain.category, JSON.stringify(categoryRef));
+  }
+  assert.deepEqual((await run({ categoryRef: subsection() }, { categoryRef: subsection({ id: 6 }) })).category, plain.category);
+});
+
 type AdapterOptions = Parameters<PayloadRequest['payload']['db']['find']>[0];
 function anonymous(find: (options: AdapterOptions) => Promise<{ docs: unknown[]; hasNextPage: boolean }>): PayloadRequest {
   // Minimal typed double, not a real PayloadRequest or database adapter.

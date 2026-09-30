@@ -33,18 +33,12 @@ export const navigation = [
   { path: 'heritage', ar: 'التراث', en: 'Heritage' },
 ] as const;
 
-export type NavigationItem = { path: string; ar: string; en: string };
+/** `subsections` are the listing's category labels in the page locale (links to `?category=`). */
+export type NavigationItem = { path: string; ar: string; en: string; subsections?: string[] };
 
-const compactLabels: Record<string, { ar: string; en: string }> = {
-  regions: { ar: 'المناطق', en: 'Regions' },
-  'notable-figures': { ar: 'الشخصيات', en: 'People' },
-  economy: { ar: 'الاقتصاد', en: 'Economy' },
-  nature: { ar: 'الطبيعة', en: 'Nature' },
-  tourism: { ar: 'السياحة', en: 'Tourism' },
-};
-
+/** Section names are managed in the CMS («أقسام الموسوعة»); the header shows them as stored. */
 export function navigationLabel(item: NavigationItem, locale: Locale): string {
-  return compactLabels[item.path]?.[locale] ?? item[locale];
+  return item[locale];
 }
 
 export function publicNavigation(sections: readonly { slug: string; name: { ar: string; en: string } }[]): NavigationItem[] {
@@ -53,9 +47,16 @@ export function publicNavigation(sections: readonly { slug: string; name: { ar: 
     if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(section.slug)
       || ['search', 'privacy', 'credits', 'about', 'editorial-policy', 'geography', 'admin', 'api'].includes(section.slug)) continue;
     const path = ['people', 'rulers'].includes(section.slug) ? 'notable-figures' : section.slug;
-    if (!items.has(path)) items.set(path, navigation.find(item => item.path === path) ?? { path, ...section.name });
+    if (!items.has(path)) items.set(path, { path, ar: section.name.ar, en: section.name.en });
   }
   return [...items.values()];
+}
+
+/** CMS name of a public section path (notable-figures merges the biography sections), else the fixed fallback. */
+export function sectionName(path: string, sections: readonly { slug: string; name: { ar: string; en: string } }[]): { ar: string; en: string } | undefined {
+  const cms = publicNavigation(sections).find(item => item.path === path);
+  const fallback = navigation.find(item => item.path === path);
+  return cms ? { ar: cms.ar, en: cms.en } : fallback ? { ar: fallback.ar, en: fallback.en } : undefined;
 }
 
 export const photoCredits = [

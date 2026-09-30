@@ -3,7 +3,9 @@ import test from 'node:test';
 import { APIError, type CollectionConfig, type PayloadRequest } from 'payload';
 import { Sections, enforceSectionSlugImmutable, protectReferencedSection } from '../../src/collections/Sections';
 import { roles } from '../../src/collections/access';
-import { navigationLabel, publicNavigation } from '../../src/lib/site';
+import { navigationLabel, publicNavigation, sectionName } from '../../src/lib/site';
+import { withSubsections } from '../../src/lib/subsections';
+import type { Entry } from '../../src/lib/encyclopedia';
 import { readSections } from '../../src/lib/sections';
 
 test('public navigation includes CMS sections and merges legacy biography listings without mutating input', () => {
@@ -19,30 +21,42 @@ test('public navigation includes CMS sections and merges legacy biography listin
   const before = structuredClone(input);
   const result = publicNavigation(input);
   assert.deepEqual(result.map(item => item.path), ['history', 'notable-figures', 'nature', 'economy', 'tourism']);
-  assert.deepEqual(result[1], { path: 'notable-figures', ar: 'شخصيات بارزة', en: 'Notable figures' });
+  assert.deepEqual(result[1], { path: 'notable-figures', ar: 'اسم قديم', en: 'Old label' }, 'the first biography section names the merged entry');
   assert.deepEqual(result[2], { path: 'nature', ar: 'البيئة والطبيعة', en: 'Nature & Environment' });
   assert.deepEqual(input, before);
   assert.deepEqual(publicNavigation([]), []);
 });
 
-test('header labels are compact in both languages without changing full names or routes', () => {
+test('header, footer and section titles use the names managed in the CMS, in CMS order', () => {
   const sections = [
-    { slug: 'history', name: { ar: 'التاريخ', en: 'History' } },
-    { slug: 'regions', name: { ar: 'الجغرافيا والمناطق', en: 'Regions' } },
-    { slug: 'people', name: { ar: 'شخصيات بارزة', en: 'Notable figures' } },
-    { slug: 'heritage', name: { ar: 'التراث', en: 'Heritage' } },
-    { slug: 'economy', name: { ar: 'الاقتصاد والتنمية', en: 'Economy & Development' } },
-    { slug: 'nature', name: { ar: 'البيئة والطبيعة', en: 'Nature & Environment' } },
-    { slug: 'tourism', name: { ar: 'السياحة والمعالم', en: 'Tourism & Landmarks' } },
+    { slug: 'regions', name: { ar: 'المناطق', en: 'Regions' } },
+    { slug: 'history', name: { ar: 'تاريخ المملكة', en: 'Saudi history' } },
+    { slug: 'people', name: { ar: 'الشخصيات', en: 'People' } },
+    { slug: 'new-section', name: { ar: 'قسم جديد', en: 'New section' } },
   ];
   const items = publicNavigation(sections);
-  const before = structuredClone(items);
-  assert.deepEqual(items.map(item => navigationLabel(item, 'ar')), ['التاريخ', 'المناطق', 'الشخصيات', 'التراث', 'الاقتصاد', 'الطبيعة', 'السياحة']);
-  assert.deepEqual(items.map(item => navigationLabel(item, 'en')), ['History', 'Regions', 'People', 'Heritage', 'Economy', 'Nature', 'Tourism']);
-  assert.deepEqual(items, before);
-  const custom = { path: 'custom', ar: 'قسم مخصص', en: 'Custom section' };
-  assert.equal(navigationLabel(custom, 'ar'), custom.ar);
-  assert.equal(navigationLabel(custom, 'en'), custom.en);
+  assert.deepEqual(items.map(item => navigationLabel(item, 'ar')), ['المناطق', 'تاريخ المملكة', 'الشخصيات', 'قسم جديد']);
+  assert.deepEqual(items.map(item => navigationLabel(item, 'en')), ['Regions', 'Saudi history', 'People', 'New section']);
+  assert.deepEqual(sectionName('notable-figures', sections), { ar: 'الشخصيات', en: 'People' });
+  assert.deepEqual(sectionName('history', sections), { ar: 'تاريخ المملكة', en: 'Saudi history' });
+  assert.deepEqual(sectionName('heritage', sections), { ar: 'التراث', en: 'Heritage' }, 'fixed fallback when the CMS has no such section');
+  assert.equal(sectionName('unknown', sections), undefined);
+});
+
+test('header dropdowns list a section\'s subsections like its filter tabs (rulers first, only when more than one)', () => {
+  const entry = (section: string, slug: string, category: string, kind?: 'ruler' | 'notable', parentKey?: string) => ({
+    section, slug, key: slug, kind, parentKey, category: { ar: category, en: `${category}-en` },
+  }) as unknown as Entry;
+  const entries = [
+    entry('people', 'talal', 'الفن', 'notable'), entry('people', 'king', 'ملوك', 'ruler'), entry('people', 'imam', 'أئمة', 'notable'),
+    entry('heritage', 'a', 'موقع'), entry('heritage', 'b', 'موقع'),
+    entry('regions', 'riyadh', 'منطقة'), entry('regions', 'kharj', 'محافظة', undefined, 'riyadh'),
+  ];
+  const nav = withSubsections([{ path: 'notable-figures', ar: 'ش', en: 'P' }, { path: 'heritage', ar: 'ت', en: 'H' }, { path: 'regions', ar: 'م', en: 'R' }], entries, 'ar');
+  assert.deepEqual(nav[0].subsections, ['ملوك', 'الفن', 'أئمة']);
+  assert.equal(nav[1].subsections, undefined, 'a single subsection needs no dropdown');
+  assert.equal(nav[2].subsections, undefined, 'children listed inside their parent hub are not subsections');
+  assert.deepEqual(withSubsections([{ path: 'notable-figures', ar: 'ش', en: 'P' }], entries, 'en')[0].subsections, ['ملوك-en', 'الفن-en', 'أئمة-en']);
 });
 
 test('public navigation omits invalid and reserved slugs instead of linking outside encyclopedia sections', () => {

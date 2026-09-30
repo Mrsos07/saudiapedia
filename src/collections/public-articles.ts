@@ -40,6 +40,8 @@ export type PublicArticle = ArticleSEO & {
   /** Translation keys of publicly readable targets only; unpublished targets are never populated. */
   parentKey?: string;
   relatedKeys?: string[];
+  /** Linked subsection (Categories) of the same section, when populated; its names replace the plain category text. */
+  subsection?: { id: ID; ar: string; en: string };
 };
 
 const record = (value: unknown): value is Record<string, unknown> =>
@@ -117,8 +119,13 @@ export function decodePublicArticle(value: unknown): PublicArticle {
   const siteType = entityType === 'site' ? oneOf(siteTypes, value.siteType) : undefined;
   const parentKey = populatedKey(value.parent);
   const relatedKeys = Array.isArray(value.related) ? [...new Set(value.related.map(populatedKey).filter((key): key is string => Boolean(key)))] : [];
+  // Unpopulated IDs, foreign-section or malformed categories fall back to the article's own category text.
+  const ref = value.categoryRef;
+  const subsection = record(ref) && id(ref.id) && ref.section === section && nonEmpty(ref.nameAr) && nonEmpty(ref.nameEn)
+    ? { id: ref.id, ar: ref.nameAr.trim(), en: ref.nameEn.trim() } : undefined;
   return {
     ...(createdAt ? { createdAt } : {}), ...(updatedAt ? { updatedAt } : {}),
+    ...(subsection ? { subsection } : {}),
     ...(entityType ? { entityType } : {}), ...(siteType ? { siteType } : {}),
     ...(parentKey ? { parentKey } : {}), ...(relatedKeys.length ? { relatedKeys } : {}),
     id: value.id, locale, section, kind: kind ?? null, image: decodedImage,

@@ -1,5 +1,5 @@
 import { APIError, type CollectionBeforeChangeHook, type CollectionBeforeDeleteHook, type CollectionConfig } from 'payload';
-import { isAdmin, isStaff, nonEmpty } from './access';
+import { boundPublicReads, isAdmin, isStaff, nonEmpty } from './access';
 
 type CategoryDocument = { id: number | string; section?: unknown };
 
@@ -31,15 +31,16 @@ export const protectReferencedCategory: CollectionBeforeDeleteHook = async ({ id
 
 export const Categories: CollectionConfig = {
   slug: 'categories',
-  labels: { singular: { ar: 'تصنيف', en: 'Category' }, plural: { ar: 'التصنيفات', en: 'Categories' } },
+  labels: { singular: { ar: 'قسم فرعي (تصنيف)', en: 'Subsection (category)' }, plural: { ar: 'الأقسام الفرعية (التصنيفات)', en: 'Subsections (categories)' } },
   admin: {
     group: { ar: 'المحتوى', en: 'Content' },
     useAsTitle: 'nameAr',
     defaultColumns: ['nameAr', 'nameEn', 'section'],
-    description: 'تصنيفات تحريرية داخلية مرتبطة بقسم ثابت. / Internal editorial categories, each assigned to an immutable section.',
+    description: 'الأقسام الفرعية لكل قسم. اسم التصنيف المرتبط بالمقال يظهر في تبويبات صفحة القسم وفي القائمة المنسدلة بشريط التنقل، وتعديل الاسم هنا يغيّره في كل المقالات المرتبطة. / Subsections of each section. The linked category name appears in the section page tabs and the header dropdown; renaming it here renames it for every linked article.',
   },
-  access: { read: isStaff, create: isStaff, update: isStaff, delete: isAdmin },
-  hooks: { beforeChange: [enforceCategorySection], beforeDelete: [protectReferencedCategory] },
+  // Names/descriptions are public navigation data like section names (see Sections).
+  access: { read: () => true, create: isStaff, update: isStaff, delete: isAdmin },
+  hooks: { beforeOperation: [boundPublicReads], beforeChange: [enforceCategorySection], beforeDelete: [protectReferencedCategory] },
   fields: [
     {
       name: 'nameAr', type: 'text', required: true, label: { ar: 'الاسم بالعربية', en: 'Arabic name' },

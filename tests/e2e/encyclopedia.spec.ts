@@ -4,7 +4,8 @@ import { entries, entryPath } from '../../src/lib/encyclopedia';
 for (const locale of ['ar', 'en'] as const) {
   const ar = locale === 'ar';
   const label = ar ? 'شخصيات بارزة' : 'Notable figures';
-  const navLabel = ar ? 'الشخصيات' : 'People';
+  // The header shows the section name managed in the CMS (seed names in this CMS-disabled build).
+  const navLabel = label;
 
   test(`${locale}: homepage history presents the three Saudi states in chronological order`, async ({ page }) => {
     await page.goto(`/${locale}`);
@@ -37,6 +38,14 @@ for (const locale of ['ar', 'en'] as const) {
     await expect(page.locator('.people-grid h3')).toHaveText(kings.map(entry => entry.title[locale]));
     await expect(page.locator('.people-grid .person-portrait img')).toHaveCount(7);
     await expect(page.locator('.people-grid a[href$="/ghazi-al-gosaibi"], .people-grid a[href$="/mohammed-abdu"]')).toHaveCount(0);
+    // Subsection dropdown: the rulers' category first, linking to the filtered listing.
+    const kingsCategory = ar ? 'ملوك المملكة العربية السعودية' : 'Kings of Saudi Arabia';
+    const submenu = page.locator('.desktop-nav .nav-submenu');
+    await expect(submenu).toBeHidden();
+    await link.hover();
+    await expect(submenu).toBeVisible();
+    await expect(submenu.locator('a').first()).toHaveText(kingsCategory);
+    await expect(submenu.locator('a').first()).toHaveAttribute('href', `/${locale}/notable-figures?category=${encodeURIComponent(kingsCategory)}`);
     await link.click();
     await expect(page).toHaveURL(new RegExp(`/${locale}/notable-figures$`));
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(label);

@@ -68,8 +68,8 @@ export const sectionLabels = seedSectionLabels;
  * document (nameAr/nameEn) should prefer that over this fallback, which only
  * has the slug to work with. */
 export function resolveSectionLabel(section: string, locale: Locale, known?: Localized): string {
-  if (['people', 'rulers', 'notable-figures'].includes(section)) return seedSectionLabels.people[locale];
   if (known) return known[locale];
+  if (['people', 'rulers', 'notable-figures'].includes(section)) return seedSectionLabels.people[locale];
   const seedLabel = (seedSectionLabels as Record<string, Localized>)[section];
   return seedLabel ? seedLabel[locale] : section;
 }

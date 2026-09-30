@@ -239,9 +239,9 @@ export const Articles: CollectionConfig = {
         components: { Field: '/components/admin/section-picker#SectionPicker' },
       },
     },
-    { name: 'categoryRef', label: { ar: 'التصنيف المرتبط', en: 'Linked category' }, type: 'relationship', relationTo: 'categories', maxDepth: 0,
-      access: { read: ({ req }) => hasRole(req, roles) },
-      admin: { description: { ar: 'اختر تصنيفًا من قسم المقال. العلاقة خاصة بالتحرير ويجب أن تتطابق في الترجمتين.', en: 'Choose a category from this section. This private editorial association must match both translations.' } } },
+    // Public: the linked subsection's names label the article in section tabs and the header dropdown.
+    { name: 'categoryRef', label: { ar: 'القسم الفرعي (التصنيف المرتبط)', en: 'Subsection (linked category)' }, type: 'relationship', relationTo: 'categories', maxDepth: 1,
+      admin: { description: { ar: 'اختر قسمًا فرعيًا من قسم المقال، ويجب أن يتطابق في الترجمتين. يحل اسمه محل نص «التصنيف» في الموقع العام.', en: 'Choose a subsection of this section; it must match in both translations. Its name replaces the “Category” text on the public site.' } } },
     { name: 'authors', label: { ar: 'الكتّاب', en: 'Authors' }, type: 'relationship', relationTo: 'authors', hasMany: true, maxRows: MAX_ARTICLE_AUTHORS, maxDepth: 0,
       access: { read: ({ req }) => hasRole(req, roles) }, admin: { description: { ar: 'ملفات الكتّاب مستقلة عن حسابات الدخول. حافظ على ترتيبهم نفسه في الترجمتين.', en: 'Author profiles are separate from login accounts. Keep the same order in both translations.' } } },
     {

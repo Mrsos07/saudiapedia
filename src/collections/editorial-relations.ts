@@ -2,7 +2,7 @@ import { APIError, type CollectionBeforeValidateHook } from 'payload';
 
 export const MAX_ARTICLE_AUTHORS = 20;
 
-/** Private associations only; never include these fields in public article DTOs. */
+/** Authors stay private; never include them in public article DTOs. categoryRef is the public subsection (names only). */
 export type EditorialRelations = { categoryRef?: unknown; authors?: unknown };
 export type EditorialArticleDocument = EditorialRelations & { id: number | string; section?: unknown };
 

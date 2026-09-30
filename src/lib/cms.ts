@@ -78,7 +78,8 @@ export function mergePair(ar: PublicArticle, en: PublicArticle): Entry | null {
     slug: ar.slug,
     title: localized(ar.title, en.title),
     summary: localized(ar.summary, en.summary),
-    category: localized(ar.category, en.category),
+    category: ar.subsection && en.subsection?.id === ar.subsection.id
+      ? localized(ar.subsection.ar, ar.subsection.en) : localized(ar.category, en.category),
     period: ar.period || undefined,
     kind: ar.kind || undefined,
     featured: Boolean(ar.featured && en.featured),

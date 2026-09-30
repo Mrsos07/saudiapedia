@@ -18,7 +18,8 @@ test('leaders and biographies share one navigation entry and localized section l
   assert.equal(navigation.some(item => ['people', 'rulers'].includes(item.path)), false);
   for (const locale of ['ar', 'en'] as const) {
     assert.equal(seedSectionLabels.people[locale], people[0][locale]);
-    assert.equal(resolveSectionLabel('people', locale, { ar: 'الشخصيات', en: 'People' }), people[0][locale]);
+    assert.equal(resolveSectionLabel('people', locale), people[0][locale]);
+    assert.equal(resolveSectionLabel('people', locale, { ar: 'الشخصيات', en: 'People' }), locale === 'ar' ? 'الشخصيات' : 'People', 'the CMS name wins');
     assert.equal(resolveSectionLabel('custom-section', locale, { ar: 'قسم مخصص', en: 'Custom section' }), locale === 'ar' ? 'قسم مخصص' : 'Custom section');
   }
 });
