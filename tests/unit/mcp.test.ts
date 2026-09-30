@@ -70,6 +70,29 @@ test('publishing tools demand explicit confirmation and optimistic concurrency',
   assert.match((editor!.result as { content: { text: string }[] }).content[0].text, /Only reviewer or administrator/);
 });
 
+test('articles can reference existing media by ID, and private images block publication', async () => {
+  const listed = toolList();
+  for (const name of ['create_article', 'update_article']) {
+    const image = (listed.find(item => item.name === name)!.inputSchema as { properties: Record<string, { type: string; minimum: number }> }).properties.image;
+    assert.deepEqual([image.type, image.minimum], ['integer', 0], name);
+  }
+  assert.equal(listed.find(item => item.name === 'search_media')!.annotations.readOnlyHint, true);
+  const doc = (locale: string, published: boolean) => ({
+    id: locale === 'ar' ? 1 : 2, locale, translationKey: 'k', section: 'people', slug: 'x', title: 't', summary: 's', category: 'c',
+    image: { id: 9, published }, imageAlt: 'alt', body: [{ heading: 'h', text: 'p [1]' }], sources: [{ title: 'src', url: 'https://example.org/' }],
+  });
+  const withMedia = (published: boolean) => ({
+    ...context,
+    payload: { find: async ({ collection }: { collection: string }) => ({ docs: collection === 'articles' ? [doc('ar', published), doc('en', published)] : [], totalDocs: 0 }) },
+  }) as unknown as ToolContext;
+  const run = (published: boolean) => handleMessage({ jsonrpc: '2.0', id: 11, method: 'tools/call', params: { name: 'review_checklist', arguments: { translationKey: 'k' } } }, withMedia(published), open, () => {});
+  const text = async (published: boolean) => JSON.parse(((await run(published))!.result as { content: { text: string }[] }).content[0].text) as { ready: boolean; errors: string[] };
+  const blocked = await text(false);
+  assert.equal(blocked.ready, false);
+  assert.match(blocked.errors.join(' '), /Media asset 9 is not approved for public delivery/);
+  assert.equal((await text(true)).ready, true);
+});
+
 test('rate limits are per account, with a tighter budget for writes', async () => {
   let now = 0;
   const realNow = Date.now;

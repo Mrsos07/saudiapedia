@@ -43,6 +43,7 @@ const sharedFields = {
   related: s.array(route, 20, 'Routes of related articles (replaces the list).'),
   sources: s.array(source, 40, 'Citations in [n] order; replaces the list.', 1),
   noIndex: s.boolean('Exclude this article from search engines.'),
+  image: s.integer(0, 2147483647, 'ID of an existing media asset (see search_media), shared by both translations; 0 removes the image. Uploading files is done in the admin panel.'),
 };
 const expectedUpdatedAt = s.object({ ar: s.string({ max: 40 }), en: s.string({ max: 40 }) }, ['ar', 'en'], 'updatedAt values from get_article; the write is refused if either document changed since.');
 
@@ -154,7 +155,13 @@ async function structureData(context: ToolContext, input: SharedInput, locale: L
     ...(input.parent !== undefined ? { parent: input.parent === 'none' ? null : routes.get(input.parent)![locale] } : {}),
     ...(input.related !== undefined ? { related: input.related.map(value => routes.get(value)![locale]) } : {}),
     ...(input.sources !== undefined ? { sources: input.sources.map(item => ({ title: item.title[locale], url: item.url })) } : {}),
+    ...(input.image !== undefined ? { image: input.image || null } : {}),
   };
+}
+async function assertImage(context: ToolContext, id: number | undefined, req: PayloadRequest) {
+  if (!id) return;
+  const { docs } = await context.payload.find({ collection: 'media', user: context.user, overrideAccess: false, req, where: { id: { equals: id } }, limit: 1, depth: 0 });
+  if (!docs.length) throw new ToolError(`Media asset ${id} does not exist or is not readable by this account.`);
 }
 function validateSources(sources: { url: string }[] | undefined) {
   for (const item of sources ?? []) if (!validHTTPURL(item.url)) throw new ToolError(`Source URL is not an absolute HTTP(S) URL without credentials: ${item.url.slice(0, 120)}`);
@@ -170,6 +177,7 @@ async function checklist(context: ToolContext, key: string) {
   for (const field of ['section', 'slug', 'period', 'kind', 'entityType', 'siteType'] as const) if ((ar[field] ?? null) !== (en[field] ?? null)) errors.push(`"${field}" differs between translations.`);
   const imageID = (doc: Doc) => doc.image && typeof doc.image === 'object' ? (doc.image as Doc).id : doc.image ?? null;
   if (imageID(ar) !== imageID(en)) errors.push('The translations use different images.');
+  if (ar.image && typeof ar.image === 'object' && (ar.image as Doc).published !== true) errors.push(`Media asset ${String(imageID(ar))} is not approved for public delivery; a reviewer must enable it in the admin panel (or set image to 0).`);
   if (imageID(ar) && (!text(ar.imageAlt).trim() || !text(en.imageAlt).trim())) warnings.push('Image alt text is missing in one language; the public site will fall back to a contextual photo.');
   for (const field of ['facts', 'body', 'sources'] as const) {
     const a = Array.isArray(ar[field]) ? (ar[field] as unknown[]).length : 0; const b = Array.isArray(en[field]) ? (en[field] as unknown[]).length : 0;
@@ -288,6 +296,14 @@ export const tools: Tool[] = [
     },
   }),
   tool({
+    name: 'search_media', description: 'Find uploaded media assets by words in their alt text or filename, with their public-delivery approval. Use the id as "image" in create_article/update_article.', annotations: read('Search media'),
+    input: s.object({ query: s.string({ max: 120, description: 'Words matched against alt text and filename.' }), limit: s.integer(1, 25) }),
+    run: async (input, { payload, user }) => {
+      const { docs } = await payload.find({ collection: 'media', user, overrideAccess: false, where: input.query ? { or: [{ alt: { like: input.query } }, { filename: { like: input.query } }] } : {}, limit: input.limit ?? 10, depth: 0, sort: '-updatedAt' });
+      return { media: (docs as Doc[]).map(doc => ({ id: doc.id, alt: doc.alt, filename: doc.filename, width: doc.width ?? null, height: doc.height ?? null, attribution: doc.attribution, license: doc.license, published: doc.published === true, updatedAt: doc.updatedAt })) };
+    },
+  }),
+  tool({
     name: 'review_checklist', description: 'Checks whether a bilingual article is ready to publish: matching translations, complete sections, valid citations and sources, and internal links to published articles. publish_article runs the same checks.', annotations: read('Publication checklist'),
     input: s.object({ translationKey }, ['translationKey']),
     run: async (input, context) => ({ translationKey: input.translationKey, ...(await checklist(context, input.translationKey)) }),
@@ -303,6 +319,7 @@ export const tools: Tool[] = [
       checkCitations(input.ar.body, input.sources!.length, 'ar'); checkCitations(input.en.body, input.sources!.length, 'en');
       if (Object.keys(await pair(context, key)).length) throw new ToolError(`Translation key "${key}" is already used.`);
       return inTransaction(context, async req => {
+        await assertImage(context, input.image, req);
         const routes = await resolveRoutes(context, [...linkRoutes([...input.ar.body, ...input.en.body].flatMap(row => row.paragraphs)), ...(input.parent && input.parent !== 'none' ? [input.parent] : []), ...(input.related ?? [])], req);
         const created: Record<string, unknown> = {};
         for (const locale of locales) {
@@ -325,6 +342,7 @@ export const tools: Tool[] = [
       return inTransaction(context, async req => {
         const docs = await requirePair(context, input.translationKey, req);
         assertFresh(docs, input.expectedUpdatedAt);
+        await assertImage(context, input.image, req);
         const sourceCount = input.sources?.length ?? ((docs.ar.sources as unknown[] | undefined) ?? []).length;
         if (input.ar?.body) checkCitations(input.ar.body, sourceCount, 'ar');
         if (input.en?.body) checkCitations(input.en.body, sourceCount, 'en');

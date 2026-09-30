@@ -1,0 +1,114 @@
+{
+  "researchDate": "2026-09-30",
+  "status": "mcp-create_article-input",
+  "reviewNotes": [
+    "Operator request 2026-09-30: notable-figures article on Crown Prince Mohammed bin Salman, sources limited to Saudipedia and the Saudi Press Agency (SPA); no Wikipedia text or citations. Published through the MCP endpoint (create_article, review_checklist, publish_article).",
+    "kind=notable with the category 'Crown princes', not kind=ruler: the homepage and the default notable-figures tab are defined as the kings (AGENTS.md).",
+    "SPA article pages are rendered by JavaScript; their titles and dates were confirmed through search results on spa.gov.sa, and every fact is also stated in the Saudipedia biography (retrieved 2026-09-30).",
+    "Omitted: investment totals, project values, vote counts beyond the Allegiance Council figure stated by Saudipedia, anti-corruption settlement totals, foreign-policy assessments and anything not stated in the two permitted sources.",
+    "Image: SPA official portrait published on SPA's Creative Commons platform (https://cc.spa.gov.sa/ar/news/2265652), CC BY-SA 4.0; file copy via Wikimedia Commons (SHA-1 7597b652e5f2931d6a70f0cdc6b1a07c66540ad8 of the 2400px derivative source), converted to WebP quality 85 at 2400 × 1722. Uploaded through the admin panel (MCP has no upload tool) and referenced by media ID."
+  ],
+  "media": {
+    "file": "crown-prince-mohammed-bin-salman.webp",
+    "alt": "الصورة الرسمية لولي العهد الأمير محمد بن سلمان بن عبدالعزيز آل سعود / Official portrait of Crown Prince Mohammed bin Salman bin Abdulaziz Al Saud",
+    "attribution": "وكالة الأنباء السعودية (واس) — الصورة الرسمية لسمو ولي العهد، منصة واس للمشاع الإبداعي https://cc.spa.gov.sa/ar/news/2265652 / Saudi Press Agency (SPA), official portrait, SPA Creative Commons platform. CMS derivative: WebP quality 85, resized within 2400 × 2400.",
+    "license": "CC BY-SA 4.0 — https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "article": {
+    "section": "people",
+    "slug": "mohammed-bin-salman",
+    "translationKey": "people-20260930-mohammed-bin-salman",
+    "entityType": "person",
+    "kind": "notable",
+    "period": "1985–",
+    "related": ["people/king-salman", "people/king-abdulaziz", "history/third-saudi-state", "regions/riyadh-city"],
+    "sources": [
+      { "url": "https://saudipedia.com/%D9%85%D8%AD%D9%85%D8%AF-%D8%A8%D9%86-%D8%B3%D9%84%D9%85%D8%A7%D9%86-%D8%A8%D9%86-%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D8%B9%D8%B2%D9%8A%D8%B2", "title": { "ar": "سعوديبيديا: محمد بن سلمان بن عبدالعزيز", "en": "Saudipedia: Mohammed bin Salman bin Abdulaziz (Arabic)" } },
+      { "url": "https://www.spa.gov.sa/1083395", "title": { "ar": "واس: أمر ملكي بتعيين الأمير محمد بن سلمان رئيسًا لديوان سمو ولي العهد ومستشارًا خاصًا لسموه بمرتبة وزير", "en": "SPA: Royal order appoints Prince Mohammed bin Salman President of the Crown Prince Court (Arabic)" } },
+      { "url": "https://www.spa.gov.sa/1225049", "title": { "ar": "واس: أمر ملكي بتعيين الأمير محمد بن سلمان وزير دولة وعضوًا في مجلس الوزراء", "en": "SPA: Royal order appoints Prince Mohammed bin Salman Minister of State and Cabinet member (Arabic)" } },
+      { "url": "https://www.spa.gov.sa/1641892", "title": { "ar": "واس: خادم الحرمين الشريفين يدعو لمبايعة سمو الأمير محمد بن سلمان وليًا للعهد في قصر الصفا بمكة المكرمة", "en": "SPA: King Salman calls for the pledge of allegiance to Prince Mohammed bin Salman as Crown Prince at Al-Safa Palace, Makkah (Arabic)" } },
+      { "url": "https://www.spa.gov.sa/2387955", "title": { "ar": "واس: وزير الصحة يهنئ سمو ولي العهد بصدور الأمر الملكي بأن يكون رئيسًا لمجلس الوزراء", "en": "SPA: Minister of Health congratulates the Crown Prince on the royal order naming him Prime Minister (Arabic)" } },
+      { "url": "https://spa.gov.sa/N2676590", "title": { "ar": "واس: سمو ولي العهد يرأس جلسة مجلس الوزراء في جدة (15 سبتمبر 2026)", "en": "SPA: The Crown Prince chairs the Cabinet session in Jeddah, 15 September 2026 (Arabic)" } }
+    ],
+    "ar": {
+      "title": "الأمير محمد بن سلمان بن عبدالعزيز",
+      "summary": "ولي العهد منذ 1438هـ/2017م ورئيس مجلس الوزراء منذ 1444هـ/2022م، أطلق رؤية السعودية 2030، وهو أول رئيس لمجلس الوزراء من أحفاد الملك عبدالعزيز.",
+      "category": "ولاة العهد",
+      "imageAlt": "الصورة الرسمية لولي العهد الأمير محمد بن سلمان بن عبدالعزيز آل سعود مرتديًا الشماغ والبشت",
+      "seoTitle": "الأمير محمد بن سلمان: ولي العهد رئيس مجلس الوزراء",
+      "seoDescription": "سيرة ولي العهد رئيس مجلس الوزراء الأمير محمد بن سلمان: نشأته وتعليمه ومناصبه، وولاية العهد، ورؤية السعودية 2030، من سعوديبيديا ووكالة الأنباء السعودية.",
+      "facts": [
+        { "label": "الاسم", "value": "محمد بن سلمان بن عبدالعزيز آل سعود" },
+        { "label": "الميلاد", "value": "15 ذو الحجة 1405هـ/31 أغسطس 1985م، الرياض" },
+        { "label": "الوالدان", "value": "الملك سلمان بن عبدالعزيز، والأميرة فهدة بنت فلاح بن سلطان آل حثلين" },
+        { "label": "التعليم", "value": "بكالوريوس القانون، جامعة الملك سعود" },
+        { "label": "ولي العهد", "value": "منذ 26 رمضان 1438هـ/21 يونيو 2017م" },
+        { "label": "رئيس مجلس الوزراء", "value": "منذ 1 ربيع الأول 1444هـ/27 سبتمبر 2022م" }
+      ],
+      "body": [
+        { "heading": "النشأة والتعليم", "role": "overview", "paragraphs": [
+          "الأمير محمد بن سلمان بن عبدالعزيز آل سعود، ولي العهد منذ 26 رمضان 1438هـ/21 يونيو 2017م، ورئيس مجلس الوزراء منذ 1 ربيع الأول 1444هـ/27 سبتمبر 2022م، وهو أول من يتولى رئاسة مجلس الوزراء من أحفاد الملك [[people/king-abdulaziz|عبدالعزيز]]. [1]",
+          "وُلد في 15 ذي الحجة 1405هـ/31 أغسطس 1985م في [[regions/riyadh-city|الرياض]]، ونشأ في كنف والده خادم الحرمين الشريفين الملك [[people/king-salman|سلمان بن عبدالعزيز]] حين كان أميرًا لمنطقة الرياض، ووالدته الأميرة فهدة بنت فلاح بن سلطان آل حثلين، وهو الابن السادس للملك سلمان في ترتيب الأبناء الذكور. [1]",
+          "تلقى تعليمه في مدارس الرياض، وكان ضمن العشرة الأوائل على مستوى المملكة في المرحلة الثانوية، ثم حصل على بكالوريوس القانون من جامعة الملك سعود، وجاء ترتيبه الثاني على دفعته في كلية الحقوق والعلوم السياسية. [1]"
+        ] },
+        { "heading": "المناصب الأولى", "role": "history", "paragraphs": [
+          "عمل بعد تخرجه مستشارًا في هيئة الخبراء بمجلس الوزراء في 22 ربيع الأول 1428هـ/10 أبريل 2007م، ثم مستشارًا خاصًا لأمير منطقة الرياض في 28 ذي الحجة 1430هـ/15 ديسمبر 2009م، كما عمل أمينًا عامًا لمركز الرياض للتنافسية ومستشارًا خاصًا لرئيس مجلس إدارة دارة الملك عبدالعزيز. [1]",
+          "وفي 20 ربيع الآخر 1434هـ/2 مارس 2013م صدر أمر ملكي بتعيينه رئيسًا لديوان ولي العهد ومستشارًا خاصًا له بمرتبة وزير، وفي 25 جمادى الآخرة 1435هـ/25 أبريل 2014م عُيّن وزير دولة عضوًا في مجلس الوزراء إضافة إلى عمله. [1] [2] [3]",
+          "وفي 3 ربيع الآخر 1436هـ/23 يناير 2015م عُيّن وزيرًا للدفاع ورئيسًا للديوان الملكي ومستشارًا خاصًا لخادم الحرمين الشريفين بمرتبة وزير، وفي 9 ربيع الآخر 1436هـ/29 يناير 2015م أُنشئ مجلس الشؤون الاقتصادية والتنمية برئاسته، ثم ترأس مجلس إدارة صندوق الاستثمارات العامة في 3 جمادى الآخرة 1436هـ/23 مارس 2015م. [1]"
+        ] },
+        { "heading": "ولاية العهد ورئاسة مجلس الوزراء", "role": "administration", "paragraphs": [
+          "في 26 رمضان 1438هـ/21 يونيو 2017م صدر أمر ملكي باختياره وليًا للعهد بتأييد 31 من أعضاء هيئة البيعة البالغ عددهم 34، وبويع في قصر الصفا بمكة المكرمة، وعُيّن نائبًا لرئيس مجلس الوزراء مع استمراره وزيرًا للدفاع. [1] [4]",
+          "وفي 20 ربيع الآخر 1440هـ/27 ديسمبر 2018م عُيّن رئيسًا لمجلس الشؤون السياسية والأمنية، وفي 1 ربيع الأول 1444هـ/27 سبتمبر 2022م صدر أمر ملكي بأن يكون ولي العهد رئيسًا لمجلس الوزراء، ويرأس بهذه الصفة جلسات المجلس. [1] [5] [6]",
+          "ومن المناصب التي يتولاها كذلك رئاسة مجلس الشؤون الاقتصادية والتنمية، ومجلس إدارة صندوق الاستثمارات العامة، والمجلس الأعلى لأرامكو السعودية، والهيئة الملكية لمدينة الرياض، والهيئة الملكية لمحافظة العلا، واللجنة العليا لمكافحة الفساد، ومجلس المحميات الملكية. [1]"
+        ] },
+        { "heading": "رؤية السعودية 2030", "role": "economy", "paragraphs": [
+          "في 18 رجب 1437هـ/25 أبريل 2016م أطلق رؤية السعودية 2030 خارطةً لتحول المملكة في مختلف القطاعات، وبُنيت على ثلاث ركائز: مجتمع حيوي، واقتصاد مزدهر، ووطن طموح. [1]",
+          "ومن المشاريع التي أطلقها في إطارها مشروع نيوم عام 2017 على ساحل البحر الأحمر وخليج العقبة، أحد المشاريع الكبرى لصندوق الاستثمارات العامة. [1]"
+        ] },
+        { "heading": "مبادرات تحمل اسمه", "role": "culture", "paragraphs": [
+          "تحمل اسمه مبادرات منها مؤسسة محمد بن سلمان «مسك» التي تأسست عام 2011م لتنمية قدرات الشباب ورعاية المواهب، ومشروع الأمير محمد بن سلمان لتطوير المساجد التاريخية الذي أُعلن عام 2018م، وكلية الأمير محمد بن سلمان للإدارة وريادة الأعمال. [1]"
+        ] }
+      ]
+    },
+    "en": {
+      "title": "Prince Mohammed bin Salman bin Abdulaziz",
+      "summary": "Crown Prince since 1438 AH/2017 CE and Prime Minister since 1444 AH/2022 CE, who launched Saudi Vision 2030; the first grandson of King Abdulaziz to lead the Council of Ministers.",
+      "category": "Crown princes",
+      "imageAlt": "Official portrait of Crown Prince Mohammed bin Salman bin Abdulaziz Al Saud wearing a shemagh and bisht",
+      "seoTitle": "Mohammed bin Salman: Crown Prince and Prime Minister",
+      "seoDescription": "Biography of Crown Prince and Prime Minister Mohammed bin Salman: early life, education, offices, the crown princeship and Saudi Vision 2030.",
+      "facts": [
+        { "label": "Name", "value": "Mohammed bin Salman bin Abdulaziz Al Saud" },
+        { "label": "Born", "value": "15 Dhu al-Hijjah 1405 AH/31 August 1985 CE, Riyadh" },
+        { "label": "Parents", "value": "King Salman bin Abdulaziz and Princess Fahdah bint Falah bin Sultan Al Hithlain" },
+        { "label": "Education", "value": "Bachelor of Law, King Saud University" },
+        { "label": "Crown Prince", "value": "Since 26 Ramadan 1438 AH/21 June 2017 CE" },
+        { "label": "Prime Minister", "value": "Since 1 Rabi al-Awwal 1444 AH/27 September 2022 CE" }
+      ],
+      "body": [
+        { "heading": "Early life and education", "role": "overview", "paragraphs": [
+          "Prince Mohammed bin Salman bin Abdulaziz Al Saud has been Crown Prince since 26 Ramadan 1438 AH/21 June 2017 CE and Prime Minister since 1 Rabi al-Awwal 1444 AH/27 September 2022 CE, the first grandson of King [[people/king-abdulaziz|Abdulaziz]] to head the Council of Ministers. [1]",
+          "He was born on 15 Dhu al-Hijjah 1405 AH/31 August 1985 CE in [[regions/riyadh-city|Riyadh]] and raised by his father, the Custodian of the Two Holy Mosques King [[people/king-salman|Salman bin Abdulaziz]], then Governor of the Riyadh Region, and his mother, Princess Fahdah bint Falah bin Sultan Al Hithlain. He is King Salman's sixth son. [1]",
+          "He was educated in Riyadh schools, ranking among the top ten students in the Kingdom at secondary level, and earned a Bachelor of Law from King Saud University, placing second in his class at the College of Law and Political Science. [1]"
+        ] },
+        { "heading": "Early offices", "role": "history", "paragraphs": [
+          "After graduating he became an adviser to the Bureau of Experts at the Council of Ministers on 22 Rabi al-Awwal 1428 AH/10 April 2007 CE and special adviser to the Governor of the Riyadh Region on 28 Dhu al-Hijjah 1430 AH/15 December 2009 CE. He also served as secretary-general of the Riyadh Competitiveness Centre and special adviser to the chairman of the King Abdulaziz Foundation for Research and Archives (Darah). [1]",
+          "A royal order of 20 Rabi al-Akhir 1434 AH/2 March 2013 CE appointed him President of the Crown Prince Court and special adviser to the Crown Prince with the rank of minister, and on 25 Jumada al-Akhirah 1435 AH/25 April 2014 CE he was made Minister of State and a member of the Council of Ministers in addition to his duties. [1] [2] [3]",
+          "On 3 Rabi al-Akhir 1436 AH/23 January 2015 CE he was appointed Minister of Defence, Chief of the Royal Court and special adviser to the King with the rank of minister. On 9 Rabi al-Akhir 1436 AH/29 January 2015 CE the Council of Economic and Development Affairs was established under his chairmanship, and on 3 Jumada al-Akhirah 1436 AH/23 March 2015 CE he became chairman of the Public Investment Fund. [1]"
+        ] },
+        { "heading": "Crown Prince and Prime Minister", "role": "administration", "paragraphs": [
+          "On 26 Ramadan 1438 AH/21 June 2017 CE a royal order named him Crown Prince with the support of 31 of the 34 members of the Allegiance Council. Allegiance was pledged to him at Al-Safa Palace in Makkah, and he was appointed Deputy Prime Minister while remaining Minister of Defence. [1] [4]",
+          "On 20 Rabi al-Akhir 1440 AH/27 December 2018 CE he became chairman of the Council of Political and Security Affairs, and on 1 Rabi al-Awwal 1444 AH/27 September 2022 CE a royal order made the Crown Prince Prime Minister; in that capacity he chairs the Council of Ministers' sessions. [1] [5] [6]",
+          "His other offices include chairing the Council of Economic and Development Affairs, the Public Investment Fund, the Supreme Council of Saudi Aramco, the Royal Commission for Riyadh City, the Royal Commission for AlUla, the Supreme Anti-Corruption Committee and the Council of Royal Reserves. [1]"
+        ] },
+        { "heading": "Saudi Vision 2030", "role": "economy", "paragraphs": [
+          "On 18 Rajab 1437 AH/25 April 2016 CE he launched Saudi Vision 2030 as a roadmap for transforming the Kingdom across sectors, built on three pillars: a vibrant society, a thriving economy and an ambitious nation. [1]",
+          "Projects launched under it include NEOM, announced in 2017 on the Red Sea and the Gulf of Aqaba as one of the Public Investment Fund's major projects. [1]"
+        ] },
+        { "heading": "Initiatives bearing his name", "role": "culture", "paragraphs": [
+          "Initiatives bearing his name include the Mohammed bin Salman Foundation (Misk), founded in 2011 to develop young people's skills and nurture talent; the Prince Mohammed bin Salman Project for the Development of Historical Mosques, announced in 2018; and the Prince Mohammed bin Salman College of Business and Entrepreneurship. [1]"
+        ] }
+      ]
+    }
+  }
+}
