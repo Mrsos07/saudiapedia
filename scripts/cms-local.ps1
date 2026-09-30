@@ -1,5 +1,5 @@
 param(
-    [ValidateSet('prepare', 'inspect', 'provision', 'generate', 'migrate', 'migrate-status', 'backup', 'rollback-last', 'verify', 'smoke', 'seed-sections', 'publish-structure', 'transfer', 'dev')]
+    [ValidateSet('prepare', 'inspect', 'provision', 'generate', 'migrate', 'migrate-status', 'backup', 'rollback-last', 'verify', 'smoke', 'seed-sections', 'publish-structure', 'transfer', 'attach-images', 'dev')]
     [string]$Action = 'inspect',
     [switch]$Apply,
     [ValidatePattern('^[a-z][a-z0-9_]*$')]
@@ -56,7 +56,7 @@ try {
     $env:NODE_ENV = 'development'
     $env:PAYLOAD_CONFIG_PATH = 'src/payload.config.ts'
     $storageFile = Join-Path $vaultDir 's3-credentials.xml'
-    if ($Action -in @('dev', 'smoke') -and (Test-Path $storageFile)) {
+    if ($Action -in @('dev', 'smoke', 'attach-images') -and (Test-Path $storageFile)) {
         $storage = Import-Clixml $storageFile
         $env:S3_BUCKET = $storage.Bucket
         $env:S3_REGION = $storage.Region
@@ -125,6 +125,10 @@ try {
         } finally {
             Remove-Item Env:PGPASSWORD -ErrorAction SilentlyContinue
         }
+    } elseif ($Action -eq 'attach-images') {
+        # Runtime role + production S3; writes only with -Apply.
+        Remove-Item Env:CMS_RUNTIME_PASSWORD, Env:CMS_MIGRATOR_PASSWORD
+        if ($Apply) { & node --import tsx scripts/attach-images.ts --apply } else { & node --import tsx scripts/attach-images.ts }
     } elseif ($Action -eq 'publish-structure') {
         # Runtime role only; writes happen only with -Apply after an administrator signs in via Edge.
         Remove-Item Env:CMS_RUNTIME_PASSWORD, Env:CMS_MIGRATOR_PASSWORD

@@ -117,7 +117,16 @@ for (const locale of ['ar', 'en'] as const) {
 test('Arabic home, article and equivalent English route', async ({ page }) => {
   await page.goto('/ar');
   await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
-  await expect(page.getByRole('heading', { level: 1 })).toContainText('تاريخٌ');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('موسوعة المملكة العربية السعودية');
+  // Brand title appears once; the social card shows the logo; raster favicons for search engines.
+  await expect(page).toHaveTitle('موسوعة المملكة العربية السعودية');
+  await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content', /\/brand\/og-image\.png$/);
+  await expect(page.locator('meta[property="og:site_name"]')).toHaveAttribute('content', 'موسوعة المملكة العربية السعودية');
+  await expect(page.locator('link[rel="icon"][href="/favicon.ico"]')).toHaveCount(1);
+  for (const asset of ['/brand/og-image.png', '/favicon.ico', '/brand/icon-192.png', '/brand/apple-touch-icon.png']) {
+    expect((await page.request.get(asset)).status(), asset).toBe(200);
+  }
+  await expect(page.getByText('أرضٌ تختصر عوالم')).toHaveCount(0);
   await page.locator('h3 a', { hasText: 'الدولة السعودية الأولى' }).click();
   await expect(page).toHaveURL(/\/ar\/history\/first-saudi-state$/);
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('الدولة السعودية الأولى');

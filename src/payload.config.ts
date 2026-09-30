@@ -67,7 +67,7 @@ export default buildConfig({
       },
     },
     importMap: { baseDir, importMapFile: path.resolve(baseDir, 'app/(payload)/admin/importMap.ts'), autoGenerate: false },
-    meta: { titleSuffix: ' | Kingdom Encyclopedia CMS' },
+    meta: { titleSuffix: ' | Encyclopedia of Saudi Arabia CMS' },
   },
   routes: { admin: '/admin', api: '/api' },
   i18n: { supportedLanguages: { ar, en }, fallbackLanguage: 'ar' },

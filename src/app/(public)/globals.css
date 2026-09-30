@@ -494,7 +494,7 @@ button, a { transition: color 180ms ease, background-color 180ms ease, border-co
   .header-inner { min-block-size: 78px; gap: 12px; }
   .brand { gap: 8px; flex: 1 1 auto; min-inline-size: 0; }
   .brand img { inline-size: 43px; block-size: 39px; }
-  .brand strong { font-size: 22px; }
+  .brand strong { font-size: 17px; line-height: 1.25; }
   .brand small { font-size: 10px; }
   .header-actions { gap: 10px; }
   .language-link, .menu-toggle { font-size: 15px; }
@@ -574,7 +574,7 @@ button, a { transition: color 180ms ease, background-color 180ms ease, border-co
 @media (max-width: 380px) {
   :root { --gutter: 16px; }
   .brand img { inline-size: 34px; block-size: 34px; }
-  .brand strong { font-size: 20px; }
+  .brand strong { font-size: 15px; }
   .brand small { display: none; }
   .header-actions { gap: 8px; }
   .header-inner { flex-wrap: wrap; padding-block: 10px; }

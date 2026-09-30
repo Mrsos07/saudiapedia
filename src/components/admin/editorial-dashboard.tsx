@@ -32,7 +32,7 @@ const dashboardCopy = {
     media: 'مكتبة الوسائط',
   },
   en: {
-    eyebrow: 'Kingdom Encyclopedia · Editorial workspace',
+    eyebrow: 'Encyclopedia of Saudi Arabia · Editorial workspace',
     title: 'Editorial dashboard',
     introduction: 'Organize knowledge, review sources, and complete Arabic and English content in one workspace.',
     createArticle: 'Create article document',

@@ -6,7 +6,7 @@ export function ArticleTools({ title, locale }: { title: string; locale: Locale 
   const [status, setStatus] = useState('');
   async function copy() {
     try {
-      await navigator.clipboard.writeText(`${title} — ${locale === 'ar' ? 'موسوعة المملكة' : 'Kingdom Encyclopedia'}. ${window.location.href}`);
+      await navigator.clipboard.writeText(`${title} — ${locale === 'ar' ? 'موسوعة المملكة العربية السعودية' : 'Encyclopedia of Saudi Arabia'}. ${window.location.href}`);
       setStatus(locale === 'ar' ? 'نُسخ الاستشهاد' : 'Citation copied');
     } catch { setStatus(locale === 'ar' ? 'تعذّر النسخ؛ يمكنك نسخ رابط الصفحة من المتصفح.' : 'Copy failed. You can copy the page address from your browser.'); }
   }

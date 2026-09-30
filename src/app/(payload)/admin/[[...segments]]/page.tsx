@@ -11,7 +11,7 @@ type Props = {
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
-  if (!cmsConfigured()) return { title: 'CMS setup | موسوعة المملكة', robots: { index: false, follow: false } };
+  if (!cmsConfigured()) return { title: 'CMS setup | موسوعة المملكة العربية السعودية', robots: { index: false, follow: false } };
   const [{ generatePageMetadata }, { default: config }] = await Promise.all([
     import('@payloadcms/next/views'), import('../../../../payload.config'),
   ]);

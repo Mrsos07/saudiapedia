@@ -49,7 +49,7 @@ export const analyticsCopy = {
     limitations: 'يشمل فقط الصفحات المزوّدة بالمتتبع والطلبات المقبولة. الصفر يعني عدم وجود أحداث مسجلة، وليس إثباتًا لعمل التتبع. قد تُفقد مشاهدات بسبب الحجب أو فشل الطلبات، وقد تتكرر أو تُزوّر الأعداد؛ فحص المصدر لا يمنع تزوير عملاء خارج المتصفح.',
   },
   en: {
-    eyebrow: 'Kingdom Encyclopedia · Editorial analytics',
+    eyebrow: 'Encyclopedia of Saudi Arabia · Editorial analytics',
     title: 'Analytics',
     introduction: 'Monitor article-document creation and recorded page views in Riyadh time.',
     dashboard: 'Editorial dashboard',

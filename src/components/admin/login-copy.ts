@@ -1,6 +1,6 @@
 export const loginCopy = {
   ar: {
-    brand: 'موسوعة المملكة',
+    brand: 'موسوعة المملكة العربية السعودية',
     eyebrow: 'مساحة فريق التحرير',
     title: 'تسجيل الدخول إلى لوحة التحكم',
     description: 'أهلًا بك مجددًا. سجّل الدخول بحساب فريق التحرير لإدارة محتوى الموسوعة.',
@@ -11,7 +11,7 @@ export const loginCopy = {
     setupHelp: 'راجع docs/cms.md لإكمال الترحيلات وإعداد حساب المسؤول الأول. لا تُدخل كلمات المرور أو مفاتيح الاتصال في هذه الصفحة.',
   },
   en: {
-    brand: 'Kingdom Encyclopedia',
+    brand: 'Encyclopedia of Saudi Arabia',
     eyebrow: 'Editorial workspace',
     title: 'Sign in to the dashboard',
     description: 'Welcome back. Sign in with your editorial team account to manage encyclopedia content.',

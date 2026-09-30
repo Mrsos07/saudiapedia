@@ -2,8 +2,10 @@ import type { Metadata } from 'next';
 import type { Locale } from './encyclopedia';
 
 export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000').replace(/\/$/, '');
-export const brand = { ar: 'موسوعة المملكة', en: 'Kingdom Encyclopedia' };
-export const intro = { ar: 'نافذتك إلى تاريخ المملكة العربية السعودية، وتنوّع أرضها، وإرث إنسانها.', en: 'A window into Saudi Arabia’s history, diverse landscapes and human heritage.' };
+export const brand = { ar: 'موسوعة المملكة العربية السعودية', en: 'Encyclopedia of Saudi Arabia' };
+/** Default social card (public/brand/og-image.png, built by scripts/build-brand-assets.mjs). */
+export const socialImage = { url: '/brand/og-image.png', width: 1200, height: 630, alt: { ar: 'شعار موسوعة المملكة العربية السعودية: خريطة المملكة مع اسم الموسوعة', en: 'Encyclopedia of Saudi Arabia logo: a map of the Kingdom with the encyclopedia name' } };
+export const intro = { ar: 'موسوعة ثنائية اللغة عن تاريخ المملكة العربية السعودية ومناطقها وتراثها وشخصياتها، مع مصادر لكل مقال.', en: 'A bilingual encyclopedia of Saudi Arabia’s history, regions, heritage and people, with sources for every article.' };
 
 /** Arabic is the default for visitors whose language matches neither version. */
 export function languageAlternates(path: string): Record<'ar' | 'en' | 'x-default', string> {
@@ -12,12 +14,15 @@ export function languageAlternates(path: string): Record<'ar' | 'en' | 'x-defaul
 
 export function pageMetadata(locale: Locale, title: string, description: string, path = '', noindex = false): Metadata {
   const url = `${siteUrl}/${locale}${path}`;
+  // The home page is titled with the brand alone; never "brand | brand".
+  const fullTitle = title === brand[locale] ? title : `${title} | ${brand[locale]}`;
+  const image = { url: socialImage.url, width: socialImage.width, height: socialImage.height, alt: socialImage.alt[locale] };
   return {
-    metadataBase: new URL(siteUrl), title: `${title} | ${brand[locale]}`, description,
+    metadataBase: new URL(siteUrl), title: fullTitle, description, applicationName: brand[locale],
     alternates: { canonical: url, languages: languageAlternates(path) },
     robots: { index: !noindex && process.env.SITE_INDEXABLE === 'true', follow: true },
-    openGraph: { title, description, url, siteName: brand[locale], locale: locale === 'ar' ? 'ar_SA' : 'en_US', type: 'website', images: [{ url: '/images/desert.jpg', width: 1920, height: 1280, alt: locale === 'ar' ? 'وادي العلا' : 'AlUla valley' }] },
-    twitter: { card: 'summary_large_image', title, description, images: ['/images/desert.jpg'] },
+    openGraph: { title, description, url, siteName: brand[locale], locale: locale === 'ar' ? 'ar_SA' : 'en_US', alternateLocale: locale === 'ar' ? 'en_US' : 'ar_SA', type: 'website', images: [image] },
+    twitter: { card: 'summary_large_image', title, description, images: [image] },
   };
 }
 
