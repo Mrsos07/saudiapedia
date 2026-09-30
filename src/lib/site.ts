@@ -5,7 +5,7 @@ export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:30
 export const brand = { ar: 'موسوعة المملكة العربية السعودية', en: 'Encyclopedia of Saudi Arabia' };
 /** Default social card (public/brand/og-image.png, built by scripts/build-brand-assets.mjs). */
 export const socialImage = { url: '/brand/og-image.png', width: 1200, height: 630, alt: { ar: 'شعار موسوعة المملكة العربية السعودية: خريطة المملكة مع اسم الموسوعة', en: 'Encyclopedia of Saudi Arabia logo: a map of the Kingdom with the encyclopedia name' } };
-export const intro = { ar: 'موسوعة ثنائية اللغة عن تاريخ المملكة العربية السعودية ومناطقها وتراثها وشخصياتها، مع مصادر لكل مقال.', en: 'A bilingual encyclopedia of Saudi Arabia’s history, regions, heritage and people, with sources for every article.' };
+export const intro = { ar: 'موسوعة معرفية توثق تاريخ المملكة العربية السعودية، ومناطقها، وتراثها، وشخصياتها، وتقدم المعرفة التاريخية مدعومة بالمصادر والمراجع.', en: 'An encyclopedia documenting the history of Saudi Arabia, its regions, heritage and people, presenting historical knowledge supported by sources and references.' };
 
 /** Arabic is the default for visitors whose language matches neither version. */
 export function languageAlternates(path: string): Record<'ar' | 'en' | 'x-default', string> {

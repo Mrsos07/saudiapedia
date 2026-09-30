@@ -85,9 +85,6 @@ button, a { transition: color 180ms ease, background-color 180ms ease, border-co
 .arrow { display: inline-block; flex: 0 0 auto; font-size: 24px; font-weight: 400; line-height: 1; }
 
 /* Masthead */
-.top-strip { background: var(--deep-green); color: var(--cream); font-size: 14px; }
-.top-strip .container { display: flex; justify-content: space-between; gap: 12px 24px; padding-block: 7px; }
-.top-strip .container > :last-child { color: #DDD4BF; }
 .site-header { position: sticky; inset-block-start: 0; z-index: 30; background: var(--paper); border-block-end: 1px solid var(--line); }
 .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-block-size: 96px; }
 .brand { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
@@ -421,7 +418,7 @@ button, a { transition: color 180ms ease, background-color 180ms ease, border-co
 .footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 20px 36px; padding-block: 24px; border-block-start: 1px solid #456354; color: #D3DDCF; font-size: 14px; }
 .footer-bottom > div { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; }
 .footer-bottom a { display: inline-flex; align-items: center; min-block-size: 44px; color: var(--cream); }
-.hero :focus-visible, .feature-section :focus-visible, .site-footer :focus-visible, .top-strip :focus-visible { outline-color: #EBD59E; }
+.hero :focus-visible, .feature-section :focus-visible, .site-footer :focus-visible { outline-color: #EBD59E; }
 .hero .search-form :focus-visible { outline-color: var(--green); }
 
 @media (hover: hover) {
@@ -488,9 +485,6 @@ button, a { transition: color 180ms ease, background-color 180ms ease, border-co
 @media (max-width: 640px) {
   :root { --gutter: 20px; --header-offset: 94px; }
   body { font-size: 18px; }
-  .top-strip { font-size: 12px; }
-  .top-strip .container { justify-content: center; padding-block: 6px; text-align: center; }
-  .top-strip .container > :last-child:not(:first-child) { display: none; }
   .header-inner { min-block-size: 78px; gap: 12px; }
   .brand { gap: 8px; flex: 1 1 auto; min-inline-size: 0; }
   .brand img { inline-size: 43px; block-size: 39px; }
@@ -606,7 +600,7 @@ button, a { transition: color 180ms ease, background-color 180ms ease, border-co
   html { scroll-behavior: auto; }
   body { background: white !important; color: black !important; font-size: 12pt; line-height: 1.6; }
   *, *::before, *::after { box-shadow: none !important; text-shadow: none !important; }
-  .top-strip, .site-header, .site-footer, .skip-link, .article-aside, .article-tools,
+  .site-header, .site-footer, .skip-link, .article-aside, .article-tools,
   .hero-search, .search-form, .search-panel, .search-filters, .popular-searches,
   .hero-scroll, .filter-tabs, .pagination, .related-section, .preview-notice, .breadcrumbs { display: none !important; }
   .container { inline-size: 100%; max-inline-size: none; margin-inline: 0; }

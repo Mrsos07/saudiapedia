@@ -13,7 +13,6 @@ export function SiteHeader({ locale, navigation }: { locale: Locale; navigation:
   const other = locale === 'ar' ? 'en' : 'ar';
   const otherPath = pathname.replace(/^\/(ar|en)(?=\/|$)/, `/${other}`);
   return <>
-    <div className="top-strip"><div className="container"><span>{locale === 'ar' ? 'موسوعة بالعربية والإنجليزية' : 'In Arabic and English'}</span><span>{locale === 'ar' ? 'مشروع معرفي مستقل' : 'An independent knowledge project'}</span></div></div>
     <header className="site-header">
       <div className="container header-inner">
         <Link href={`/${locale}`} className="brand" aria-label={brand[locale]} onClick={() => setOpen(false)}>
