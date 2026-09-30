@@ -117,7 +117,8 @@ for (const locale of ['ar', 'en'] as const) {
 test('Arabic home, article and equivalent English route', async ({ page }) => {
   await page.goto('/ar');
   await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('موسوعة المملكة العربية السعودية');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('موسوعة السعودية');
+  await expect(page.locator('.brand strong')).toHaveText('موسوعة السعودية');
   // Brand title appears once; the social card shows the logo; raster favicons for search engines.
   await expect(page).toHaveTitle('موسوعة المملكة العربية السعودية');
   await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content', /\/brand\/og-image\.png$/);
@@ -134,6 +135,7 @@ test('Arabic home, article and equivalent English route', async ({ page }) => {
   await page.getByRole('link', { name: 'English', exact: true }).click();
   await expect(page).toHaveURL(/\/en\/history\/first-saudi-state$/);
   await expect(page.locator('html')).toHaveAttribute('dir', 'ltr');
+  await expect(page.locator('.brand strong')).toHaveText('Saudi Encyclopedia');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('The First Saudi State');
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', /noindex/);
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', /\/en\/history\/first-saudi-state$/);

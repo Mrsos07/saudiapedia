@@ -18,7 +18,7 @@ export function SiteHeader({ locale, navigation }: { locale: Locale; navigation:
       <div className="container header-inner">
         <Link href={`/${locale}`} className="brand" aria-label={brand[locale]} onClick={() => setOpen(false)}>
           <Image src="/brand/saudi-map-logo.svg" alt="" width={61} height={52} priority />
-          <span><strong>{brand[locale]}</strong><small>saudiknowledge.com</small></span>
+          <span><strong>{locale === 'ar' ? 'موسوعة السعودية' : 'Saudi Encyclopedia'}</strong><small>saudiknowledge.com</small></span>
         </Link>
         <nav className="desktop-nav" aria-label={locale === 'ar' ? 'الأقسام الرئيسية' : 'Main navigation'}>
           {navigation.map(item => <Link key={item.path} href={`/${locale}/${item.path}`} title={item[locale]} aria-current={(pathname.split('/')[2] === item.path || (item.path === 'notable-figures' && ['people', 'rulers'].includes(pathname.split('/')[2]))) ? 'page' : undefined}>{navigationLabel(item, locale)}</Link>)}
