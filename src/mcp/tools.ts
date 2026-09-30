@@ -301,6 +301,18 @@ export const tools: Tool[] = [
     },
   }),
   tool({
+    name: 'create_category', description: 'Creates a subsection (category) of a section, used as "subsection" in create_article/update_article. Refused if the section already has a subsection with the same Arabic or English name.',
+    annotations: { title: 'Create subsection', readOnlyHint: false, destructiveHint: false, idempotentHint: false, openWorldHint: false },
+    input: s.object({ section: s.string({ max: 80, pattern: SLUG }), nameAr: s.string({ min: 1, max: 120 }), nameEn: s.string({ min: 1, max: 120 }) }, ['section', 'nameAr', 'nameEn']),
+    run: async (input, { payload, user }) => {
+      const { docs } = await payload.find({ collection: 'categories', user, overrideAccess: false, where: { and: [{ section: { equals: input.section } }, { or: [{ nameAr: { equals: input.nameAr } }, { nameEn: { equals: input.nameEn } }] }] }, limit: 1, depth: 0 });
+      if (docs.length) throw new ToolError(`Section "${input.section}" already has this subsection (id ${String((docs[0] as Doc).id)}).`);
+      const doc = await payload.create({ collection: 'categories', user, overrideAccess: false, data: { section: input.section, nameAr: input.nameAr, nameEn: input.nameEn } as never, depth: 0 }).catch(unwrap) as Doc;
+      invalidatePublicContent();
+      return { id: doc.id, section: input.section, nameAr: input.nameAr, nameEn: input.nameEn };
+    },
+  }),
+  tool({
     name: 'search_media', description: 'Find uploaded media assets by words in their alt text or filename, with their public-delivery approval. Use the id as "image" in create_article/update_article.', annotations: read('Search media'),
     input: s.object({ query: s.string({ max: 120, description: 'Words matched against alt text and filename.' }), limit: s.integer(1, 25) }),
     run: async (input, { payload, user }) => {

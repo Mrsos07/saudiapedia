@@ -61,7 +61,7 @@ test('publishing tools demand explicit confirmation and optimistic concurrency',
     assert.equal(listed.find(item => item.name === name)!.annotations.destructiveHint, true);
   }
   for (const item of listed) {
-    assert.equal(item.annotations.readOnlyHint, !['create_article', 'update_article', 'set_review_status', 'publish_article', 'unpublish_article'].includes(item.name), item.name);
+    assert.equal(item.annotations.readOnlyHint, !['create_article', 'update_article', 'set_review_status', 'publish_article', 'unpublish_article', 'create_category'].includes(item.name), item.name);
     assert.equal((item.inputSchema as { additionalProperties: boolean }).additionalProperties, false, item.name);
   }
   const denied = await call({ jsonrpc: '2.0', id: 8, method: 'tools/call', params: { name: 'publish_article', arguments: { translationKey: 'k', expectedUpdatedAt: { ar: 'a', en: 'b' }, confirm: false } } });
