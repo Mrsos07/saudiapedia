@@ -189,8 +189,21 @@ test('region navigation, pagination and required public credits', async ({ page 
   await page.locator('.pagination a').last().click();
   await expect(page.locator('.entry-card')).toHaveCount(4);
   await page.goto('/en/credits');
-  await expect(page.locator('.credit-card')).toHaveCount(5);
+  await expect(page.locator('.credit-card')).toHaveCount(7);
   await expect(page.getByText('Sammy Six', { exact: true })).toBeVisible();
+  await expect(page.getByText('S0lL0 TRAVELER', { exact: true })).toBeVisible();
+});
+
+test('homepage hero cycles through credited Saudi scenes, one visible credit at a time', async ({ page }) => {
+  await page.goto('/ar');
+  await expect(page.locator('.hero-slide img')).toHaveCount(6);
+  const visibleCredits = () => page.locator('.hero-credit').evaluateAll(nodes => nodes.filter(node => getComputedStyle(node).visibility === 'visible').length);
+  expect(await visibleCredits()).toBe(1);
+  await expect(page.locator('.hero-credit').first()).toContainText('B.alotaby');
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.reload();
+  expect(await page.locator('.hero-slide').evaluateAll(nodes => nodes.map(node => getComputedStyle(node).opacity))).toEqual(['1', '0', '0', '0', '0', '0']);
+  expect(await visibleCredits()).toBe(1);
 });
 
 test('mobile menu, layout width, inherited font and not-found', async ({ page }) => {

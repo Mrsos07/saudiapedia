@@ -7,7 +7,7 @@ import { organization, website } from '@/lib/structured-data';
 import { Arrow, EntryCard, PhotoCredit, RegionExplorer, SearchForm, SectionHeading } from '@/components/encyclopedia';
 import { getContent } from '@/lib/content';
 import { entryPath, isLocale, matchesSection, saudiStateHistory } from '@/lib/encyclopedia';
-import { brand, intro, navigation, pageMetadata, publicNavigation, sectionName } from '@/lib/site';
+import { brand, heroSlides, intro, navigation, pageMetadata, photoCredits, publicNavigation, sectionName } from '@/lib/site';
 import { getSections } from '@/lib/sections';
 
 export const dynamic = 'force-dynamic';
@@ -27,16 +27,17 @@ export default async function Home({ params }: Props) {
   const { sections } = await getSections();
   const additionalSections = publicNavigation(sections).filter(item => !navigation.some(core => core.path === item.path));
   const name = (path: string) => sectionName(path, sections)?.[locale] ?? path;
+  const slides = heroSlides.map(file => photoCredits.find(credit => credit.file === file)!);
   const history = saudiStateHistory(entries);
   const heritage = entries.filter(e => e.section === 'heritage').slice(0, 3);
   const featuredKings = entries.filter(entry => entry.kind === 'ruler');
   return <main id="main-content">
     {!preview && <JsonLd graph={[organization(), website(locale)]} />}
     <section className="hero" aria-labelledby="hero-title">
-      <Image src="/images/desert.jpg" alt={ar ? 'وادي العلا وجروفه الصحراوية الصخرية' : 'AlUla valley and sandstone escarpments'} fill priority sizes="100vw" />
+      <div className="hero-slides">{slides.map((credit, index) => <div className="hero-slide" key={credit.file} style={{ '--slide': index } as React.CSSProperties}><Image src={`/images/${credit.file}`} alt={credit[locale]} fill priority={index === 0} sizes="100vw" /></div>)}</div>
       <div className="hero-shade" />
       <div className="container hero-content"><h1 id="hero-title" className="hero-title">{ar ? 'موسوعة السعودية' : 'Saudi Encyclopedia'}</h1><p className="hero-description">{intro[locale]}</p><a href="#explore" className="button">{ar ? 'تصفح الأقسام' : 'Browse sections'} <Arrow locale={locale} /></a></div>
-      <div className="container hero-bottom"><PhotoCredit image="/images/desert.jpg" locale={locale} /></div>
+      <div className="container hero-bottom"><div className="hero-credits">{slides.map((credit, index) => <div className="hero-credit" key={credit.file} style={{ '--slide': index } as React.CSSProperties}><PhotoCredit image={`/images/${credit.file}`} locale={locale} /></div>)}</div></div>
     </section>
     <div className="container hero-search"><SearchForm locale={locale} /><div className="popular-searches"><span>{ar ? 'أقسام رئيسة:' : 'Main sections:'}</span>{[{ path: 'history', ar: 'الدول السعودية', en: 'Saudi states' }, { path: 'regions', ar: 'مناطق المملكة', en: 'The regions' }, { path: 'heritage', ar: 'المواقع التراثية', en: 'Heritage sites' }].map(item => <Link key={item.path} href={`/${locale}/${item.path}`}>{item[locale]}</Link>)}</div></div>
     <nav id="explore" className="container discovery-strip" aria-label={ar ? 'أقسام الموسوعة' : 'Encyclopedia sections'}>{[

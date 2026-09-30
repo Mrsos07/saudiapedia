@@ -121,6 +121,25 @@ button, a { transition: color 180ms ease, background-color 180ms ease, border-co
   background: var(--deep-green);
 }
 .hero > img { z-index: -3; object-fit: cover; object-position: center; }
+/* Continuous crossfade slideshow: 6 slides × 6 s. Each slide fades in, holds with a slow zoom, then fades out.
+   Negative offsets start the first slide fully visible. Without animation (reduced motion) only the first slide shows. */
+.hero-slides { position: absolute; inset: 0; z-index: -3; overflow: hidden; }
+.hero-slide, .hero-credit { opacity: 0; visibility: hidden; animation: hero-fade 36s linear infinite both; animation-delay: calc(var(--slide) * 6s - 1.1s); }
+.hero-slide { position: absolute; inset: 0; }
+.hero-slide:first-child, .hero-credit:first-child { opacity: 1; visibility: visible; }
+.hero-slide img { object-fit: cover; object-position: center; animation: hero-zoom 36s linear infinite both; animation-delay: inherit; }
+.hero-credits { display: grid; }
+.hero-credit { grid-area: 1 / 1; }
+@keyframes hero-fade {
+  0% { opacity: 0; visibility: hidden; }
+  3%, 16.67% { opacity: 1; visibility: visible; }
+  19.67% { opacity: 0; visibility: visible; }
+  19.68%, 100% { opacity: 0; visibility: hidden; }
+}
+@keyframes hero-zoom {
+  0% { transform: scale(1); }
+  19.67%, 100% { transform: scale(1.08); }
+}
 .hero-shade {
   position: absolute;
   inset: 0;
@@ -613,7 +632,7 @@ button, a { transition: color 180ms ease, background-color 180ms ease, border-co
   .hero-scroll, .filter-tabs, .pagination, .related-section, .preview-notice, .breadcrumbs { display: none !important; }
   .container { inline-size: 100%; max-inline-size: none; margin-inline: 0; }
   .page-hero, .section, .region-section, .feature-section, .history-section, .hero, .policy-content { min-block-size: 0; padding-block: 16pt; background: white !important; color: black !important; }
-  .hero > img, .hero-shade, .hero-bottom, .article-cover, .article-caption, .card-image, .feature-image { display: none !important; }
+  .hero > img, .hero-slides, .hero-shade, .hero-bottom, .article-cover, .article-caption, .card-image, .feature-image { display: none !important; }
   .hero-content { padding-block: 0; }
   .article-shell, .region-explorer, .feature-inner, .history-grid, .heritage-grid, .card-grid, .people-grid, .credits-grid { display: block; padding-block: 16pt; }
   .article-header, .policy-content { max-inline-size: none; }

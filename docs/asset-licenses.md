@@ -97,6 +97,18 @@ Dimensions describe the actual local files, in pixels, width × height.
 - Arabic caption/alt: “أفق مدينة الرياض المضاء عند الغسق، في صورة التُقطت في فبراير 2018.”
 - Honesty: an archival 2018 city view, not a claim about the current skyline. Photograph licensing does not imply endorsement by depicted businesses or resolve all possible non-copyright rights in every jurisdiction.
 
+## Homepage hero slideshow additions — 2026-09-30
+
+Operator request: replace the single AlUla hero with a continuous slideshow of broader Saudi scenes. Slides, in order (`heroSlides` in `src/lib/site.ts`): `riyadh-kafd.jpg`, `desert.jpg`, `edge-of-the-world.jpg`, `heritage.jpg`, `diriyah.jpg`, `mountains.jpg`. Each slide's credit fades in with it under the hero and all are listed on the public credits page. Two new files were downloaded as the Commons API's 1920-pixel standard thumbnails (HTTP 200, decoded as JPEG, visually reviewed); no local retouching, cropping or recompression. The page displays them with a cover crop, a dark gradient overlay and a slow zoom (up to 8 %).
+
+| Local file / public URL | Subject | Dimensions | Bytes | Photographer | License | SHA-256 |
+| --- | --- | --- | ---: | --- | --- | --- |
+| `public/images/riyadh-kafd.jpg` | Riyadh skyline with Kingdom Tower and KAFD at sunset, 3 April 2016 | 1920 × 1280 | 314,358 | B.alotaby | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | `CA04B254ED527CEF932C3499E4A9A02225D37A1F2EC756529AEDBAE6F36B9B13` |
+| `public/images/edge-of-the-world.jpg` | Tuwaiq escarpment, “Edge of the World”, central Saudi Arabia, 17 February 2017 | 1920 × 1283 | 139,227 | S0lL0 TRAVELER | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | `2F6A7199345C3D6C42B4A533C841983672822E4582F822BE422C6AE4A7BD95D3` |
+
+- `riyadh-kafd.jpg`: [Commons source and licensing](https://commons.wikimedia.org/wiki/File:Riyadh_Skyline_showing_the_King_Abdullah_Financial_District_(KAFD)_and_the_famous_Kingdom_Tower_.jpg); Wikimedia proportional resize from 6000 × 4000; renamed locally. Credit: “Riyadh Skyline showing the King Abdullah Financial District (KAFD) and the famous Kingdom Tower” — B.alotaby, via Wikimedia Commons, CC BY-SA 4.0. Archival 2016 view (towers under construction), not the current skyline.
+- `edge-of-the-world.jpg`: [Commons source and licensing](https://commons.wikimedia.org/wiki/File:Edge_of_the_World.jpg); Wikimedia proportional resize from 2992 × 2000; renamed locally. Credit: “Edge of the World” — S0lL0 TRAVELER, via Wikimedia Commons, CC BY-SA 4.0. Commons describes it only as a mountain destination in central Saudi Arabia; the caption says “near Riyadh” and does not name a specific peak. The silhouetted visitors are not identifiable.
+
 ## Original Saudi outline logo
 
 - Local file: `public/brand/saudi-map-logo.svg`; public URL: `/brand/saudi-map-logo.svg`.
